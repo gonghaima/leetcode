@@ -1,0 +1,54 @@
+Arguments: 
+  /Users/s110535/.nvm/versions/node/v9.11.1/bin/node /Users/s110535/.yarn/bin/yarn.js add --dev babel-preset-latest
+
+PATH: 
+  /Users/s110535/.yarn/bin:/Users/s110535/.config/yarn/global/node_modules/.bin:/Users/s110535/.nvm/versions/node/v9.11.1/bin:/Users/s110535/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:/Users/s110535/.yarn/bin:/Users/s110535/.config/yarn/global/node_modules/.bin:/Users/s110535/bin
+
+Yarn version: 
+  1.7.0
+
+Node version: 
+  9.11.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/s110535/temp/1/package.json: Unexpected token } in JSON at position 373
+      at JSON.parse (<anonymous>)
+      at /Users/s110535/.yarn/lib/cli.js:1130:59
+      at Generator.next (<anonymous>)
+      at step (/Users/s110535/.yarn/lib/cli.js:98:30)
+      at /Users/s110535/.yarn/lib/cli.js:109:13
+      at <anonymous>
+
+npm manifest: 
+  {
+    "name": "1",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
+      "build-babel": "babel server --out-dir build --presets=es2015 && webpack",
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "express": "^4.16.3",
+      "morgan": "^1.9.0"
+    },
+    "devDependencies": {
+      "babel-cli": "^6.26.0",
+      "babel-preset-es2015": "^6.24.1",
+      "rimraf": "^2.6.2"
+    }
+  }
+  ``
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

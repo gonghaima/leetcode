@@ -1,16 +1,19 @@
-const loopThrough = (currentNode, data) => {
-  if (currentNode && currentNode.val) data.push(currentNode.val);
-
-  if (currentNode && currentNode.left) loopThrough(currentNode.left, data);
-
-  if (currentNode && currentNode.right) loopThrough(currentNode.right, data);
-};
 
 const preorderTraversal = root => {
-  let data = [];
+  const result = [];
+  const inorder = node => {
+    if (!node) return;
+    result.push(node.val);
+    if (node.left) {
+      inorder(node.left);
+    }
+    if (node.right) {
+      inorder(node.right);
+    }
+  };
 
-  loopThrough(root, data);
-  return data;
+  inorder(root);
+  return result;
 };
 
 export default preorderTraversal;

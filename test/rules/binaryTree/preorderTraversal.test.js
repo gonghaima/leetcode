@@ -1,5 +1,5 @@
-import TreeNode from '../../src/models/treeNode';
-import preorderTraversal from '../../src/rules/binaryTree/preorderTraversal';
+import TreeNode from '../../../src/models/treeNode';
+import preorderTraversal from '../../../src/rules/binaryTree/preorderTraversal';
 
 const threeN = new TreeNode(3);
 const twoN = new TreeNode(2);

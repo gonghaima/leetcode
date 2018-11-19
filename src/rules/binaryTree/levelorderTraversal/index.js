@@ -1,6 +1,5 @@
 export const levelorderTraversal = root => {
   const result = [];
-  let temp = [];
   const levelorder = nodeList => {
     if (nodeList.length === 0) return;
     let currentResult = [];

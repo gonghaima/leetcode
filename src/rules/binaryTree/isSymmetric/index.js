@@ -67,7 +67,21 @@ export const isSymmetric = function(root) {
     return isSym;
   }
 
-  checkSym([root.left, root.right]);
+  if (
+    root &&
+    root.left &&
+    root.left !== undefined &&
+    root.left !== null &&
+    root.right !== undefined &&
+    root.right !== null
+  ) {
+    checkSym([root.left, root.right]);
+  } else if (
+    (root && root.left && !(root && root.right)) ||
+    (!(root && root.left) && (root && root.right))
+  ) {
+    isSym = false;
+  }
 
   return isSym;
 };

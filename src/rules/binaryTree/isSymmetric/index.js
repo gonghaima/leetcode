@@ -2,8 +2,8 @@ export const isSymmetric = function(root) {
   const startRoot = [root];
   let isSym = true;
 
+  //compare two nodes, include their left and right child
   const compareTwoNode = (node1, node2) => {
-    //compare two nodes
     if (node1.val !== node2.val) {
       isSym = false;
       return;
@@ -42,16 +42,20 @@ export const isSymmetric = function(root) {
     }
   };
 
+  //check if a nodeList is symmetric, by checking its value and childrens
   const checkSym = nodeList => {
-    // if no sym, return
+    // if no sym, return - stop point for recursion call
     if (isSym === false) return;
 
     let nodeLstCopy = nodeList.slice();
+    //loop through all nodes in current level, verify isSym or not.
     while (nodeList.length > 1 && isSym === true) {
       const nodeFirst = nodeList.shift();
       const nodeLast = nodeList.pop();
       compareTwoNode(nodeFirst, nodeLast);
     }
+
+    //if isSym at current level, get all nodes in next level, then repeat the checkSym process
     if (isSym === true) {
       let childNodeList = [];
       nodeLstCopy.map(c => {
@@ -61,12 +65,15 @@ export const isSymmetric = function(root) {
       if (childNodeList.length > 0) checkSym(childNodeList);
     }
   };
-  //if only one in list
+
+  //if there is only one node, only root node, return isSym true
   if (root && !root.left && !root.right) {
     isSym = true;
     return isSym;
   }
 
+  //if root.left and root.right available, start to check
+  //else if left availabe but right not, or vice versa, isSym is false
   if (
     root &&
     root.left &&

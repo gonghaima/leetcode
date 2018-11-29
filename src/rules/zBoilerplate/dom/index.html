@@ -1,0 +1,20 @@
+<div class="image">
+  <img src="https://goo.gl/kjzfbE" alt="First" />
+  <button class="remove">X</button>
+</div>
+<div class="image">
+  <img src="https://goo.gl/d2JncW" alt="Second" />
+  <button class="remove">X</button>
+</div>
+<script>
+  function setup() {
+    var allButtons = document.getElementsByClassName('remove');
+    for (let index = 0; index < allButtons.length; index++) {
+      const button = allButtons[index];
+      button.addEventListener('click', function() {
+        this.parentElement.remove();
+      });
+    }
+  }
+  setup();
+</script>

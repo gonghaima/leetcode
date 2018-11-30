@@ -1,0 +1,17 @@
+<!-- make a constant, before loop -->
+
+<div id="a"><div id="b"></div></div>
+<script>
+  function appendChildren(decorateDivFunction) {
+    var allDivs = document.getElementsByTagName('div');
+
+    const count = allDivs.length;
+    for (var i = 0; i < count; i++) {
+      var newDiv = document.createElement('div');
+      decorateDivFunction(newDiv);
+      allDivs[i].appendChild(newDiv);
+    }
+  }
+
+  appendChildren(() => {});
+</script>

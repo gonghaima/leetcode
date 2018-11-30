@@ -1,0 +1,20 @@
+<!--
+  The code below should do the job, but for some reason it goes into an infinite loop. Fix the bugs.
+
+  The issue is the  allDivs.length is keep growing everytime, so the for loop never finishes.
+-->
+
+<div id="a"><div id="b"></div></div>
+<script>
+  function appendChildren(decorateDivFunction) {
+    var allDivs = document.getElementsByTagName('div');
+
+    for (var i = 0; i < allDivs.length; i++) {
+      var newDiv = document.createElement('div');
+      decorateDivFunction(newDiv);
+      allDivs[i].appendChild(newDiv);
+    }
+  }
+
+  appendChildren(() => {});
+</script>

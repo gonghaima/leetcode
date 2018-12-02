@@ -11,3 +11,9 @@ Example 2:
 
 Input: "cbbd"
 Output: "bb"
+
+babad
+dabab
+
+cbbd
+dbbc

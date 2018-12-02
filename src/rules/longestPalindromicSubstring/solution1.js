@@ -5,10 +5,13 @@
 // return longest string in result array
 export const longestPalindromeSolution1 = s => {
   if (s.length === 1) return s;
-  const sub = s
-    .split('')
-    .reverse()
-    .join('');
+  const rev = str =>
+    str
+      .split('')
+      .reverse()
+      .join('');
+
+  const sub = rev(s);
 
   let longestMatch = [];
 
@@ -22,19 +25,11 @@ export const longestPalindromeSolution1 = s => {
       currentCount++;
       element = sub.substring(i, currentCount);
     }
-    const pl = sub.substring(i, currentCount - 1);
-    longestMatch.push(pl);
+    longestMatch.push(sub.substring(i, currentCount - 1));
   }
 
   //filter out none palindrome value
-  let palindromes = longestMatch.filter(
-    a =>
-      a ===
-      a
-        .split('')
-        .reverse()
-        .join('')
-  );
+  let palindromes = longestMatch.filter(a => a === rev(a));
 
   const final =
     palindromes.length !== 0

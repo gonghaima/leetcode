@@ -4,7 +4,10 @@ export const inputData = {
   case3: 'a',
   case4: 'bb',
   case5: 'eabcb',
-  case6: 'aacdefcaa'
+  case6: 'aacdefcaa',
+  case7: 'aba',
+  case8: 'abcda'
+  // adcba
 };
 
 export const expected = {
@@ -13,5 +16,7 @@ export const expected = {
   case3: 'a',
   case4: 'bb',
   case5: 'bcb',
-  case6: 'aa'
+  case6: 'aa',
+  case7: 'aba',
+  case8: 'a'
 };

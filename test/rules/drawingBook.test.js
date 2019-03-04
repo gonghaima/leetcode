@@ -8,9 +8,7 @@ test('sockMerchant function should return correct pairs of sock from case1 data'
   expect(pageCount(inputData.case5.n, inputData.case5.p)).toBe(expected.case5);
   expect(pageCount(inputData.case6.n, inputData.case6.p)).toBe(expected.case6);
 
-  //   utilData.map(item => {
-  //     expect(countHelper(item[0])).toBe(item[1]);
-  //   });
-
-  //   expect(countHelper(utilData[0][0])).toBe(utilData[0][1]);
+  utilData.map(item => {
+    expect(countHelper(item[0])).toBe(item[1]);
+  });
 });

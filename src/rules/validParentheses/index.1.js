@@ -4,7 +4,9 @@ export const isValid = s => {
   let valid = true;
   let prevLength = s.length;
   while (s.length > 2 && valid) {
-    s = s.replace(/\{\}|\[\]|\(\)/g, "");
+    valLookup.forEach(item => {
+      s = s.split(item).join("");
+    });
     if (prevLength === s.length) {
       valid = false;
       break;

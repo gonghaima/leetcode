@@ -2,10 +2,11 @@ export default nums => {
   const result = nums.reduce(
     (i, c) => {
       if (c !== i.prevItem) {
-        i += c;
-        return c;
+        i.counter += 1;
+        i.prevItem = c;
+        return i;
       } else {
-        return c;
+        return i;
       }
     },
     { prevItem: null, counter: 0 }

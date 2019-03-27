@@ -6,9 +6,10 @@ export const searchInsert = (nums, target) => {
       return;
     }
     if (num > target && result === null) {
-      result = i - 1;
+      result = i;
       return;
     }
   });
+  if (result === null) result = nums.length;
   return result;
 };

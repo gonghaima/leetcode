@@ -1,15 +1,15 @@
 export const searchInsert = (nums, target) => {
   let result = null;
-  nums.map((num, i) => {
-    if (num === target) {
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] === target) {
       result = i;
-      return;
+      break;
     }
-    if (num > target && result === null) {
+    if (nums[i] > target && result === null) {
       result = i;
-      return;
+      break;
     }
-  });
+  }
   if (result === null) result = nums.length;
   return result;
 };

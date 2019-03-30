@@ -1,19 +1,21 @@
-export default (n, ar) => {
-  let r = {};
-
-  ar.map(c => {
-    if (r[c]) {
-      r[c] += 1;
-    } else {
-      r[c] = 1;
-    }
-  });
-
-  let total = 0;
-
-  Object.keys(r).map(c => {
-    total += Math.floor(r[c] / 2);
-  });
-
-  return total;
+export default nums => {
+  let maxVal = null;
+  let numsLength = nums.length;
+  for (let i = 0; i < numsLength; i++) {
+    const curNums = nums.slice(i);
+    curNums.reduce((i, item) => {
+      if (i === null) {
+        i = item;
+      } else {
+        i = i + item;
+      }
+      if (maxVal === null) {
+        maxVal = i;
+      } else {
+        if (i > maxVal) maxVal = i;
+      }
+      return i;
+    }, null);
+  }
+  return maxVal;
 };

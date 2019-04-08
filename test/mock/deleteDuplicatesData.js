@@ -15,8 +15,7 @@ c1n1E.next = c1n2E;
 /**case 1 end */
 
 /**case 2 start */
-
-//input 11233    123
+//input
 const c2n1 = new ListNode(1);
 const c2n2 = new ListNode(1);
 const c2n3 = new ListNode(2);

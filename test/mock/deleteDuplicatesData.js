@@ -35,12 +35,40 @@ c2n1E.next = c2n2E;
 c2n2E.next = c2n3E;
 /**case 2 end */
 
+/**case 3 start */
+//input
+const c3n1 = new ListNode(null);
+
+//expected
+const c3n1E = new ListNode(null);
+/**case 3 end */
+
+/**case 4 start */
+//input
+const c4n1 = new ListNode(0);
+const c4n2 = new ListNode(0);
+const c4n3 = new ListNode(0);
+const c4n4 = new ListNode(0);
+const c4n5 = new ListNode(0);
+c4n1.next = c4n2;
+c4n2.next = c4n3;
+c4n3.next = c4n4;
+c4n4.next = c4n5;
+
+//expected
+const c4n1E = new ListNode(0);
+/**case 4 end */
+
 export const inputData = {
   case1: c1n1,
-  case2: c2n1
+  case2: c2n1,
+  case3: c3n1,
+  case4: c4n1
 };
 
 export const expected = {
   case1: c1n1E,
-  case2: c2n1E
+  case2: c2n1E,
+  case3: c3n1E,
+  case4: c4n1E
 };

@@ -4,8 +4,10 @@ export default (a, b) => {
   const bLength = b.length;
 
   let longerString;
+  let longerStringLength;
 
   let shorterString;
+  let shorterStringLength;
 
   let reservedVal = 0;
   let result = "";

@@ -30,5 +30,27 @@ Example 2:
   
 </pre>
 
+Example 3:
+
+<pre>
+[null]
+[null]
+
+expected to be true
+</pre>
+
+Example 4:
+
+<pre>
+    1
+     \
+      1      [1,null,1] 
+
+    1                           
+     \
+      1       [1,null,] 
+  
+</pre>
+
 Note:
 Bonus points if you could solve it both recursively and iteratively.

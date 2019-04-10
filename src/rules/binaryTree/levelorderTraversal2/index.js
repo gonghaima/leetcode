@@ -4,12 +4,14 @@ export default root => {
   let currentNodeList = [root];
   while (currentNodeList.length > 0) {
     let tempArr = [];
-    allArr.map(i => {
-      if (i.left) tempArr.push(i.left);
-      if (i.right) tempArr.push(i.right);
-      allArr.unshift(i.val);
+    let tempNodeList = [];
+    currentNodeList.map(i => {
+      if (i.left) tempNodeList.push(i.left);
+      if (i.right) tempNodeList.push(i.right);
+      tempArr.push(i.val);
     });
-    currentNodeList = tempArr;
+    allArr.unshift(tempArr);
+    currentNodeList = tempNodeList;
   }
   return allArr;
 };

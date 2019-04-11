@@ -1,17 +1,16 @@
 export default root => {
-  const minDepth = nd => {
-    if (!nd) return 0;
-    return 1 + Math.min(minDepth(nd.left), minDepth(nd.right));
-  };
+  let isB = true;
+  const height = root => {
+    if (!root) return 0;
+    const left = height(root.left);
+    const right = height(root.right);
+    if (Math.abs(left - right) > 1) isB = false;
 
-  const maxDepth = nd => {
-    if (!nd) return 0;
-    return 1 + Math.max(maxDepth(nd.left), maxDepth(nd.right));
+    return Math.max(left, right) + 1;
   };
-
-  const balanced = nd => {
-    if (!nd) return undefined;
-    return maxDepth(nd) - minDepth(nd) <= 1;
+  const balanced = root => {
+    height(root);
+    return isB;
   };
   return balanced(root);
 };

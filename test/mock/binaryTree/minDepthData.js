@@ -13,7 +13,6 @@ rootN.left = two1;
 rootN.right = two2;
 
 //case 2
-
 export const inputData = {
   case1: rootN
 };

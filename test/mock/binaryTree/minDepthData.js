@@ -13,8 +13,13 @@ rootN.left = two1;
 rootN.right = two2;
 
 //case 2
+let c2l = new TreeNode(2);
+let c2Root = new TreeNode(1);
+c2Root.left = c2l;
+
 export const inputData = {
-  case1: rootN
+  case1: rootN,
+  case2: c2Root
 };
 
-export const expected = { case1: 2 };
+export const expected = { case1: 2 , case2: 2};

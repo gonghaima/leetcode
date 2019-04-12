@@ -1,17 +1,12 @@
 export default root => {
-  let counter = 1;
-  let con = true;
-  const ht = nd => {
-    con;
-    if (!nd) return 0;
-    if (nd.left && nd.right && con) {
-      counter += 1;
-      return ht(nd.left) && ht(nd.right);
-    } else {
-      con = false;
-      return;
-    }
+  const minDepth = root => {
+    if (root === null) return 0;
+    if (root.left === null || root.right === null)
+      return 1 + Math.max(minDepth(root.left), minDepth(root.right));
+    return 1 + Math.min(minDepth(root.left), minDepth(root.right));
   };
-  ht(root, true);
-  return counter;
+
+  const minH = minDepth(root);
+
+  return minH;
 };

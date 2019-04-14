@@ -1,4 +1,4 @@
-import ListNode from "../../models/listNode";
+import ListNode from "../../../models/listNode";
 export default head => {
   if (head) {
   } else {

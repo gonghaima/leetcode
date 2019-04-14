@@ -1,4 +1,4 @@
-import ListNode from "../../src/models/listNode";
+import ListNode from "../../../src/models/listNode";
 
 /**case 1 start */
 //input

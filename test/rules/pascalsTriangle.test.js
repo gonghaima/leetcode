@@ -3,5 +3,5 @@ import { inputData, expected } from "../mock/pascalsTriangleData";
 
 test("pascalsTriangle should check a number", () => {
   const result = pascalsTriangle(inputData.case1);
-  expect(result).toBe(expected.case1);
+  expect(result[2]).toBe(expected.case1[2]);
 });

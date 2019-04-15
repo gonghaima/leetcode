@@ -1,5 +1,5 @@
 export default head => {
-  if(!head)return -1;
+  if (!head || !head.next) return false;
   let cache = [];
   let cycled = false;
   let currentNode = head;

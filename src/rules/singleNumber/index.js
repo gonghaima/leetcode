@@ -2,7 +2,7 @@ export default nums => {
   let aggregatedNums = nums.reduce((i, c) => {
     if (!i) {
       i = {};
-      i.c = 1;
+      i[c] = 1;
       return i;
     }
     if (!i[c]) {
@@ -10,9 +10,10 @@ export default nums => {
     } else {
       i[c] += 1;
     }
-  });
+    return i;
+  }, null);
   const result = Object.entries(aggregatedNums).filter(item => {
     return item[1] === 1;
   });
-  return result;
+  return Number(result[0][0]);
 };

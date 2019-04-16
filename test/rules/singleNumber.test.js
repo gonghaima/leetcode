@@ -1,7 +1,7 @@
-import { isPalindrome } from '../../src/rules/palindromeNumber';
-import { inputData, expected } from '../mock/palindromeNumberData';
+import singleNumber from "../../src/rules/singleNumber";
+import { inputData, expected } from "../mock/singleNumberData";
 
-test('palindromeNumber should check a number', () => {
-  const result = isPalindrome(inputData.case1);
+test("singleNumber should check a number", () => {
+  const result = singleNumber(inputData.case1);
   expect(result).toBe(expected.case1);
 });

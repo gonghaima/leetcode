@@ -1,13 +1,8 @@
-import pascalsTriangle from "../../src/rules/pascalsTriangle";
-import pascalsTriangle1 from "../../src/rules/pascalsTriangle/pascalsTriangle";
-import { inputData, expected } from "../mock/pascalsTriangleData";
+import pascalsTriangleII from "../../src/rules/pascalsTriangleII";
 
-// test("pascalsTriangle should check a number", () => {
-//   const result = pascalsTriangle(inputData.case1);
-//   expect(result[2]).toBe(expected.case1[2]);
-// });
+import { inputData, expected } from "../mock/pascalsTriangleIIData";
 
-test("pascalsTriangle1 should check a number", () => {
-  const result = pascalsTriangle1(inputData.case1);
-  expect(result[2][2]).toBe(expected.case1[2][2]);
+test("pascalsTriangleII should return an expected array, given an index number as input", () => {
+  const result = pascalsTriangleII(inputData.case1);
+  expect(result[2]).toBe(expected.case1[2]);
 });

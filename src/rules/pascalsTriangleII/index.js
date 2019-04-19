@@ -7,8 +7,7 @@ export default rowIndex => {
     for (let k = 0; k < i + 1; k++) {
       const val1 = (result[i - 1] && result[i - 1][k]) || 0;
       const val2 = (result[i - 1] && result[i - 1][k - 1]) || 0;
-      const curResult = val1 + val2 || 1;
-      curArr.push(curResult);
+      curArr.push(val1 + val2 || 1);
     }
     result.push(curArr);
   }

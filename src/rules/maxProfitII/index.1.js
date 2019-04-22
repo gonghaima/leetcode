@@ -1,4 +1,4 @@
-/** the idea behind is that
+/** the idea behind is that (my solution)
  * find the lowest price from the start point, then slice it to there.
  * then, find the lowest price from start point, then slice it to there.
  * calculate diff between high and low, add to total if greater than 0
@@ -8,7 +8,6 @@
 export default prices => {
   let curA = prices.slice();
   let total = 0;
-  let lt = prices.length;
   // a = array,  p - position
   const findLowest = a => {
     if (a[0] >= a[1]) {
@@ -26,20 +25,20 @@ export default prices => {
     }
   };
 
-  const calcTotal = (ar, tt) => {
-    if (ar.length <= 0) return tt;
-    const curB = findLowest(ar.slice(0));
+  while (curA.length > 0) {
+    curA = findLowest(curA);
+    const alVal = curA[0];
 
-    const curD = findHighest(curB.slice(1).slice(0));
+    curA = curA.slice(1);
+    curA = findHighest(curA);
+    const ahval = curA[0];
 
-    const diff = curD[0] - curB[0];
+    const diff = ahval - alVal;
     if (diff > 0) {
-      tt += diff;
+      total += diff;
     }
-    return calcTotal(curD.slice(1), tt);
-  };
-
-  const re = calcTotal(curA, total);
+    curA = curA.slice(1);
+  }
 
   return total;
 };

@@ -16,7 +16,7 @@ test("maxProfitII should return 0 from case3", () => {
   expect(result).toBe(expected.case3);
 });
 
-// test("maxProfitII should return 0 from case4", () => {
-//   const result = maxProfitII(inputData.case4);
-//   expect(result).toBe(expected.case4);
-// });
+test("maxProfitII should return 0 from case4", () => {
+  const result = maxProfitII(inputData.case4);
+  expect(result).toBe(expected.case4);
+});

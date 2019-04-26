@@ -17,14 +17,15 @@ MinStack.prototype.push = function(x) {
  * @return {void}
  */
 MinStack.prototype.pop = function() {
-  return this.num.pop();
+  this.num.pop();
+  return null;
 };
 
 /**
  * @return {number}
  */
 MinStack.prototype.top = function() {
-  return Math.max(...this.num);
+  return this.num[this.num.length - 1];
 };
 
 /**

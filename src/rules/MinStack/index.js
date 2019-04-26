@@ -1,28 +1,39 @@
 /**
  * initialize your data structure here.
  */
-let MinStack = function() {};
+let MinStack = function() {
+  this.num = [];
+};
 
 /**
  * @param {number} x
  * @return {void}
  */
-MinStack.prototype.push = function(x) {};
+MinStack.prototype.push = function(x) {
+  this.num.push(x);
+};
 
 /**
  * @return {void}
  */
-MinStack.prototype.pop = function() {};
+MinStack.prototype.pop = function() {
+  return this.num.pop();
+};
 
 /**
  * @return {number}
  */
-MinStack.prototype.top = function() {};
+MinStack.prototype.top = function() {
+  return Math.max(...this.num);
+};
 
 /**
  * @return {number}
  */
-MinStack.prototype.getMin = function() {};
+MinStack.prototype.getMin = function() {
+  const minVal = Math.min(...this.num);
+  return minVal;
+};
 
 /**
  * Your MinStack object will be instantiated and called as such:

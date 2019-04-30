@@ -1,49 +1,15 @@
 import ListNode from "../../../models/listNode";
 export default (headA, headB) => {
-  let result = null;
-  let notFound = true;
-  let ca = headA;
-  let cb = headB;
+  if (!headA || !headB) return null;
+  var p1 = headA;
+  var p2 = headB;
+  while (p1 && p2 && p1 !== p2) {
+    p1 = p1.next;
+    p2 = p2.next;
 
-  //if same from root
-  if (ca === cb) {
-    notFound = false;
-    return ca;
+    if (p1 == p2) return p1;
+    if (!p1) p1 = headB;
+    if (!p2) p2 = headA;
   }
-  if (ca && !ca.next) {
-    while (cb && cb.next) {
-      if (ca === cb.next) {
-        result = ca;
-        notFound = false;
-        break;
-      } else {
-        cb = cb.next;
-      }
-    }
-  }
-  cb = headB;
-  while (ca && ca.next && notFound) {
-    if (ca.next === cb) {
-      result = cb;
-      notFound = false;
-      break;
-    }
-    while (cb && cb.next && notFound) {
-      if (cb.next === ca) {
-        result = ca;
-        notFound = false;
-        break;
-      }
-      if (ca.next === cb.next) {
-        result = ca.next;
-        notFound = false;
-        break;
-      } else {
-        cb = cb.next;
-      }
-    }
-    ca = ca.next;
-    cb = headB;
-  }
-  return result;
+  return p1;
 };

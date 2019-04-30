@@ -73,12 +73,52 @@ const c3E = null;
 /**case 3 end */
 
 /**case 4 start */
+//1
+const c4n1 = new ListNode(null);
+
+const c4n2 = new ListNode(2);
+
+c4n2.next = c4n1;
+//expected
+const c4E = null;
 /**case 4 end */
+
+/**case 5 start */
+//1
+const c5n1 = new ListNode(3);
+
+const c5n2 = new ListNode(2);
+
+c5n2.next = c5n1;
+//expected
+const c5E = 3;
+/**case 5 end */
+
+/**case 6 start */
+//1
+const c6n1 = new ListNode(1);
+
+const c6n2 = new ListNode(2);
+c6n1.next = c6n2;
+
+//expected
+const c6E = 2;
+/**case 6 end */
 
 export const inputData = {
   case1: { headA: c1n1, headB: c1n6 },
   case2: { headA: c2n1, headB: c2n6 },
-  case3: { headA: c3n1, headB: c3n4 }
+  case3: { headA: c3n1, headB: c3n4 },
+  case4: { headA: c4n1, headB: c4n2 },
+  case5: { headA: c5n1, headB: c5n2 },
+  case6: { headA: c6n1, headB: c6n2 }
 };
 
-export const expected = { case1: c1E, case2: c2E, case3: c3E };
+export const expected = {
+  case1: c1E,
+  case2: c2E,
+  case3: c3E,
+  case4: c4E,
+  case5: c5E,
+  case6: c6E
+};

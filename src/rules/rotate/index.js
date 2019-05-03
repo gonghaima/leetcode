@@ -1,3 +1,5 @@
 export default (nums, k) => {
-  return [1, 2, 3];
+  const s = nums.splice(0, nums.length - k);
+  const r = nums.concat(s);
+  return r;
 };

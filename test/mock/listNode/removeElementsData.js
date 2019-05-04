@@ -31,7 +31,7 @@ c1n4E.next = c1n5E;
 /**case 1 end */
 
 export const inputData = {
-  case1: c1n1
+  case1: { data: c1n1, val: 6 }
 };
 
 export const expected = {

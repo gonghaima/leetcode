@@ -1,10 +1,16 @@
 import ListNode from "../../../models/listNode";
 export default (head, val) => {
-  let currentNode = head;
+  if (!head) return head;
+  if (!head.val && head.val !== 0) return head;
+
+  while (head && head.val === val) {
+    head = head.next;
+  }
+  if (!head) return head;
   let newRoot = new ListNode(head.val);
+  let currentNode = head;
   currentNode = currentNode.next;
   const r = newRoot;
-  // let newRoot;
   while (currentNode) {
     if (!currentNode) break;
     let tmpNode;

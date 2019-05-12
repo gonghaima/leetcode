@@ -1,18 +1,6 @@
-export const sumOfLeftLeaves = function(root) {
-  if (!root) return 0;
-  let sum = 0;
-  let currentNodes = [];
-  currentNodes.push(root);
-  while (currentNodes.length !== 0) {
-    let tmNodes = [];
-    currentNodes.map(cNode => {
-      if (cNode.left && cNode.left.left === null && cNode.left.right === null) {
-        sum += cNode.left.val;
-      }
-      if (cNode.left) tmNodes.push(cNode.left);
-      if (cNode.right) tmNodes.push(cNode.right);
-    });
-    currentNodes = tmNodes;
-  }
-  return sum;
+export const sumOfLeftLeaves = (x, isLeft) => {
+  if (!x) return 0;
+  if (!x.left && !x.right && isLeft) return x.val;
+
+  return sumOfLeftLeaves(x.left, true) + sumOfLeftLeaves(x.right, false);
 };

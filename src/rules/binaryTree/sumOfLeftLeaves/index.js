@@ -1,4 +1,5 @@
 export const sumOfLeftLeaves = function(root) {
+  if (!root) return 0;
   let sum = 0;
   let currentNodes = [];
   currentNodes.push(root);

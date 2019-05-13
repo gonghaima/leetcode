@@ -1,9 +1,7 @@
 export const inputData = {
-  case1: [7, 1, 5, 3, 6, 4],
-  case2: [7, 6, 4, 3, 1]
+  case1: { num: "1432219", k: 3 },
+  case2: { num: "10200", k: 1 },
+  case2: { num: "10", k: 2 }
 };
 
-export const expected = {
-  case1: 5,
-  case2: 0
-};
+export const expected = { case1: "1219", case2: "200", case3: "0" };

@@ -1,14 +1,10 @@
-# Sum of Left Leaves
+# Count the number of segments in a string
 
-Find the sum of all left leaves in a given binary tree.
+where a segment is defined to be a contiguous sequence of non-space characters.
 
-<pre>
+Please note that the string does not contain any non-printable characters.
 
-    3
-   / \
-  9  20
-    /  \
-   15   7
-</pre>
+Example:
 
-There are two left leaves in the binary tree, with values 9 and 15 respectively. Return 24.
+Input: "Hello, my name is John"
+Output: 5

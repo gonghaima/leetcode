@@ -1,5 +1,6 @@
 export default (num, k) => {
   const nums = num.split("");
+  const requiredSize = nums.length - k;
 
   /**get all combination util start */
   var Util = function() {};
@@ -29,7 +30,7 @@ export default (num, k) => {
   /**get all combination util end */
 
   let combinations = [];
-  Util.getAllPossibleCombinations(nums, 4, combinations);
+  Util.getAllPossibleCombinations(nums, requiredSize, combinations);
 
   //combile and remove leading zero
   const formatNum = arr => {

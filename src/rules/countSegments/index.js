@@ -1,3 +1,4 @@
 export default s => {
-  return 999;
+  const sArr = s.split(/ +/g);
+  return sArr.length;
 };

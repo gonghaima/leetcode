@@ -1,62 +1,39 @@
+/**
+ * The intuition is, when you see a digit, you are not sure whether you should use or drop the digit, so you just save it into the stack for better decision later.
+ * When there is a better candidate (a smaller digit) to use, you drop the saved bigger digit from the stack.
+ * Look carefully, the elements in the stack are kept in increasing order.
+ * So when a new candidate comes up, you can do a comparison to remove one or more of the saved digits, until you meet one in the stack that is not larger than the candidate.
+ * This kind of stack is called Monotonous Increase Stack.
+ * See this post for more info. At the end, it lists other problems that can solved using such kind of stack.
+https://leetcode.com/problems/sum-of-subarray-minimums/discuss/178876/stack-solution-with-very-detailed-explanation-step-by-step
+ */
 export default (num, k) => {
-  const nums = num.split("");
-  const requiredSize = nums.length - k;
+  const stack = [];
 
-  //combile and remove leading zero
-  const formatNum = arr => {
-    let res = [];
-    let leading = true;
-    arr.map(i => {
-      if (i === "0" && leading === true) {
-      } else {
-        leading = false;
-        res.push(i);
-      }
-    });
-    return res.join("");
-  };
+  //corner case
+  if (k === num.length) {
+    return "0";
+  }
 
-  const formatNumAsNumber = arr => {
-    return Number(formatNum(arr));
-  };
-
-  /**get all combination util start */
-  var Util = function() {};
-
-  Util.getCombinations = function(array, size, start, initialStuff, output) {
-    if (initialStuff.length >= size) {
-      if (
-        output[0] &&
-        formatNumAsNumber(output[0]) > formatNumAsNumber(initialStuff)
-      ) {
-        output[0] = initialStuff;
-      } else {
-        output.push(initialStuff);
-      }
-    } else {
-      var i;
-
-      for (i = start; i < array.length; ++i) {
-        Util.getCombinations(
-          array,
-          size,
-          i + 1,
-          initialStuff.concat(array[i]),
-          output
-        );
-      }
+  for (let i = 0; i < num.length; i++) {
+    //whenever meet a digit which is less than the previous digit, discard the previous one
+    while (k > 0 && stack.length > 0 && stack[stack.length - 1] > num[i]) {
+      stack.pop();
+      k -= 1;
     }
-  };
+    stack.push(num[i]);
+  }
 
-  Util.getAllPossibleCombinations = function(array, size, output) {
-    Util.getCombinations(array, size, 0, [], output);
-  };
+  while (k > 0) {
+    stack.pop();
+    k -= 1;
+  }
 
-  /**get all combination util end */
+  let i = 0;
+  while (i < stack.length - 1) {
+    if (stack[i] !== "0") break;
+    i++;
+  }
 
-  let combinations = [];
-  Util.getAllPossibleCombinations(nums, requiredSize, combinations);
-
-  const result = formatNum(combinations[0]);
-  return result || "0";
+  return stack.slice(i).join("");
 };

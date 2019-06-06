@@ -3,5 +3,5 @@ export const inputData = {
 };
 
 export const expected = {
-  case1: 1
+  case1: 0
 };

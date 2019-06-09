@@ -1,5 +1,4 @@
 {
-  "presets": ["es2015"],
-  "sourceMap": "inline",
-  "retainLines": true
+  "presets": ["@babel/preset-env", "@babel/preset-react"],
+  "plugins": ["@babel/plugin-proposal-object-rest-spread"]
 }

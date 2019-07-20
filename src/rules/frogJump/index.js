@@ -23,6 +23,8 @@
 //   //
 // };
 
+/** Detailed explaination */
+// https://leetcode.com/problems/frog-jump/discuss/193816/Concise-and-fast-DP-solution-using-2D-array-instead-of-HashMap-with-text-and-video-explanation.
 export default stones => {
   const N = stones.length;
   const dp = new Array(N).fill(0).map(() => new Array(N + 1).fill(0));

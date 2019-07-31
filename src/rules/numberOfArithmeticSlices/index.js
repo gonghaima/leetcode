@@ -70,7 +70,7 @@ export default A => {
             return i;
           }
           for (let k = 3; k <= c.length; k++) {
-            i += aLength - k + 1;
+            i += c.length - k + 1;
           }
           return i;
         }, 0);

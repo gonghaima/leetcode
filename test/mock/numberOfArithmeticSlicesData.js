@@ -1,11 +1,13 @@
 export const inputData = {
   case1: [1, 2, 3, 4],
-  case2: [1, 2, 3, 8, 9, 10]
+  case2: [1, 2, 3, 8, 9, 10],
+  case3: [1, 2, 3, 4, 8, 9, 10]
 };
 
 export const expected = {
   case1: 3,
-  case2: 2
+  case2: 2,
+  case3: 4
 };
 
 // 1 2 3 4 5      - 5

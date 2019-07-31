@@ -10,3 +10,8 @@ test("case2 - numberOfArithmeticSlices should return the number of arithmetic sl
   const result = numberOfArithmeticSlices(inputData.case2);
   expect(result).toBe(expected.case2);
 });
+
+test("case3 - numberOfArithmeticSlices should return the number of arithmetic slices from a given list", () => {
+  const result = numberOfArithmeticSlices(inputData.case3);
+  expect(result).toBe(expected.case3);
+});

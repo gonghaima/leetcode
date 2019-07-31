@@ -1,7 +1,12 @@
 import numberOfArithmeticSlices from "../../src/rules/numberOfArithmeticSlices";
-import { inputData, expected } from "../mock/maxProfitData";
+import { inputData, expected } from "../mock/numberOfArithmeticSlicesData";
 
-test("numberOfArithmeticSlices should return the number of arithmetic slices from a given list", () => {
+test("case1 - numberOfArithmeticSlices should return the number of arithmetic slices from a given list", () => {
   const result = numberOfArithmeticSlices(inputData.case1);
   expect(result).toBe(expected.case1);
+});
+
+test("case2 - numberOfArithmeticSlices should return the number of arithmetic slices from a given list", () => {
+  const result = numberOfArithmeticSlices(inputData.case2);
+  expect(result).toBe(expected.case2);
 });

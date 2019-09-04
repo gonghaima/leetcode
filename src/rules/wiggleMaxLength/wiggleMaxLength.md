@@ -20,3 +20,17 @@ Input: [1,2,3,4,5,6,7,8,9]
 Output: 2
 Follow up:
 Can you do it in O(n) time?
+
+
+
+Solution explaination
+
+Approach #4 Space-Optimized Dynamic Programming [Accepted]
+Algorithm
+
+This approach relies on the same concept as Approach #3. But we can observe that in the DP approach, for updating elements up[i]up[i] and down[i]down[i], we need only the elements up[i-1]up[i−1] and down[i-1]down[i−1]. Thus, we can save space by not using the whole array, but only the last elements.
+
+Complexity Analysis
+
+Time complexity : O(n). Only one pass over the array length.
+Space complexity : O(1). Constant space is used.

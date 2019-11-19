@@ -24,7 +24,7 @@ Input: arr = [1,2]
 Output: false
 ```
 
-### Constraints:
+### Constraints
 
 1 <= arr.length <= 1000
 -1000 <= arr[i] <= 1000

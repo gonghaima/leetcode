@@ -7,9 +7,9 @@
     "test": "jest",
     "test-watch": "jest --watch",
     "test-coverage": "jest --coverage",
-    "build": "babel src -d dist --source-maps",
-    "start": "babel-node",
-    "start-index": "babel-node ./src/index.js",
+    "build": "babel src -d dist --source-maps --experimental-modules",
+    "start": "babel-node --experimental-modules",
+    "start-index": "babel-node ./src/index.js --experimental-modules",
     "debug": "babel-node --inspect ./src/index.js",
     "lint": "eslint . --ext .js --quiet --fix"
   },
@@ -18,6 +18,7 @@
     "type": "git",
     "url": "git@github.com:gonghaima/leetcode.git"
   },
+  "type": "module",
   "license": "ISC",
   "dependencies": {
     "@babel/cli": "^7.4.4",

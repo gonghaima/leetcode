@@ -123,4 +123,4 @@ const expected = {
   case6: c6E
 };
 
-export default () => { inputData, expected }
+export default () => { return { inputData, expected } }

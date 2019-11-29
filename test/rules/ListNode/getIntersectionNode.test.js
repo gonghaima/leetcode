@@ -1,9 +1,7 @@
 import getIntersectionNode from "../../../src/rules/listNode/getIntersectionNode";
-import {
-  inputData,
-  expected
-} from "../../mock/listNode/getIntersectionNodeData";
+import input from "../../mock/listNode/getIntersectionNodeData";
 test("getIntersectionNode function should find the intersacted data", () => {
+  const { inputData, expected } = input;
   expect(
     getIntersectionNode(inputData.case1.headA, inputData.case1.headB).val
   ).toEqual(expected.case1);

@@ -105,7 +105,7 @@ c6n1.next = c6n2;
 const c6E = 2;
 /**case 6 end */
 
-export const inputData = {
+const inputData = {
   case1: { headA: c1n1, headB: c1n6 },
   case2: { headA: c2n1, headB: c2n6 },
   case3: { headA: c3n1, headB: c3n4 },
@@ -114,7 +114,7 @@ export const inputData = {
   case6: { headA: c6n1, headB: c6n2 }
 };
 
-export const expected = {
+const expected = {
   case1: c1E,
   case2: c2E,
   case3: c3E,
@@ -122,3 +122,5 @@ export const expected = {
   case5: c5E,
   case6: c6E
 };
+
+export default { inputData, expected }

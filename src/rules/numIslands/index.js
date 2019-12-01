@@ -1,59 +1,38 @@
-const checkConnected = (store, item) => {
-
-}
-
-const checkConnectionThenUpdateStore = (orgin, store, item) => {
-  // console.log(store);
-
-  if (store.length === 0) {
-    store.push([item]);
-    return store;
-  }
-
-  for (let r = 0; r < store.length; r++) {
-    for (let c = 0; c < store[r].length; c++) {
-      const cItem = store[r][c];
-      if (
-        ((orgin[cItem.pos.rIndex + 1] !== undefined && orgin[cItem.pos.rIndex + 1][cItem.pos.cIndex] !== undefined) && orgin[cItem.pos.rIndex + 1][cItem.pos.cIndex] === item.value) ||
-        (orgin[cItem.pos.rIndex - 1] !== undefined && orgin[cItem.pos.rIndex - 1][cItem.pos.cIndex] !== undefined && orgin[cItem.pos.rIndex - 1][cItem.pos.cIndex] === item.value) ||
-        (orgin[cItem.pos.rIndex] !== undefined && orgin[cItem.pos.rIndex][cItem.pos.cIndex + 1] !== undefined && orgin[cItem.pos.rIndex][cItem.pos.cIndex + 1] === item.value) ||
-        (orgin[cItem.pos.rIndex] !== undefined && orgin[cItem.pos.rIndex][cItem.pos.cIndex - 1] !== undefined && orgin[cItem.pos.rIndex][cItem.pos.cIndex - 1] === item.value)
-      ) {
-        console.log('pushing to existing');
-
-        store[r].push(item);
-        return store;
-      } else {
-        console.log('pushing to new');
-
-        store.push([item]);
-        return store;
-      }
-    }
-  }
-  return store;
-}
-
+/**
+ * @param {character[][]} grid
+ * @return {number}
+ */
 export default (grid) => {
-  // console.log(grid);
+  let markIsland = function (grid, x, y, visited) {
+    if (x < 0 || x > grid.length - 1 || y < 0 || y > grid[x].length - 1) {
+      return;
+    }
+    if (visited[x][y] === true) {
+      return;
+    }
+    visited[x][y] = true;
+    if (grid[x][y] === '0') {
+      return;
+    }
+    markIsland(grid, x - 1, y, visited);
+    markIsland(grid, x + 1, y, visited);
+    markIsland(grid, x, y - 1, visited);
+    markIsland(grid, x, y + 1, visited);
+  };
 
-  const rows = grid.length;
-  const cols = grid[0].length;
-  let resultSet = [];
-
-  for (let r = 0; r < rows; r++) {
-    for (let c = 0; c < cols; c++) {
-      // console.log(resultSet);
-      resultSet = checkConnectionThenUpdateStore(grid, resultSet, { value: grid[r][c], pos: { rIndex: r, cIndex: c } })
+  let visited = [];
+  for (let i = 0; i < grid.length; i++) {
+    visited[i] = [];
+  }
+  let count = 0;
+  for (let x = 0; x < grid.length; x++) {
+    for (let y = 0; y < grid[x].length; y++) {
+      if (!visited[x][y] && grid[x][y] === '1') {
+        count++;
+        markIsland(grid, x, y, visited);
+      }
+      visited[x][y] = true;
     }
   }
-
-  console.log(resultSet);
-
-  return resultSet.length;
+  return count;
 };
-
-// (store[r + 1][c] !== undefined && store[r + 1][c] === item.value)
-//   (store[r - 1][c] !== undefined && store[r - 1][c] === item.value)
-//   (store[r][c + 1] !== undefined && store[r][c + 1] === item.value)
-//   (store[r][c - 1] !== undefined && store[r][c - 1] === item.value)

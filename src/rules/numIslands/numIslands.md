@@ -25,3 +25,7 @@ Input:
 
 Output: 3
 ```
+
+## Solution description
+
+[Details](https://code.scottshipp.com/2018/11/29/walkthrough-solving-number-of-islands/)

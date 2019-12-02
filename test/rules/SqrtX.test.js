@@ -1,4 +1,4 @@
-import sqrtX from "../../src/rules/SqrtX";
+import sqrtX from "../../src/rules/sqrtX";
 import { inputData, expected } from "../mock/sqrtXData";
 test("sqrtX function should calculate correct result from cases data", () => {
   expect(sqrtX(inputData.case1)).toEqual(expected.case1);

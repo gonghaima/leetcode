@@ -1,5 +1,5 @@
-import getIntersectionNode from "../../../src/rules/listNode/getIntersectionNode";
-import getMockData from "../../mock/listNode/getIntersectionNodeData";
+import getIntersectionNode from "../../src/rules/listNode/getIntersectionNode";
+import getMockData from "../mock/listNode/getIntersectionNodeData";
 test("getIntersectionNode function should find the intersacted data", () => {
   const { inputData, expected } = getMockData();
   expect(

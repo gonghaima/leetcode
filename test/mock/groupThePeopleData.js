@@ -4,6 +4,6 @@ export const inputData = {
 };
 
 export const expected = {
-  case1: [[5], [0, 1, 2], [3, 4, 6]],
-  case2: [[1], [0, 5], [2, 3, 4]]
+  case1: [[0, 1, 2], [5], [3, 4, 6]],
+  case2: [[1], [2, 3, 4], [0, 5]]
 };

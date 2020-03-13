@@ -1,4 +1,5 @@
-import constructMaximumBinaryTree from '../../src/rules/maximumBinaryTree';
+// import constructMaximumBinaryTree from '../../src/rules/maximumBinaryTree';
+import constructMaximumBinaryTree from '../../src/rules/binaryTree/maximumBinaryTree';
 import { arrCase1, arrCase2 } from '../mock/maximumBinaryTreeData';
 
 test('maximumBinaryTree should return the sorted tree', () => {

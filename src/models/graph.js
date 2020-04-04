@@ -30,6 +30,7 @@ export default class Graph {
   // printGraph() 
   // Prints the vertex and adjacency list – It prints vertices and its adjacency list.
   printGraph() {
+    let output = "";
     // get all the vertices 
     var get_keys = this.AdjList.keys();
 
@@ -47,7 +48,9 @@ export default class Graph {
 
       // print the vertex and its adjacency list 
       console.log(i + " -> " + conc);
+      output += `${i} + " -> " + ${conc}`;
     }
+    return output;
   }
 
   // bfs(v) 

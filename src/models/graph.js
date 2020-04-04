@@ -32,18 +32,18 @@ export default class Graph {
   printGraph() {
     let output = "";
     // get all the vertices 
-    var get_keys = this.AdjList.keys();
+    const get_keys = this.AdjList.keys();
 
     // iterate over the vertices 
-    for (var i of get_keys) {
+    for (let i of get_keys) {
       // great the corresponding adjacency list 
       // for the vertex 
-      var get_values = this.AdjList.get(i);
-      var conc = "";
+      const get_values = this.AdjList.get(i);
+      const conc = "";
 
       // iterate over the adjacency list 
       // concatenate the values into a string 
-      for (var j of get_values)
+      for (let j of get_values)
         conc += j + " ";
 
       // print the vertex and its adjacency list 

@@ -54,5 +54,47 @@ export default class Graph {
   }
 
   // bfs(v) 
+  bfs(startingNode) {
+
+    const result = [];
+
+    // create a visited array 
+    var visited = [];
+    for (var i = 0; i < this.noOfVertices; i++)
+      visited[i] = false;
+
+    // Create an object for queue 
+    var q = [];
+
+    // add the starting node to the queue 
+    visited[startingNode] = true;
+    q.push(startingNode);
+
+    // loop until queue is element 
+    while (q.length > 0) {
+      // get the element from the queue 
+      var getQueueElement = q.shift();
+
+      // passing the current vertex to callback funtion 
+      console.log(getQueueElement);
+      result.push(getQueueElement)
+
+      // get the adjacent list for current vertex 
+      var get_List = this.AdjList.get(getQueueElement);
+
+      // loop through the list and add the element to the 
+      // queue if it is not processed yet 
+      for (var i in get_List) {
+        var neigh = get_List[i];
+
+        if (!visited[neigh]) {
+          visited[neigh] = true;
+          q.push(neigh);
+        }
+      }
+    }
+    return result;
+  }
+
   // dfs(v)
 }

@@ -30,4 +30,10 @@ test("Graph should build an object, and printGraph works", () => {
     const result = g.printGraph();
     const expectedData = `A + \" -> \" + B D E B + \" -> \" + A C C + \" -> \" + B E F D + \" -> \" + A E E + \" -> \" + A D F C F + \" -> \" + E C `;
     expect(result).toEqual(expectedData);
+
+
+    //bfs
+    const connectedItem = g.bfs('A');
+    expect(connectedItem.sort()).toEqual(['A', 'B', 'C', 'D', 'E', 'F']);
+
 });

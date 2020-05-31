@@ -13,8 +13,6 @@ export default (numCompetitors, topNCompetitors, competitors, numReviews, review
   const vals = Array.from(resultMap.values());
   const sorted = vals.sort().slice(-topNCompetitors);
   for (let entry of resultMap) {
-    console.log(`entry: ${entry[1]}`);
-
     if (sorted.includes(entry[1])) {
       output.push(entry[0])
     }

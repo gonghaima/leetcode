@@ -3,8 +3,6 @@ import { inputData, expected } from "../mock/cellCompeteData";
 
 test("cellCompete should return compete cells for test case 1", () => {
   const result = cellCompete(inputData.case1.states, inputData.case1.days);
-  console.log(result);
-
   expect(result).toEqual(expected.case1);
 });
 

@@ -11,5 +11,5 @@ export const expected = {
   case2: 4,
   case3: 9,
   case4: 58,
-  case4: 1994
+  case5: 1994
 };

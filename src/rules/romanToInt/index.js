@@ -1,3 +1,7 @@
+/************************************************************
+ * list all possible combiniation, loop through & get total *
+ ************************************************************/
+
 export default s => {
   let total = 0;
   let remaining = s;

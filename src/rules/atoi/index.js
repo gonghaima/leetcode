@@ -4,13 +4,12 @@ export default str => {
   const numArr = Array.from(Array(10), (_, i) => String(i));
   const trimedStr = str.trimLeft();
   numArr.push('-');
+  numArr.push('+');
 
-  // console.log(numArr);
   if (!numArr.includes(trimedStr.slice(0, 1))) return 0;
 
   let numOn = "";
-  // const numberPattern = /\d+/g;
-  // const numOnly = trimedStr.match(numberPattern);
+
   const trimedStrArr = trimedStr.split("");
   for (let idx = 0; idx < trimedStrArr.length; idx++) {
     const element = trimedStrArr[idx];

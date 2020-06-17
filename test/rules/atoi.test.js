@@ -42,3 +42,8 @@ test("atoi should return correct data from case 8", () => {
   const result = atoi(inputData.case8);
   expect(result).toBe(expected.case8);
 });
+
+test("atoi should return correct data from case 9", () => {
+  const result = atoi(inputData.case9);
+  expect(result).toBe(expected.case9);
+});

@@ -6,7 +6,8 @@ export const inputData = {
   case5: "-91283472332",
   case6: "3.14159",
   case7: "-",
-  case8: "+1"
+  case8: "+1",
+  case9: "-abc"
 };
 
 export const expected = {
@@ -17,5 +18,6 @@ export const expected = {
   case5: -2147483648,
   case6: 3,
   case7: 0,
-  case8: 1
+  case8: 1,
+  case9: 0
 };

@@ -4,13 +4,28 @@ export default str => {
   const trimedStr = str.trimLeft();
   numArr.push('-');
 
-  console.log(numArr);
+  // console.log(numArr);
   if (!numArr.includes(trimedStr.slice(0, 1))) return 0;
 
-  const numberPattern = /\d+/g;
-  const numOnly = trimedStr.match(numberPattern);
-
-  const trimedNum = +((trimedStr[0] === '-') ? '-' + numOnly : numOnly);
+  let numOn = "";
+  // const numberPattern = /\d+/g;
+  // const numOnly = trimedStr.match(numberPattern);
+  const trimedStrArr = trimedStr.split("");
+  for (let idx = 0; idx < trimedStrArr.length; idx++) {
+    const element = trimedStrArr[idx];
+    if (numArr.includes(element)) {
+      numOn += element;
+    } else {
+      break;
+    }
+  }
+  console.log("numOn: " + numOn);
+  
+  // const trimedNum = +((trimedStrArr[0] === '-') ? '-' + numOn : numOn);
+  const trimedNum = + numOn;
+  console.log("trimedStrArr: " + trimedStrArr);
+  console.log("trimedStr: " + trimedStr);
+  console.log("trimedNum: " + trimedNum);
   const minResult = trimedNum < -2147483648 ? -2147483648 : trimedNum;
   const maxResult = minResult > 2147483647 ? 2147483647 : minResult;
   return maxResult;

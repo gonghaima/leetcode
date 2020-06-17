@@ -4,7 +4,8 @@ export const inputData = {
   case3: "4193 with words",
   case4: "words and 987",
   case5: "-91283472332",
-  case6: "3.14159"
+  case6: "3.14159",
+  case7: "-"
 };
 
 export const expected = {
@@ -13,5 +14,6 @@ export const expected = {
   case3: 4193,
   case4: 0,
   case5: -2147483648,
-  case6: 3
+  case6: 3,
+  case7: 0
 };

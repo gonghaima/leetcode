@@ -1,5 +1,6 @@
 export default str => {
 
+  if (str === "-") return 0;
   const numArr = Array.from(Array(10), (_, i) => String(i));
   const trimedStr = str.trimLeft();
   numArr.push('-');
@@ -20,7 +21,7 @@ export default str => {
     }
   }
   console.log("numOn: " + numOn);
-  
+
   // const trimedNum = +((trimedStrArr[0] === '-') ? '-' + numOn : numOn);
   const trimedNum = + numOn;
   console.log("trimedStrArr: " + trimedStrArr);

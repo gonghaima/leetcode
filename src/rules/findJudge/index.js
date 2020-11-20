@@ -5,6 +5,7 @@
  */
 
 export default (N, trust) => {
+  if (N === 1) return 1;
   let output = -1;
 
   // track if some one trusts others

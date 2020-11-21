@@ -49,3 +49,6 @@ Constraints:
 - trust[i] are all different
 - trust[i][0] != trust[i][1]
 - 1 <= trust[i][0], trust[i][1] <= N
+
+Ref
+[In degree and Out degree](http://mathonline.wikidot.com/out-degree-sequence-and-in-degree-sequence)

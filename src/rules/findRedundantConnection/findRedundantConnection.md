@@ -10,7 +10,7 @@ Return an edge that can be removed so that the resulting graph is a tree of N no
 
 Example 1:
 
-```
+```shell
 Input: [[1,2], [1,3], [2,3]]
 Output: [2,3]
 Explanation: The given undirected graph will be like this:
@@ -21,7 +21,7 @@ Explanation: The given undirected graph will be like this:
 
 Example 2:
 
-```
+```shell
 Input: [[1,2], [2,3], [3,4], [1,4], [1,5]]
 Output: [1,4]
 Explanation: The given undirected graph will be like this:

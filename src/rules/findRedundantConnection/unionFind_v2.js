@@ -1,8 +1,7 @@
-/********************************************
- * Runtime: 88 ms, faster than 68.00 %      *
- * Memory Usage: 41.7 MB, less than 36.00 % *
- ********************************************/
-
+/*******************************************
+ * Runtime: 80 ms, faster than 94.83%      *
+ * Memory Usage: 41.9 MB, less than 34.48% *
+ *******************************************/
 // union find
 
 // util node builder
@@ -25,34 +24,35 @@ const findParentNode = (nd) => {
 export default edges => {
   let result = [];
   let notFound = true;
+
   // initialize node list
   let nodes = {};
-  for (let x = 0; x < edges.length; x += 1) {
+  for (let x = 0; notFound && x < edges.length; x += 1) {
     const [firstVal, secondVal] = edges[x];
+
+    // initialize node if not found
     if (!nodes[firstVal]) {
       nodes[firstVal] = new Node(firstVal, null);
     }
     if (!nodes[secondVal]) {
       nodes[secondVal] = new Node(secondVal, null);
     }
-  }
 
-  // iterate find parent, associate them
-  for (let y = 0; notFound && y < edges.length; y += 1) {
-    const [firstVal, secondVal] = edges[y];
-    const iNode = nodes[firstVal];
-    const jNode = nodes[secondVal];
+    // find parent of each node
+    const iParentNode = findParentNode(nodes[firstVal]);
+    const jParentNode = findParentNode(nodes[secondVal]);
 
-    const iParentNode = findParentNode(iNode);
-    const jParentNode = findParentNode(jNode);
-
+    // if same parent, record the edge
     if (iParentNode.val === jParentNode.val) {
+      result = edges[x];
       notFound = false;
-      result = edges[y];
-    } else {
-      jParentNode.parent = iParentNode;
     }
-
+    //associate them
+    if (jParentNode.val > iParentNode.val) {
+      jParentNode.parent = iParentNode;
+    } else {
+      iParentNode.parent = jParentNode;
+    }
   }
 
   return result;

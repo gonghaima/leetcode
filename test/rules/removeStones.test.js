@@ -17,3 +17,9 @@ test("removeStones should find the largest possible number of moves for case 3",
   expect(result).toBe(expected.case3);
 });
 
+test("removeStones should find the largest possible number of moves for case 4", () => {
+  const result = removeStones(inputData.case4);
+  expect(result).toBe(expected.case4);
+});
+
+

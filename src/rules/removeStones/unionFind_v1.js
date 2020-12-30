@@ -17,7 +17,7 @@ class DSU {
   }
   union(x, y) {
     // set y as x's parent
-    this.parent[this.find(x)] = this.find(this.find(y));
+    this.parent[this.find(x)] = this.find(y);
   }
 }
 

@@ -16,6 +16,7 @@ export default (n, connections) => {
       parentsCount++;
       parents[u] = u;
     }
+    // path compression
     else if (parents[u] !== u) parents[u] = find(parents[u]); // path compression
     return parents[u];
   };
@@ -24,7 +25,6 @@ export default (n, connections) => {
     const p1 = find(u);
     const p2 = find(v);
     if (p1 !== p2) {
-      // path compression
       parents[p1] = p2;
       parentsCount--;
     }

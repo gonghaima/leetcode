@@ -1,7 +1,7 @@
-/*********************************************************************************************************************
- * Runtime: 100 ms, faster than 46.43% of JavaScript online submissions for Satisfiability of Equality Equations.    *
- * Memory Usage: 42.2 MB, less than 28.57% of JavaScript online submissions for Satisfiability of Equality Equations *
- *********************************************************************************************************************/
+/***********************************************************************************************************************
+ * Runtime: 92 ms, faster than 75.00 % of JavaScript online submissions for Satisfiability of Equality Equations.      *
+ * Memory Usage: 42.7 MB, less than 21.43 % of JavaScript online submissions for Satisfiability of Equality Equations. *
+ ***********************************************************************************************************************/
 
 export default (equations) => {
   let parent = new Map();
@@ -12,8 +12,6 @@ export default (equations) => {
 
   equations.forEach(([a, s, , b]) => {
     if (s === "=") {
-      find(a);
-      find(b);
       parent.set(find(a), find(b));
     }
   })

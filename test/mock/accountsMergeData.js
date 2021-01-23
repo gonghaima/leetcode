@@ -8,7 +8,7 @@ export const inputData = {
 
 export const expected = {
   case1: [
-    ["John", 'john00@mail.com', 'john_newyork@mail.com', 'johnsmith@mail.com'],
     ["John", "johnnybravo@mail.com"],
+    ["John", 'john00@mail.com', 'john_newyork@mail.com', 'johnsmith@mail.com'],
     ["Mary", "mary@mail.com"]]
 };

@@ -44,7 +44,6 @@ class DSU {
 
 
 export default (accounts) => {
-  const result = {};
   // 1. Find all edges (having common email address), represent by idex [[0, 3][1,5]] etc.
   const edges = [];
   for (let i = 0; i < accounts.length; i++) {
@@ -56,8 +55,6 @@ export default (accounts) => {
     }
   }
 
-  debugger;
-
   // 2. Union find to union all nodes
   const dsu = new DSU(accounts.length);
   edges.forEach(([x, y]) => {
@@ -66,5 +63,25 @@ export default (accounts) => {
   // now dsu.parent=[2,1,2,3]
 
   // 3. For each group, get name, then sort all emails
-  return [];
+  const mergeResult = {};
+  for (let i = 0; i < dsu.parent.length; i++) {
+    const parentIndex = dsu.parent[i];
+    mergeResult[parentIndex] = mergeResult[parentIndex] || [];
+
+    const [name, ...emails] = accounts[i];
+    let emailsList = emails;
+    if (mergeResult[parentIndex].length > 0) {
+      const [_, ...existingEmails] = mergeResult[parentIndex];
+      emailsList = emailsList.concat(existingEmails);
+    }
+    mergeResult[parentIndex] = [name, ...emailsList];
+  }
+
+  const sortedResult = Object.values(mergeResult).map(record => {
+    const [name, ...values] = record;
+    const sortedUniqueValue = [...new Set(values)].sort();
+    return [name, ...sortedUniqueValue];
+  });
+
+  return sortedResult;
 };

@@ -25,26 +25,8 @@ const checkCommon = (elementFirst, elementSecond) => {
   return containsCommonEle;
 }
 
-class DSU {
-  constructor(n) {
-    this.parent = [...Array(n).keys()];
-  }
-  find(x) {
-    // find the root parent
-    if (this.parent[x] !== x) {
-      this.parent[x] = this.find(this.parent[x]);
-    }
-    return this.parent[x];
-  }
-  union(x, y) {
-    // set y as x's parent
-    this.parent[this.find(x)] = this.find(y);
-  }
-}
-
 
 export default (accounts) => {
-  const result = {};
   // 1. Find all edges (having common email address), represent by idex [[0, 3][1,5]] etc.
   const edges = [];
   for (let i = 0; i < accounts.length; i++) {
@@ -59,12 +41,30 @@ export default (accounts) => {
   debugger;
 
   // 2. Union find to union all nodes
-  const dsu = new DSU(accounts.length);
-  edges.forEach(([x, y]) => {
-    dsu.union(x, y)
-  });
-  // now dsu.parent=[2,1,2,3]
+  const parents = {};
+  let n = 0;
 
+  const find = (u) => {
+    if (parents[u] == null) {
+      n++;
+      parents[u] = u;
+    }
+    else if (parents[u] !== u) parents[u] = find(parents[u]); // path compression
+    return parents[u];
+  };
+
+  const union = (u, v) => {
+    const p1 = find(u);
+    const p2 = find(v);
+    if (p1 !== p2) {
+      parents[p1] = p2;
+      n--;
+    }
+  };
+
+  for (const [u, v] of stones) {
+    union(u, ~v);
+  }
   // 3. For each group, get name, then sort all emails
   return [];
 };

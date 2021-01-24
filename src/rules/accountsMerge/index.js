@@ -1,3 +1,8 @@
+/************************************************************************************************
+ * Runtime: 1344 ms, faster than 6.31% of JavaScript online submissions for Accounts Merge.     *
+ * Memory Usage: 58.2 MB, less than 24.76% of JavaScript online submissions for Accounts Merge. *
+ ************************************************************************************************/
+
 const checkCommon = (elementFirst, elementSecond) => {
   const [first, ...restElementFirst] = elementFirst;
   const [second, ...restElementSecond] = elementSecond;
@@ -57,10 +62,16 @@ export default (accounts) => {
 
   // 2. Union find to union all nodes
   const dsu = new DSU(accounts.length);
+
   edges.forEach(([x, y]) => {
     dsu.union(x, y)
   });
   // now dsu.parent=[2,1,2,3]
+
+  //2.5 path compression to root
+  for (let i = 0; i < dsu.parent.length; i++) {
+    dsu.parent[i] = dsu.find(i);
+  }
 
   // 3. For each group, get name, then sort all emails
   const mergeResult = {};

@@ -3,6 +3,12 @@
  * Memory Usage: 58.2 MB, less than 24.76% of JavaScript online submissions for Accounts Merge. *
  ************************************************************************************************/
 
+// 1. find all edges  2. union all nodes 3. compress all nodes to parent 4. unique & sort
+
+// performance enhancement consideration:  initial loop, merge to parent if possible
+// for each parent, find root, and merge into it.
+// unique & sort
+
 const checkCommon = (elementFirst, elementSecond) => {
   const [first, ...restElementFirst] = elementFirst;
   const [second, ...restElementSecond] = elementSecond;
@@ -66,7 +72,6 @@ export default (accounts) => {
   edges.forEach(([x, y]) => {
     dsu.union(x, y)
   });
-  // now dsu.parent=[2,1,2,3]
 
   //2.5 path compression to root
   for (let i = 0; i < dsu.parent.length; i++) {

@@ -4,9 +4,9 @@
 
 Identify if problems talks about finding groups or components.
 
-findCircleNum https://leetcode.com/problems/friend-circles/
-findRedundantConnection https://leetcode.com/problems/redundant-connection/
-removeStones https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/
-makeConnected https://leetcode.com/problems/number-of-operations-to-make-network-connected/
-equationsPossible https://leetcode.com/problems/satisfiability-of-equality-equations/
-accountsMerge https://leetcode.com/problems/accounts-merge/
+- [547. Number of Provinces](https://leetcode.com/problems/friend-circles/) solution: [findCircleNum](./src/rules/findCircleNum/index.js)
+- [findRedundantConnection](https://leetcode.com/problems/redundant-connection/)
+- [removeStones](https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/)
+- [makeConnected](https://leetcode.com/problems/-number-of-operations-to-make-network-connected/)
+- [equationsPossible](https://leetcode.com/problems/satisfiability-of-equality-equations/)
+- [accountsMerge](https://leetcode.com/problems/accounts-merge/)

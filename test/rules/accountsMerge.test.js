@@ -23,7 +23,7 @@ import { inputData, expected } from "../mock/accountsMergeData";
 
 test("accountsMerge should satisfy all the given equations for case4", () => {
   const result = accountsMerge(inputData.case4);
-  expect(result[0]).toEqual(expected.case4[0]);
+  expect(result.sort()[0]).toEqual(expected.case4.sort()[0]);
 });
 
 

@@ -1,3 +1,14 @@
+/************************************************************************************************
+ * Runtime: 164 ms, faster than 67.64% of JavaScript online submissions for Accounts Merge.     *
+ * Memory Usage: 51.9 MB, less than 55.23% of JavaScript online submissions for Accounts Merge. *
+ ************************************************************************************************/
+
+/**************************************************************************************************************************
+ * As in Approach #1, draw edges between emails if they occur in the same account.                                        *
+ * For easier interoperability between our DSU template, we will map each email to some integer index by using emailToID. *
+ * Then, dsu.find(email) will tell us a unique id representing what component that email is in.                           *
+ **************************************************************************************************************************/
+
 class DSU {
   constructor(n) {
     this.parent = [...Array(n).keys()];
@@ -14,7 +25,6 @@ class DSU {
     this.parent[this.find(x)] = this.find(y);
   }
 }
-
 
 export default (accounts) => {
   let dsu = new DSU(10001),
@@ -39,11 +49,9 @@ export default (accounts) => {
     ans[index] = ans[index] ? ans[index] : new Set();
     ans[dsu.find(em_to_id[email])].add(email);
   });
-  const result = Object.entries(ans).map(([_, dataSet]) => {
+  return Object.entries(ans).map(([_, dataSet]) => {
     const sorted = [...dataSet].sort();
     const name = em_to_name[sorted[0]];
     return [name, ...sorted];
   });
-  debugger;
-  return result;
 };

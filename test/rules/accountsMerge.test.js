@@ -1,6 +1,7 @@
 // import accountsMerge from "../../src/rules/accountsMerge";
 // import accountsMerge from "../../src/rules/accountsMerge/dfs";
-import accountsMerge from "../../src/rules/accountsMerge/unionFind_v1";
+// import accountsMerge from "../../src/rules/accountsMerge/unionFind_v1";
+import accountsMerge from "../../src/rules/accountsMerge/unionFind_v2";
 
 import { inputData, expected } from "../mock/accountsMergeData";
 

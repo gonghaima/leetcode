@@ -44,12 +44,12 @@ export default (accounts) => {
     });
   });
   let ans = {};
-  Object.entries(em_to_name).map(([email,]) => {
+  Object.keys(em_to_name).map(email => {
     const index = dsu.find(em_to_id[email]);
     ans[index] = ans[index] ? ans[index] : new Set();
     ans[dsu.find(em_to_id[email])].add(email);
   });
-  return Object.entries(ans).map(([_, dataSet]) => {
+  return Object.values(ans).map(dataSet => {
     const sorted = [...dataSet].sort();
     const name = em_to_name[sorted[0]];
     return [name, ...sorted];

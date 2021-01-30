@@ -25,18 +25,21 @@ export default (board) => {
   // track/group items to regions
   let regions = {};
   let regionsKey = 0;
+  let xCoordinateLimit = board.length;
+  let yCoordinateLimit = board[0].length;
+
 
   // loop through each item
-  for (let i = 0; i < board.length; i++) {
-    for (let j = 0; j < board[0].length; j++) {
+  for (let i = 0; i < xCoordinateLimit; i++) {
+    for (let j = 0; j < yCoordinateLimit; j++) {
       // set next to current item, if it hasn't been visited
-      const next = visited.has(i + "" + j) ? [] : [i + "" + j];
+      let next = visited.has(i + "" + j) ? [] : [i + "" + j];
       // if visited, set next to empty
       if (visited.has(i + "" + j)) {
-        next = [];
+        next.length=0;
       } else if (board[i][j] === "X") { //if X, set visited, set next empty
         visited.add(i + "" + j);
-        next = [];
+        next.length = 0;
       }
       else { //else it is O, also unvisited
         // add current item into next
@@ -49,7 +52,7 @@ export default (board) => {
         regions[regionsKey].add(i + "" + j);
         // if the item is on an edge, it means it is not sournded by X
         // add a null value into the region, to indicate that.
-        if (i === 0 || j === 0 || j === board[0].length - 1 || i === board.length - 1) regions[regionsKey].add(null);
+        if (i === 0 || j === 0 || j === yCoordinateLimit - 1 || i === xCoordinateLimit - 1) regions[regionsKey].add(null);
       }
       // loop through next, keep finding region items
       while (next.length > 0) {
@@ -57,7 +60,7 @@ export default (board) => {
         let holderNext = [];
         next.map(stringIndex => {
           // get all neighbours
-          const neighbours = getNeighbours(Number(stringIndex[0]), Number(stringIndex[1]), board.length, board[0].length);
+          const neighbours = getNeighbours(Number(stringIndex[0]), Number(stringIndex[1]), xCoordinateLimit, yCoordinateLimit);
           neighbours.map(([x, y]) => {
             // if the neighbour hasn't been visited, also X
             if (board[x][y] === "O" && !visited.has(x + "" + y)) {
@@ -67,7 +70,7 @@ export default (board) => {
               regions[regionsKey].add(x + "" + y);
               // if the item is on an edge, it means it is not sournded by X
               // add a null value into the region, to indicate that.
-              if (x === 0 || y === 0 || y === board[0].length - 1 || x === board.length - 1) regions[regionsKey].add(null);
+              if (x === 0 || y === 0 || y === yCoordinateLimit - 1 || x === xCoordinateLimit - 1) regions[regionsKey].add(null);
             }
             // set the neighbour as visited
             visited.add(x + "" + y);
@@ -88,7 +91,9 @@ export default (board) => {
 
   // initiate whole area to be X
   // const newArea = new Array(board.length).fill(new Array(board[0].length).fill("X"));
-  const newArea = [...Array(board.length)].map(x => Array(board[0].length).fill("X"))  
+  // const newArea = [...Array(board.length)].map(x => Array(board[0].length).fill("X")) 
+  const newArea = [...Array(xCoordinateLimit)].map(x => [...Array(yCoordinateLimit)].map(r => "X"));
+ 
 
   // set none surrounded to be O
   if(noneSurroundedRegion.length>0){

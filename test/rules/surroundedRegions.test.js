@@ -1,4 +1,5 @@
-import surroundedRegions from "../../src/rules/surroundedRegions";
+// import surroundedRegions from "../../src/rules/surroundedRegions";
+import surroundedRegions from "../../src/rules/surroundedRegions/dfs";
 
 import { inputData, expected } from "../mock/surroundedRegionsData";
 

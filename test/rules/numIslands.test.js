@@ -1,6 +1,7 @@
 // import numIslands from "../../src/rules/numIslands";
 // import numIslands from "../../src/rules/numIslands/bfs";
-import numIslands from "../../src/rules/numIslands/dfs_v1";
+// import numIslands from "../../src/rules/numIslands/dfs_v1";
+import numIslands from "../../src/rules/numIslands/dfs_v2";
 import { inputData, expected } from "../mock/numIslandsData";
 
 test("numIslands should return the number of isolated island - case 1", () => {

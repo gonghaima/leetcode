@@ -4,6 +4,7 @@
  ****************************************************************************************************/
 
 export default (matrix) => {
+  const M = matrix;
   let y = M.length, x = M[0].length, ans = 0
   for (let i = 1; i < y; i++)
     for (let j = 0; j < x; j++)

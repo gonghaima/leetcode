@@ -13,6 +13,8 @@ Identify if problems talks about finding groups or components.
 
 ## DFS
 
+- 1727. [Largest Submatrix With Rearrangements](https://leetcode.com/problems/largest-submatrix-with-rearrangements/) => [largestSubmatrix](./src/rules/largestSubmatrix/index.js)
+
 ### DFS from boundary
 
 - [130. Surrounded Regions](https://leetcode.com/problems/surrounded-regions/) => [solve]()

@@ -3,6 +3,14 @@
  * Memory Usage: 50.7 MB, less than 6.82% of JavaScript online submissions for Number of Enclaves. *
  ***************************************************************************************************/
 
+/*************************************************************************************************************************
+ * 1. loop through find 1 value, and                                                                                     *
+ * islandGroup - group by connected count, e.g. { 1: 3, 2: 9 }, group1 has 3 connected land, group2 has 9 connected land *
+ * meanwhile, maintain a edgeGroup, where group id kept if one of its land is on edge                                    *
+ *                                                                                                                       *
+ * 2. loop islandGroup, find groups not in dedge, add their value together                                               *
+ *************************************************************************************************************************/
+
 export default (A) => {
   if (!A) { return 0; }
   let rows = A.length; if (rows == 0) { return 0; }
@@ -48,6 +56,7 @@ export default (A) => {
     }
   }
 
+  // loop islandGroup, find groups not in dedge, add their value together 
   let total = 0;
   Object.entries(islandGroup).map(([key, val]) => {
     if (!edgeGroup.has(Number(key))) {

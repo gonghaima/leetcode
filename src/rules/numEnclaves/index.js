@@ -28,9 +28,9 @@ export default (A) => {
         neighbors.push([row, col]);
         while (neighbors.length > 0) {
           [us, neighbors] = [neighbors, []];
-          first = 0;
-          while (first < us.length) {
-            [r, c] = us[first++];
+
+          while (0 < us.length) {
+            [r, c] = us.pop();
             if (r - 1 >= 0 && A[r - 1][c] === 1) {
               islandGroup[islandcount] += 1;
               neighbors.push([r - 1, c]); A[r - 1][c] = 0;

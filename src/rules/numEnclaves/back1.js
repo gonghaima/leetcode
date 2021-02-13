@@ -1,14 +1,9 @@
-/***************************************************************************************************
- * Runtime: 144 ms, faster than 25.00% of JavaScript online submissions for Number of Enclaves.    *
- * Memory Usage: 48.4 MB, less than 9.09% of JavaScript online submissions for Number of Enclaves. *
- ***************************************************************************************************/
-
 export default (A) => {
   if (!A) { return 0; }
   let rows = A.length; if (rows == 0) { return 0; }
   let cols = A[0].length; if (cols == 0) { return 0; }
   const onEdge = (x, y) => {
-    return x === 0 || y === 0 || x === A.length - 1 || y === A[0].length - 1;
+    return x === 0 || y === 0 || x === A[0].length - 1 || y === A.length - 1;
   }
 
   let islandcount = 0;
@@ -56,12 +51,13 @@ export default (A) => {
       }
     }
   }
-
+  debugger;
   let total = 0;
   Object.entries(islandGroup).map(([key, val]) => {
     if (!edgeGroup.has(Number(key))) {
       total += val;
     }
   });
+  debugger;
   return total;
 };

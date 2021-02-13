@@ -28,8 +28,7 @@ export default (A) => {
         neighbors.push([row, col]);
         while (neighbors.length > 0) {
           [us, neighbors] = [neighbors, []];
-
-          while (0 < us.length) {
+          while (us.length > 0) {
             [r, c] = us.pop();
             if (r - 1 >= 0 && A[r - 1][c] === 1) {
               islandGroup[islandcount] += 1;

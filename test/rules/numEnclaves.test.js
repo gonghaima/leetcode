@@ -2,7 +2,8 @@
 // import numEnclaves from "../../src/rules/numEnclaves/bfs-mine-not-pass";
 // import numEnclaves from "../../src/rules/numEnclaves/bfs-mine-1";
 // import numEnclaves from "../../src/rules/numEnclaves/bfs-mine-enhanced";
-import numEnclaves from "../../src/rules/numEnclaves/dfs";
+// import numEnclaves from "../../src/rules/numEnclaves/dfs";
+import numEnclaves from "../../src/rules/numEnclaves/dfs-v1";
 
 import { inputData, expected } from "../mock/numEnclavesData";
 

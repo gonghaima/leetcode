@@ -15,8 +15,11 @@ Identify if problems talks about finding groups or components.
 
 - 1727. [Largest Submatrix With Rearrangements](https://leetcode.com/problems/largest-submatrix-with-rearrangements/) => [largestSubmatrix](./src/rules/largestSubmatrix/index.js)
 
-- 1020. [Number of Enclaves](https://leetcode.com/problems/number-of-enclaves/) => [numEnclaves](./src/rules/numEnclaves/index.js)
-
 ### DFS from boundary
 
-- [130. Surrounded Regions](https://leetcode.com/problems/surrounded-regions/) => [solve]()
+- [130. Surrounded Regions](https://leetcode.com/problems/surrounded-regions/) => [solve](./src/rules/surroundedRegions/index.js)
+
+- 1020. [Number of Enclaves](https://leetcode.com/problems/number-of-enclaves/) => [numEnclaves](./src/rules/numEnclaves/index.js)
+  
+### DFS - Time taken to reach all nodes or share information to all graph nodes
+

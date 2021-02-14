@@ -19,4 +19,4 @@ Identify if problems talks about finding groups or components.
 
 ### DFS from boundary
 
-- [130. Surrounded Regions](https://leetcode.com/problems/surrounded-regions/) => [solve]()
+- [130. Surrounded Regions](https://leetcode.com/problems/surrounded-regions/) => [solve](./src/rules/surroundedRegions/index.js)

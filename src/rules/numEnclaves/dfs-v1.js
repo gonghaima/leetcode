@@ -1,6 +1,6 @@
 /****************************************************************************************************
- *  Runtime: 92 ms, faster than 93.18% of JavaScript online submissions for Number of Enclaves.     *
- * Memory Usage: 43.2 MB, less than 54.55% of JavaScript online submissions for Number of Enclaves. *
+ * Runtime: 108 ms, faster than 56.82% of JavaScript online submissions for Number of Enclaves.     *
+ * Memory Usage: 45.7 MB, less than 40.91% of JavaScript online submissions for Number of Enclaves. *
  ****************************************************************************************************/
 
 export default (A) => {
@@ -16,23 +16,20 @@ export default (A) => {
         dfs(next);
     }
   }
-  for (let i = 0; i < A.length; i++) {
-    if (A[i][0] == 1) dfs(A, i, 0);
-    if (A[i][A[0].length - 1] == 1) dfs(A, i, A[0].length - 1);
+  for (let i = 0; i < m; i++) {
+    if (A[i][0]) dfs([i, 0]);
+    if (A[i][n - 1]) dfs([i, n - 1]);
   }
 
-  for (let i = 0; i < A[0].length; i++) {
-    if (A[0][i] == 1) dfs(A, 0, i);
-    if (A[A.length - 1][i] == 1) dfs(A, A.length - 1, i);
+  for (let i = 0; i < n; i++) {
+    if (A[0][i]) dfs([0, i]);
+    if (A[m - 1][i]) dfs([m - 1, i]);
   }
 
   let result = 0;
-
-  for (let i = 0; i < A.length; i++) {
-    for (let j = 0; j < A[0].length; j++) {
-      if (A[i][j] == 1) result++;
-    }
-  }
+  for (let i = 0; i < m; i++)
+    for (let j = 0; j < n; j++)
+      if (A[i][j]) result++;
 
   return result;
 }

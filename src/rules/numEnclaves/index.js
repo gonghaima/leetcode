@@ -1,66 +1,66 @@
+/***************************************************************************************************
+ * Runtime: 144 ms, faster than 25.00% of JavaScript online submissions for Number of Enclaves.    *
+ * Memory Usage: 48.4 MB, less than 9.09% of JavaScript online submissions for Number of Enclaves. *
+ ***************************************************************************************************/
+
 export default (A) => {
-  const triverseParams = [[-1, 0], [0, 1], [1, 0], [0, -1]];
-  const xLimit = A[0].length;
-  const yLimit = A.length;
-  const inBoundary = (x, y) => {
-    return x >= 0 && x < xLimit && y >= 0 && y < yLimit;
-  }
+  if (!A) { return 0; }
+  let rows = A.length; if (rows == 0) { return 0; }
+  let cols = A[0].length; if (cols == 0) { return 0; }
   const onEdge = (x, y) => {
-    return x === 0 || y === 0 || x === xLimit - 1 || y === yLimit - 1;
+    return x === 0 || y === 0 || x === A.length - 1 || y === A[0].length - 1;
   }
 
-  let counter = 0;
-  let visited = new Set();
+  let islandcount = 0;
 
-  let landGroupIndex = -1;
-  let landGroup = {};
-  let noneEnclaves = new Set();
+  let islandGroup = {};
+  let edgeGroup = new Set();
+  let r, c, row, col, first;
+  for (row = 0; row < rows; ++row) {
+    for (col = 0; col < cols; ++col) {
+      if (A[row][col] === 1) {
+        ++islandcount;
+        islandGroup[islandcount] = 1;
+        if (onEdge(row, col)) edgeGroup.add(islandcount);
 
-  for (let i = 0; i < A.length; i++) {
-    for (let j = 0; j < A[0].length; j++) {
-      const element = A[i][j];
-      if (!visited.has(`${i}${j}`) && element === 1) {
-        visited.add(`${i}${j}`)
-        landGroupIndex += 1;
-        counter += 1;
-        landGroup[landGroupIndex] = 1;
-        if (onEdge(i, j)) noneEnclaves.add(landGroupIndex);
-        let next = [];
-        debugger;
-        next.push([i, j]);
-
-        while (next.length > 0) {
-          let tempNext = [];
-          next.map(([x, y]) => {
-            visited.add(`${x}${y}`);
-            triverseParams.map(([a, b]) => {
-              const newX = a + x;
-              const newY = b + y;
-              const isIn = inBoundary(newX, newY);
-              const hasVisited = visited.has(`${newX}${newY}`);
-              if (isIn && !hasVisited && A[newX][newY] === 1) {
-                visited.add(`${newX}${newY}`);
-                landGroup[landGroupIndex] += 1;
-                tempNext.push([newX, newY]);
-              }
-            })
-          });
-          next = tempNext;
+        A[row][col] = 0; // mark as visited
+        let us = [], neighbors = [];
+        neighbors.push([row, col]);
+        while (neighbors.length > 0) {
+          [us, neighbors] = [neighbors, []];
+          while (us.length > 0) {
+            [r, c] = us.pop();
+            if (r - 1 >= 0 && A[r - 1][c] === 1) {
+              islandGroup[islandcount] += 1;
+              neighbors.push([r - 1, c]); A[r - 1][c] = 0;
+              if (onEdge(r - 1, c)) edgeGroup.add(islandcount);
+            }
+            if (r + 1 < rows && A[r + 1][c] === 1) {
+              islandGroup[islandcount] += 1;
+              neighbors.push([r + 1, c]); A[r + 1][c] = 0;
+              if (onEdge(r + 1, c)) edgeGroup.add(islandcount)
+            }
+            if (c - 1 >= 0 && A[r][c - 1] === 1) {
+              islandGroup[islandcount] += 1;
+              neighbors.push([r, c - 1]); A[r][c - 1] = 0;
+              if (onEdge(r, c - 1)) edgeGroup.add(islandcount)
+            }
+            if (c + 1 < cols && A[r][c + 1] === 1) {
+              islandGroup[islandcount] += 1;
+              neighbors.push([r, c + 1]); A[r][c + 1] = 0;
+              if (onEdge(r, c + 1)) edgeGroup.add(islandcount)
+            }
+          }
         }
-
-
       }
-      visited.add(`${i}${j}`)
     }
   }
 
-  let total=0;
-  debugger;
-  Object.entries(landGroup).map(([key,val])=>{
-    if(!noneEnclaves.has(Number(key))){
-      total+=val;
+  let total = 0;
+  Object.entries(islandGroup).map(([key, val]) => {
+    if (!edgeGroup.has(Number(key))) {
+      total += val;
     }
   });
-  debugger;
   return total;
 };

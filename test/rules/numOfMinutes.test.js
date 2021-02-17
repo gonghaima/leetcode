@@ -1,4 +1,5 @@
-import numOfMinutes from "../../src/rules/numOfMinutes";
+// import numOfMinutes from "../../src/rules/numOfMinutes";
+import numOfMinutes from "../../src/rules/numOfMinutes/top-down";
 
 import { inputData, expected } from "../mock/numOfMinutesData";
 

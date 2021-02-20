@@ -1,4 +1,4 @@
-import canVisitAllRooms from "../../src/rules/canVisitAllRooms";
+import canVisitAllRooms from "../../src/rules/canVisitAllRooms/bfs";
 
 import { inputData, expected } from "../mock/canVisitAllRoomsData";
 
@@ -12,3 +12,13 @@ test("canVisitAllRooms should return correct result from - case 2", () => {
   expect(result).toBe(expected.case2);
 });
 
+test("canVisitAllRooms should return correct result from - case 3", () => {
+  const result = canVisitAllRooms(inputData.case3);
+  expect(result).toBe(expected.case3);
+});
+
+
+test("canVisitAllRooms should return correct result from - case 4", () => {
+  const result = canVisitAllRooms(inputData.case4);
+  expect(result).toBe(expected.case4);
+});

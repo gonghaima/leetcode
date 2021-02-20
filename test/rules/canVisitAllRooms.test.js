@@ -1,4 +1,5 @@
-import canVisitAllRooms from "../../src/rules/canVisitAllRooms/bfs";
+// import canVisitAllRooms from "../../src/rules/canVisitAllRooms/bfs";
+import canVisitAllRooms from "../../src/rules/canVisitAllRooms/dfs";
 
 import { inputData, expected } from "../mock/canVisitAllRoomsData";
 

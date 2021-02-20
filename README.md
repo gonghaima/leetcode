@@ -27,4 +27,6 @@ Identify if problems talks about finding groups or components.
 
 ### DFS - from each unvisited node/Island problems
 
+- [695. Max Area of Island](https://leetcode.com/problems/max-area-of-island/) => [solve](./src/rules/maxAreaOfIsland/index.js)
+
 - [733. Flood Fill](https://leetcode.com/problems/flood-fill/) => [solve](./src/rules/floodFill/index.js)

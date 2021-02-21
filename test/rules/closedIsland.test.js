@@ -1,4 +1,5 @@
-import closedIsland from "../../src/rules/closedIsland/bfs";
+// import closedIsland from "../../src/rules/closedIsland/bfs";
+import closedIsland from "../../src/rules/closedIsland/bfs-v1";
 
 import { inputData, expected } from "../mock/closedIslandData";
 

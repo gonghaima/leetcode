@@ -1,6 +1,7 @@
 // import eventualSafeNodes from "../../src/rules/eventualSafeNodes/bfs";
 // import eventualSafeNodes from "../../src/rules/eventualSafeNodes/dfs";
-import eventualSafeNodes from "../../src/rules/eventualSafeNodes/dfs-v1";
+// import eventualSafeNodes from "../../src/rules/eventualSafeNodes/dfs-v1";
+import eventualSafeNodes from "../../src/rules/eventualSafeNodes/dfs-v2";
 
 import { inputData, expected } from "../mock/eventualSafeNodesData";
 

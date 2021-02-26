@@ -31,6 +31,7 @@ function isNodeSafe(graph, node, visited) {
   }
   visited[node] = "safe";
   return true;
+  return true;
 }
 
 export default eventualSafeNodes;

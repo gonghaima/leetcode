@@ -11,8 +11,11 @@
 var updateMatrix = function (matrix) {
   const row = matrix.length;
   const column = matrix[0].length;
+  //the following two approach are good
   // const visited = new Array(row).fill(0).map(()=>new Array(column).fill(false));
   const visited = [...Array(row)].map(x => Array(column).fill(false))
+
+  //dangerous - Since all the rows are filled with references to ONE array
   // const visited = (new Array(row)).map(() => {
   //   const ar = (new Array(column)).map(()=>false);
   //   return ar;

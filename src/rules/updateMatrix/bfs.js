@@ -8,6 +8,18 @@
  * Memory Usage: 49 MB, less than 55.91% of JavaScript online submissions for 01 Matrix. *
  *****************************************************************************************/
 
+/***********************************************************************************
+ * set initial counter to 1,                                                       *
+ * find all 0s, put to queue                                                       *
+ * while queue length is greater than 0                                            *
+ *    for all items in next                                                        *
+ *    find all adjacencies (not visited), set value to counter and add to tempNext *
+ *                                                                                 *
+ *    set next to be tempNext                                                      *
+ *    counter increase                                                             *
+ ***********************************************************************************/
+
+
 var updateMatrix = function (matrix) {
   const row = matrix.length;
   const column = matrix[0].length;

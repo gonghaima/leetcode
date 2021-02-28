@@ -1,4 +1,9 @@
-var maxDistance = function(grid) {
+/*************************************************************************************************************
+ * Runtime: 6412 ms, faster than 5.71% of JavaScript online submissions for As Far from Land as Possible.    *
+ * Memory Usage: 76.8 MB, less than 5.71% of JavaScript online submissions for As Far from Land as Possible. *
+ *************************************************************************************************************/
+
+var maxDistance = function (grid) {
   const m = grid.length;
   const n = m;
   const maxDist = [...new Array(m)].map(() => new Array(n).fill(Infinity));

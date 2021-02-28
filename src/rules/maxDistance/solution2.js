@@ -2,6 +2,11 @@
  * bfs solution - expand & increase steps, and keep track the max step *
  ***********************************************************************/
 
+/**************************************************************************************************************
+ *  Runtime: 164 ms, faster than 47.14% of JavaScript online submissions for As Far from Land as Possible.    *
+ * Memory Usage: 45.5 MB, less than 78.57% of JavaScript online submissions for As Far from Land as Possible. *
+ **************************************************************************************************************/
+
 var maxDistance = function (grid) {
   var max = 0;
   var lastIndex = grid.length - 1;

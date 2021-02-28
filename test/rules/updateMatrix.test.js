@@ -1,5 +1,6 @@
 // import updateMatrix from "../../src/rules/updateMatrix/bfs";
-import updateMatrix from "../../src/rules/updateMatrix/bfs-v1";
+// import updateMatrix from "../../src/rules/updateMatrix/bfs-v1";
+import updateMatrix from "../../src/rules/updateMatrix/dp";
 
 import { inputData, expected } from "../mock/updateMatrixData";
 

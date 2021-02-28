@@ -39,3 +39,6 @@ Identify if problems talks about finding groups or components.
 ## BFS
 
 ### BFS - Shortest Path
+
+- [542. 01 Matrix](https://leetcode.com/problems/01-matrix/) => [updateMatrix](./src/rules/updateMatrix/index.js)
+- [1162. As Far from Land as Possible](https://leetcode.com/problems/as-far-from-land-as-possible/) => [maxDistance](./src/rules/maxDistance/index.js)

@@ -3,6 +3,11 @@
  * Use DP to find the distance between each node and nearest island. Update result with max distance.                                   *
  ****************************************************************************************************************************************/
 
+/**************************************************************************************************************
+ *  Runtime: 136 ms, faster than 60.00% of JavaScript online submissions for As Far from Land as Possible.    *
+ * Memory Usage: 44.2 MB, less than 87.14% of JavaScript online submissions for As Far from Land as Possible. *
+ **************************************************************************************************************/
+
 var maxDistance = function (grid) {
   var res = -1, row = grid.length, col = grid[0].length,
     g = new Array(row);
@@ -25,7 +30,7 @@ var maxDistance = function (grid) {
       }
     }
   }
-
+  debugger;
   for (var i = row - 1; i >= 0; i--) {
     for (var j = col - 1; j >= 0; j--) {
       if (g[i][j] !== 0) {

@@ -24,20 +24,18 @@ var orangesRotting = function (grid) {
   }
 
   let minutes = 2;
-  // for (let [] row: grid) {
-  //   for (let cell : row) {
-  //   if (cell == 1) return -1;
-  //   minutes = Math.max(minutes, cell);
-  // }
 
   for (let i = 0; minutes !== -1 && i < grid.length; i++) {
     for (let j = 0; minutes !== -1 && j < grid[0].length; j++) {
+      // if still 1 exist, return -1
       if (grid[i][j] === 1) { minutes = -1; continue; }
+      // otherwise, find max
       minutes = Math.max(minutes, grid[i][j]);
     }
   }
 
-  return minutes - 2;
+// remove 2 (base), if lower than 0 return -1, otherwise return actual number
+  return (minutes - 2) < 0 ? -1 : minutes - 2;
 }
 
 export default orangesRotting;

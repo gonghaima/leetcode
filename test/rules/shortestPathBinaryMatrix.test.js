@@ -1,5 +1,5 @@
 // import shortestPathBinaryMatrix from "../../src/rules/shortestPathBinaryMatrix";
-import shortestPathBinaryMatrix from "../../src/rules/shortestPathBinaryMatrix/bfs";
+import shortestPathBinaryMatrix from "../../src/rules/shortestPathBinaryMatrix/bfs-v1";
 import { inputData, expected } from "../mock/shortestPathBinaryMatrixData";
 
 test("shortestPathBinaryMatrix should return the distance for case1", () => {

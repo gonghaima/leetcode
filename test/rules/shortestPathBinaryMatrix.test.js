@@ -1,4 +1,5 @@
-import shortestPathBinaryMatrix from "../../src/rules/shortestPathBinaryMatrix";
+// import shortestPathBinaryMatrix from "../../src/rules/shortestPathBinaryMatrix";
+import shortestPathBinaryMatrix from "../../src/rules/shortestPathBinaryMatrix/bfs";
 import { inputData, expected } from "../mock/shortestPathBinaryMatrixData";
 
 test("shortestPathBinaryMatrix should return the distance for case1", () => {
@@ -24,6 +25,11 @@ test("shortestPathBinaryMatrix should return the distance for case4", () => {
 test("shortestPathBinaryMatrix should return the distance for case5", () => {
   const result = shortestPathBinaryMatrix(inputData.case5);
   expect(result).toBe(expected.case5);
+});
+
+test("shortestPathBinaryMatrix should return the distance for case6", () => {
+  const result = shortestPathBinaryMatrix(inputData.case6);
+  expect(result).toBe(expected.case6);
 });
 
 

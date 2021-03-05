@@ -4,7 +4,11 @@ export const inputData = {
   case3: [[1, 0, 0], [1, 1, 0], [1, 1, 0]],
   case4: [[0, 0, 0], [1, 0, 0], [1, 1, 0]],
   case5: [[0]],
-  case6: [[0, 0, 0, 0], [1, 0, 0, 1], [0, 1, 0, 0], [0, 0, 0, 0]]
+  case6: [
+    [0, 0, 0, 0],
+    [1, 0, 0, 1],
+    [0, 1, 0, 0],
+    [0, 0, 0, 0]]
 };
 
 export const expected = {
@@ -13,5 +17,5 @@ export const expected = {
   case3: -1,
   case4: 3,
   case5: 1,
-  case6:4
+  case6: 4
 };

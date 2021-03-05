@@ -5,9 +5,13 @@
 */
 
 /****************************************************************************************************************
- * Runtime: 120 ms, faster than 69.82% of JavaScript online submissions for Shortest Path in Binary Matrix.     *
- * Memory Usage: 46.1 MB, less than 68.26% of JavaScript online submissions for Shortest Path in Binary Matrix. *
+ * Runtime: 128 ms, faster than 61.01% of JavaScript online submissions for Shortest Path in Binary Matrix.     *
+ * Memory Usage: 45.5 MB, less than 88.99% of JavaScript online submissions for Shortest Path in Binary Matrix. *
  ****************************************************************************************************************/
+
+// This solution can enhanced to A* search, by changing "attempts" type from array, to a priority queue, 
+// smallest steps will put into front, get picked first
+
 
 var shortestPathBinaryMatrix = function (grid) {
   const N = grid.length;
@@ -21,8 +25,10 @@ var shortestPathBinaryMatrix = function (grid) {
   const attempts = [];
   attempts.push([0, 0, 1]);
   while (attempts.length) {
+    // here, pop cannot be used, because if the latest item used reached to the end, it will not check other options,
+    // shift will ensure all the items will be check without skipping
+    // however, if A* used, to use closest item, it will boost the performance, as well as avoiding worse picking
     const [r, c, s] = attempts.shift();
-
     if (r == N - 1 && c == N - 1) {
       return s;
     }

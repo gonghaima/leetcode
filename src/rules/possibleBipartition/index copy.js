@@ -5,6 +5,8 @@
  * @return {boolean}
  */
 
+// my original thought, not working out
+
 var possibleBipartition = function (N, dislikes) {
   // build an adjancency list
   let adjList = {};
@@ -46,9 +48,9 @@ var possibleBipartition = function (N, dislikes) {
       };
       next.push(person);
 
-      while(next.length){
-        next.map(p=>{
-          
+      while (next.length) {
+        next.map(p => {
+
         })
       }
 

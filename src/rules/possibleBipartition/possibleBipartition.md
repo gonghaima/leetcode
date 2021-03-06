@@ -1,43 +1,42 @@
-# 1091. [Shortest Path in Binary Matrix](https://leetcode.com/problems/shortest-path-in-binary-matrix/)
+# [886. Possible Bipartition](https://leetcode.com/problems/possible-bipartition/)
 
 Medium
 
-Given an n x n binary matrix grid, return the length of the shortest clear path in the matrix. If there is no clear path, return -1.
+Given a set of N people (numbered 1, 2, ..., N), we would like to split everyone into two groups of any size.
 
-A clear path in a binary matrix is a path from the top-left cell (i.e., (0, 0)) to the bottom-right cell (i.e., (n - 1, n - 1)) such that:
+Each person may dislike some other people, and they should not go into the same group.
 
-All the visited cells of the path are 0.
-All the adjacent cells of the path are 8-directionally connected (i.e., they are different and they share an edge or a corner).
-The length of a clear path is the number of visited cells of this path.
+Formally, if dislikes[i] = [a, b], it means it is not allowed to put the people numbered a and b into the same group.
+
+Return true if and only if it is possible to split everyone into two groups in this way.
 
 Example 1:
 
-![img1](1.png)
-
-```shell
-Input: grid = [[0,1],[1,0]]
-Output: 2
+```s
+Input: N = 4, dislikes = [[1,2],[1,3],[2,4]]
+Output: true
+Explanation: group1 [1,4], group2 [2,3]
 ```
 
 Example 2:
 
-![img2](2.png)
-
-```shell
-Input: grid = [[0,0,0],[1,1,0],[1,1,0]]
-Output: 4
+```s
+Input: N = 3, dislikes = [[1,2],[1,3],[2,3]]
+Output: false
 ```
 
 Example 3:
 
-```shell
-Input: grid = [[1,0,0],[1,1,0],[1,1,0]]
-Output: -1
+```s
+Input: N = 5, dislikes = [[1,2],[2,3],[3,4],[4,5],[1,5]]
+Output: false
 ```
 
 Constraints:
 
-n == grid.length
-n == grid[i].length
-1 <= n <= 100
-grid[i][j] is 0 or 1
+- 1 <= N <= 2000
+- 0 <= dislikes.length <= 10000
+- dislikes[i].length == 2
+- 1 <= dislikes[i][j] <= N
+- dislikes[i][0] < dislikes[i][1]
+- There does not exist i != j for which dislikes[i] == dislikes[j].

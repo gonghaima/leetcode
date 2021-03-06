@@ -1,4 +1,4 @@
-import possibleBipartition from "../../src/rules/possibleBipartition";
+import possibleBipartition from "../../src/rules/possibleBipartition/bfs";
 import { inputData, expected } from "../mock/possibleBipartitionData";
 
 test("possibleBipartition should return the distance for case1", () => {

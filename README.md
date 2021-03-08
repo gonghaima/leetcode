@@ -48,3 +48,4 @@ Identify if problems talks about finding groups or components.
 ## Graph coloring/Bipartition
 
 - [886. Possible Bipartition](https://leetcode.com/problems/possible-bipartition/) => [possibleBipartition](./src/rules/possibleBipartition/index.js)
+- [785. Is Graph Bipartite?](https://leetcode.com/problems/is-graph-bipartite/) => [isBipartite](./src/rules/isBipartite/index.js)

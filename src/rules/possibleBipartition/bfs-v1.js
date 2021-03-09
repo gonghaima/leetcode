@@ -5,13 +5,17 @@
  * @return {boolean}
  */
 
+/******************************************************************************************************
+ * Runtime: 136 ms, faster than 84.52% of JavaScript online submissions for Possible Bipartition.     *
+ * Memory Usage: 49.2 MB, less than 63.09% of JavaScript online submissions for Possible Bipartition. *
+ ******************************************************************************************************/
 
 var possibleBipartition = function (N, dislikes) {
   if (!dislikes.length) return true;
   const colors = new Map();
   const stack = [];
 
-  const graph = new Array(N+1).fill(null).map(() => ([]));
+  const graph = new Array(N + 1).fill(null).map(() => ([]));
   //build graph, each person has a set of disliked people
   for (let [a, b] of dislikes) {
     graph[a].push(b);

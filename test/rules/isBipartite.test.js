@@ -1,5 +1,5 @@
 // import isBipartite from "../../src/rules/isBipartite/bfs";
-import isBipartite from "../../src/rules/isBipartite/bfs";
+import isBipartite from "../../src/rules/isBipartite/dfs";
 import { inputData, expected } from "../mock/isBipartiteData";
 
 test("isBipartite should return the distance for case1", () => {

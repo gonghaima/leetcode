@@ -1,6 +1,7 @@
 // import possibleBipartition from "../../src/rules/possibleBipartition/bfs";
 // import possibleBipartition from "../../src/rules/possibleBipartition/solution1";
-import possibleBipartition from "../../src/rules/possibleBipartition/bfs-v1";
+// import possibleBipartition from "../../src/rules/possibleBipartition/bfs-v1";
+import possibleBipartition from "../../src/rules/possibleBipartition/union-find";
 import { inputData, expected } from "../mock/possibleBipartitionData";
 
 test("possibleBipartition should return the distance for case1", () => {

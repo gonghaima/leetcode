@@ -30,7 +30,6 @@ const dfs = (node, color, graph) => {
 
 var canFinish = function (numCourses, prerequisites) {
 
-  let visited = {};
   //build graph
   const graph = {};
   prerequisites.map(([cur, pre]) => {

@@ -1,6 +1,7 @@
 // import canFinish from "../../src/rules/canFinish";
 // import canFinish from "../../src/rules/canFinish/dfs";
-import canFinish from "../../src/rules/canFinish/dfs-v1";
+// import canFinish from "../../src/rules/canFinish/dfs-v1";
+import canFinish from "../../src/rules/canFinish/topologicalSort";
 import { inputData, expected } from "../mock/canFinishData";
 
 test("canFinish should return expected result for case1", () => {

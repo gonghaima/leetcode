@@ -1,4 +1,4 @@
-import findOrder from "../../src/rules/findOrder";
+import findOrder from "../../src/rules/findOrder/Topological";
 import { inputData, expected } from "../mock/findOrderData";
 
 test("findOrder should return expected result for case1", () => {
@@ -8,7 +8,7 @@ test("findOrder should return expected result for case1", () => {
 
 test("findOrder should return expected result for case2", () => {
   const result = findOrder(inputData.case2.numCourses, inputData.case2.prerequisites);
-  expect(result).toEqual(expected.case2);
+  expect(result.sort()).toEqual(expected.case2.sort());
 });
 
 test("findOrder should return expected result for case3", () => {

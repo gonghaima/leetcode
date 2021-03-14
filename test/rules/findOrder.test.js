@@ -1,4 +1,5 @@
-import findOrder from "../../src/rules/findOrder/Topological";
+// import findOrder from "../../src/rules/findOrder/Topological";
+import findOrder from "../../src/rules/findOrder/dfs";
 import { inputData, expected } from "../mock/findOrderData";
 
 test("findOrder should return expected result for case1", () => {

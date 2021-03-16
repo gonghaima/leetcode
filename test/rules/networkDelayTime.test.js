@@ -1,7 +1,8 @@
 // import networkDelayTime from "../../src/rules/networkDelayTime/Topological";
 // import networkDelayTime from "../../src/rules/networkDelayTime";
 // import networkDelayTime from "../../src/rules/networkDelayTime/index-nw";
-import networkDelayTime from "../../src/rules/networkDelayTime/bellmanFord";
+// import networkDelayTime from "../../src/rules/networkDelayTime/bellmanFord";
+import networkDelayTime from "../../src/rules/networkDelayTime/dijikstra";
 import { inputData, expected } from "../mock/networkDelayTimeData";
 
 test("networkDelayTime should return expected result for case1", () => {

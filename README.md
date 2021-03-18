@@ -58,4 +58,4 @@ Identify if problems talks about finding groups or components.
 
 ### Find Shortest Path (Dijkstra's/Bellman Ford)
 
-- [743. Network Delay Time](https://leetcode.com/problems/network-delay-time/) => [networkDelayTime](./src/rules/networkDelayTime/index.js)
+- [743. Network Delay Time](https://leetcode.com/problems/network-delay-time/) => [networkDelayTime](./src/rules/networkDelayTime/dijikstra.js)

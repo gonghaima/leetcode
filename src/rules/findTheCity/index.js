@@ -12,6 +12,8 @@
  * Memory Usage: 41.1 MB, less than 88.24% of JavaScript online submissions for Find the City With the Smallest Number of Neighbors at a Threshold Distance. *
  *************************************************************************************************************************************************************/
 
+// Time O(N^3)    Space O(N^2)
+
 var findTheCity = (n, edges, distanceThreshold) => {
   // build distance matrix for the shortest weight, between nodes
   const distance = Array.from({ length: n }, () => new Uint16Array(n).fill(10001));

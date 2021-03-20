@@ -7,6 +7,11 @@
 
 // Floyd–Warshall algorithm
 
+/*************************************************************************************************************************************************************
+ * Runtime: 112 ms, faster than 86.27% of JavaScript online submissions for Find the City With the Smallest Number of Neighbors at a Threshold Distance.     *
+ * Memory Usage: 41.1 MB, less than 88.24% of JavaScript online submissions for Find the City With the Smallest Number of Neighbors at a Threshold Distance. *
+ *************************************************************************************************************************************************************/
+
 var findTheCity = (n, edges, distanceThreshold) => {
   // build distance matrix for the shortest weight, between nodes
   const distance = Array.from({ length: n }, () => new Uint16Array(n).fill(10001));

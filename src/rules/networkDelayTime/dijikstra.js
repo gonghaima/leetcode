@@ -1,3 +1,7 @@
+/****************************************************************************************************
+ * Runtime: 112 ms, faster than 79.10% of JavaScript online submissions for Network Delay Time.     *
+ * Memory Usage: 47.2 MB, less than 52.61% of JavaScript online submissions for Network Delay Time. *
+ ****************************************************************************************************/
 class QElement {
     constructor(element, priority) {
         this.element = element;

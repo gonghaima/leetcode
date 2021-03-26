@@ -1,7 +1,8 @@
 
 // import findCheapestPrice from "../../src/rules/findCheapestPrice";
 // import findCheapestPrice from "../../src/rules/findCheapestPrice/BellmanFord";
-import findCheapestPrice from "../../src/rules/findCheapestPrice/Dijkstra";
+// import findCheapestPrice from "../../src/rules/findCheapestPrice/Dijkstra";
+import findCheapestPrice from "../../src/rules/findCheapestPrice/Dijkstra-1";
 import { inputData, expected } from "../mock/findCheapestPriceData";
 
 test("findCheapestPrice should return expected result for case1", () => {

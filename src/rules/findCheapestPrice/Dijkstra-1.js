@@ -4,6 +4,8 @@
  * Memory Usage: 54.5 MB, less than 9.20% of JavaScript online submissions for Cheapest Flights Within K Stops. *
  ****************************************************************************************************************/
 
+// seems the Adjacency Matrix is slower than than Adjacency List, comparing with the other Dijkstra
+
 var findCheapestPrice = function (n, flights, src, dst, K) {
     let graph = {}
     flights.forEach((flight) => {

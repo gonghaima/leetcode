@@ -59,3 +59,9 @@ Identify if problems talks about finding groups or components.
 ### Find Shortest Path (Dijkstra's/Bellman Ford)
 
 - [743. Network Delay Time](https://leetcode.com/problems/network-delay-time/) => [networkDelayTime](./src/rules/networkDelayTime/dijikstra.js)
+- [1334. Find the City With the Smallest Number of Neighbors at a Threshold Distance](https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/) => [findTheCity](./src/rules/findTheCity/dijikstra.js)
+- [787. Cheapest Flights Within K Stops](https://leetcode.com/problems/cheapest-flights-within-k-stops/) => [findCheapestPrice](./src/rules/findCheapestPrice/dijikstra.js)
+
+## Sliding Window
+
+- [1438. Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit](https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/) => [longestSubarray](./src/rules/longestSubarray/index.js)

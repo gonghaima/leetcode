@@ -18,6 +18,7 @@
       "request": "launch",
       "name": "Jest Current File",
       "program": "${workspaceFolder}/node_modules/jest/bin/jest",
+      "runtimeExecutable": "/usr/local/bin/node",
       "args": [
         "${relativeFile}"
       ],

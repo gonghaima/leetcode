@@ -1,5 +1,6 @@
 
-import longestSubarray from "../../src/rules/longestSubarray";
+// import longestSubarray from "../../src/rules/longestSubarray";
+import longestSubarray from "../../src/rules/longestSubarray/slidingWindow-mine";
 import { inputData, expected } from "../mock/longestSubarrayData";
 
 test("longestSubarray should return expected result for case1", () => {

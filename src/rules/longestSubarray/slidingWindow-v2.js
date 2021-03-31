@@ -4,6 +4,11 @@
  * @return {number}
  */
 
+/************************************************************************************************************************************************************
+ * Runtime: 92 ms, faster than 98.48% of JavaScript online submissions for Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit.      *
+ * Memory Usage: 49.5 MB, less than 53.79% of JavaScript online submissions for Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit. *
+ ************************************************************************************************************************************************************/
+
 
 
 //Actually, we can easily find out that the array in JS is a linear list. 
@@ -17,7 +22,6 @@
 
 const longestSubarray = (nums, limit) => {
     const maxQue = [];
-    
     const minQue = [];
     let maxTop = -1, minTop = -1;
     let maxBottom = 0, minBottom = 0;

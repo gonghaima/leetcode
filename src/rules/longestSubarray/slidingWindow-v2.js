@@ -9,7 +9,7 @@
  * Memory Usage: 49.5 MB, less than 53.79% of JavaScript online submissions for Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit. *
  ************************************************************************************************************************************************************/
 
-
+//https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/discuss/628252/JavaScript-Easy-to-understand-optimize-from-6564ms-to-64ms
 
 //Actually, we can easily find out that the array in JS is a linear list. 
 //We call the shift method to remove the first element, 

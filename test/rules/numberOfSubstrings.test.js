@@ -17,3 +17,8 @@ test("numberOfSubstrings should return expected result for case3", () => {
   const result = numberOfSubstrings(inputData.case3);
   expect(result).toEqual(expected.case3);
 });
+
+test("numberOfSubstrings should return expected result for case4", () => {
+  const result = numberOfSubstrings(inputData.case4);
+  expect(result).toEqual(expected.case4);
+});

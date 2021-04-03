@@ -1,7 +1,7 @@
 
 // import numberOfSubstrings from "../../src/rules/numberOfSubstrings";
 // import numberOfSubstrings from "../../src/rules/numberOfSubstrings/slidingWindow-mine";
-import numberOfSubstrings from "../../src/rules/numberOfSubstrings";
+import numberOfSubstrings from "../../src/rules/numberOfSubstrings/index-v1";
 import { inputData, expected } from "../mock/numberOfSubstringsData";
 
 test("numberOfSubstrings should return expected result for case1", () => {

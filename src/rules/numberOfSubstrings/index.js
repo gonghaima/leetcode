@@ -9,6 +9,8 @@
  * Memory Usage: 46.2 MB, less than 14.06% of JavaScript online submissions for Number of Substrings Containing All Three Characters. *
  **************************************************************************************************************************************/
 
+// my solution
+
 var numberOfSubstrings = function (s) {
     let left = 0;
     let counter = 0;

@@ -2,7 +2,7 @@ export const inputData = {
   case1: "abcabc",
   case2: "aaacb",
   case3: "abc",
-  case4: "abab",
+  case4: "abab"
 };
 
 export const expected = {

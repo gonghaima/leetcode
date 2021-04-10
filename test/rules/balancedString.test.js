@@ -1,5 +1,6 @@
 
-import balancedString from "../../src/rules/balancedString";
+// import balancedString from "../../src/rules/balancedString";
+import balancedString from "../../src/rules/balancedString/slidingWindow";
 import { inputData, expected } from "../mock/balancedStringData";
 
 test("balancedString should return expected result for case1", () => {

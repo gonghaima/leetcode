@@ -3,24 +3,26 @@
  * @param {number} k
  * @return {number}
  */
-var longestOnes = function (nums, k) {
-    let zeroCounter = 0;
-    let max = 0;
-    let left = 0;
 
-    for (let right = 0; right < nums.length; right++) {
-        if (nums[right] === 0) zeroCounter++;
-        //right keep moving, until reach to the point, where next item is 0
-        if (zeroCounter === k && (right + 1) < nums.length && nums[right + 1] === 0) {
-            max = Math.max(max, right - left + 1);
-            while (zeroCounter === k) {
-                max = Math.max(max, right - left + 1);
-                if (nums[left] === 0) zeroCounter--;
-                left++;
-            }
+/**********************************************************************************************************
+ * Runtime: 80 ms, faster than 97.53% of JavaScript online submissions for Max Consecutive Ones III.      *
+ * Memory Usage: 43.3 MB, less than 80.86% of JavaScript online submissions for Max Consecutive Ones III. *
+ **********************************************************************************************************/
+
+// sliding window
+
+var longestOnes = function (nums, k) {
+    let i = 0, j = 0, len = 0, res = 0;
+    while (j < nums.length) {
+        if (nums[j] === 0 && k) len++, k--, j++;
+        else if (nums[j] === 1) len++, j++;
+        else {
+            res = Math.max(res, len);
+            if (nums[i] === 0) k++;
+            i++, len--;
         }
     }
-    return max;
+    return Math.max(res, len);
 };
 
 export default longestOnes;

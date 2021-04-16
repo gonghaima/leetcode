@@ -1,5 +1,6 @@
 
-import longestOnes from "../../src/rules/longestOnes";
+// import longestOnes from "../../src/rules/longestOnes";
+import longestOnes from "../../src/rules/longestOnes/slidingWindow";
 import { inputData, expected } from "../mock/longestOnesData";
 
 test("longestOnes should return expected result for case1", () => {

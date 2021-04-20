@@ -4,6 +4,7 @@
  * @return {number}
  */
 
+// https://leetcode.com/problems/subarrays-with-k-different-integers/discuss/235235/C%2B%2BJava-with-picture-prefixed-sliding-window
 // https://leetcode.com/problems/subarrays-with-k-different-integers/discuss/235293/Java-%22Elastic%22-Sliding-Window
 
 

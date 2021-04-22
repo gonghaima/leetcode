@@ -68,5 +68,5 @@ Identify if problems talks about finding groups or components.
 - [1358. Number of Substrings Containing All Three Characters](https://leetcode.com/problems/number-of-substrings-containing-all-three-characters/) => [numberOfSubstrings](./src/rules/numberOfSubstrings/index.js)
 - [1234. Replace the Substring for Balanced String](https://leetcode.com/problems/replace-the-substring-for-balanced-string/) => [balancedString](./src/rules/balancedString/index.js)
 - [1004. Max Consecutive Ones III](https://leetcode.com/problems/max-consecutive-ones-iii/) => [longestOnes](./src/rules/longestOnes/index.js)
-- [992. Subarrays with K Different Integers](https://leetcode.com/problems/subarrays-with-k-different-integers/) => [subarraysWithKDistinct](./src/rules/subarraysWithKDistinct/index.js
-- [904. Fruit Into Baskets](https://leetcode.com/problems/fruit-into-baskets/) => [totalFruit](./src/rules/totalFruit/index.js
+- [992. Subarrays with K Different Integers](https://leetcode.com/problems/subarrays-with-k-different-integers/) => [subarraysWithKDistinct](./src/rules/subarraysWithKDistinct/index.js)
+- [904. Fruit Into Baskets](https://leetcode.com/problems/fruit-into-baskets/) => [totalFruit](./src/rules/totalFruit/index.js)

@@ -10,6 +10,7 @@
  ****************************************************************************************************/
 
 // sliding window
+// https://leetcode.com/problems/fruit-into-baskets/discuss/284862/JavaScript-Solution-%3A-O(n)
 
 var totalFruit = function (tree) {
     let result = 0;

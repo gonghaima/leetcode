@@ -10,6 +10,8 @@
  ****************************************************************************************************/
 
 // sliding window
+// https://leetcode.com/problems/fruit-into-baskets/discuss/600614/Fast-JavaScript-Solution
+// https://leetcode.com/problems/fruit-into-baskets/discuss/170745/Problem%3A-Longest-Subarray-With-2-Elements
 
 var totalFruit = function (tree) {
     let map = new Map(), max = -1

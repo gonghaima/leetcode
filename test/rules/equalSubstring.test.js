@@ -1,5 +1,5 @@
 // import equalSubstring from "../../src/rules/equalSubstring";
-import equalSubstring from "../../src/rules/equalSubstring/mine-not-all-cases";
+import equalSubstring from "../../src/rules/equalSubstring/mine";
 import { inputData, expected } from "../mock/equalSubstringData";
 
 // test("equalSubstring should return expected result for case1", () => {

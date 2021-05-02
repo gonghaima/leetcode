@@ -4,23 +4,22 @@
  * @return {number}
  */
 var shortestSubarray = function (A, K) {
-    let left = 0, currentTotal = null, shortest = -1;
+    let left = 0, currentTotal = null, shortest = Number.MAX_VALUE;
     for (let right = 0; right < A.length; right++) {
         if (currentTotal === null) currentTotal = 0;
         currentTotal += A[right];
         if (currentTotal < K) {
             continue;
-        } else if (currentTotal = K) {
-            shortest = Math.max(shortest, right - left + 1);
         } else {
-            while (currentTotal > K) {
-                currentTotal -= A[right];
+            while (currentTotal >= K) {
+                shortest = Math.min(shortest, right - left + 1);
+                currentTotal -= A[left];
                 left++;
             }
         }
 
     }
-    return shortest < 0 ? -1 : shortest;
+    return shortest === Number.MAX_VALUE ? -1 : shortest;
 };
 
 export default shortestSubarray;

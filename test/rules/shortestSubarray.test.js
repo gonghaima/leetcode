@@ -1,5 +1,6 @@
 
-import shortestSubarray from "../../src/rules/shortestSubarray";
+// import shortestSubarray from "../../src/rules/shortestSubarray";
+import shortestSubarray from "../../src/rules/shortestSubarray/index-v1";
 import { inputData, expected } from "../mock/shortestSubarrayData";
 
 test("shortestSubarray should return expected result for case1", () => {

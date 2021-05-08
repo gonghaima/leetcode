@@ -1,5 +1,6 @@
 
-import minSubArrayLen from "../../src/rules/minSubArrayLen";
+// import minSubArrayLen from "../../src/rules/minSubArrayLen";
+import minSubArrayLen from "../../src/rules/minSubArrayLen/slidingwindow";
 
 import { inputData, expected } from "../mock/minSubArrayLenData";
 

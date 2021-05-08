@@ -1,27 +1,57 @@
-# [209. Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/)
+# [239. Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)
 
-Medium
+Hard
 
-Given an array of positive integers nums and a positive integer target, return the minimal length of a contiguous subarray [numsl, numsl+1, ..., numsr-1, numsr] of which the sum is greater than or equal to target. If there is no such subarray, return 0 instead.
+You are given an array of integers nums, there is a sliding window of size k which is moving from the very left of the array to the very right. You can only see the k numbers in the window. Each time the sliding window moves right by one position.
+
+Return the max sliding window.
 
 Example 1:
 
 ```s
-Input: target = 7, nums = [2,3,1,2,4,3]
-Output: 2
-Explanation: The subarray [4,3] has the minimal length under the problem constraint.
+Input: nums = [1,3,-1,-3,5,3,6,7], k = 3
+Output: [3,3,5,5,6,7]
+Explanation: 
+Window position                Max
+---------------               -----
+[1  3  -1] -3  5  3  6  7       3
+ 1 [3  -1  -3] 5  3  6  7       3
+ 1  3 [-1  -3  5] 3  6  7       5
+ 1  3  -1 [-3  5  3] 6  7       5
+ 1  3  -1  -3 [5  3  6] 7       6
+ 1  3  -1  -3  5 [3  6  7]      7
 ```
 
 Example 2:
 
 ```s
-Input: target = 4, nums = [1,4,4]
-Output: 1
+Input: nums = [1], k = 1
+Output: [1]
 ```
 
 Example 3:
 
 ```s
-Input: target = 11, nums = [1,1,1,1,1,1,1,1]
-Output: 0
+Input: nums = [1,-1], k = 1
+Output: [1,-1]
 ```
+
+Example 4:
+
+```s
+Input: nums = [9,11], k = 2
+Output: [11]
+```
+
+Example 5:
+
+```s
+Input: nums = [4,-2], k = 2
+Output: [4]
+```
+
+Constraints:
+
+- 1 <= nums.length <= 105
+- -104 <= nums[i] <= 104
+- 1 <= k <= nums.length

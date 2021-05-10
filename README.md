@@ -75,3 +75,4 @@ Identify if problems talks about finding groups or components.
 - [862. Shortest Subarray with Sum at Least K](https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/) => [shortestSubarray](./src/rules/shortestSubarray/index.js)
 - [209. Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/) => [minSubArrayLen](./src/rules/minSubArrayLen/index.js)
 - [239. Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)=> [maxSlidingWindow](./src/rules/maxSlidingWindow/index.js)
+- [76. Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)=> [minWindow](./src/rules/minWindow/index.js)

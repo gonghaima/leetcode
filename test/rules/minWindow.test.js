@@ -21,3 +21,9 @@ test("minWindow should return expected result for case3", () => {
   expect(result).toEqual(expected.case3);
 });
 
+test("minWindow should return expected result for case4", () => {
+  const { s, t } = inputData.case4;
+  const result = minWindow(s, t);
+  expect(result).toEqual(expected.case4);
+});
+

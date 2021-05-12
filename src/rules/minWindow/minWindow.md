@@ -9,7 +9,7 @@ Note that If there is such a window, it is guaranteed that there will always be 
 Example 1:
 
 ```s
-Input: s = "ADOBECODEBANC", t = "ABC"
+Input: s = "A DOBECODEBA NC", t = "ABC"
 Output: "BANC"
 ```
 

@@ -3,6 +3,14 @@
  * @param {string} t
  * @return {string}
  */
+
+/**********************************************************************************************************
+ * Runtime: 120 ms, faster than 27.51% of JavaScript online submissions for Minimum Window Substring.     *
+ * Memory Usage: 43.4 MB, less than 27.41% of JavaScript online submissions for Minimum Window Substring. *
+ **********************************************************************************************************/
+
+// sliding window
+
 var minWindow = function (s, t) {
     // tracking character paramter, min
     let min = [0, Number.MAX_SAFE_INTEGER], left = 0;
@@ -28,22 +36,12 @@ var minWindow = function (s, t) {
             min = newGreater ? min : [left, right];
             const leftEl = s[left];
 
-            // if (currentWindow.get(leftEl) > 1) currentWindow.set(leftEl, currentWindow.get(leftEl) - 1);
-            // else currentWindow.delete(leftEl);
-
-            // if (tTrack.has(leftEl) && !currentWindow.has(leftEl)) {
-            //     remaining.set(leftEl, 1);
-            // }
-
-            // if (currentWindow.get(leftEl) > 1) currentWindow.set(leftEl, currentWindow.get(leftEl) - 1);
-            // else currentWindow.delete(leftEl);
-
-            if (tTrack.has(leftEl)) {
+            if (tTrack.has(leftEl) && currentWindow.get(leftEl) === tTrack.get(leftEl)) {
                 remaining.set(leftEl, 1);
-                if (currentWindow.get(leftEl) > 1) currentWindow.set(leftEl, currentWindow.get(leftEl) - 1);
-                else currentWindow.delete(leftEl);
             }
 
+            if (currentWindow.get(leftEl) > 1) currentWindow.set(leftEl, currentWindow.get(leftEl) - 1);
+            else currentWindow.delete(leftEl);
             left++;
         }
 

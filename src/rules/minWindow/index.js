@@ -28,11 +28,20 @@ var minWindow = function (s, t) {
             min = newGreater ? min : [left, right];
             const leftEl = s[left];
 
-            if (currentWindow.get(leftEl) > 1) currentWindow.set(leftEl, currentWindow.get(leftEl) - 1);
-            else currentWindow.delete(leftEl);
+            // if (currentWindow.get(leftEl) > 1) currentWindow.set(leftEl, currentWindow.get(leftEl) - 1);
+            // else currentWindow.delete(leftEl);
 
-            if (tTrack.has(leftEl) && !currentWindow.has(leftEl)) {
+            // if (tTrack.has(leftEl) && !currentWindow.has(leftEl)) {
+            //     remaining.set(leftEl, 1);
+            // }
+
+            // if (currentWindow.get(leftEl) > 1) currentWindow.set(leftEl, currentWindow.get(leftEl) - 1);
+            // else currentWindow.delete(leftEl);
+
+            if (tTrack.has(leftEl)) {
                 remaining.set(leftEl, 1);
+                if (currentWindow.get(leftEl) > 1) currentWindow.set(leftEl, currentWindow.get(leftEl) - 1);
+                else currentWindow.delete(leftEl);
             }
 
             left++;

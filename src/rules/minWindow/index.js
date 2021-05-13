@@ -9,7 +9,7 @@
  * Memory Usage: 43.4 MB, less than 27.41% of JavaScript online submissions for Minimum Window Substring. *
  **********************************************************************************************************/
 
-// sliding window
+// sliding window - my solution
 
 var minWindow = function (s, t) {
     // tracking character paramter, min

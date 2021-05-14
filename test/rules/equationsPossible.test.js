@@ -1,5 +1,5 @@
-import equationsPossible from "../../src/rules/equationsPossible";
-// import equationsPossible from "../../src/rules/equationsPossible/graph_coloring_mine";
+// import equationsPossible from "../../src/rules/equationsPossible";
+import equationsPossible from "../../src/rules/equationsPossible/unionFind";
 
 import { inputData, expected } from "../mock/equationsPossibleData";
 

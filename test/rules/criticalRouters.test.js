@@ -1,4 +1,4 @@
-import criticalRouters from "../../src/rules/criticalRouters";
+import criticalRouters from "../../src/rules/aCriticalRouters";
 import { inputData, expected } from "../mock/criticalRoutersData";
 
 test("criticalRouters should return correct path number for case 1", () => {

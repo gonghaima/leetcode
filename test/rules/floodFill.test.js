@@ -1,6 +1,6 @@
 // import floodFill from "../../src/rules/floodFill/bfs";
 import floodFill from "../../src/rules/floodFill/dfs";
-import floodFill from "../../src/rules/floodFill/dfs-v1";
+// import floodFill from "../../src/rules/floodFill/dfs-v1";
 import { inputData, expected } from "../mock/floodFillData";
 
 test("floodFill should return correct answer - case 1", () => {

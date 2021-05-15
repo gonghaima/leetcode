@@ -1,13 +1,13 @@
 export const inputData = {
-  case1: { s: "ADOBECODEBANC", t: "ABC" },
-  case2: { s: "a", t: "a" },
-  case3: { s: "a", t: "aa" },
-  case4: { s: "aa", t: "aa" },
+  case1: "12",
+  case2: "226",
+  case3: "0",
+  case4: "06",
 };
 
 export const expected = {
-  case1: "BANC",
-  case2: "a",
-  case3: "",
-  case4: "aa",
+  case1: 2,
+  case2: 3,
+  case3: 0,
+  case4: 0,
 };

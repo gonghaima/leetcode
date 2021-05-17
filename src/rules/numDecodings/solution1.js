@@ -30,7 +30,6 @@ var numDecodings = function (s, i = 0, memo = {}) {
             dp[i] += dp[i - 2];
         }
     }
-    console.log(dp);
     return dp[s.length];
 };
 

@@ -1,5 +1,6 @@
 
-import numDecodings from "../../src/rules/numDecodings";
+// import numDecodings from "../../src/rules/numDecodings";
+import numDecodings from "../../src/rules/numDecodings/solution1";
 
 import { inputData, expected } from "../mock/minWindowData";
 
@@ -22,4 +23,10 @@ test("numDecodings should return expected result for case4", () => {
   const result = numDecodings(inputData.case4);
   expect(result).toEqual(expected.case4);
 });
+
+test("numDecodings should return expected result for case5", () => {
+  const result = numDecodings(inputData.case5);
+  expect(result).toEqual(expected.case5);
+});
+
 

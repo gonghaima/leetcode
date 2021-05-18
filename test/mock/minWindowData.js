@@ -3,6 +3,7 @@ export const inputData = {
   case2: "226",
   case3: "0",
   case4: "06",
+  case5: "110"
 };
 
 export const expected = {
@@ -10,4 +11,5 @@ export const expected = {
   case2: 3,
   case3: 0,
   case4: 0,
+  case5: 1,
 };

@@ -8,6 +8,10 @@
  * Memory Usage: 38.2 MB, less than 71.77% of JavaScript online submissions for Unique Binary Search Trees. *
  ************************************************************************************************************/
 
+// current number  = leftPossibility * rightPossibility
+
+// https://leetcode.com/problems/unique-binary-search-trees/discuss/31666/DP-Solution-in-6-lines-with-explanation.-F(i-n)-G(i-1)-*-G(n-i)
+
 var numTrees = function (n) {
     const trees = (lo, hi) => {
         if (lo >= hi) return 1;

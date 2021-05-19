@@ -82,3 +82,4 @@ Identify if problems talks about finding groups or components.
 ### Linear DP
 
 - [91. Decode Ways](https://leetcode.com/problems/decode-ways/) => [numDecodings](./src/rules/numDecodings/index.js)
+- [96. Unique Binary Search Trees](https://leetcode.com/problems/unique-binary-search-trees/) => [numTrees](./src/rules/numTrees/index.js)

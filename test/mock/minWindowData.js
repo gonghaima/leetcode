@@ -1,9 +1,9 @@
 export const inputData = {
-  case1: 3,
-  case2: 1
+  case1: { s: "ADOBECODEBANC", t: "ABC" },
+  case2: { s: "a", t: "a" }
 };
 
 export const expected = {
-  case1: 5,
-  case2: 1
+  case1: "BANC",
+  case2: "a"
 };

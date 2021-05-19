@@ -15,15 +15,3 @@ test("minWindow should return expected result for case2", () => {
   expect(result).toEqual(expected.case2);
 });
 
-test("minWindow should return expected result for case3", () => {
-  const { s, t } = inputData.case3;
-  const result = minWindow(s, t);
-  expect(result).toEqual(expected.case3);
-});
-
-test("minWindow should return expected result for case4", () => {
-  const { s, t } = inputData.case4;
-  const result = minWindow(s, t);
-  expect(result).toEqual(expected.case4);
-});
-

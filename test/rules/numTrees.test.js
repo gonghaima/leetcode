@@ -1,5 +1,6 @@
 
-import numTrees from "../../src/rules/numTrees";
+// import numTrees from "../../src/rules/numTrees";
+import numTrees from "../../src/rules/numTrees/dp-memo";
 
 import { inputData, expected } from "../mock/minWindowData";
 

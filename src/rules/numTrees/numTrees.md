@@ -21,3 +21,5 @@ Output: 1
 Constraints:
 
 - 1 <= n <= 19
+
+hint: ( Catalan number factorial equation: 2n!/(n+1)!n!)

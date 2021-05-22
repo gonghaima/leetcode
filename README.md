@@ -21,7 +21,7 @@ Identify if problems talks about finding groups or components.
 
 - [130. Surrounded Regions](https://leetcode.com/problems/surrounded-regions/) => [solve](./src/rules/surroundedRegions/index.js)
 - 1020. [Number of Enclaves](https://leetcode.com/problems/number-of-enclaves/) => [numEnclaves](./src/rules/numEnclaves/index.js)
-  
+
 #### DFS - Time taken to reach all nodes or share information to all graph nodes
 
 - [1376. Time Needed to Inform All Employees](https://leetcode.com/problems/time-needed-to-inform-all-employees/) => [solve](./src/rules/numOfMinutes/index.js)
@@ -82,4 +82,5 @@ Identify if problems talks about finding groups or components.
 ### Linear DP
 
 - [91. Decode Ways](https://leetcode.com/problems/decode-ways/) => [numDecodings](./src/rules/numDecodings/index.js)
-- [96. Unique Binary Search Trees](https://leetcode.com/problems/unique-binary-search-trees/) => [numTrees](./src/rules/numTrees/index.js)
+- [96. Unique Binary Search Trees](https://leetcode.com/problems/unique-binary-search-trees/) =>(./src/rules/numTrees/index.js)
+- [121. Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) =>[maxProfit](./src/rules/maxProfit/index.js)

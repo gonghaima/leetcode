@@ -1,4 +1,4 @@
-export default nums => {
+const maxSubArray = function (nums) {
   let maxVal = null;
   let numsLength = nums.length;
   for (let i = 0; i < numsLength; i++) {
@@ -19,3 +19,5 @@ export default nums => {
   }
   return maxVal;
 };
+
+export default maxSubArray;

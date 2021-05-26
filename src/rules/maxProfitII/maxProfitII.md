@@ -1,4 +1,6 @@
-# Best Time to Buy and Sell Stock II
+# [Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/)
+
+Easy
 
 Say you have an array for which the ith element is the price of a given stock on day i.
 
@@ -35,3 +37,8 @@ Output: 0
 ```
 
 Explanation: In this case, no transaction is done, i.e. max profit = 0.
+
+Constraints:
+
+- 1 <= prices.length <= 3 * 104
+- 0 <= prices[i] <= 104

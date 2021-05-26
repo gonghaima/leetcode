@@ -1,4 +1,7 @@
-/** Simple One Pass */
+/********************************************************************************************************************
+ * Runtime: 84 ms, faster than 54.28% of JavaScript online submissions for Best Time to Buy and Sell Stock II.      *
+ * Memory Usage: 39.3 MB, less than 50.21% of JavaScript online submissions for Best Time to Buy and Sell Stock II. *
+ ********************************************************************************************************************/
 
 export default prices => {
   let mp = 0;

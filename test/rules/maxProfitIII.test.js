@@ -1,4 +1,5 @@
-import maxProfitIII from "../../src/rules/maxProfitIII";
+// import maxProfitIII from "../../src/rules/maxProfitIII";
+import maxProfitIII from "../../src/rules/maxProfitIII/recursion-memo";
 import { inputData, expected } from "../mock/maxProfitIIIData";
 
 test("maxProfitIII should return max profit from case1", () => {

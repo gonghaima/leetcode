@@ -1,5 +1,5 @@
 import maxProfitCooldown from "../../src/rules/maxProfitCooldown";
-import { inputData, expected } from "../mock/maxProfitIVData";
+import { inputData, expected } from "../mock/maxProfitCooldownData";
 
 test("maxProfitCooldown should return max profit from case1", () => {
   const result = maxProfitCooldown(inputData.case1);

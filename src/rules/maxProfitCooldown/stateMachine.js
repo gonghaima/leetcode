@@ -3,11 +3,16 @@
  * @return {number}
  */
 
+/*****************************************************************************************************************************
+ * Runtime: 72 ms, faster than 98.51% of JavaScript online submissions for Best Time to Buy and Sell Stock with Cooldown.    *
+ * Memory Usage: 41 MB, less than 20.90% of JavaScript online submissions for Best Time to Buy and Sell Stock with Cooldown. *
+ *****************************************************************************************************************************/
 
+// state machine
 // https://www.youtube.com/watch?v=4wNXkhAky3s
 
 var maxProfitCooldown = function (prices) {
-  let n = prices.size();
+  let n = prices.length;
   if (n <= 1)
     return 0;
   let noStock = new Array(prices.length);

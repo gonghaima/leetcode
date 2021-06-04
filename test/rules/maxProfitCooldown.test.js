@@ -1,4 +1,5 @@
-import maxProfitCooldown from "../../src/rules/maxProfitCooldown";
+// import maxProfitCooldown from "../../src/rules/maxProfitCooldown";
+import maxProfitCooldown from "../../src/rules/maxProfitCooldown/rec-memo";
 import { inputData, expected } from "../mock/maxProfitCooldownData";
 
 test("maxProfitCooldown should return max profit from case1", () => {

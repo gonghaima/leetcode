@@ -86,5 +86,6 @@ Identify if problems talks about finding groups or components.
 - [121. Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) =>[maxProfit](./src/rules/maxProfit/index.js) kadane's (max subArray of currentIndex is either current item value, or currentItemValue + maxSubArrValueTillPreviousIndex)
 - [122. Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/) =>[maxProfitII](./src/rules/maxProfitII/index.js)
 - [123. Best Time to Buy and Sell Stock III](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/) =>[maxProfitIII](./src/rules/maxProfitIII/index.js)
-- [188. Best Time to Buy and Sell Stock IV](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/)
+- [188. Best Time to Buy and Sell Stock IV](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/)=>[maxProfitIV](./src/rules/maxProfitIV/index.js)
+- [714. Best Time to Buy and Sell Stock with Transaction Fee](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/)=>[maxProfitTransaction](./src/rules/maxProfitTransaction/index.js)
 - [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/) =>[maxSubArray](./src/rules/maxSubArray/index.js)

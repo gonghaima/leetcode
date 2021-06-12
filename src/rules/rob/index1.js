@@ -16,7 +16,6 @@ var rob = function (nums) {
   for (let i = 1; i < nums.length; i++) {
     const prevRob = rob;
     rob = noRob + nums[i];
-    noRob = Math.max(noRob, prevRob);
     noRob = noRob > prevRob ? noRob : prevRob;
   }
   const result = rob > noRob ? rob : noRob;

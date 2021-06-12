@@ -4,8 +4,8 @@
  */
 
 /**********************************************************************************************
- *   RUNTIME: 80 MS, FASTER THAN 54.77% OF JAVASCRIPT ONLINE SUBMISSIONS FOR HOUSE ROBBER.    *
- * MEMORY USAGE: 37.8 MB, LESS THAN 96.28% OF JAVASCRIPT ONLINE SUBMISSIONS FOR HOUSE ROBBER. *
+ *   RUNTIME: 72 MS, FASTER THAN 92.83% OF JAVASCRIPT ONLINE SUBMISSIONS FOR HOUSE ROBBER.    *
+ * MEMORY USAGE: 38.2 MB, LESS THAN 81.42% OF JAVASCRIPT ONLINE SUBMISSIONS FOR HOUSE ROBBER. *
  **********************************************************************************************/
 
 // it seems faster without Math.max

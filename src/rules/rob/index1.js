@@ -4,9 +4,11 @@
  */
 
 /**********************************************************************************************
- *   RUNTIME: 92 MS, FASTER THAN 15.18% OF JAVASCRIPT ONLINE SUBMISSIONS FOR HOUSE ROBBER.    *
- * MEMORY USAGE: 37.7 MB, LESS THAN 99.55% OF JAVASCRIPT ONLINE SUBMISSIONS FOR HOUSE ROBBER. *
+ *   RUNTIME: 80 MS, FASTER THAN 54.77% OF JAVASCRIPT ONLINE SUBMISSIONS FOR HOUSE ROBBER.    *
+ * MEMORY USAGE: 37.8 MB, LESS THAN 96.28% OF JAVASCRIPT ONLINE SUBMISSIONS FOR HOUSE ROBBER. *
  **********************************************************************************************/
+
+// it seems faster without Math.max
 
 var rob = function (nums) {
   let noRob = 0;

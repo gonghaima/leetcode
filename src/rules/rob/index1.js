@@ -4,9 +4,11 @@
  */
 
 /**********************************************************************************************
- *   RUNTIME: 92 MS, FASTER THAN 15.18% OF JAVASCRIPT ONLINE SUBMISSIONS FOR HOUSE ROBBER.    *
- * MEMORY USAGE: 37.7 MB, LESS THAN 99.55% OF JAVASCRIPT ONLINE SUBMISSIONS FOR HOUSE ROBBER. *
+ *   RUNTIME: 72 MS, FASTER THAN 92.83% OF JAVASCRIPT ONLINE SUBMISSIONS FOR HOUSE ROBBER.    *
+ * MEMORY USAGE: 38.2 MB, LESS THAN 81.42% OF JAVASCRIPT ONLINE SUBMISSIONS FOR HOUSE ROBBER. *
  **********************************************************************************************/
+
+// it seems faster without Math.max
 
 var rob = function (nums) {
   let noRob = 0;
@@ -14,7 +16,6 @@ var rob = function (nums) {
   for (let i = 1; i < nums.length; i++) {
     const prevRob = rob;
     rob = noRob + nums[i];
-    noRob = Math.max(noRob, prevRob);
     noRob = noRob > prevRob ? noRob : prevRob;
   }
   const result = rob > noRob ? rob : noRob;

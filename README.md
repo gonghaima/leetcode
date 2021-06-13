@@ -89,4 +89,5 @@ Identify if problems talks about finding groups or components.
 - [188. Best Time to Buy and Sell Stock IV](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/)=>[maxProfitIV](./src/rules/maxProfitIV/index.js)
 - [714. Best Time to Buy and Sell Stock with Transaction Fee](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/)=>[maxProfitTransaction](./src/rules/maxProfitTransaction/index.js)
 - [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/) =>[maxSubArray](./src/rules/maxSubArray/index.js)
-- [198. House Robber](https://leetcode.com/problems/house-robber/) =>[rod](./src/rules/rod/index.js)
+- [198. House Robber](https://leetcode.com/problems/house-robber/) =>[rob](./src/rules/rob/index.js)
+- [279. Perfect Squares](https://leetcode.com/problems/perfect-squares/)=>[numSquares](./src/rules/numSquares/index.js)

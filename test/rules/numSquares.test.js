@@ -1,4 +1,4 @@
-import numSquares from "../../src/rules/numSquares";
+import numSquares from "../../src/rules/numSquares/bfs";
 import { inputData, expected } from "../mock/numSquaresData";
 
 test("numSquares should return correct result for case1", () => {

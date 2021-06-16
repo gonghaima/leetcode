@@ -4,6 +4,7 @@ export const inputData = {
   case3: {coins : [1], amount : 0},
   case4: {coins : [1], amount : 1},
   case5: {coins : [1], amount : 2},
+  case6: {coins : [1,2,5], amount : 100},
 };
 
 export const expected = {
@@ -12,4 +13,5 @@ export const expected = {
   case3: 0,
   case4: 1,
   case5: 2,
+  case6: 20,
 };

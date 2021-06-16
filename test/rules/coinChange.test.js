@@ -30,3 +30,9 @@ test("coinChange should return correct result for case5", () => {
   const result = coinChange(coins, amount);
   expect(result).toEqual(expected.case5);
 });
+
+test("coinChange should return correct result for case6", () => {
+  const {coins, amount} = inputData.case6;
+  const result = coinChange(coins, amount);
+  expect(result).toEqual(expected.case6);
+});

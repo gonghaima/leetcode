@@ -1,4 +1,4 @@
-import coinChange from "../../src/rules/coinChange/dp";
+import coinChange from "../../src/rules/coinChange/dp-bottomup";
 import { inputData, expected } from "../mock/coinChangeData";
 
 test("coinChange should return correct result for case1", () => {

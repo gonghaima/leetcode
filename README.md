@@ -93,3 +93,4 @@ Identify if problems talks about finding groups or components.
 - [279. Perfect Squares](https://leetcode.com/problems/perfect-squares/)=>[numSquares](./src/rules/numSquares/index.js)
 - [322. Coin Change](https://leetcode.com/problems/coin-change/)=>[coinChange](./src/rules/coinChange/index.js)
 - [343. Integer Break](https://leetcode.com/problems/integer-break/) => [integerBreak](./src/rules/integerBreak/index.js)
+- [357. Count Numbers with Unique Digits](https://leetcode.com/problems/count-numbers-with-unique-digits/) => [countNumbersWithUniqueDigits](./src/rules/countNumbersWithUniqueDigits/index.js)

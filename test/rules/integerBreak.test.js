@@ -1,4 +1,4 @@
-import integerBreak from "../../src/rules/integerBreak";
+import integerBreak from "../../src/rules/integerBreak/dp";
 import { inputData, expected } from "../mock/integerBreakData";
 
 test("integerBreak should return correct result for case1", () => {

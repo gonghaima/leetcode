@@ -1,36 +1,42 @@
-A sequence of numbers is called a wiggle sequence if the differences between successive numbers strictly alternate between positive and negative. The first difference (if one exists) may be either positive or negative. A sequence with fewer than two elements is trivially a wiggle sequence.
+# [376. Wiggle Subsequence](https://leetcode.com/problems/wiggle-subsequence/)
 
-For example, [1,7,4,9,2,5] is a wiggle sequence because the differences (6,-3,5,-7,3) are alternately positive and negative. In contrast, [1,4,7,2,5] and [1,7,4,5,5] are not wiggle sequences, the first because its first two differences are positive and the second because its last difference is zero.
+Medium
 
-Given a sequence of integers, return the length of the longest subsequence that is a wiggle sequence. A subsequence is obtained by deleting some number of elements (eventually, also zero) from the original sequence, leaving the remaining elements in their original order.
+A wiggle sequence is a sequence where the differences between successive numbers strictly alternate between positive and negative. The first difference (if one exists) may be either positive or negative. A sequence with one element and a sequence with two non-equal elements are trivially wiggle sequences.
+
+For example, [1, 7, 4, 9, 2, 5] is a wiggle sequence because the differences (6, -3, 5, -7, 3) alternate between positive and negative.
+In contrast, [1, 4, 7, 2, 5] and [1, 7, 4, 5, 5] are not wiggle sequences. The first is not because its first two differences are positive, and the second is not because its last difference is zero.
+A subsequence is obtained by deleting some elements (possibly zero) from the original sequence, leaving the remaining elements in their original order.
+
+Given an integer array nums, return the length of the longest wiggle subsequence of nums.
+
+ 
 
 Example 1:
 
-Input: [1,7,4,9,2,5]
+```
+Input: nums = [1,7,4,9,2,5]
 Output: 6
-Explanation: The entire sequence is a wiggle sequence.
+Explanation: The entire sequence is a wiggle sequence with differences (6, -3, 5, -7, 3).
+```
+
 Example 2:
 
-Input: [1,17,5,10,13,15,10,5,16,8]
+```
+Input: nums = [1,17,5,10,13,15,10,5,16,8]
 Output: 7
-Explanation: There are several subsequences that achieve this length. One is [1,17,10,13,10,16,8].
+Explanation: There are several subsequences that achieve this length.
+One is [1, 17, 10, 13, 10, 16, 8] with differences (16, -7, 3, -3, 6, -8).
+```
+
 Example 3:
 
-Input: [1,2,3,4,5,6,7,8,9]
+```
+Input: nums = [1,2,3,4,5,6,7,8,9]
 Output: 2
-Follow up:
-Can you do it in O(n) time?
+```
 
+Constraints:
 
-
-Solution explaination
-
-Approach #4 Space-Optimized Dynamic Programming [Accepted]
-Algorithm
-
-This approach relies on the same concept as Approach #3. But we can observe that in the DP approach, for updating elements up[i]up[i] and down[i]down[i], we need only the elements up[i-1]up[i−1] and down[i-1]down[i−1]. Thus, we can save space by not using the whole array, but only the last elements.
-
-Complexity Analysis
-
-Time complexity : O(n). Only one pass over the array length.
-Space complexity : O(1). Constant space is used.
+- 1 <= nums.length <= 1000
+- 0 <= nums[i] <= 1000

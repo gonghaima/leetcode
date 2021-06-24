@@ -94,3 +94,4 @@ Identify if problems talks about finding groups or components.
 - [322. Coin Change](https://leetcode.com/problems/coin-change/)=>[coinChange](./src/rules/coinChange/index.js)
 - [343. Integer Break](https://leetcode.com/problems/integer-break/) => [integerBreak](./src/rules/integerBreak/index.js)
 - [357. Count Numbers with Unique Digits](https://leetcode.com/problems/count-numbers-with-unique-digits/) => [countNumbersWithUniqueDigits](./src/rules/countNumbersWithUniqueDigits/index.js)
+- [376. Wiggle Subsequence](https://leetcode.com/problems/wiggle-subsequence/) =>  [wiggleMaxLength](./src/rules/wiggleMaxLength/index.js)

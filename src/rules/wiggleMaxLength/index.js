@@ -1,4 +1,10 @@
-export default nums => {
+
+/****************************************************************************************************
+ *   RUNTIME: 68 MS, FASTER THAN 96.61% OF JAVASCRIPT ONLINE SUBMISSIONS FOR WIGGLE SUBSEQUENCE.    *
+ * MEMORY USAGE: 38.9 MB, LESS THAN 10.17% OF JAVASCRIPT ONLINE SUBMISSIONS FOR WIGGLE SUBSEQUENCE. *
+ ****************************************************************************************************/
+
+const wiggleMaxLength = nums => {
   if (nums.length < 2) return nums.length;
   var down = 1,
     up = 1;
@@ -8,3 +14,5 @@ export default nums => {
   }
   return Math.max(down, up);
 };
+
+export default wiggleMaxLength;

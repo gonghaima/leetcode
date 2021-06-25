@@ -4,6 +4,8 @@
  * MEMORY USAGE: 38.9 MB, LESS THAN 10.17% OF JAVASCRIPT ONLINE SUBMISSIONS FOR WIGGLE SUBSEQUENCE. *
  ****************************************************************************************************/
 
+// greedy
+
 const wiggleMaxLength = nums => {
   if (nums.length < 2) return nums.length;
   var down = 1,

@@ -1,4 +1,4 @@
-import wiggleMaxLength, { isWiggle } from "../../src/rules/wiggleMaxLength";
+import wiggleMaxLength, { isWiggle } from "../../src/rules/wiggleMaxLength/dp";
 import {
   inputData,
   expected,

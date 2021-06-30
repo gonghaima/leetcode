@@ -5,6 +5,7 @@
  * MEMORY USAGE: 40.9 MB, LESS THAN 84.28% OF JAVASCRIPT ONLINE SUBMISSIONS FOR PARTITION EQUAL SUBSET SUM. *
  ************************************************************************************************************/
 
+// [JS] 0/1 Knapsack DP
 //https://leetcode.com/problems/partition-equal-subset-sum/submissions/
 
 var canPartition = function (nums) {

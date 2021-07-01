@@ -1,4 +1,4 @@
-import canPartition from "../../src/rules/canPartition";
+import canPartition from "../../src/rules/canPartition/dp1";
 import { inputData, expected } from "../mock/canPartitionData";
 
 test("canPartition should return correct result for case1", () => {

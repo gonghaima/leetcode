@@ -95,3 +95,5 @@ Identify if problems talks about finding groups or components.
 - [343. Integer Break](https://leetcode.com/problems/integer-break/) => [integerBreak](./src/rules/integerBreak/index.js)
 - [357. Count Numbers with Unique Digits](https://leetcode.com/problems/count-numbers-with-unique-digits/) => [countNumbersWithUniqueDigits](./src/rules/countNumbersWithUniqueDigits/index.js)
 - [376. Wiggle Subsequence](https://leetcode.com/problems/wiggle-subsequence/) =>  [wiggleMaxLength](./src/rules/wiggleMaxLength/index.js)
+- [416. Partition Equal Subset Sum](https://leetcode.com/problems/partition-equal-subset-sum/) => [canPartition](./src/rules/canPartition/index.js)
+- [698. Partition to K Equal Sum Subsets](https://leetcode.com/problems/partition-to-k-equal-sum-subsets/) => [canPartitionKSubsets](./src/rules/canPartitionKSubsets/index.js)

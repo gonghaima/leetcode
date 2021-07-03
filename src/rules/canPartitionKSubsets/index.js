@@ -9,6 +9,12 @@
  * MEMORY USAGE: 39.7 MB, LESS THAN 27.89% OF JAVASCRIPT ONLINE SUBMISSIONS FOR PARTITION TO K EQUAL SUM SUBSETS. *
  ******************************************************************************************************************/
 
+// with enhancement
+/******************************************************************************************************************
+ *   RUNTIME: 68 MS, FASTER THAN 99.47% OF JAVASCRIPT ONLINE SUBMISSIONS FOR PARTITION TO K EQUAL SUM SUBSETS.    *
+ * MEMORY USAGE: 39.7 MB, LESS THAN 27.89% OF JAVASCRIPT ONLINE SUBMISSIONS FOR PARTITION TO K EQUAL SUM SUBSETS. *
+ ******************************************************************************************************************/
+
 // backtracking
 
 // https://leetcode.com/problems/partition-to-k-equal-sum-subsets/discuss/608396/Intuitive-JavaScript-Solution-with-Backgracking
@@ -30,6 +36,7 @@ var canPartitionKSubsets = function (nums, k) {
         }
         // when a subset is found, we launch another search to find the 
         // remaining subsets from the unvisited elements. 
+        if (currentSum > target) return false; // enhancement
         if (currentSum === target) {
             return canPartition(0, numberOfSubsets - 1, 0);
         }

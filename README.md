@@ -97,3 +97,4 @@ Identify if problems talks about finding groups or components.
 - [376. Wiggle Subsequence](https://leetcode.com/problems/wiggle-subsequence/) =>  [wiggleMaxLength](./src/rules/wiggleMaxLength/index.js)
 - [416. Partition Equal Subset Sum](https://leetcode.com/problems/partition-equal-subset-sum/) => [canPartition](./src/rules/canPartition/index.js)
 - [698. Partition to K Equal Sum Subsets](https://leetcode.com/problems/partition-to-k-equal-sum-subsets/) => [canPartitionKSubsets](./src/rules/canPartitionKSubsets/index.js)
+- [338. Counting Bits](https://leetcode.com/problems/counting-bits/) =>  [countBits](./src/rules/countBits/index.js)

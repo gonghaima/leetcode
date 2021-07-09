@@ -1,4 +1,4 @@
-import countBits from "../../src/rules/countBits/dp";
+import countBits from "../../src/rules/countBits/twoPointers";
 import { inputData, expected } from "../mock/countBitsData";
 
 test("countBits should return correct result for case1", () => {

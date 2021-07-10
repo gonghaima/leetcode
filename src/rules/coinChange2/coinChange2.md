@@ -12,7 +12,7 @@ The answer is guaranteed to fit into a signed 32-bit integer.
 
 ## Example 1:
 
-```
+```s
 Input: amount = 5, coins = [1,2,5]
 Output: 4
 Explanation: there are four ways to make up the amount:
@@ -24,7 +24,7 @@ Explanation: there are four ways to make up the amount:
 
 ## Example 2:
 
-```
+```s
 Input: amount = 3, coins = [2]
 Output: 0
 Explanation: the amount of 3 cannot be made up just with coins of 2.
@@ -32,7 +32,7 @@ Explanation: the amount of 3 cannot be made up just with coins of 2.
 
 ## Example 3:
 
-```
+```s
 Input: amount = 10, coins = [10]
 Output: 1
 ```

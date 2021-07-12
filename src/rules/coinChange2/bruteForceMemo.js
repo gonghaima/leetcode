@@ -29,10 +29,10 @@ var coinChange2 = function (amount, coins) {
         if (dp[currentIndex][amount] != null)
             return dp[currentIndex][amount];
 
-        // Recursive call after selecting the coin at the currentIndex
+        // Recursive call after excluding the coin at the currentIndex
         const sum1 = changeFrom(amount - coins[currentIndex], coins, currentIndex);
 
-        // Recursive call after excluding the coin at the currentIndex
+        // Recursive call after selecting the coin at the currentIndex
         const sum2 = changeFrom(amount, coins, currentIndex + 1);
 
         dp[currentIndex][amount] = sum1 + sum2;

@@ -1,4 +1,4 @@
-import coinChange2 from "../../src/rules/coinChange2/bruteForceMemo";
+import coinChange2 from "../../src/rules/coinChange2/dp-bottom-up";
 import { inputData, expected } from "../mock/coinChange2Data";
 
 test("coinChange2 should return correct result for case1", () => {

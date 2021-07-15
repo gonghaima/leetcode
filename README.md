@@ -100,3 +100,4 @@ Identify if problems talks about finding groups or components.
 - [698. Partition to K Equal Sum Subsets](https://leetcode.com/problems/partition-to-k-equal-sum-subsets/) => [canPartitionKSubsets](./src/rules/canPartitionKSubsets/index.js)
 - [338. Counting Bits](https://leetcode.com/problems/counting-bits/) =>  [countBits](./src/rules/countBits/index.js)
 - [551. Student Attendance Record I](https://leetcode.com/problems/student-attendance-record-i/) => [checkRecord](./src/rules/checkRecord/index.js)
+- [552. Student Attendance Record II](https://leetcode.com/problems/student-attendance-record-ii/) => [checkRecord2](./src/rules/checkRecord2/index.js)

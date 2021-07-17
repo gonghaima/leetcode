@@ -1,4 +1,4 @@
-import checkRecord2 from "../../src/rules/checkRecord2";
+import checkRecord2 from "../../src/rules/checkRecord2/topdown";
 import { inputData, expected } from "../mock/checkRecord2Data";
 
 test("checkRecord2 should return correct result for case1", () => {

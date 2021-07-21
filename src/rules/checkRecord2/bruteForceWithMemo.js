@@ -3,6 +3,8 @@
  * @return {number}
  */
 
+// https://leetcode.com/problems/student-attendance-record-ii/discuss/650804/Evolve-from-brute-force-to-optimal
+
 // brute force - with memo - third test case still not passing
 
 var checkRecord2 = function (n) {

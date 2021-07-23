@@ -4,9 +4,11 @@
  */
 
 /**************************************************************************************************************
- *  Runtime: 2396 ms, faster than 14.29% of JavaScript online submissions for Student Attendance Record II.   *
- * Memory Usage: 81.1 MB, less than 14.29% of JavaScript online submissions for Student Attendance Record II. *
+ *  Runtime: 2296 ms, faster than 11.11% of JavaScript online submissions for Student Attendance Record II.   *
+ * Memory Usage: 81.2 MB, less than 11.11% of JavaScript online submissions for Student Attendance Record II. *
  **************************************************************************************************************/
+
+// topdown (O)n space
 
 // https://leetcode.com/problems/student-attendance-record-ii/discuss/650804/Evolve-from-brute-force-to-optimal
 

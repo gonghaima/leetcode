@@ -82,6 +82,7 @@ Identify if problems talks about finding groups or components.
 ### Linear DP
 
 - [91. Decode Ways](https://leetcode.com/problems/decode-ways/) => [numDecodings](./src/rules/numDecodings/index.js)
+- [639. Decode Ways II](https://leetcode.com/problems/decode-ways-ii/) => [numDecodings2](./src/rules/numDecodings2/index.js)
 - [96. Unique Binary Search Trees](https://leetcode.com/problems/unique-binary-search-trees/) =>(./src/rules/numTrees/index.js)
 - [121. Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) =>[maxProfit](./src/rules/maxProfit/index.js) kadane's (max subArray of currentIndex is either current item value, or currentItemValue + maxSubArrValueTillPreviousIndex)
 - [122. Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/) =>[maxProfitII](./src/rules/maxProfitII/index.js)

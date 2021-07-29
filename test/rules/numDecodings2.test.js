@@ -1,5 +1,5 @@
 
-import numDecodings2 from "../../src/rules/numDecodings2";
+import numDecodings2 from "../../src/rules/numDecodings2/dp";
 
 import { inputData, expected } from "../mock/numDecodings2Data";
 

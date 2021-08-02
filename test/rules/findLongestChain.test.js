@@ -1,5 +1,5 @@
 
-import findLongestChain from "../../src/rules/findLongestChain/slidingWindow";
+import findLongestChain from "../../src/rules/findLongestChain/bfs";
 
 import { inputData, expected } from "../mock/findLongestChainData";
 

@@ -103,3 +103,4 @@ Identify if problems talks about finding groups or components.
 - [551. Student Attendance Record I](https://leetcode.com/problems/student-attendance-record-i/) => [checkRecord](./src/rules/checkRecord/index.js)
 - [552. Student Attendance Record II](https://leetcode.com/problems/student-attendance-record-ii/) => [checkRecord2](./src/rules/checkRecord2/index.js)
 - [646. Maximum Length of Pair Chain](https://leetcode.com/problems/maximum-length-of-pair-chain/) => [findLongestChain](./src/rules/findLongestChain/index.js)
+- [740. Delete and Earn](https://leetcode.com/problems/delete-and-earn/) => [deleteAndEarn](./src/rules/deleteAndEarn/index.js)

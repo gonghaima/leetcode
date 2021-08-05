@@ -10,6 +10,8 @@
 
 // https://leetcode.com/problems/delete-and-earn/discuss/109895/JavaC%2B%2B-Clean-Code-with-Explanation
 
+// similar/reduce to https://leetcode.com/problems/house-robber/
+
 var deleteAndEarn = function (nums) {
     let n = 10001;
     let values = new Array(n).fill(0);

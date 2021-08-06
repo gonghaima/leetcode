@@ -1,5 +1,5 @@
 
-import deleteAndEarn from "../../src/rules/deleteAndEarn/dp";
+import deleteAndEarn from "../../src/rules/deleteAndEarn/dp1";
 
 import { inputData, expected } from "../mock/deleteAndEarnData";
 

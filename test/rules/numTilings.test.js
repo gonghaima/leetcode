@@ -1,5 +1,5 @@
 
-import numTilings from "../../src/rules/numTilings";
+import numTilings from "../../src/rules/numTilings/dp";
 
 import { inputData, expected } from "../mock/numTilingsData";
 

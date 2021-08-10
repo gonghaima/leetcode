@@ -105,3 +105,4 @@ Identify if problems talks about finding groups or components.
 - [646. Maximum Length of Pair Chain](https://leetcode.com/problems/maximum-length-of-pair-chain/) => [findLongestChain](./src/rules/findLongestChain/index.js)
 - [740. Delete and Earn](https://leetcode.com/problems/delete-and-earn/) => [deleteAndEarn](./src/rules/deleteAndEarn/index.js)
 - [790. Domino and Tromino Tiling](https://leetcode.com/problems/domino-and-tromino-tiling/) =>  [numTilings](./src/rules/numTilings/index.js)
+- [935. Knight Dialer](https://leetcode.com/problems/knight-dialer/) => [knightDialer](./src/rules/knightDialer/index.js)

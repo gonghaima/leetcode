@@ -1,5 +1,5 @@
 
-import knightDialer from "../../src/rules/knightDialer";
+import knightDialer from "../../src/rules/knightDialer/dp";
 
 import { inputData, expected } from "../mock/knightDialerData";
 

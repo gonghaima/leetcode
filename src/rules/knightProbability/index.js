@@ -5,58 +5,31 @@
  * @param {number} column
  * @return {number}
  */
+
+/******************************************************************************************************************
+ *   Runtime: 84 ms, faster than 94.55% of JavaScript online submissions for Knight Probability in Chessboard.    *
+ * Memory Usage: 44.8 MB, less than 49.70% of JavaScript online submissions for Knight Probability in Chessboard. *
+ ******************************************************************************************************************/
+
+// https://leetcode.com/problems/knight-probability-in-chessboard/discuss/113954/Evolve-from-recursive-to-dpbeats-94
+
 var knightProbability = function (n, k, row, column) {
-    const dirs = [
-        [1, -2],
-        [2, -1],
-        [2, 1],
-        [1, 2],
-        [-1, 2],
-        [-2, 1],
-        [-2, -1],
-        [-1, -2],
-    ];
-    // possibility []
-    const possibility = [];
+    const dir = [[-2, -1], [-1, -2], [1, -2], [2, -1], [2, 1], [1, 2], [-1, 2], [-2, 1]];
+    let dp = [...Array(n)].map(_ => [...Array(n)].map(__ => new Array(k + 1).fill(0)));
 
-    // validity check util
-    const isValid = (arr, x, y) => {
-        return (arr[x] && arr[x][y] && arr[x][y]) || false;
-    };
-    // initialize a tracking
-    const arr = [...Array(n)].map(_ => new Array(n).fill(1));
-    // loop through k
-    // in each loop
-    // check how many directions are valid
-    // devide by 8
-    // add into possibility array
-    let currentPosition = [[row, column]];
-    for (let i = 0; i < k; i++) {
-        let temp = [];
-        let currentPossibility = 0;
-        for (const [r, c] of currentPosition) {
-            //debugger;
-            let ableToMoveCount = 0;
-            for (const [modX, modY] of dirs) {
-                if (isValid(arr, r + modX, c + modY)) {
-                    ableToMoveCount++;
-                    temp.push([r + modX, c + modY]);
-                }
-            };
-            // debugger;
-            currentPossibility += ableToMoveCount / 8 / currentPosition.length;
-        };
-        possibility.push(currentPossibility);
-        debugger;
-        currentPosition = temp;
-    }
-    // multiple all the items in the array, return the result
-    let result = 1;
-    for (const p of possibility) {
-        result *= p;
+    const find = (n, k, r, c) => {
+        if (r < 0 || r > n - 1 || c < 0 || c > n - 1) return 0;
+        if (k == 0) return 1;
+        if (dp[r][c][k] != 0) return dp[r][c][k];
+        let rate = 0;
+        for (let i = 0; i < dir.length; i++) rate += 0.125 * find(n, k - 1, r + dir[i][0], c + dir[i][1]);
+        dp[r][c][k] = rate;
+        return rate;
     };
 
-    return result;
+
+    let rs = find(n, k, row, column);
+    return Math.round(rs * 100000) / 100000;
 };
 
 export default knightProbability;

@@ -6,6 +6,7 @@ On an n x n chessboard, a knight starts at the cell (row, column) and attempts t
 
 A chess knight has eight possible moves it can make, as illustrated below. Each move is two cells in a cardinal direction, then one cell in an orthogonal direction.
 
+![img1](1.png)
 
 Each time the knight is to move, it chooses one of eight possible moves uniformly at random (even if the piece would go off the chessboard) and moves there.
 

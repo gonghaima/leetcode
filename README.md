@@ -107,3 +107,4 @@ Identify if problems talks about finding groups or components.
 - [790. Domino and Tromino Tiling](https://leetcode.com/problems/domino-and-tromino-tiling/) =>  [numTilings](./src/rules/numTilings/index.js)
 - [935. Knight Dialer](https://leetcode.com/problems/knight-dialer/) => [knightDialer](./src/rules/knightDialer/index.js)
 - [688. Knight Probability in Chessboard](https://leetcode.com/problems/knight-probability-in-chessboard/) =>[knightProbability](./src/rules/knightProbability/index.js)
+- [982. Triples with Bitwise AND Equal To Zero](https://leetcode.com/problems/triples-with-bitwise-and-equal-to-zero/) => [countTriplets](./src/rules/countTriplets/index.js)

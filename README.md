@@ -108,3 +108,4 @@ Identify if problems talks about finding groups or components.
 - [935. Knight Dialer](https://leetcode.com/problems/knight-dialer/) => [knightDialer](./src/rules/knightDialer/index.js)
 - [688. Knight Probability in Chessboard](https://leetcode.com/problems/knight-probability-in-chessboard/) =>[knightProbability](./src/rules/knightProbability/index.js)
 - [982. Triples with Bitwise AND Equal To Zero](https://leetcode.com/problems/triples-with-bitwise-and-equal-to-zero/) => [countTriplets](./src/rules/countTriplets/index.js)
+- [983. Minimum Cost For Tickets](https://leetcode.com/problems/minimum-cost-for-tickets/) => [mincostTickets](./src/rules/mincostTickets/index.js)

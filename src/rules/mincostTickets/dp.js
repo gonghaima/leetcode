@@ -8,8 +8,8 @@
 // solution approach 2
 
 /**********************************************************************************************************
- *   Runtime: 80 ms, faster than 56.25% of JavaScript online submissions for Minimum Cost For Tickets.    *
- * Memory Usage: 39.1 MB, less than 91.48% of JavaScript online submissions for Minimum Cost For Tickets. *
+ *   Runtime: 64 ms, faster than 98.86% of JavaScript online submissions for Minimum Cost For Tickets.    *
+ * Memory Usage: 39.1 MB, less than 94.89% of JavaScript online submissions for Minimum Cost For Tickets. *
  **********************************************************************************************************/
 
 /*****************************************************************************************
@@ -39,7 +39,7 @@ var mincostTickets = function (days, costs) {
         let ans = Number.MAX_VALUE;
         let j = i;
         for (let k = 0; k < 3; ++k) {
-            while (j < days.length && days[j] < days[i] + durations[k])
+            while (days[j] < days[i] + durations[k])
                 j++;
             ans = Math.min(ans, dp(j) + costs[k]);
         };

@@ -1,5 +1,5 @@
 
-import mincostTickets from "../../src/rules/mincostTickets/twoPointers";
+import mincostTickets from "../../src/rules/mincostTickets/dp1";
 import { inputData, expected } from "../mock/mincostTicketsData";
 
 test("mincostTickets should return expected result for case1", () => {

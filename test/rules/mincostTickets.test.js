@@ -1,5 +1,5 @@
 
-import mincostTickets from "../../src/rules/mincostTickets/dp1";
+import mincostTickets from "../../src/rules/mincostTickets/dp2";
 import { inputData, expected } from "../mock/mincostTicketsData";
 
 test("mincostTickets should return expected result for case1", () => {

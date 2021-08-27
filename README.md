@@ -109,3 +109,4 @@ Identify if problems talks about finding groups or components.
 - [688. Knight Probability in Chessboard](https://leetcode.com/problems/knight-probability-in-chessboard/) =>[knightProbability](./src/rules/knightProbability/index.js)
 - [982. Triples with Bitwise AND Equal To Zero](https://leetcode.com/problems/triples-with-bitwise-and-equal-to-zero/) => [countTriplets](./src/rules/countTriplets/index.js)
 - [983. Minimum Cost For Tickets](https://leetcode.com/problems/minimum-cost-for-tickets/) => [mincostTickets](./src/rules/mincostTickets/index.js)
+- [1025. Divisor Game](https://leetcode.com/problems/divisor-game/) =>  [divisorGame](./src/rules/divisorGame/index.js)

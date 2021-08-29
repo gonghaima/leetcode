@@ -1,5 +1,5 @@
 
-import divisorGame from "../../src/rules/divisorGame";
+import divisorGame from "../../src/rules/divisorGame/bruteforce";
 
 import { inputData, expected } from "../mock/divisorGameData";
 

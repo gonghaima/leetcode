@@ -1,4 +1,4 @@
-import maxSumAfterPartitioning from "../../src/rules/maxSumAfterPartitioning";
+import maxSumAfterPartitioning from "../../src/rules/maxSumAfterPartitioning/dp";
 import { inputData, expected } from "../mock/maxSumAfterPartitioningData";
 
 test("maxSumAfterPartitioning should return max profit from case1", () => {

@@ -1,4 +1,4 @@
-import maxSumAfterPartitioning from "../../src/rules/maxSumAfterPartitioning/dp";
+import maxSumAfterPartitioning from "../../src/rules/maxSumAfterPartitioning/recursion-memo";
 import { inputData, expected } from "../mock/maxSumAfterPartitioningData";
 
 test("maxSumAfterPartitioning should return max profit from case1", () => {

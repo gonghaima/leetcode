@@ -18,7 +18,7 @@
 
 var minHeightShelves = function (books, shelfWidth) {
     const cache = Array(books.length + 1).fill(0);
-    const dp = (cache, shelfWidth, currentIndex, maxHeight) => {
+    const dp = (cache, shelfWidth, currentIndex, minHeight) => {
         if (cache[currentIndex]) return cache[currentIndex];
         if (currentIndex === 0) return books[0][1];
         //loop all possibilities within shelfWidth capacity
@@ -30,14 +30,14 @@ var minHeightShelves = function (books, shelfWidth) {
                 let maxItoJ = Number.MIN_VALUE;
                 for (let x = i; x < i + j + 1; x++) {
                     maxItoJ = Math.max(books[x][1]);
-                }
+                };
                 currentMax = Math.max(currentMax, dp(cache, shelfWidth, currentIndex - j) + maxItoJ);
                 widthCapacity -= books[i][j];
             };
-            maxHeight = Math.max(maxHeight, currentMax);
-            cache[i] = maxHeight;
+            minHeight = Math.min(minHeight, currentMax);
+            cache[i] = minHeight;
         };
-        return maxHeight;
+        return minHeight;
     };
     return dp(cache, shelfWidth, books.length, Number.MIN_VALUE);
 };

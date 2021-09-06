@@ -1,5 +1,5 @@
 
-import minHeightShelves from "../../src/rules/minHeightShelves/myThought";
+import minHeightShelves from "../../src/rules/minHeightShelves";
 
 import { inputData, expected } from "../mock/minHeightShelvesData";
 

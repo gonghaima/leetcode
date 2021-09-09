@@ -1,5 +1,5 @@
 
-import minHeightShelves from "../../src/rules/minHeightShelves/recursion-memo";
+import minHeightShelves from "../../src/rules/minHeightShelves/buttom-up";
 
 import { inputData, expected } from "../mock/minHeightShelvesData";
 

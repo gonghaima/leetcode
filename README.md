@@ -112,3 +112,4 @@ Identify if problems talks about finding groups or components.
 - [1025. Divisor Game](https://leetcode.com/problems/divisor-game/) =>  [divisorGame](./src/rules/divisorGame/index.js)
 - [1043. Partition Array for Maximum Sum](https://leetcode.com/problems/partition-array-for-maximum-sum/) => [maxSumAfterPartitioning](./src/rules/maxSumAfterPartitioning/index.js)
 - [1105. Filling Bookcase Shelves](https://leetcode.com/problems/filling-bookcase-shelves/) => [minHeightShelves](./src/rules/minHeightShelves/index.js)
+- [1218. Longest Arithmetic Subsequence of Given Difference](https://leetcode.com/problems/longest-arithmetic-subsequence-of-given-difference/) => [longestSubsequence](./src/rules/longestSubsequence/index.js)

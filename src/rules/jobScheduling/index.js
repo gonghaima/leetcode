@@ -1,26 +1,47 @@
-var jobScheduling = function (startTime, endTime, profit) {
-    let pNotTake = 0, pTake = 0, dp = {}, top = 0;
-    dp[0] = 0;
-    for (let i = 0; i < endTime.length; i++) {
-        let s = startTime[i];
-        let e = endTime[i];
+/******************************************************************************************************************
+ *   Runtime: 124 ms, faster than 85.54% of JavaScript online submissions for Maximum Profit in Job Scheduling.   *
+ * Memory Usage: 58.6 MB, less than 41.27% of JavaScript online submissions for Maximum Profit in Job Scheduling. *
+ ******************************************************************************************************************/
 
-        if (top === 0) {
-            top = profit[i];
-            pTake = profit[i];
-        } else {
-            pTake = dp[i - (e - s)] + profit[i];
-            pNotTake = top;
-            if (!dp[i]) {
-                let tmpIndex = i;
-                while (!dp[tmpIndex] && dp[tmpIndex] !== 0) tmpIndex--;
-                dp[i] = dp[tmpIndex];
-            }
-            dp[i] = Math.max(pTake, dp[i], top);
-            top = dp[i];
-        }
+// https://leetcode.com/problems/maximum-profit-in-job-scheduling/discuss/1430645/javaScript-inuttive-solution
+
+var jobScheduling = function (startTime, endTime, profit) {
+    var jobs = [];
+    var dp = []
+
+    for (let i = 0; i < startTime.length; i++) {
+        jobs.push([startTime[i], endTime[i], profit[i]])
     }
-    return top;
+    jobs.sort((a, b) => a[1] - b[1]);
+
+    dp[0] = jobs[0][2];
+    for (let i = 1; i < startTime.length; i++) {
+        var result = binary(i);
+        let profit = (result === -1) ? 0 : dp[result];
+
+
+        dp[i] = Math.max(dp[i - 1], profit + jobs[i][2])
+    }
+    return dp[dp.length - 1]
+
+
+
+
+    function binary(index) {
+        var l = 0;
+        var h = index - 1;
+        var temp = -1
+        while (l <= h) {
+            var mid = Math.floor((l + h) / 2);
+            if (jobs[mid][1] <= jobs[index][0]) {
+                temp = mid;
+                l = mid + 1
+            } else {
+                h = mid - 1
+            }
+        }
+        return temp
+    }
 };
 
 export default jobScheduling;

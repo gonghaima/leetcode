@@ -1,7 +1,19 @@
+/**
+ * @param {number[]} startTime
+ * @param {number[]} endTime
+ * @param {number[]} profit
+ * @return {number}
+ */
+
+/**
+ * 
+ *  p(take) = dp[i-(e-s)] + profit[i];
+ *  p(notTake) = dp[prev];
+ * dp[i] = Math.max(p(take), p(notTake));
+ */
 var jobScheduling = function (startTime, endTime, profit) {
     let pNotTake = 0, pTake = 0, dp = {}, top = 0;
-    dp[0] = 0;
-    for (let i = 0; i < endTime.length; i++) {
+    for (let i = 0; i < end.length; i++) {
         let s = startTime[i];
         let e = endTime[i];
 
@@ -11,11 +23,6 @@ var jobScheduling = function (startTime, endTime, profit) {
         } else {
             pTake = dp[i - (e - s)] + profit[i];
             pNotTake = top;
-            if (!dp[i]) {
-                let tmpIndex = i;
-                while (!dp[tmpIndex] && dp[tmpIndex] !== 0) tmpIndex--;
-                dp[i] = dp[tmpIndex];
-            }
             dp[i] = Math.max(pTake, pNotTake);
             top = dp[i];
         }

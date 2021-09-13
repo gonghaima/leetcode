@@ -16,7 +16,7 @@ var jobScheduling = function (startTime, endTime, profit) {
                 while (!dp[tmpIndex] && dp[tmpIndex] !== 0) tmpIndex--;
                 dp[i] = dp[tmpIndex];
             }
-            dp[i] = Math.max(pTake, pNotTake);
+            dp[i] = Math.max(pTake, dp[i], top);
             top = dp[i];
         }
     }

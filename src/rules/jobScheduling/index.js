@@ -18,14 +18,9 @@ var jobScheduling = function (startTime, endTime, profit) {
     for (let i = 1; i < startTime.length; i++) {
         var result = binary(i);
         let profit = (result === -1) ? 0 : dp[result];
-
-
         dp[i] = Math.max(dp[i - 1], profit + jobs[i][2])
     }
     return dp[dp.length - 1]
-
-
-
 
     function binary(index) {
         var l = 0;

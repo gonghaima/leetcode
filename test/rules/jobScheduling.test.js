@@ -1,5 +1,5 @@
 
-import jobScheduling from "../../src/rules/jobScheduling";
+import jobScheduling from "../../src/rules/jobScheduling/dp1";
 
 import { inputData, expected } from "../mock/jobSchedulingData";
 

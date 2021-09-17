@@ -1,4 +1,4 @@
-import maxSumDivThree from "../../src/rules/maxSumDivThree";
+import maxSumDivThree from "../../src/rules/maxSumDivThree/dp";
 import { inputData, expected } from "../mock/maxSumDivThreeData";
 
 test("maxSumDivThree should return the distance for case1", () => {

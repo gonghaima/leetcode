@@ -28,3 +28,23 @@ var maxSumDivThree = function (nums) {
 
 export default maxSumDivThree;
 
+/**
+ * My debugging understanding
+ *
+Input: nums = [3,6,5,1,8]
+Output: 18
+
+    [ 3, 0, 0 ]
+    [ 9, 0, 0 ]
+    [ 9, 0, 14 ]
+    [ 15, 10, 14 ]
+    [ 18, 22, 23 ]
+
+dp[0] means the remaining is 0, indicating can be divided by 3.
+in line 21, find the max value for the remaining index. for each remaining dp[0] dp[1] dp[2], find the max value (currentMax, num+prevDP[i])
+
+Final result would be dp[0], because the questions is max sum, can be divided by 3.
+The result would be dp[1], if the question is finding out max sum, which can be divided by 3 remaining 1.
+
+
+ */

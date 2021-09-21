@@ -3,7 +3,7 @@
  * @return {number[][]}
  */
 var subsets = function (nums) {
-    return [];
+    return Infinity;
 };
 
 export default subsets;

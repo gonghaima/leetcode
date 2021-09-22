@@ -1,5 +1,5 @@
 
-import subsets from "../../src/rules/subsets";
+import subsets from "../../src/rules/subsets/recursive";
 import { inputData, expected } from "../mock/subsetsData";
 
 test("subsets should return expected result for case1", () => {

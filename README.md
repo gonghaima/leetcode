@@ -116,3 +116,4 @@ Identify if problems talks about finding groups or components.
 - [1235. Maximum Profit in Job Scheduling](https://leetcode.com/problems/maximum-profit-in-job-scheduling/) => [jobScheduling](./src/rules/jobScheduling/index.js)
 - [1262. Greatest Sum Divisible by Three](https://leetcode.com/problems/greatest-sum-divisible-by-three/) => [maxSumDivThree](./src/rules/maxSumDivThree/index.js)
 - [78. Subsets](https://leetcode.com/problems/subsets/) => [subsets](./src/rules/subsets/index.js)
+- [90. Subsets II](https://leetcode.com/problems/subsets-ii/) => [subsetsWithDup](./src/rules/subsetsWithDup/index.js)

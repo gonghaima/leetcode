@@ -12,7 +12,6 @@
 
 var subsets = function (nums) {
     const backtrack = (list, tempList, nums, start) => {
-        // console.log('list, tempList, start', { list, tempList, start });
         list.push(tempList.slice())
         for (let i = start; i < nums.length; i++) {
             tempList.push(nums[i]);

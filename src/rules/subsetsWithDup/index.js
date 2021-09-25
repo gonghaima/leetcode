@@ -8,7 +8,7 @@
  * Memory Usage: 41.8 MB, less than 16.54% of JavaScript online submissions for Subsets II. *
  ********************************************************************************************/
 
-// idea from the subsets solution
+// idea from the subsets solution - iterative
 
 var subsetsWithDup = function (nums) {
     let res = [[]];

@@ -1,5 +1,5 @@
 
-import subsetsWithDup from "../../src/rules/subsetsWithDup/backtrack";
+import subsetsWithDup from "../../src/rules/subsetsWithDup/recursive";
 import { inputData, expected } from "../mock/subsetsWithDupData";
 
 test("subsetsWithDup should return expected result for case1", () => {
@@ -12,5 +12,5 @@ test("subsetsWithDup should return expected result for case2", () => {
 });
 test("subsetsWithDup should return expected result for case3", () => {
   const result = subsetsWithDup(inputData.case3);
-  expect(result).toEqual(expected.case3);
+  expect(result.sort()).toEqual(expected.case3.sort());
 });

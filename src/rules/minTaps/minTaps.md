@@ -10,7 +10,7 @@ Given an integer n and an integer array ranges of length n + 1 where ranges[i] (
 
 Return the minimum number of taps that should be open to water the whole garden, If the garden cannot be watered return -1.
 
- 
+ 58 / 9 = 6   4   6
 
 Example 1:
 

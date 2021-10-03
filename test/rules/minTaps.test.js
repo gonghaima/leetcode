@@ -1,5 +1,5 @@
 
-import minTaps from "../../src/rules/minTaps/dp";
+import minTaps from "../../src/rules/minTaps/dp1";
 import { inputData, expected } from "../mock/minTapsData";
 
 test("minTaps should return expected result for case1", () => {

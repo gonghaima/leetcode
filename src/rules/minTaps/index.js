@@ -28,7 +28,7 @@ var minTaps = function (n, ranges) {
         if (ranges[i] == 0) continue;
         let left = Math.max(0, i - ranges[i]);
         arr[left] = Math.max(arr[left], i + ranges[i]);
-    }
+    };
 
     // same part like previous problem
     let end = 0, farCanReach = 0, cnt = 0;

@@ -3,9 +3,14 @@
  * @return {number}
  */
 
-
+/**********************************************************************************************
+ *   Runtime: 76 ms, faster than 87.71% of JavaScript online submissions for Jump Game II.    *
+ * Memory Usage: 40.7 MB, less than 75.93% of JavaScript online submissions for Jump Game II. *
+ **********************************************************************************************/
 
 //https://leetcode.com/problems/jump-game-ii/discuss/18023/Single-loop-simple-java-solution
+
+// O(n)
 
 var jump = function (nums) {
   let step_count = 0;

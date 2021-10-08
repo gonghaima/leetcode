@@ -8,6 +8,7 @@
 //https://leetcode.com/problems/jump-game-ii/discuss/18089/Evolve-from-brute-force-to-optimal
 
 // Brute force O(2^n), this is the most straight forward solution, just try all the moves.
+// with Memoization, time complexity reduce to O(n^2)
 
 
 

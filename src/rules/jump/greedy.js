@@ -3,6 +3,10 @@
  * @return {number}
  */
 
+/********************************************************************************************
+ *  Runtime: 120 ms, faster than 50.17% of JavaScript online submissions for Jump Game II.  *
+ * Memory Usage: 41 MB, less than 45.12% of JavaScript online submissions for Jump Game II. *
+ ********************************************************************************************/
 
 
 //https://leetcode.com/problems/jump-game-ii/discuss/18089/Evolve-from-brute-force-to-optimal

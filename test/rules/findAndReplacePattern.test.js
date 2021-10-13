@@ -1,5 +1,5 @@
 import findAndReplacePattern from '../../src/rules/findAndReplacePattern';
-import { inputData, expected } from '../mock/findAndReplacePatternData';
+import { inputData, expected } from '../data/findAndReplacePatternData';
 
 test('findAndReplacePattern can return an array with matched pattern', () => {
   const result = findAndReplacePattern(

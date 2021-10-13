@@ -1,7 +1,7 @@
 
 import knightDialer from "../../src/rules/knightDialer/dp1";
 
-import { inputData, expected } from "../mock/knightDialerData";
+import { inputData, expected } from "../data/knightDialerData";
 
 test("knightDialer should return expected result for case1", () => {
   const result = knightDialer(inputData.case1);

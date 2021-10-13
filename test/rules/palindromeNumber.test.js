@@ -1,5 +1,5 @@
 import { isPalindrome } from '../../src/rules/palindromeNumber';
-import { inputData, expected } from '../mock/palindromeNumberData';
+import { inputData, expected } from '../data/palindromeNumberData';
 
 test('palindromeNumber should check a number', () => {
   const result = isPalindrome(inputData.case1);

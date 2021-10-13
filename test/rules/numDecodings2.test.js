@@ -1,7 +1,7 @@
 
 import numDecodings2 from "../../src/rules/numDecodings2/dp";
 
-import { inputData, expected } from "../mock/numDecodings2Data";
+import { inputData, expected } from "../data/numDecodings2Data";
 
 test("numDecodings2 should return expected result for case1", () => {
   const result = numDecodings2(inputData.case1);

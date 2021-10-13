@@ -3,7 +3,7 @@
 // import numOfMinutes from "../../src/rules/numOfMinutes/bfs";
 import numOfMinutes from "../../src/rules/numOfMinutes/dfs-hashmap";
 
-import { inputData, expected } from "../mock/numOfMinutesData";
+import { inputData, expected } from "../data/numOfMinutesData";
 
 // test("numOfMinutes should return the number of isolated island - case 1", () => {
 //   const { n, headID, manager, informTime} = inputData.case1;

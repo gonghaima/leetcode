@@ -2,7 +2,7 @@ import {
   loopMatch,
   longestPalindrome
 } from '../../src/rules/longestPalindromicSubstring';
-import { inputData, expected } from '../mock/longestPalindromicSubstringData';
+import { inputData, expected } from '../data/longestPalindromicSubstringData';
 
 import { longestPalindromeSolution1 } from '../../src/rules/longestPalindromicSubstring/solution1';
 import { longestPalindromeSolution2 } from '../../src/rules/longestPalindromicSubstring/solution2';

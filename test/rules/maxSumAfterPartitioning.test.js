@@ -1,5 +1,5 @@
 import maxSumAfterPartitioning from "../../src/rules/maxSumAfterPartitioning/buttomUp";
-import { inputData, expected } from "../mock/maxSumAfterPartitioningData";
+import { inputData, expected } from "../data/maxSumAfterPartitioningData";
 
 test("maxSumAfterPartitioning should return max profit from case1", () => {
   const { arr, k } = inputData.case1;

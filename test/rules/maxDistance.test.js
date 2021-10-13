@@ -2,7 +2,7 @@ import maxDistance from "../../src/rules/maxDistance/dp";
 // import maxDistance from "../../src/rules/maxDistance";
 // import s1 from "../../src/rules/maxDistance/solution1";
 // import s2 from "../../src/rules/maxDistance/solution2";
-import { inputData, expected } from "../mock/maxDistanceData";
+import { inputData, expected } from "../data/maxDistanceData";
 
 test("maxDistance should return the distance for case1", () => {
   const result = maxDistance(inputData.case1);

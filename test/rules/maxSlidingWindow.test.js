@@ -1,7 +1,7 @@
 
 import maxSlidingWindow from "../../src/rules/maxSlidingWindow";
 
-import { inputData, expected } from "../mock/maxSlidingWindowData";
+import { inputData, expected } from "../data/maxSlidingWindowData";
 
 test("maxSlidingWindow should return expected result for case1", () => {
   const { nums, k } = inputData.case1;

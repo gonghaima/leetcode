@@ -1,6 +1,6 @@
 
 import subarraysWithKDistinct from "../../src/rules/subarraysWithKDistinct";
-import { inputData, expected } from "../mock/subarraysWithKDistinctData";
+import { inputData, expected } from "../data/subarraysWithKDistinctData";
 
 test("subarraysWithKDistinct should return expected result for case1", () => {
   const result = subarraysWithKDistinct(inputData.case1.A, inputData.case1.K);

@@ -3,7 +3,7 @@ import { levelorderTraversalSolution1 } from '../../../src/rules/binaryTree/leve
 import {
   inputData,
   expected
-} from '../../mock/binaryTree/levelorderTraversalData';
+} from '../../data/binaryTree/levelorderTraversalData';
 
 test('levelorderTraversal should return expected value', () => {
   const actual = levelorderTraversal(inputData.case1);

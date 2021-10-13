@@ -2,7 +2,7 @@
 // import maxProfit from "../../src/rules/maxProfit/dp";
 // import maxProfit from "../../src/rules/maxProfit/kadane";
 import maxProfit from "../../src/rules/maxProfit/kadane-1";
-import { inputData, expected } from "../mock/maxProfitData";
+import { inputData, expected } from "../data/maxProfitData";
 
 test("maxProfit should return max profit from a given list", () => {
   const result = maxProfit(inputData.case1);

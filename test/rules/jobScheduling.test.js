@@ -1,7 +1,7 @@
 
 import jobScheduling from "../../src/rules/jobScheduling/dp1";
 
-import { inputData, expected } from "../mock/jobSchedulingData";
+import { inputData, expected } from "../data/jobSchedulingData";
 
 test("jobScheduling should return expected result for case1", () => {
   const { startTime, endTime, profit } = inputData.case1;

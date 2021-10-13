@@ -2,7 +2,7 @@
 // import updateMatrix from "../../src/rules/updateMatrix/bfs-v1";
 import updateMatrix from "../../src/rules/updateMatrix/dp";
 
-import { inputData, expected } from "../mock/updateMatrixData";
+import { inputData, expected } from "../data/updateMatrixData";
 
 test("updateMatrix should return expected result - case 1", () => {
   const result = updateMatrix(inputData.case1);

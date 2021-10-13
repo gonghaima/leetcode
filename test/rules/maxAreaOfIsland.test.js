@@ -2,7 +2,7 @@
 // import maxAreaOfIsland from "../../src/rules/maxAreaOfIsland/back";
 import maxAreaOfIsland from "../../src/rules/maxAreaOfIsland/dfs-Iterative";
 
-import { inputData, expected } from "../mock/maxAreaOfIslandData";
+import { inputData, expected } from "../data/maxAreaOfIslandData";
 
 // test("maxAreaOfIsland should return the number of isolated island - case 1", () => {
 //   const result = maxAreaOfIsland(inputData.case1);

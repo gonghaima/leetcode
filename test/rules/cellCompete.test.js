@@ -1,5 +1,5 @@
 import cellCompete from "../../src/rules/cellCompete";
-import { inputData, expected } from "../mock/cellCompeteData";
+import { inputData, expected } from "../data/cellCompeteData";
 
 test("cellCompete should return compete cells for test case 1", () => {
   const result = cellCompete(inputData.case1.states, inputData.case1.days);

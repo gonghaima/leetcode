@@ -1,5 +1,5 @@
 import maxProfitIII from "../../src/rules/maxProfitIII";
-import { inputData, expected } from "../mock/maxProfitIIData";
+import { inputData, expected } from "../data/maxProfitIIData";
 
 test("maxProfitIII should return max profit from case1", () => {
   const result = maxProfitIII(inputData.case1);

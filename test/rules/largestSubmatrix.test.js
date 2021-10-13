@@ -1,6 +1,6 @@
 import largestSubmatrix from "../../src/rules/largestSubmatrix";
 
-import { inputData, expected } from "../mock/largestSubmatrixData";
+import { inputData, expected } from "../data/largestSubmatrixData";
 
 test("largestSubmatrix should return the number of isolated island - case 1", () => {
   const result = largestSubmatrix(inputData.case1);

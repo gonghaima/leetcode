@@ -1,9 +1,9 @@
 
-import {postorderTraversal} from '../../../src/rules/binaryTree/postorderTraversal';
+import { postorderTraversal } from '../../../src/rules/binaryTree/postorderTraversal';
 import {
   inputData,
   expected
-} from '../../mock/binaryTree/postorderTraversalData';
+} from '../../data/binaryTree/postorderTraversalData';
 
 test('postorderTraversal should return expected value', () => {
   const actual = postorderTraversal(inputData.case1);

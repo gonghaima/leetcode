@@ -1,5 +1,5 @@
 import validateStackSequences from '../../src/rules/validateStackSequences';
-import { inputData, expected } from '../mock/validateStackSequencesData';
+import { inputData, expected } from '../data/validateStackSequencesData';
 
 test('validateStackSequences should return true, if can be resolved to popped', () => {
   expect(

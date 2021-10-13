@@ -1,7 +1,7 @@
 import findCircleNum from "../../src/rules/findCircleNum";
 import findCircleNumSolution1 from "../../src/rules/findCircleNum/solution1";
 import findCircleNumSolution2 from "../../src/rules/findCircleNum/unionFind";
-import { inputData, expected } from "../mock/findCircleNumData";
+import { inputData, expected } from "../data/findCircleNumData";
 
 test("findCircleNum should find the number of direct related students, for case 1", () => {
   const result = findCircleNum(inputData.case1);

@@ -1,5 +1,5 @@
 import removeKdigits from "../../src/rules/removeKdigits";
-import { inputData, expected } from "../mock/removeKdigitsData";
+import { inputData, expected } from "../data/removeKdigitsData";
 
 test("removeKdigits should return minimium number in case1", () => {
   const result = removeKdigits(inputData.case1.num, inputData.case1.k);

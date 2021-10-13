@@ -2,7 +2,7 @@ import removeDuplicatesFromSortedArray from "../../src/rules/removeDuplicatesFro
 import {
   inputData,
   expected
-} from "../mock/removeDuplicatesFromSortedArrayData";
+} from "../data/removeDuplicatesFromSortedArrayData";
 
 test("removeDuplicatesFromSortedArray should return expected result 1", () => {
   expect(removeDuplicatesFromSortedArray(inputData.case1)).toBe(expected.case1);

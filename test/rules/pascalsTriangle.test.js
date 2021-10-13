@@ -1,6 +1,6 @@
 import pascalsTriangleII from "../../src/rules/pascalsTriangleII";
 
-import { inputData, expected } from "../mock/pascalsTriangleIIData";
+import { inputData, expected } from "../data/pascalsTriangleIIData";
 
 test("pascalsTriangleII should return an expected array, given an index number as input", () => {
   const result = pascalsTriangleII(inputData.case1);

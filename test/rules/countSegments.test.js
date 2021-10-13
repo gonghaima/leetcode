@@ -1,5 +1,5 @@
 import countSegments from "../../src/rules/countSegments";
-import { inputData, expected } from "../mock/countSegmentsData";
+import { inputData, expected } from "../data/countSegmentsData";
 
 test("countSegments should return correct number from a given string", () => {
   const result = countSegments(inputData.case1);

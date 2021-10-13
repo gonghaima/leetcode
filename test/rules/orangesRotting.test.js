@@ -1,6 +1,6 @@
 // import orangesRotting from "../../src/rules/orangesRotting/bfs";
 import orangesRotting from "../../src/rules/orangesRotting/dfs";
-import { inputData, expected } from "../mock/orangesRottingData";
+import { inputData, expected } from "../data/orangesRottingData";
 
 test("orangesRotting should return the distance for case1", () => {
   const result = orangesRotting(inputData.case1);

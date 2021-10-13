@@ -1,7 +1,7 @@
 
 // import balancedString from "../../src/rules/balancedString";
 import balancedString from "../../src/rules/balancedString/slidingWindow";
-import { inputData, expected } from "../mock/balancedStringData";
+import { inputData, expected } from "../data/balancedStringData";
 
 test("balancedString should return expected result for case1", () => {
   const result = balancedString(inputData.case1);

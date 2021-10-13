@@ -1,5 +1,5 @@
 import countPrimes from "../../src/rules/countPrimes";
-import { inputData, expected } from "../mock/countPrimesData";
+import { inputData, expected } from "../data/countPrimesData";
 
 test("countPrimes should return correct number of prime numbers c1", () => {
   const result = countPrimes(inputData.case1);

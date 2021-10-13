@@ -1,6 +1,6 @@
 import equalSubstring from "../../src/rules/equalSubstring";
 // import equalSubstring from "../../src/rules/equalSubstring/mine";
-import { inputData, expected } from "../mock/equalSubstringData";
+import { inputData, expected } from "../data/equalSubstringData";
 
 test("equalSubstring should return expected result for case1", () => {
   const { s, t, maxCost } = inputData.case1;

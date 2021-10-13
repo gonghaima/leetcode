@@ -1,5 +1,5 @@
 import sameTree from "../../../src/rules/binaryTree/sameTree";
-import { inputData, expected } from "../../mock/binaryTree/sameTreeData";
+import { inputData, expected } from "../../data/binaryTree/sameTreeData";
 
 test("sameTree should return true for the trees with same value and same structure", () => {
   const actual = sameTree(inputData.case1.a, inputData.case1.a);

@@ -1,7 +1,7 @@
 
 import deleteAndEarn from "../../src/rules/deleteAndEarn/dp1";
 
-import { inputData, expected } from "../mock/deleteAndEarnData";
+import { inputData, expected } from "../data/deleteAndEarnData";
 
 test("deleteAndEarn should return expected result for case1", () => {
   const result = deleteAndEarn(inputData.case1);

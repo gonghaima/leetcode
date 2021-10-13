@@ -1,5 +1,5 @@
 import numSquares from "../../src/rules/numSquares/bfs";
-import { inputData, expected } from "../mock/numSquaresData";
+import { inputData, expected } from "../data/numSquaresData";
 
 test("numSquares should return correct result for case1", () => {
   const result = numSquares(inputData.case1);

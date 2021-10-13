@@ -1,5 +1,5 @@
 import countTriplets from "../../src/rules/countTriplets";
-import { inputData, expected } from "../mock/countTripletsData";
+import { inputData, expected } from "../data/countTripletsData";
 
 test("countTriplets should return correct result for case1", () => {
   const result = countTriplets(inputData.case1);

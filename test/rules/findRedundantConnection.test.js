@@ -3,7 +3,7 @@ import findRedundantConnection_v2 from "../../src/rules/findRedundantConnection/
 import findRedundantConnection_v3 from "../../src/rules/findRedundantConnection/unionFind_v3";
 import findRedundantConnection_v4 from "../../src/rules/findRedundantConnection/unionFind_v4";
 import set_merge from "../../src/rules/findRedundantConnection/set_merge";
-import { inputData, expected } from "../mock/findRedundantConnectionData";
+import { inputData, expected } from "../data/findRedundantConnectionData";
 
 // test("findRedundantConnection should find the number of direct related students, for case 1", () => {
 //   const result = findRedundantConnection(inputData.case1);

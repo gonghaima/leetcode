@@ -1,5 +1,5 @@
 import numberOfArithmeticSlices from "../../src/rules/numberOfArithmeticSlices";
-import { inputData, expected } from "../mock/numberOfArithmeticSlicesData";
+import { inputData, expected } from "../data/numberOfArithmeticSlicesData";
 
 test("case1 - numberOfArithmeticSlices should return the number of arithmetic slices from a given list", () => {
   const result = numberOfArithmeticSlices(inputData.case1);

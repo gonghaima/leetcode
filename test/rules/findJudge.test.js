@@ -1,5 +1,5 @@
 import findJudgeSolutions from "../../src/rules/findJudge";
-import testCases from "../mock/findJudgeData";
+import testCases from "../data/findJudgeData";
 
 Object.entries(findJudgeSolutions).map(([solutionKey, solution]) => {
   Object.entries(testCases).map(([testKey, testCase]) => {

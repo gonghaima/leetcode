@@ -1,5 +1,5 @@
 import coinChange2 from "../../src/rules/coinChange2/dp-bottom-up-space-improved";
-import { inputData, expected } from "../mock/coinChange2Data";
+import { inputData, expected } from "../data/coinChange2Data";
 
 test("coinChange2 should return correct result for case1", () => {
   const { amount, coins } = inputData.case1;

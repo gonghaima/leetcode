@@ -118,4 +118,5 @@ Identify if problems talks about finding groups or components.
 - [78. Subsets](https://leetcode.com/problems/subsets/) => [subsets](./src/rules/subsets/index.js)
 - [90. Subsets II](https://leetcode.com/problems/subsets-ii/) => [subsetsWithDup](./src/rules/subsetsWithDup/index.js)
 - [1326. Minimum Number of Taps to Open to Water a Garden](https://leetcode.com/problems/minimum-number-of-taps-to-open-to-water-a-garden/) => [minTaps](./src/rules/minTaps/index.js)
-- [45. Jump Game II](https://leetcode.com/problems/jump-game-ii/) => [jump](./src/rules/jump/index.js)
+- [55. Jump Game](https://leetcode.com/problems/jump-game/) => [jump](./src/rules/jump/index.js)
+- [45. Jump Game II](https://leetcode.com/problems/jump-game-ii/) => [jumpII](./src/rules/jumpII/index.js)

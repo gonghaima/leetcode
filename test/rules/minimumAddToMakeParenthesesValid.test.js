@@ -3,7 +3,7 @@ import calcV1 from '../../src/rules/minimumAddToMakeParenthesesValid/minimumAddT
 import {
   inputData,
   expected
-} from '../mock/minimumAddToMakeParenthesesValid.data';
+} from '../data/minimumAddToMakeParenthesesValid.data';
 
 test('minimumAddToMakeParenthesesValid should calculate and return minimum required parentheses', () => {
   expect(calc(inputData.case1)).toBe(expected.case1);

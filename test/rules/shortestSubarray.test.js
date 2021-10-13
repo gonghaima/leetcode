@@ -2,7 +2,7 @@
 // import shortestSubarray from "../../src/rules/shortestSubarray";
 // import shortestSubarray from "../../src/rules/shortestSubarray/index-v1";
 import shortestSubarray from "../../src/rules/shortestSubarray/bruteForce";
-import { inputData, expected } from "../mock/shortestSubarrayData";
+import { inputData, expected } from "../data/shortestSubarrayData";
 
 test("shortestSubarray should return expected result for case1", () => {
   const result = shortestSubarray(inputData.case1.A, inputData.case1.K);

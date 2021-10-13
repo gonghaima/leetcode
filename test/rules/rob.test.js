@@ -1,5 +1,5 @@
 import rob from "../../src/rules/rob/rec";
-import { inputData, expected } from "../mock/robData";
+import { inputData, expected } from "../data/robData";
 
 test("rob should return correct result for case1", () => {
   const result = rob(inputData.case1);

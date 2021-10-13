@@ -1,6 +1,6 @@
 
 import longestSubsequence from "../../src/rules/longestSubsequence/dp";
-import { inputData, expected } from "../mock/longestSubsequenceData";
+import { inputData, expected } from "../data/longestSubsequenceData";
 
 test("longestSubsequence should return expected result for case1", () => {
   const { arr, difference } = inputData.case1;

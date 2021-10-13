@@ -1,7 +1,7 @@
 
 import minWindow from "../../src/rules/minWindow";
 
-import { inputData, expected } from "../mock/minWindowData";
+import { inputData, expected } from "../data/minWindowData";
 
 test("minWindow should return expected result for case1", () => {
   const { s, t } = inputData.case1;

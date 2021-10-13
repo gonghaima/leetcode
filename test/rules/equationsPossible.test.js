@@ -1,7 +1,7 @@
 // import equationsPossible from "../../src/rules/equationsPossible";
 import equationsPossible from "../../src/rules/equationsPossible/unionFind";
 
-import { inputData, expected } from "../mock/equationsPossibleData";
+import { inputData, expected } from "../data/equationsPossibleData";
 
 test("equationsPossible should satisfy all the given equations for case 1", () => {
   const result = equationsPossible(inputData.case1);

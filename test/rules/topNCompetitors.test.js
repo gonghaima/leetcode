@@ -1,5 +1,5 @@
 import topNCompetitorsFunc from "../../src/rules/topNCompetitors";
-import { inputData, expected } from "../mock/topNCompetitorsData";
+import { inputData, expected } from "../data/topNCompetitorsData";
 
 
 // const topNCompetitors = (numCompetitors, topNCompetitors, competitors, numReviews, reviews) => {

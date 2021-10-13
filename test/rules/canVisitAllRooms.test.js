@@ -2,7 +2,7 @@
 import canVisitAllRooms from "../../src/rules/canVisitAllRooms";
 // import canVisitAllRooms from "../../src/rules/canVisitAllRooms/dfs-v1";
 
-import { inputData, expected } from "../mock/canVisitAllRoomsData";
+import { inputData, expected } from "../data/canVisitAllRoomsData";
 
 test("canVisitAllRooms should return correct result from - case 1", () => {
   const result = canVisitAllRooms(inputData.case1);

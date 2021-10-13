@@ -1,6 +1,6 @@
 
 import minTaps from "../../src/rules/minTaps/dp1";
-import { inputData, expected } from "../mock/minTapsData";
+import { inputData, expected } from "../data/minTapsData";
 
 test("minTaps should return expected result for case1", () => {
   const { n, ranges } = inputData.case1;

@@ -6,7 +6,7 @@ import {
   wiggle_expected,
   sub_comb_inputData,
   sub_comb_expected
-} from "../mock/wiggleMaxLengthData";
+} from "../data/wiggleMaxLengthData";
 
 // test("wiggle util should return true from a valid wiggle list", () => {
 //   const result = isWiggle(wiggle_inputData.case1);

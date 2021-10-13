@@ -1,5 +1,5 @@
 import atoi from "../../src/rules/atoi";
-import { inputData, expected } from "../mock/atoiData";
+import { inputData, expected } from "../data/atoiData";
 
 test("atoi should return correct data from case 1", () => {
   const result = atoi(inputData.case1);

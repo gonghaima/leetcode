@@ -1,5 +1,5 @@
 import uniqueOccurrences from "../../src/rules/uniqueOccurrences";
-import { inputData, expected } from "../mock/uniqueOccurrencesData";
+import { inputData, expected } from "../data/uniqueOccurrencesData";
 
 test("uniqueOccurrences should return true from case 1", () => {
   const result = uniqueOccurrences(inputData.case1);

@@ -1,5 +1,5 @@
 import checkRecord from "../../src/rules/checkRecord";
-import { inputData, expected } from "../mock/checkRecordData";
+import { inputData, expected } from "../data/checkRecordData";
 
 test("checkRecord should return correct result for case1", () => {
   const result = checkRecord(inputData.case1);

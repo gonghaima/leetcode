@@ -1,7 +1,7 @@
 
 import knightProbability from "../../src/rules/knightProbability";
 
-import { inputData, expected } from "../mock/knightProbabilityData";
+import { inputData, expected } from "../data/knightProbabilityData";
 
 test("knightProbability should return expected result for case1", () => {
   const { n, k, row, column } = inputData.case1;

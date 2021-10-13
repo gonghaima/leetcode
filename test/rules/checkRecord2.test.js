@@ -1,5 +1,5 @@
 import checkRecord2 from "../../src/rules/checkRecord2/dp-topdown-O1space";
-import { inputData, expected } from "../mock/checkRecord2Data";
+import { inputData, expected } from "../data/checkRecord2Data";
 
 test("checkRecord2 should return correct result for case1", () => {
   const result = checkRecord2(inputData.case1);

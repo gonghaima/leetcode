@@ -1,5 +1,5 @@
 import addBinary from "../../src/rules/addBinary";
-import { inputData, expected } from "../mock/addBinaryData";
+import { inputData, expected } from "../data/addBinaryData";
 test("addBinary function should calculate correct result from cases data", () => {
   expect(addBinary(inputData.case1.a, inputData.case1.b)).toEqual(
     expected.case1

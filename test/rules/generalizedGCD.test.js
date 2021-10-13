@@ -1,5 +1,5 @@
 import generalizedGCD from "../../src/rules/generalizedGCD";
-import { inputData, expected } from "../mock/generalizedGCDData";
+import { inputData, expected } from "../data/generalizedGCDData";
 
 test("generalizedGCD should return compete cells for test case 1", () => {
   const result = generalizedGCD(inputData.case1.num, inputData.case1.arr);

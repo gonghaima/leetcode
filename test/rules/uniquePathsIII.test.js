@@ -1,5 +1,5 @@
 import uniquePathsIII from "../../src/rules/uniquePathsIII";
-import { inputData, expected } from "../mock/uniquePathsIIIData";
+import { inputData, expected } from "../data/uniquePathsIIIData";
 
 test("uniquePathsIII should return correct path number for case 1", () => {
   const result = uniquePathsIII(inputData.case1);

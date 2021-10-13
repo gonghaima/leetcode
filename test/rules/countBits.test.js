@@ -1,5 +1,5 @@
 import countBits from "../../src/rules/countBits/twoPointers";
-import { inputData, expected } from "../mock/countBitsData";
+import { inputData, expected } from "../data/countBitsData";
 
 test("countBits should return correct result for case1", () => {
   const result = countBits(inputData.case1);

@@ -1,6 +1,6 @@
 
 import mincostTickets from "../../src/rules/mincostTickets/buttomUp";
-import { inputData, expected } from "../mock/mincostTicketsData";
+import { inputData, expected } from "../data/mincostTicketsData";
 
 test("mincostTickets should return expected result for case1", () => {
   const { days, costs } = inputData.case1;

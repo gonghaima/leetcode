@@ -1,5 +1,5 @@
 import pageCount, { countHelper } from '../../src/rules/drawingBook';
-import { inputData, expected, utilData } from '../mock/drawingBookData';
+import { inputData, expected, utilData } from '../data/drawingBookData';
 test('sockMerchant function should return correct pairs of sock from case1 data', () => {
   expect(pageCount(inputData.case1.n, inputData.case1.p)).toBe(expected.case1);
   expect(pageCount(inputData.case2.n, inputData.case2.p)).toBe(expected.case2);

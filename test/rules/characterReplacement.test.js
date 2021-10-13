@@ -1,5 +1,5 @@
 import characterReplacement from "../../src/rules/characterReplacement";
-import { inputData, expected } from "../mock/characterReplacementData";
+import { inputData, expected } from "../data/characterReplacementData";
 
 test("characterReplacement should return expected result for case1", () => {
   const { s, k } = inputData.case1;

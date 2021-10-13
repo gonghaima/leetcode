@@ -2,7 +2,7 @@
 // import surroundedRegions from "../../src/rules/surroundedRegions/dfs";
 import surroundedRegions from "../../src/rules/surroundedRegions/unionFind";
 
-import { inputData, expected } from "../mock/surroundedRegionsData";
+import { inputData, expected } from "../data/surroundedRegionsData";
 
 test("surroundedRegions should satisfy all the given equations for case1", () => {
   const result = surroundedRegions(inputData.case1);

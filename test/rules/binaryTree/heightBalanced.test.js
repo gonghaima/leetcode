@@ -1,5 +1,5 @@
 import heightBalanced from "../../../src/rules/binaryTree/heightBalanced";
-import { inputData, expected } from "../../mock/binaryTree/heightBalancedData";
+import { inputData, expected } from "../../data/binaryTree/heightBalancedData";
 
 test("heightBalanced should return expected value", () => {
   expect(heightBalanced(inputData.case1)).toBe(expected.case1);

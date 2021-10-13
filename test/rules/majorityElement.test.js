@@ -1,5 +1,5 @@
 import majorityElement from "../../src/rules/majorityElement";
-import { inputData, expected } from "../mock/majorityElementData";
+import { inputData, expected } from "../data/majorityElementData";
 
 test("majorityElement should work for case 1", () => {
   const result = majorityElement(inputData.case1);

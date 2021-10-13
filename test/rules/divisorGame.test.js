@@ -1,7 +1,7 @@
 
 import divisorGame from "../../src/rules/divisorGame/topdown";
 
-import { inputData, expected } from "../mock/divisorGameData";
+import { inputData, expected } from "../data/divisorGameData";
 
 test("divisorGame should return expected result for case1", () => {
   const result = divisorGame(inputData.case1);

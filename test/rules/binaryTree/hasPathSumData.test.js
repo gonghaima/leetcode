@@ -1,5 +1,5 @@
 import hasPathSum from '../../../src/rules/binaryTree/hasPathSum';
-import { inputData, expected } from '../../mock/binaryTree/hasPathSumData';
+import { inputData, expected } from '../../data/binaryTree/hasPathSumData';
 
 test('hasPathSum should return true, for case1', () => {
   const actual = hasPathSum(inputData.case1.root, inputData.case1.sum);

@@ -2,7 +2,7 @@
 // import closedIsland from "../../src/rules/closedIsland/bfs-v1";
 import closedIsland from "../../src/rules/closedIsland/dfs-v1";
 
-import { inputData, expected } from "../mock/closedIslandData";
+import { inputData, expected } from "../data/closedIslandData";
 
 test("closedIsland should return the number of closed island - case 1", () => {
   const result = closedIsland(inputData.case1);

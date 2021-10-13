@@ -2,7 +2,7 @@
 // import numTrees from "../../src/rules/numTrees";
 import numTrees from "../../src/rules/numTrees/dp-2";
 
-import { inputData, expected } from "../mock/numTreesData";
+import { inputData, expected } from "../data/numTreesData";
 
 test("numTrees should return expected result for case1", () => {
   const result = numTrees(inputData.case1);

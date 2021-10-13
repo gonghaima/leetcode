@@ -2,7 +2,7 @@
 // import numDecodings from "../../src/rules/numDecodings";
 import numDecodings from "../../src/rules/numDecodings/solution1";
 
-import { inputData, expected } from "../mock/numDecodingsData";
+import { inputData, expected } from "../data/numDecodingsData";
 
 test("numDecodings should return expected result for case1", () => {
   const result = numDecodings(inputData.case1);

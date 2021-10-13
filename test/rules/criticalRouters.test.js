@@ -1,5 +1,5 @@
 import criticalRouters from "../../src/rules/aCriticalRouters";
-import { inputData, expected } from "../mock/criticalRoutersData";
+import { inputData, expected } from "../data/criticalRoutersData";
 
 test("criticalRouters should return correct path number for case 1", () => {
   const { numRouters, numLinks, links } = inputData.case1;

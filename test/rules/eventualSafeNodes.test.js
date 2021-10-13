@@ -3,7 +3,7 @@
 // import eventualSafeNodes from "../../src/rules/eventualSafeNodes/dfs-v1";
 import eventualSafeNodes from "../../src/rules/eventualSafeNodes/dfs-v2";
 
-import { inputData, expected } from "../mock/eventualSafeNodesData";
+import { inputData, expected } from "../data/eventualSafeNodesData";
 
 test("eventualSafeNodes should return the number of closed island - case 1", () => {
   const result = eventualSafeNodes(inputData.case1);

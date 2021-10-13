@@ -3,7 +3,7 @@
 // import networkDelayTime from "../../src/rules/networkDelayTime/index-nw";
 // import networkDelayTime from "../../src/rules/networkDelayTime/bellmanFord";
 import networkDelayTime from "../../src/rules/networkDelayTime/dijikstra";
-import { inputData, expected } from "../mock/networkDelayTimeData";
+import { inputData, expected } from "../data/networkDelayTimeData";
 
 test("networkDelayTime should return expected result for case1", () => {
   const result = networkDelayTime(inputData.case1.times, inputData.case1.n, inputData.case1.k);

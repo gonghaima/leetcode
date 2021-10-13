@@ -1,5 +1,5 @@
 import removeElements from "../../../src/rules/listNode/removeElements";
-// import { inputData, expected } from "../../mock/listNode/removeElementsData";
+// import { inputData, expected } from "../../data/listNode/removeElementsData";
 test("removeElements function should remove items with given value", () => {
   // let result = removeElements(inputData.case1.data, inputData.case1.val);
   // let exp = expected.case1;

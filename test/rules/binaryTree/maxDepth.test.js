@@ -1,5 +1,5 @@
 import { maxDepth } from '../../../src/rules/binaryTree/maxDepth';
-import { inputData, expected } from '../../mock/binaryTree/maxDepthData';
+import { inputData, expected } from '../../data/binaryTree/maxDepthData';
 
 test('maxDepth should return expected value', () => {
   const actual = maxDepth(inputData.case1);

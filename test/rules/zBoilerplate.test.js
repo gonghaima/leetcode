@@ -1,5 +1,5 @@
 import { zBoilerplate } from '../../src/rules/zBoilerplate';
-import { inputData, expected } from '../mock/zBoilerplateData';
+import { inputData, expected } from '../data/zBoilerplateData';
 
 test('zBoilerplate should return expected result 1', () => {
   expect(zBoilerplate(inputData.case1)).toBe(expected.case1);

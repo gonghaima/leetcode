@@ -1,5 +1,5 @@
 import integerBreak from "../../src/rules/integerBreak/dp";
-import { inputData, expected } from "../mock/integerBreakData";
+import { inputData, expected } from "../data/integerBreakData";
 
 test("integerBreak should return correct result for case1", () => {
   const result = integerBreak(inputData.case1);

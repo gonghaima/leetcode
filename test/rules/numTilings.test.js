@@ -1,7 +1,7 @@
 
 import numTilings from "../../src/rules/numTilings/dp";
 
-import { inputData, expected } from "../mock/numTilingsData";
+import { inputData, expected } from "../data/numTilingsData";
 
 test("numTilings should return expected result for case1", () => {
   const result = numTilings(inputData.case1);

@@ -3,7 +3,7 @@ import { inorderTraversal } from '../../../src/rules/binaryTree/inorderTraversal
 import {
   inputData,
   expected
-} from '../../mock/binaryTree/inorderTraversalData';
+} from '../../data/binaryTree/inorderTraversalData';
 
 test('inorderTraversal should return expected value in case 1', () => {
   const actual = inorderTraversal(inputData.case1);

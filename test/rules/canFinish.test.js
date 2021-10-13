@@ -3,7 +3,7 @@
 // import canFinish from "../../src/rules/canFinish/dfs-v1";
 import canFinish from "../../src/rules/canFinish/topologicalSort";
 // import canFinish from "../../src/rules/canFinish/dfs-v2";
-import { inputData, expected } from "../mock/canFinishData";
+import { inputData, expected } from "../data/canFinishData";
 
 test("canFinish should return expected result for case1", () => {
   const result = canFinish(inputData.case1.numCourses, inputData.case1.prerequisites);

@@ -1,5 +1,5 @@
 import rotate from "../../src/rules/rotate";
-import { inputData, expected } from "../mock/rotateData";
+import { inputData, expected } from "../data/rotateData";
 
 test("rotate should return rotated data from case 1", () => {
   const result = rotate(inputData.case1.nums, inputData.case1.k);

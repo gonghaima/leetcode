@@ -7,7 +7,7 @@ import {
   s3l2Seven,
   s4l1Nine,
   s4l2One
-} from '../mock/addTwoNumbersData';
+} from '../data/addTwoNumbersData';
 
 import addTwoNumbers from '../../src/rules/addTwoNumbers/addTwoNumbers';
 

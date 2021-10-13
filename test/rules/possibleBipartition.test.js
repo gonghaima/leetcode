@@ -2,7 +2,7 @@
 // import possibleBipartition from "../../src/rules/possibleBipartition/solution1";
 // import possibleBipartition from "../../src/rules/possibleBipartition/bfs-v1";
 import possibleBipartition from "../../src/rules/possibleBipartition/union-find";
-import { inputData, expected } from "../mock/possibleBipartitionData";
+import { inputData, expected } from "../data/possibleBipartitionData";
 
 test("possibleBipartition should return the distance for case1", () => {
   const result = possibleBipartition(inputData.case1.N, inputData.case1.dislikes);

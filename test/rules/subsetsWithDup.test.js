@@ -1,6 +1,6 @@
 
 import subsetsWithDup from "../../src/rules/subsetsWithDup/backtrack-2";
-import { inputData, expected } from "../mock/subsetsWithDupData";
+import { inputData, expected } from "../data/subsetsWithDupData";
 
 test("subsetsWithDup should return expected result for case1", () => {
   const result = subsetsWithDup(inputData.case1);

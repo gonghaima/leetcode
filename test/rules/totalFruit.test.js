@@ -1,6 +1,6 @@
 
 import totalFruit from "../../src/rules/totalFruit";
-import { inputData, expected } from "../mock/totalFruitData";
+import { inputData, expected } from "../data/totalFruitData";
 
 test("totalFruit should return expected result for case1", () => {
   const result = totalFruit(inputData.case1);

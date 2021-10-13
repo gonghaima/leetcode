@@ -1,6 +1,6 @@
 import { isSymmetric } from '../../../src/rules/binaryTree/isSymmetric';
 import { isSymmetricV2 } from '../../../src/rules/binaryTree/isSymmetric/solution2';
-import { inputData, expected } from '../../mock/binaryTree/isSymmetricData';
+import { inputData, expected } from '../../data/binaryTree/isSymmetricData';
 
 test('isSymmetric should return true for symmetric tree', () => {
   const actual = isSymmetric(inputData.case1);

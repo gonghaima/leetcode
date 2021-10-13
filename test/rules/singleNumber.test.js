@@ -1,6 +1,6 @@
 import singleNumber from "../../src/rules/singleNumber";
 import solution1 from "../../src/rules/singleNumber/solution1";
-import { inputData, expected } from "../mock/singleNumberData";
+import { inputData, expected } from "../data/singleNumberData";
 
 test("singleNumber should check a number for case 1", () => {
   const result = singleNumber(inputData.case1);

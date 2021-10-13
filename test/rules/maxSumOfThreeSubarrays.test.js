@@ -1,5 +1,5 @@
 import maxSumOfThreeSubarrays from "../../src/rules/maxSumOfThreeSubarrays";
-import { inputData, expected } from "../mock/maxSumOfThreeSubarraysData";
+import { inputData, expected } from "../data/maxSumOfThreeSubarraysData";
 
 test("maxSumOfThreeSubarrays should return max profit from case1", () => {
   const { nums, k } = inputData.case1;

@@ -1,5 +1,5 @@
 import { isValid } from "../../src/rules/validParentheses";
-import { inputData, expected } from "../mock/validParenthesesData";
+import { inputData, expected } from "../data/validParenthesesData";
 
 test("the validParentheses function  will validate first case", () => {
   expect(isValid(inputData.case1)).toEqual(expected.case1);

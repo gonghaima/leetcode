@@ -3,7 +3,7 @@
 // import minSubArrayLen from "../../src/rules/minSubArrayLen/slidingwindow";
 import minSubArrayLen from "../../src/rules/minSubArrayLen/slidingwindow-v1";
 
-import { inputData, expected } from "../mock/minSubArrayLenData";
+import { inputData, expected } from "../data/minSubArrayLenData";
 
 test("minSubArrayLen should return expected result for case1", () => {
   const { target, nums } = inputData.case1;

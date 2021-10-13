@@ -5,7 +5,7 @@
 // import numEnclaves from "../../src/rules/numEnclaves/dfs";
 import numEnclaves from "../../src/rules/numEnclaves/dfs-v1";
 
-import { inputData, expected } from "../mock/numEnclavesData";
+import { inputData, expected } from "../data/numEnclavesData";
 
 test("numEnclaves should return the number of isolated island - case 1", () => {
   const result = numEnclaves(inputData.case1);

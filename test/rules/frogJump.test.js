@@ -1,5 +1,5 @@
 import frogJump from "../../src/rules/frogJump";
-import { inputData, expected } from "../mock/frogJumpData";
+import { inputData, expected } from "../data/frogJumpData";
 
 test("frogJump should return true from a valid list", () => {
   const result = frogJump(inputData.case1);

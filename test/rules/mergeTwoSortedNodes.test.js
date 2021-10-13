@@ -1,5 +1,5 @@
 import { mergeTwoSortedNodes } from "../../src/rules/mergeTwoSortedNodes";
-import { inputData, expected } from "../mock/mergeTwoSortedNodesData";
+import { inputData, expected } from "../data/mergeTwoSortedNodesData";
 
 test("the mergeTwoSortedNodes function will merge first case", () => {
   expect(mergeTwoSortedNodes(inputData.case1.l1, inputData.case1.l2)).toEqual(

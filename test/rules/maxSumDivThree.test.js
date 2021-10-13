@@ -1,5 +1,5 @@
 import maxSumDivThree from "../../src/rules/maxSumDivThree/dp1";
-import { inputData, expected } from "../mock/maxSumDivThreeData";
+import { inputData, expected } from "../data/maxSumDivThreeData";
 
 test("maxSumDivThree should return the distance for case1", () => {
   const result = maxSumDivThree(inputData.case1);

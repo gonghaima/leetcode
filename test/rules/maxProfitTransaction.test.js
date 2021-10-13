@@ -1,5 +1,5 @@
 import maxProfitTransaction from "../../src/rules/maxProfitTransaction";
-import { inputData, expected } from "../mock/maxProfitTransactionData";
+import { inputData, expected } from "../data/maxProfitTransactionData";
 
 test("maxProfitTransaction should return max profit from case1", () => {
   const { prices, fee } = inputData.case1;

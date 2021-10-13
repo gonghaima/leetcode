@@ -1,5 +1,5 @@
 import { searchInsert } from "../../src/rules/SearchInsertPosition";
-import { inputData, expected } from "../mock/SearchInsertPositionData";
+import { inputData, expected } from "../data/SearchInsertPositionData";
 
 test("the SearchInsertPosition function  will validate first case", () => {
   expect(searchInsert(inputData.case1.nums, inputData.case1.target)).toEqual(

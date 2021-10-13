@@ -1,5 +1,5 @@
-import jump from "../../src/rules/jump/bfs";
-import { inputData, expected } from "../mock/jumpData";
+import jump from "../../src/rules/jumpII/bfs";
+import { inputData, expected } from "../data/jumpIIData";
 
 test("jump should return the distance for case1", () => {
   const result = jump(inputData.case1);

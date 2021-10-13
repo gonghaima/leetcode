@@ -2,7 +2,7 @@ import removeStones from "../../src/rules/removeStones";
 import removeStones_v1 from "../../src/rules/removeStones/unionFind_v1";
 import removeStones_v1_enhanced from "../../src/rules/removeStones/unionFind_v1_enhanced";
 import removeStones_v2 from "../../src/rules/removeStones/unionFind_v2";
-import { inputData, expected } from "../mock/removeStonesData";
+import { inputData, expected } from "../data/removeStonesData";
 
 // test("removeStones should find the largest possible number of moves for case 1", () => {
 //   const result = removeStones(inputData.case1);

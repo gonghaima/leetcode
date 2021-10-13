@@ -1,7 +1,7 @@
 
 import minHeightShelves from "../../src/rules/minHeightShelves/buttom-up";
 
-import { inputData, expected } from "../mock/minHeightShelvesData";
+import { inputData, expected } from "../data/minHeightShelvesData";
 
 test("minHeightShelves should return expected result for case1", () => {
   const { books, shelfWidth } = inputData.case1;

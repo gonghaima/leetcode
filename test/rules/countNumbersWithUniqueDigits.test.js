@@ -1,5 +1,5 @@
 import countNumbersWithUniqueDigits from "../../src/rules/countNumbersWithUniqueDigits/dp";
-import { inputData, expected } from "../mock/countNumbersWithUniqueDigitsData";
+import { inputData, expected } from "../data/countNumbersWithUniqueDigitsData";
 
 test("countNumbersWithUniqueDigits should return correct result for case1", () => {
   const result = countNumbersWithUniqueDigits(inputData.case1);

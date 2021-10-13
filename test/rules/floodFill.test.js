@@ -1,7 +1,7 @@
 // import floodFill from "../../src/rules/floodFill/bfs";
 import floodFill from "../../src/rules/floodFill/dfs";
 // import floodFill from "../../src/rules/floodFill/dfs-v1";
-import { inputData, expected } from "../mock/floodFillData";
+import { inputData, expected } from "../data/floodFillData";
 
 test("floodFill should return correct answer - case 1", () => {
   const { image, sr, sc, newColor } = inputData.case1;

@@ -1,5 +1,5 @@
 import groupThePeople from "../../src/rules/groupThePeople";
-import { inputData, expected } from "../mock/groupThePeopleData";
+import { inputData, expected } from "../data/groupThePeopleData";
 
 test("groupThePeople should return a grouped Ids in case1", () => {
   const result = groupThePeople(inputData.case1);

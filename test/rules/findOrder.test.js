@@ -1,6 +1,6 @@
 // import findOrder from "../../src/rules/findOrder/Topological";
 import findOrder from "../../src/rules/findOrder/dfs";
-import { inputData, expected } from "../mock/findOrderData";
+import { inputData, expected } from "../data/findOrderData";
 
 test("findOrder should return expected result for case1", () => {
   const result = findOrder(inputData.case1.numCourses, inputData.case1.prerequisites);

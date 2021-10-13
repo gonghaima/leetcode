@@ -3,7 +3,7 @@
 // import accountsMerge from "../../src/rules/accountsMerge/unionFind_v1";
 import accountsMerge from "../../src/rules/accountsMerge/unionFind_v2";
 
-import { inputData, expected } from "../mock/accountsMergeData";
+import { inputData, expected } from "../data/accountsMergeData";
 
 // test("accountsMerge should satisfy all the given equations for case 1", () => {
 //   const result = accountsMerge(inputData.case1);

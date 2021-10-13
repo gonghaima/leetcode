@@ -1,6 +1,6 @@
 // import maxProfitIV from "../../src/rules/maxProfitIV";
 import maxProfitIV from "../../src/rules/maxProfitIV/dp";
-import { inputData, expected } from "../mock/maxProfitIVData";
+import { inputData, expected } from "../data/maxProfitIVData";
 
 // test("maxProfitIV should return max profit from case1", () => {
 //   const { k, prices } = inputData.case1;

@@ -1,5 +1,5 @@
 import romanToInt from "../../src/rules/romanToInt";
-import { inputData, expected } from "../mock/romanToIntData";
+import { inputData, expected } from "../data/romanToIntData";
 
 test("romanToInt should return correct value from case one", () => {
   const result = romanToInt(inputData.case1);

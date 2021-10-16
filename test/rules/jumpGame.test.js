@@ -1,4 +1,4 @@
-import jump from "../../src/rules/jump";
+import jump from "../../src/rules/jump/greedy";
 import { inputData, expected } from "../data/jumpData";
 
 test("jump should return the distance for case1", () => {

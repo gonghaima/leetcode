@@ -18,21 +18,16 @@ var canJump = function (nums) {
       const currentIndex = next[i];
       for (let j = 0; j < currentIndex; j++) {
         const nextIndex = j + nums[j];
-        if (!reachable.has(j)) {
-          reachable.add(j);
-          tmp.push(j);
-        } else if (!reachable.has(nextIndex)) {
+        if (!reachable.has(nextIndex)) {
           reachable.add(nextIndex);
           tmp.push(nextIndex);
-        }
+        };
       }
     };
     next = tmp;
   }
 
-
   // after all the iteration, check existence of the last index of the nums
-
   return reachable.has(nums.length - 1);
 };
 export default canJump;

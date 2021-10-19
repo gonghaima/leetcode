@@ -120,3 +120,4 @@ Identify if problems talks about finding groups or components.
 - [1326. Minimum Number of Taps to Open to Water a Garden](https://leetcode.com/problems/minimum-number-of-taps-to-open-to-water-a-garden/) => [minTaps](./src/rules/minTaps/index.js)
 - [55. Jump Game](https://leetcode.com/problems/jump-game/) => [jump](./src/rules/jump/index.js)
 - [45. Jump Game II](https://leetcode.com/problems/jump-game-ii/) => [jumpII](./src/rules/jumpII/index.js)
+- [1306. Jump Game III](https://leetcode.com/problems/jump-game-iii/) => [jumpIII](./src/rules/jumpIII/index.js)

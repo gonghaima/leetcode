@@ -4,39 +4,65 @@
  * @return {boolean}
  */
 
-// my thougts
-// bfs - 
-// 0. define variable to track visited index
-//    define found = false
-// 1. find the index with value 0
-// add to next iteration array
-
-// while loop (next.length && !found)
-// 2. two pointers (left, right) to get all reachable indexes, 
-// if no visited, 
-  // add the reachable index into next iteration. 
-  // check if the reachable index is the 'start' index, set found to true if it is.
-
-// dfs - memo
-// 0. define a variable to track visitied index, a variable found=false
-// 1. start from 'start' index, recursion to keep find next reachable unvisited item, 
-// if the the next reachable unvisited item has value 0, set found = true
-// 2. return variable found
-
-
-// dp 
-// try to break down to sub problems
-// 0. find the index with value 0
-// 1. for each item
-//     take it - the item index +(or -) item value, add to the tree
-//    not take - not do anything...
-
-// graph , union find.
-// for each item, find & assign parent
-// then check if the ancestor of 'start' index is the item with value 0
+// union find
 
 var canReach = function (arr, start) {
-  return null;
+  // index with value 0
+  let end = null;
+
+
+  // build graph
+  const graph = {};
+  for (let i = 0; i < arr.length; i++) {
+    const itemValue = arr[i];
+
+    // set end index
+    if (itemValue === 0) {
+      end = i;
+      continue;
+    }
+
+    const prevIndex = i - itemValue >= 0 ? i - itemValue : null;
+    const nextIndex = (i + itemValue) <= (arr.length - 1) ? (i + itemValue) : null;
+    if (!graph[i] && graph[i] !== 0) {
+      graph[i] = [];
+    }
+
+    if (i === 5);
+    if (prevIndex) graph[i].push(prevIndex);
+    if (nextIndex) graph[i].push(nextIndex);
+  }
+  // path compression
+
+  // find the ancestor of the start
+  // bfs - find all parents & including ancestors - if index is end index
+  ;
+  let reachable = false;
+
+  let visited = new Set();
+  let next = [start];
+  ;
+
+  while (next.length && !reachable) {
+    ;
+    let tmp = [];
+    for (let i = 0; i < next.length; i++) {
+      const parentIdx = next[i];
+      const parents = graph[parentIdx];
+      const parentsSet = new Set(parents);
+
+      if (parentsSet.has(end)) reachable = true;
+      parents.map(parent => {
+        if (!visited.has(parent)) {
+          tmp.push(parent);
+          visited.add(parent);
+        }
+      })
+    };
+    next = tmp;;
+  };
+
+  return reachable;
 };
 
 export default canReach;

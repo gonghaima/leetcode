@@ -122,3 +122,4 @@ Identify if problems talks about finding groups or components.
 - [45. Jump Game II](https://leetcode.com/problems/jump-game-ii/) => [jumpII](./src/rules/jumpII/index.js)
 - [1306. Jump Game III](https://leetcode.com/problems/jump-game-iii/) => [jumpIII](./src/rules/jumpIII/index.js)
 - [1345. Jump Game IV](https://leetcode.com/problems/jump-game-iv/) => [jumpIV](./src/rules/jumpIV/index.js)
+- [1340. Jump Game V](https://leetcode.com/problems/jump-game-v/) => [jumpV](./src/rules/jumpV/index.js)

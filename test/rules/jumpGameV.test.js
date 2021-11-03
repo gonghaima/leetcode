@@ -1,4 +1,4 @@
-import jump from "../../src/rules/jumpV";
+import jump from "../../src/rules/jumpV/dp-not-all-passes";
 import { inputData, expected } from "../data/jumpVData";
 
 test("jump should return the distance for case1", () => {
@@ -29,4 +29,10 @@ test("jump should return the distance for case5", () => {
   const { arr, d } = inputData.case5;
   const result = jump(arr, d);
   expect(result).toBe(expected.case5);
+});
+
+test("jump should return the distance for case6", () => {
+  const { arr, d } = inputData.case6;
+  const result = jump(arr, d);
+  expect(result).toBe(expected.case6);
 });

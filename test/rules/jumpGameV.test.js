@@ -1,4 +1,4 @@
-import jump from "../../src/rules/jumpV/dp-not-all-passes";
+import jump from "../../src/rules/jumpV/dp";
 import { inputData, expected } from "../data/jumpVData";
 
 test("jump should return the distance for case1", () => {

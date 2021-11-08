@@ -8,12 +8,18 @@
 
 // https://leetcode.com/problems/jump-game-v/submissions/
 
+// We could find the next possible step for each point via monotone stack. And then use DFS to find the answer.
+
 const maxJumps = (arr, d) => {
     const LEN = arr.length;
     const cache = new Uint16Array(LEN);
     const map = Array.from({ length: LEN }, () => []);
 
-    for (let left = 0, right = LEN - 1, ltop = -1, rtop = -1, lstack = new Uint16Array(LEN), rstack = new Uint16Array(LEN); left < LEN; ++left, --right) {
+    for (
+        let left = 0, right = LEN - 1, ltop = -1, rtop = -1, lstack = new Uint16Array(LEN), rstack = new Uint16Array(LEN); 
+        left < LEN; 
+        ++left, --right
+        ) {
         ltop = upStack(lstack, ltop, left);
         rtop = upStack(rstack, rtop, right);
     }

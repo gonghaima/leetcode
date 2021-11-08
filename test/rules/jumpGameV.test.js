@@ -1,4 +1,4 @@
-import jump from "../../src/rules/jumpV/monotoneStack";
+import jump from "../../src/rules/jumpV/segmentTree";
 import { inputData, expected } from "../data/jumpVData";
 
 test("jump should return the distance for case1", () => {

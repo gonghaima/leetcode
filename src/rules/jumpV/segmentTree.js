@@ -74,6 +74,8 @@ var maxJumps = function (arr, d) {
       Math.min(rightTops[idx] - 1, idx + d)
     ));
   }
+
+  console.log(tree);
   return tree.query(0, LEN - 1);
 }
 

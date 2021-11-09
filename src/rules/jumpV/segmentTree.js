@@ -66,7 +66,7 @@ var maxJumps = function (arr, d) {
     rightTops[j] = rtop === -1 ? LEN : rstack[rtop];
     rstack[++rtop] = j;
   }
-
+console.log(sortedHeights);
   for (const item of sortedHeights) {
     const idx = item[1];
     tree.update(idx, 1 + tree.query(
@@ -74,6 +74,7 @@ var maxJumps = function (arr, d) {
       Math.min(rightTops[idx] - 1, idx + d)
     ));
   }
+
   return tree.query(0, LEN - 1);
 }
 

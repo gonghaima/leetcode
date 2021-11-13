@@ -4,9 +4,16 @@
  * @return {number}
  */
 
+// monotonic queue
+
 // https://leetcode.com/problems/jump-game-vi/discuss/979414/javascript-solution
 
 // Along with that, we will also pop those indices which will never have any chance of being chosen in the future. So for eg., if the score for current index - dp[i] is greater than some indices stored in the queue, it will always be optimal to choose dp[i] instead of those other indices. So, we will just pop those indices from queue since they won't ever be used.
+
+/**********************************************************************************************
+ *   Runtime: 112 ms, faster than 76.12% of JavaScript online submissions for Jump Game VI.   *
+ * Memory Usage: 49.4 MB, less than 73.13% of JavaScript online submissions for Jump Game VI. *
+ **********************************************************************************************/
 
 var maxResult = function(nums, k) {
   if (nums.length == 1) return nums[0];

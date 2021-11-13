@@ -1,4 +1,4 @@
-import jump from '../../src/rules/jumpVI';
+import jump from '../../src/rules/jumpVI/bruteforce';
 import { inputData, expected } from '../data/jumpVIData';
 
 test('jump should return the distance for case1', () => {

@@ -23,7 +23,25 @@
  */
 
 var canReach = function(s, minJump, maxJump) {
-  return null;
+  //dp
+  const n = s.split('');
+  const trackingResult = {};
+  const range = maxJump - minJump;
+  if (range <= 0) return false;
+
+  for (let i = 0; !trackingResult[n.length - 1] && i < n.length; i++) {
+    const startPoint = i + minJump;
+    if (n[i] === '0') {
+      for (
+        let j = startPoint;
+        !trackingResult[n.length - 1] && j <= startPoint + range;
+        j++
+      ) {
+        trackingResult[j] = true;
+      }
+    }
+  }
+  return trackingResult[n.length - 1] ? true : false;
 };
 
 export default canReach;

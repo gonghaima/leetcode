@@ -12,3 +12,9 @@ test('jump should return the distance for case2', () => {
   const result = jump(s, minJump, maxJump);
   expect(result).toEqual(expected.case2);
 });
+
+test('jump should return the distance for case3', () => {
+  const { s, minJump, maxJump } = inputData.case3;
+  const result = jump(s, minJump, maxJump);
+  expect(result).toEqual(expected.case3);
+});

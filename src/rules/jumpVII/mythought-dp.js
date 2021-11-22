@@ -23,38 +23,25 @@
  */
 
 var canReach = function(s, minJump, maxJump) {
-  //bfs
+  //dp
   const n = s.split('');
   const trackingResult = {};
   const range = maxJump - minJump;
-  let reachable = false;
-
   if (range <= 0) return false;
-  let firstKey = n.length - 1;
-  let firstVal = n[n.length - 1];
-  let firstItem = {};
-  firstItem = { key: firstKey, val: '0' };
-  let next = [firstItem];
 
-  // while next.length,  --> find the previous available items, add into tempArray, replace next with tempArray
-  while (next.length && !reachable) {
-    debugger;
-    let tmp = [];
-    for (let i = 0; i < next.length; i++) {
-      let nextItem = next[i];
-      let startPoint = nextItem.key - maxJump;
-      let endPoint = nextItem.key - minJump;
-      for (let j = startPoint; j <= endPoint; j++) {
-        if (j >= 0) {
-          if (j === 0) reachable = true;
-          if (n[j] === '0') tmp.push({ key: j, val: '0' });
-        }
+  for (let i = 0; !trackingResult[n.length - 1] && i < n.length; i++) {
+    const startPoint = i + minJump;
+    if (n[i] === '0') {
+      for (
+        let j = startPoint;
+        !trackingResult[n.length - 1] && j <= startPoint + range;
+        j++
+      ) {
+        trackingResult[j] = true;
       }
     }
-    next = tmp;
   }
-
-  return reachable;
+  return trackingResult[n.length - 1] ? true : false;
 };
 
 export default canReach;

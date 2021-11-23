@@ -5,56 +5,33 @@
  * @return {boolean}
  */
 
-// my thought
-
 // dp
+// https://leetcode.com/problems/jump-game-vii/discuss/1224804/JavaC%2B%2BPython-One-Pass-DP
+
 /**
- * 1. mark an array for destination, defaullt false
- * 2. for each of the idex, mark index + availableRange (maxJump - minJump) as true
- * 3. return s.length-1 index value from destination array
+ *
+ * 1. It's a bottom-up DP implementation. The boolean value represents whether this position is reachable from start. So the first step is to generate the table. Here the table was pre-labeled True or False, thus '1's are already labeled False.
+ * 2. To determine the state of dp[i], one need to check the states in window dp[i-maxJ : i-minJ], because any one of them can reach i if it's labeled True.
+ * 3. Then you need to check if there is a True in this window. Notice that this is a sliding window problem, so you don't need to calculate it everytime. You only need to remove the effect from dp[i-maxJ-1] and add the dp[i-minJ]. This is done by these two lines of code pre += dp[i - minJ] and pre -= dp[i - maxJ - 1]
+ * 4. The if statements if i >= minJ: and if i > maxJ: are dealing with the initial boundary.
  */
 
-// bfs - buttom up
-/**
- * 1. start from the last item of s, next = [lastItem]
- * 2. while next.length,  --> find the previous available items, add into tempArray, replace next with tempArray
- * 3. if one of the previous item is 0, return true
- * 4. return false
- */
+/***********************************************************************************************
+ *   Runtime: 104 ms, faster than 52.00% of JavaScript online submissions for Jump Game VII.   *
+ * Memory Usage: 47.1 MB, less than 96.00% of JavaScript online submissions for Jump Game VII. *
+ ***********************************************************************************************/
 
 var canReach = function(s, minJump, maxJump) {
-  //bfs
-  const n = s.split('');
-  const trackingResult = {};
-  const range = maxJump - minJump;
-  let reachable = false;
-
-  if (range <= 0) return false;
-  let firstKey = n.length - 1;
-  let firstVal = n[n.length - 1];
-  let firstItem = {};
-  firstItem = { key: firstKey, val: '0' };
-  let next = [firstItem];
-
-  // while next.length,  --> find the previous available items, add into tempArray, replace next with tempArray
-  while (next.length && !reachable) {
-    debugger;
-    let tmp = [];
-    for (let i = 0; i < next.length; i++) {
-      let nextItem = next[i];
-      let startPoint = nextItem.key - maxJump;
-      let endPoint = nextItem.key - minJump;
-      for (let j = startPoint; j <= endPoint; j++) {
-        if (j >= 0) {
-          if (j === 0) reachable = true;
-          if (n[j] === '0') tmp.push({ key: j, val: '0' });
-        }
-      }
-    }
-    next = tmp;
+  let n = s.length,
+    pre = 0;
+  const dp = new Array(n).fill(false);
+  dp[0] = true;
+  for (let i = 1; i < n; ++i) {
+    if (i >= minJump && dp[i - minJump]) pre++;
+    if (i > maxJump && dp[i - maxJump - 1]) pre--;
+    dp[i] = pre > 0 && s[i] == '0';
   }
-
-  return reachable;
+  return dp[n - 1];
 };
 
 export default canReach;

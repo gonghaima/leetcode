@@ -1,4 +1,4 @@
-import jump from '../../src/rules/jumpVII';
+import jump from '../../src/rules/jumpVII/bfs';
 import { inputData, expected } from '../data/jumpVIIData';
 
 test('jump should return the distance for case1', () => {

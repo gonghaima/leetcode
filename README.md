@@ -126,3 +126,4 @@ Identify if problems talks about finding groups or components.
 - [1696. Jump Game VI](https://leetcode.com/problems/jump-game-vi/) => [jumpVI](./src/rules/jumpVI/index.js)
 - [1696. Jump Game VII](https://leetcode.com/problems/jump-game-vii/) => [jumpVII](./src/rules/jumpVII/index.js)
 - [918. Maximum Sum Circular Subarray](https://leetcode.com/problems/maximum-sum-circular-subarray/) => [maxSubarraySumCircular](./src/rules/maxSubarraySumCircular/index.js)
+- [1359. Count All Valid Pickup and Delivery Options](https://leetcode.com/problems/count-all-valid-pickup-and-delivery-options/) => [countOrders](./src/rules/countOrders/index.js)

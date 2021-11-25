@@ -124,4 +124,5 @@ Identify if problems talks about finding groups or components.
 - [1345. Jump Game IV](https://leetcode.com/problems/jump-game-iv/) => [jumpIV](./src/rules/jumpIV/index.js)
 - [1340. Jump Game V](https://leetcode.com/problems/jump-game-v/) => [jumpV](./src/rules/jumpV/index.js)
 - [1696. Jump Game VI](https://leetcode.com/problems/jump-game-vi/) => [jumpVI](./src/rules/jumpVI/index.js)
+- [1696. Jump Game VII](https://leetcode.com/problems/jump-game-vii/) => [jumpVII](./src/rules/jumpVII/index.js)
 - [918. Maximum Sum Circular Subarray](https://leetcode.com/problems/maximum-sum-circular-subarray/) => [maxSubarraySumCircular](./src/rules/maxSubarraySumCircular/index.js)

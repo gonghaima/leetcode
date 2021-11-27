@@ -2,25 +2,16 @@
  * @param {number} n
  * @return {number}
  */
-/**
- * DP
- * dp[i]=
- * for the last dp[i-1] + D
- * two groups - a group of P, a group of D
- * [P1] [D1]  pick an item from group1, pick an item from group2
- * append them together
- * 
- * [P1, P2] [D1, D2]
- * 
- * Math
- * 4+3+2+1
- * factorial(n*2) / n(th) double number
- * 
- * since the number grow (1)2, (2)4, (3)8
- * so the n(th) would be 2..4..8... n(th)
- */
+
+ // https://leetcode.com/problems/count-all-valid-pickup-and-delivery-options/discuss/516968/JavaC%2B%2BPython-Easy-and-Concise
+ // https://leetcode.com/problems/count-all-valid-pickup-and-delivery-options/discuss/1301153/Arithmetic-Formula-Explained
+
 var countOrders = function(n) {
-  return Infinity;
+    let f=1;
+     for(let i =2;i<=n;i++){
+         f = f*i*(2*i-1) %(10**9+7);
+     }
+    return f
 };
 
 export default countOrders;

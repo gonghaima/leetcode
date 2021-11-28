@@ -1,4 +1,4 @@
-import countOrders from '../../src/rules/countOrders';
+import countOrders from '../../src/rules/countOrders/recursion';
 import { inputData, expected } from '../data/countOrdersData';
 
 test('countOrders should return correct result for case1', () => {

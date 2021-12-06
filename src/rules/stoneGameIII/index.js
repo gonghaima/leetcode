@@ -3,49 +3,44 @@
  * @return {string}
  */
 
-/**
- * 
+// https://leetcode.com/problems/stone-game-iii/discuss/1235671/JavaScript-DP-solution
 
-Max of the following
+/************************************************************************************************
+ *   Runtime: 140 ms, faster than 91.67% of JavaScript online submissions for Stone Game III.   *
+ * Memory Usage: 51.5 MB, less than 75.00% of JavaScript online submissions for Stone Game III. *
+ ************************************************************************************************/
 
-take [1-3], skip [1-3], take [1-3]...
-
-
-in (n-3) position,  dp[n-4] + max(stoneValue[n-3], stoneValue[n-3]+stoneValue[n-2], stoneValue[n-3]+stoneValue[n-2]+stoneValue[n-1])
-
-in (n-2) position,  dp[n-3] + max(stoneValue[n-2], stoneValue[n-2]+stoneValue[n-1])
-
-in (n-1) position,  dp[n-2] + stoneValue[n-1]
-
-
-From beginning,
-needTake = true;
-
-oneS = stone[i];
-twoS = stone[i]+stone[i+1];
-threeS = stone[i]+stone[i+1]+stone[i+2];
-needTake = false;
-
-...
-Actually, it is a tree. Each level would either be take/skip.
-
-Root is 0;
- 
-                  					0
-		      1[0]			  (1+2)3[1]		      (1+2+3)6[2]
-         1[0+1]	     1[0+2]   1[0+3]	   3[1+1]  3[1+2]                  6[2+1]           
-4[1+1] 11[1+2]      8[2+1]    		10[2+1] 	  		
-
-
-Then find the largest child value - largestVal
-CompareVal = total - largestVal;
-
-If largestVal>CompareVal: "Alice"
-Else "Bob"
-
- */
 var stoneGameIII = function(stoneValue) {
-  return null;
+  // dp[i]: diff score of alice - bob at index i
+  var n = stoneValue.length;
+  var dp = new Array(n + 1).fill(-Infinity);
+  dp[n] = 0; // the last one init value is 0 : means Tie, difference is 0 of Alic & bob
+
+  for (var i = n - 1; i >= 0; i--) {
+    var sum = 0;
+    // take 1
+    if (i < n) {
+      sum += stoneValue[i];
+      dp[i] = Math.max(dp[i], sum - dp[i + 1]);
+    }
+    // take 2
+    if (i + 1 < n) {
+      sum += stoneValue[i + 1];
+      dp[i] = Math.max(dp[i], sum - dp[i + 2]);
+    }
+    // take 3
+    if (i + 2 < n) {
+      sum += stoneValue[i + 2];
+      dp[i] = Math.max(dp[i], sum - dp[i + 3]);
+    }
+  }
+  if (dp[0] > 0) {
+    return 'Alice';
+  } else if (dp[0] < 0) {
+    return 'Bob';
+  } else {
+    return 'Tie';
+  }
 };
 
 export default stoneGameIII;

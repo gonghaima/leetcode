@@ -4,6 +4,7 @@
  */
 
 // top down
+// https://leetcode.com/problems/stone-game/discuss/731428/JavaScript-Solution-Top-Down-with-Memoization
 
 var stoneGame = function(piles) {
   const n = piles.length;

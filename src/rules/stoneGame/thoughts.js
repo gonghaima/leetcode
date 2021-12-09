@@ -19,8 +19,8 @@
  * if three items [1,2,2],Alice still take bigger ones in the beginning.
  * 
  * if four items [4,8,2,1], Alice has to take smaller number in the beginning
- * 
- * 
+ * [1,3,8,2]
+ * [1,8,3,2]
  * bfs
 alice [3,7,2,3]
 3 [7,2,3]

@@ -1,4 +1,4 @@
-import stoneGame from '../../src/rules/stoneGame';
+import stoneGame from '../../src/rules/stoneGame/dp';
 import { inputData, expected } from '../data/stoneGameData';
 
 test('stoneGame should return expected result for case1', () => {

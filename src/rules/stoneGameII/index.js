@@ -10,6 +10,11 @@
  * Memory Usage: 42.1 MB, less than 64.29% of JavaScript online submissions for Stone Game II. *
  ***********************************************************************************************/
 
+/**********************************************************************************************************************
+ *             dp[i][j] is the maximum number of stones Alex can get when starting at index i with M = j              *
+ *                          sufsum[i] is the total number of stones from index i to the end                           *
+ * The dp matrix for Lee is the same. And the stragegy for Alex is to choose an optimal X to minimize the number of stones Lee can get when starting at index (i + X) with M = max(X,j). Here we have the recurrence formula *
+ **********************************************************************************************************************/
 var stoneGameII = function(piles) {
   const length = piles.length;
   const dp = [...Array(length + 1).fill(null)].map((_) =>
@@ -31,7 +36,5 @@ var stoneGameII = function(piles) {
   }
   return dp[0][1];
 };
-
-
 
 export default stoneGameII;

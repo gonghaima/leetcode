@@ -134,3 +134,4 @@ Identify if problems talks about finding groups or components.
 - [1510. Stone Game IV](https://leetcode.com/problems/stone-game-iv/) => [stoneGameIV](./src/rules/stoneGameIV/index.js)
 - [1563. Stone Game V](https://leetcode.com/problems/stone-game-v/) => [stoneGameV](./src/rules/stoneGameV/index.js)
 - [1686. Stone Game VI](https://leetcode.com/problems/stone-game-vi/) => [stoneGameVI](./src/rules/stoneGameVI/index.js)
+- [1690. Stone Game VII](https://leetcode.com/problems/stone-game-vii/) => [stoneGameVII](./src/rules/stoneGameVII/index.js)

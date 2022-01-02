@@ -1,4 +1,4 @@
-import stoneGameVII from '../../src/rules/stoneGameVII';
+import stoneGameVII from '../../src/rules/stoneGameVII/dp1';
 import { inputData, expected } from '../data/stoneGameVIIData';
 
 test('stoneGameVII should return expected result for case1', () => {
@@ -7,6 +7,6 @@ test('stoneGameVII should return expected result for case1', () => {
 });
 
 test('stoneGameVII should return expected result for case2', () => {
-  const result = stoneGameVII(inputData.case12);
+  const result = stoneGameVII(inputData.case2);
   expect(result).toEqual(expected.case2);
 });

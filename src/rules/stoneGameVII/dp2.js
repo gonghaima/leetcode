@@ -3,9 +3,14 @@
  * @return {number}
  */
 
+/************************************************************************************************
+ * Runtime: 352 ms, faster than 68.75% of JavaScript online submissions for Stone Game VII.     *
+ * Memory Usage: 69.4 MB, less than 28.13% of JavaScript online submissions for Stone Game VII. *
+ ************************************************************************************************/
+
 // https://leetcode.com/problems/stone-game-vii/discuss/1266234/javascript-bottom-up-%2B-top-down-dp-100
 
-// bottom-up
+// (top-down)
 
 const initialize2DArrayNew = (n, m) => {
   let data = [];
@@ -28,9 +33,10 @@ const stoneGameVII = (a) => {
   let n = a.length;
   let dp = initialize2DArrayNew(n, n);
   let pre = preSum(a, n);
-  for (let i = n - 1; ~i; i--) {
-    for (let j = i; j < n; j++) {
-      if (i == j) {
+  for (let len = 1; len <= n; len++) {
+    for (let i = 0; i + len - 1 < n; i++) {
+      let j = i + len - 1;
+      if (len == 1) {
         dp[i][j] = 0;
       } else {
         let L = pre[j + 1] - pre[i + 1] - dp[i + 1][j];

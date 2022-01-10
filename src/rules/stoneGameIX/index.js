@@ -2,23 +2,21 @@
  * @param {number[]} stones
  * @return {boolean}
  */
+
+// https://leetcode.com/problems/stone-game-ix/discuss/1500245/JavaC%2B%2BPython-Easy-and-Concise-6-lines-O(n)
+
+/**********************************************************************************************
+ * Runtime: 167 ms, faster than 33.33% of JavaScript online submissions for Stone Game IX.    *
+ * Memory Usage: 57.1 MB, less than 6.67% of JavaScript online submissions for Stone Game IX. *
+ **********************************************************************************************/
+
 var stoneGameIX = function(stones) {
-  /**
-   * change current array with only remainers
-   * [5,1,2,4,3]
-   * to
-   * [2,1,2,1,0]
-   *
-   * construct a map containing key (0, 1, 2) value is counts, in this case
-   * {0:1, 1:2, 2:2}
-   *
-   * keep track of removedTotal, start with 0, only keeps remainer value, instead of actual value
-   * for each turn, avoid the option of 3 - removedTotal, then try the dp of the other two options.
-   *
-   * whoever has no other options but only choose the option of 3 - removedTotal, Alice/Bob lose the game.
-   * if no options left, but removedTotal is not 0, Alice loose the game
-   */
-  return null;
+  let cnt = new Array(3).fill(0);
+  for (let a of stones)
+      cnt[a % 3]++;
+  if (Math.min(cnt[1], cnt[2]) === 0)
+      return Math.max(cnt[1], cnt[2]) > 2 && cnt[0] % 2 > 0;
+  return Math.abs(cnt[1] - cnt[2]) > 2 || cnt[0] % 2 == 0;
 };
 
 export default stoneGameIX;

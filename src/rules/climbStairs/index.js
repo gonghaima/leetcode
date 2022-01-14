@@ -1,29 +1,17 @@
-export default n => {
-  let counter = 0;
+/*************************************************************************************************
+ *   Runtime: 84 ms, faster than 35.22% of JavaScript online submissions for Climbing Stairs.    *
+ * Memory Usage: 38.6 MB, less than 44.69% of JavaScript online submissions for Climbing Stairs. *
+ *************************************************************************************************/
 
-  let step1 = 2;
-  let step2 = 1;
-  let allSteps = 0;
+export default (n) => {
+  const initial = [0, 1, 2, 3];
+  if (n < 4) return initial[n];
+  const dp = new Array(n + 1).fill(0);
 
-  const keepCal = nm => {
-    if (nm <= 0) {
-      return 0;
-    }
-    if (nm === 1) {
-      return 1;
-    }
-    if (nm === 2) {
-      return 2;
-    }
-    for (let i = 2; i < nm; i++) {
-      allSteps = step1 + step2;
-      step2 = step1;
-      step1 = allSteps;
-    }
+  [0, 1, 2, 3].map((i) => (dp[i] = i));
+  for (let i = 4; i <= n; i++) {
+    dp[i] = dp[i - 1] + dp[i - 2];
+  }
 
-    return allSteps;
-  };
-
-  counter = keepCal(n);
-  return counter;
+  return dp[n];
 };

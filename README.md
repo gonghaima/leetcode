@@ -137,3 +137,8 @@ Identify if problems talks about finding groups or components.
 - [1690. Stone Game VII](https://leetcode.com/problems/stone-game-vii/) => [stoneGameVII](./src/rules/stoneGameVII/index.js)
 - [1872. Stone Game VIII](https://leetcode.com/problems/stone-game-viii/) => [stoneGameVIII](./src/rules/stoneGameVIII/index.js)
 - [2029. Stone Game IX](https://leetcode.com/problems/stone-game-ix/) => [stoneGameIX](./src/rules/stoneGameIX/index.js)
+
+### DP 1
+
+- [152. Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/) => [maxProduct](./src/rules/maxProduct/index.js)
+- [1567. Maximum Length of Subarray With Positive Product](https://leetcode.com/problems/maximum-length-of-subarray-with-positive-product/) => [getMaxLen](./src/rules/getMaxLen/index.js)

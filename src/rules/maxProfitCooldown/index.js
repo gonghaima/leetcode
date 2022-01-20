@@ -10,7 +10,7 @@
 
 // https://www.youtube.com/watch?v=oL6mRyTn56M
 // https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/discuss/75928/Share-my-DP-solution-(By-State-Machine-Thinking)
-// state visulization - solution-index.png
+// state visulization
 var maxProfitCooldown = function (prices) {
   let hold = -Infinity, rest = 0, sold = 0;
   prices.map(price => {

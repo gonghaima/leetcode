@@ -142,3 +142,4 @@ Identify if problems talks about finding groups or components.
 
 - [152. Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/) => [maxProduct](./src/rules/maxProduct/index.js)
 - [1567. Maximum Length of Subarray With Positive Product](https://leetcode.com/problems/maximum-length-of-subarray-with-positive-product/) => [getMaxLen](./src/rules/getMaxLen/index.js)
+- [1014. Best Sightseeing Pair](https://leetcode.com/problems/best-sightseeing-pair/) => [maxScoreSightseeingPair](./src/rules/maxScoreSightseeingPair/index.js)

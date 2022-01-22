@@ -145,3 +145,4 @@ Identify if problems talks about finding groups or components.
 - [1014. Best Sightseeing Pair](https://leetcode.com/problems/best-sightseeing-pair/) => [maxScoreSightseeingPair](./src/rules/maxScoreSightseeingPair/index.js)
 - [139. Word Break](https://leetcode.com/problems/word-break/) => [wordBreak](./src/rules/wordBreak/index.js)
 - [42. Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) => [trap](./src/rules/trap/index.js)
+- [264. Ugly Number II](https://leetcode.com/problems/ugly-number-ii/) => [uglyNumberII](./src/rules/uglyNumberII/index.js)

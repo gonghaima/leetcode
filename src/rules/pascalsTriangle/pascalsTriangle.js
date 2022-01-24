@@ -1,4 +1,9 @@
-export default numRows => {
+/*************************************************************************************************
+ *  Runtime: 117 ms, faster than 14.77% of JavaScript online submissions for Pascal's Triangle.  *
+ * Memory Usage: 38 MB, less than 98.48% of JavaScript online submissions for Pascal's Triangle. *
+ *************************************************************************************************/
+
+export default (numRows) => {
   if (numRows) {
     var result = [[1]];
 

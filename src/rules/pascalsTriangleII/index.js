@@ -1,4 +1,9 @@
-export default rowIndex => {
+/******************************************************************************************************
+ *   Runtime: 94 ms, faster than 34.83% of JavaScript online submissions for Pascal's Triangle II.    *
+ * Memory Usage: 38.6 MB, less than 68.19% of JavaScript online submissions for Pascal's Triangle II. *
+ ******************************************************************************************************/
+
+export default (rowIndex) => {
   let result = [];
   let prevArr = [];
   //level

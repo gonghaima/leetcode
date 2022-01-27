@@ -150,3 +150,4 @@ Identify if problems talks about finding groups or components.
 - [1314. Matrix Block Sum](https://leetcode.com/problems/matrix-block-sum/) => [minimumTotal](./src/rules/minimumTotal/index.js)
 - [304. Range Sum Query 2D - Immutable](https://leetcode.com/problems/range-sum-query-2d-immutable/) => [matrixBlockSum](./src/rules/matrixBlockSum/index.js)
 - [62. Unique Paths](https://leetcode.com/problems/unique-paths/) => [uniquePaths](./src/rules/uniquePaths/index.js)
+- [63. Unique Paths II](https://leetcode.com/problems/unique-paths-ii/) => [uniquePathsII](./src/rules/uniquePathsII/index.js)

@@ -147,3 +147,5 @@ Identify if problems talks about finding groups or components.
 - [42. Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) => [trap](./src/rules/trap/index.js)
 - [264. Ugly Number II](https://leetcode.com/problems/ugly-number-ii/) => [uglyNumberII](./src/rules/uglyNumberII/index.js)
 - [120. Triangle](https://leetcode.com/problems/triangle/) => [minimumTotal](./src/rules/minimumTotal/index.js)
+- [1314. Matrix Block Sum](https://leetcode.com/problems/matrix-block-sum/) => [minimumTotal](./src/rules/minimumTotal/index.js)
+- [304. Range Sum Query 2D - Immutable](https://leetcode.com/problems/range-sum-query-2d-immutable/) => [matrixBlockSum](./src/rules/matrixBlockSum/index.js)

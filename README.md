@@ -152,3 +152,4 @@ Identify if problems talks about finding groups or components.
 - [62. Unique Paths](https://leetcode.com/problems/unique-paths/) => [uniquePaths](./src/rules/uniquePaths/index.js)
 - [63. Unique Paths II](https://leetcode.com/problems/unique-paths-ii/) => [uniquePathsII](./src/rules/uniquePathsII/index.js)
 - [64. Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum/) => [minPathSum](./src/rules/minPathSum/index.js)
+- [221. Maximal Square](https://leetcode.com/problems/maximal-square/) => [maximalSquare](./src/rules/maximalSquare/index.js)

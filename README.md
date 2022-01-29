@@ -153,3 +153,4 @@ Identify if problems talks about finding groups or components.
 - [63. Unique Paths II](https://leetcode.com/problems/unique-paths-ii/) => [uniquePathsII](./src/rules/uniquePathsII/index.js)
 - [64. Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum/) => [minPathSum](./src/rules/minPathSum/index.js)
 - [221. Maximal Square](https://leetcode.com/problems/maximal-square/) => [maximalSquare](./src/rules/maximalSquare/index.js)
+- [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/) => [longestPalindromicSubstring](./src/rules/longestPalindromicSubstring/index.js)

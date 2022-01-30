@@ -2,17 +2,21 @@
  * @param {number[]} nums
  * @return {number}
  */
+
+// https://leetcode.com/problems/longest-increasing-subsequence/discuss/1469714/JavaScript-1-Reduce-100-or-90
+
+/***************************************************************************************************************
+ *  Runtime: 139 ms, faster than 79.58% of JavaScript online submissions for Longest Increasing Subsequence.   *
+ * Memory Usage: 44.2 MB, less than 5.72% of JavaScript online submissions for Longest Increasing Subsequence. *
+ ***************************************************************************************************************/
+
 var lengthOfLIS = function(nums) {
-  const dp = new Array(nums.length - 1).fill(0);
-  dp[0] = 1;
-  for (let i = 1; i < nums.length; i++) {
-    if (nums[i] > nums[i - 1]) {
-      dp[i] = dp[i - 1] + 1;
-    } else {
-      dp[i] = dp[i - 1];
-    }
-  }
-  return dp[nums.length - 1];
+  let sequence = [nums[0]];
+  nums.forEach((num, idx) => {
+    if (num > sequence[sequence.length - 1]) sequence.push(num);
+    else sequence[sequence.findIndex((val) => val >= num)] = num;
+  });
+  return sequence.length;
 };
 
 export default lengthOfLIS;

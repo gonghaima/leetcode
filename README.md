@@ -155,3 +155,4 @@ Identify if problems talks about finding groups or components.
 - [221. Maximal Square](https://leetcode.com/problems/maximal-square/) => [maximalSquare](./src/rules/maximalSquare/index.js)
 - [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/) => [longestPalindromicSubstring](./src/rules/longestPalindromicSubstring/index.js)
 - [516. Longest Palindromic Subsequence](https://leetcode.com/problems/longest-palindromic-subsequence/) => [longestPalindromeSubseq](./src/rules/longestPalindromeSubseq/index.js)
+- [300. Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/) => [lengthOfLIS](./src/rules/lengthOfLIS/index.js)

@@ -157,3 +157,4 @@ Identify if problems talks about finding groups or components.
 - [516. Longest Palindromic Subsequence](https://leetcode.com/problems/longest-palindromic-subsequence/) => [longestPalindromeSubseq](./src/rules/longestPalindromeSubseq/index.js)
 - [300. Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/) => [lengthOfLIS](./src/rules/lengthOfLIS/index.js)
 - [392. Is Subsequence](https://leetcode.com/problems/is-subsequence/) => [isSubsequence](./src/rules/isSubsequence/index.js)
+- [1143. Longest Common Subsequence](https://leetcode.com/problems/longest-common-subsequence/) => [longestCommonSubsequence](./src/rules/longestCommonSubsequence/index.js)

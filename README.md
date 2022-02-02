@@ -159,3 +159,4 @@ Identify if problems talks about finding groups or components.
 - [392. Is Subsequence](https://leetcode.com/problems/is-subsequence/) => [isSubsequence](./src/rules/isSubsequence/index.js)
 - [1143. Longest Common Subsequence](https://leetcode.com/problems/longest-common-subsequence/) => [longestCommonSubsequence](./src/rules/longestCommonSubsequence/index.js)
 - [72. Edit Distance](https://leetcode.com/problems/edit-distance/) => [longestCommonSubsequence](./src/rules/longestCommonSubsequence/index.js)
+- [377. Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/) [combinationSum4](./src/rules/combinationSum4/index.js)

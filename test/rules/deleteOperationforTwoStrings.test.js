@@ -1,4 +1,4 @@
-import deleteOperationforTwoStrings from '../../src/rules/deleteOperationforTwoStrings';
+import deleteOperationforTwoStrings from '../../src/rules/deleteOperationforTwoStrings/dp';
 
 import { inputData, expected } from '../data/deleteOperationforTwoStringsData';
 

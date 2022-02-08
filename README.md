@@ -161,4 +161,8 @@ Identify if problems talks about finding groups or components.
 - [72. Edit Distance](https://leetcode.com/problems/edit-distance/) => [longestCommonSubsequence](./src/rules/longestCommonSubsequence/index.js)
 - [583. Delete Operation for Two Strings](https://leetcode.com/problems/delete-operation-for-two-strings/) [deleteOperationforTwoStrings](./src/rules/deleteOperationforTwoStrings/index.js)
 - # [1092. Shortest Common Supersequence](https://leetcode.com/problems/shortest-common-supersequence/) => [shortestCommonSupersequence](./src/rules/shortestCommonSupersequence/index.js)
+
+### string
+
 - [377. Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/) [combinationSum4](./src/rules/combinationSum4/index.js)
+- [712. Minimum ASCII Delete Sum for Two Strings](https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings/) [minimumDeleteSum](./src/rules/minimumDeleteSum/index.js)

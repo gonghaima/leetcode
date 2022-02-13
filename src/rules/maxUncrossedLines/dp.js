@@ -8,6 +8,11 @@
 
 // 1D dp
 
+/*************************************************************************************************
+ * Runtime: 73 ms, faster than 95.31% of JavaScript online submissions for Uncrossed Lines.      *
+ * Memory Usage: 41.9 MB, less than 98.44% of JavaScript online submissions for Uncrossed Lines. *
+ *************************************************************************************************/
+
 var maxUncrossedLines = function(nums1, nums2) {
   let m = nums1.length,
     n = nums2.length;

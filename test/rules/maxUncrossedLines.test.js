@@ -1,4 +1,4 @@
-import maxUncrossedLines from '../../src/rules/maxUncrossedLines';
+import maxUncrossedLines from '../../src/rules/maxUncrossedLines/dp';
 import { inputData, expected } from '../data/maxUncrossedLinesData';
 
 test('maxUncrossedLines should return max profit from case1', () => {

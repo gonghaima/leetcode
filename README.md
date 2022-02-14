@@ -167,3 +167,4 @@ Identify if problems talks about finding groups or components.
 - [377. Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/) => [combinationSum4](./src/rules/combinationSum4/index.js)
 - [712. Minimum ASCII Delete Sum for Two Strings](https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings/) => [minimumDeleteSum](./src/rules/minimumDeleteSum/index.js)
 - [1035. Uncrossed Lines](https://leetcode.com/problems/uncrossed-lines/) => [maxUncrossedLines](./src/rules/maxUncrossedLines/index.js)
+- [6. Zigzag Conversion](https://leetcode.com/problems/zigzag-conversion/) => [zigzagConversion](./src/rules/zigzagConversion/index.js)

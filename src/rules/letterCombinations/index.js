@@ -3,47 +3,42 @@
  * @return {string[]}
  */
 
-/*****************************************************************
- * NOT CORRECT: 
- * my thoughts: is it just all permutation of the number of digits? *
- * for example, if it's single digit, it would be 3^1.
- * if it's two digit, it would be 3^2,
- * if it's three digit, it would be 3^3,                         *
- *****************************************************************/
-
 /**********************************************************************************************************************
- * Runtime: 102 ms, faster than 32.77% of JavaScript online submissions for Letter Combinations of a Phone Number.    *
- * Memory Usage: 42.1 MB, less than 19.14% of JavaScript online submissions for Letter Combinations of a Phone Number. *
+ * Runtime: 90 ms, faster than 47.90% of JavaScript online submissions for Letter Combinations of a Phone Number.     *
+ * Memory Usage: 42.3 MB, less than 16.95% of JavaScript online submissions for Letter Combinations of a Phone Number. *
  **********************************************************************************************************************/
 
+// https://leetcode.com/problems/letter-combinations-of-a-phone-number/discuss/1316786/Simple-Javascript-Solution-72ms-82.6
+
 var letterCombinations = function(digits) {
-  if (digits == null || digits.length === 0) return [];
-
-  const map = {
-    2: 'abc',
-    3: 'def',
-    4: 'ghi',
-    5: 'jkl',
-    6: 'mno',
-    7: 'pqrs',
-    8: 'tuv',
-    9: 'wxyz',
+  const numToLetter = {
+    '2': ['a', 'b', 'c'],
+    '3': ['d', 'e', 'f'],
+    '4': ['g', 'h', 'i'],
+    '5': ['j', 'k', 'l'],
+    '6': ['m', 'n', 'o'],
+    '7': ['p', 'q', 'r', 's'],
+    '8': ['t', 'u', 'v'],
+    '9': ['w', 'x', 'y', 'z'],
   };
 
-  const res = [];
-  const go = (i, s) => {
-    if (i === digits.length) {
-      res.push(s);
-      return;
+  if (digits === '') return [];
+  let array = [];
+  for (let i = digits.length - 1; i >= 0; i--) {
+    const num = digits[i];
+    if (array.length === 0) {
+      array = [...numToLetter[num]];
+    } else {
+      const newArray = [];
+      for (let j of numToLetter[num]) {
+        for (let k of array) {
+          newArray.push(j + k);
+        }
+      }
+      array = newArray;
     }
-
-    for (const c of map[digits[i]]) {
-      go(i + 1, s + c);
-    }
-  };
-
-  go(0, '');
-  return res;
+  }
+  return array;
 };
 
 export default letterCombinations;

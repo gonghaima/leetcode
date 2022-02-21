@@ -168,3 +168,5 @@ Identify if problems talks about finding groups or components.
 - [712. Minimum ASCII Delete Sum for Two Strings](https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings/) => [minimumDeleteSum](./src/rules/minimumDeleteSum/index.js)
 - [1035. Uncrossed Lines](https://leetcode.com/problems/uncrossed-lines/) => [maxUncrossedLines](./src/rules/maxUncrossedLines/index.js)
 - [6. Zigzag Conversion](https://leetcode.com/problems/zigzag-conversion/) => [zigzagConversion](./src/rules/zigzagConversion/index.js)
+- [17. Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/) => [letterCombinations](./src/rules/letterCombinations/index.js)
+- [22. Generate Parentheses](https://leetcode.com/problems/generate-parentheses/) => [generateParenthesis](./src/rules/generateParenthesis/index.js)

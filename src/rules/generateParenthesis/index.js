@@ -3,33 +3,36 @@
  * @return {string[]}
  */
 
-// backtrack
+// iterative
 
-// https://leetcode.com/problems/generate-parentheses/discuss/139455/Clean-JavaScript-backtracking-solution
+// https://leetcode.com/problems/generate-parentheses/discuss/332518/Javascript-iterative-solution
 
-/******************************************************************************************************
- * Runtime: 56 ms, faster than 99.24% of JavaScript online submissions for Generate Parentheses.      *
- * Memory Usage: 42.7 MB, less than 39.60% of JavaScript online submissions for Generate Parentheses. *
- ******************************************************************************************************/
+/****************************************************************************************************
+ * Runtime: 56 ms, faster than 99.24% of JavaScript online submissions for Generate Parentheses.    *
+ * Memory Usage: 43 MB, less than 27.52% of JavaScript online submissions for Generate Parentheses. *
+ ****************************************************************************************************/
 
 var generateParenthesis = function(n) {
-  const res = [];
+  let map = new Map();
 
-  function go(l, r, s) {
-    // l: left remaining, r: right remaining
-    if (l > r) return; // The number of '(' should be always >= ')'
-
-    if (l === 0 && r === 0) {
-      res.push(s);
-      return;
+  map.set(0, ['']);
+  for (let i = 1; i <= n; i++) {
+    let j = 0,
+      arr = [];
+    while (j < i) {
+      let arrj = map.get(j),
+        arri = map.get(i - j - 1);
+      arrj.forEach((pairj) => {
+        arri.forEach((pairi) => {
+          arr.push('(' + pairj + ')' + pairi);
+        });
+      });
+      j++;
     }
-
-    if (l > 0) go(l - 1, r, s + '(');
-    if (r > 0) go(l, r - 1, s + ')');
+    map.set(i, arr);
   }
 
-  go(n, n, '');
-  return res;
+  return map.get(n);
 };
 
 export default generateParenthesis;

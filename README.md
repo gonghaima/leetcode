@@ -170,3 +170,4 @@ Identify if problems talks about finding groups or components.
 - [6. Zigzag Conversion](https://leetcode.com/problems/zigzag-conversion/) => [zigzagConversion](./src/rules/zigzagConversion/index.js)
 - [17. Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/) => [letterCombinations](./src/rules/letterCombinations/index.js)
 - [22. Generate Parentheses](https://leetcode.com/problems/generate-parentheses/) => [generateParenthesis](./src/rules/generateParenthesis/index.js)
+- [43. Multiply Strings](https://leetcode.com/problems/multiply-strings/) => [multiplyStrings](./src/rules/multiplyStrings/index.js)

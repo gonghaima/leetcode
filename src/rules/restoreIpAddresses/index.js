@@ -3,37 +3,40 @@
  * @return {string[]}
  */
 
-// https://leetcode.com/problems/restore-ip-addresses/discuss/672543/JavaScript-The-Most-Clean-Backtracking-Solution
+// https://leetcode.com/problems/restore-ip-addresses/discuss/925224/backtracking
 
 /******************************************************************************************************
- * Runtime: 86 ms, faster than 67.41% of JavaScript online submissions for Restore IP Addresses.      *
- * Memory Usage: 43.4 MB, less than 37.31% of JavaScript online submissions for Restore IP Addresses. *
+ * Runtime: 56 ms, faster than 99.75% of JavaScript online submissions for Restore IP Addresses.      *
+ * Memory Usage: 43.3 MB, less than 38.31% of JavaScript online submissions for Restore IP Addresses. *
  ******************************************************************************************************/
 
 var restoreIpAddresses = function(s) {
-  const result = [];
-
-  function permute(arr, str) {
-    if (arr.length === 3) {
-      if (isValid(str)) result.push([...arr, str]);
+  const dp = function(path, start, res, s) {
+    if (path.length == 4 && start == s.length) {
+      res.push(path.join('.'));
       return;
     }
-
-    for (let i = 1; i < 4; i++) {
-      let subStr = str.slice(0, i);
-      if (!isValid(subStr)) continue;
-      permute([...arr, subStr], str.slice(i));
+    if (path.length == 4 && start < s.length) {
+      return;
     }
-  }
-
-  function isValid(str) {
-    if (+str > 255 || !str.length) return false;
-    if (str.length >= 2 && str[0] === '0') return false;
-    return true;
-  }
-
-  permute([], s);
-  return result.map((x) => x.join('.'));
+    for (let i = 1; i <= 3; i++) {
+      if (start + i - 1 >= s.length) {
+        return;
+      }
+      if (s[start] == '0' && i != 1) {
+        return;
+      }
+      if (s.substring(start, start + i) > 255) {
+        return;
+      }
+      path.push(s.substring(start, start + i));
+      dp(path, start + i, res, s);
+      path.pop();
+    }
+  };
+  let res = [];
+  dp([], 0, res, s);
+  return res;
 };
 
 export default restoreIpAddresses;

@@ -5,40 +5,36 @@
  * @return {boolean}
  */
 
-/**
- * for each char in s3,
- * remove it from s1, if match
- * remove it from 22, if match
- * otherwise return false
- *
- * same process, but check s2 first, then s1
- */
+// https://leetcode.com/problems/interleaving-string/discuss/1127736/JavaScript-Simple-Top-Down-DP
+
+/*****************************************************************************************************
+ * Runtime: 72 ms, faster than 90.72% of JavaScript online submissions for Interleaving String.      *
+ * Memory Usage: 45.2 MB, less than 41.77% of JavaScript online submissions for Interleaving String. *
+ *****************************************************************************************************/
+
+//dfs - memo
 
 var isInterleave = function(s1, s2, s3) {
-  let dp = (p1, p2, p3) => {
-    if (!isIL) return isIL;
-    if (p1.length === 0 && p2.length === 0 && p3.length === 0) {
-      isIL = true;
-      return isIL;
-    }
+  if (s1.length + s2.length !== s3.length) return false;
+  const memo = new Map();
 
-    if (p1[p1.length - 1] === char) return dp(p1.slice(-1), p2, p3, isIL);
-    if (p2[p2.length - 1] === char) return dp(p1, p2.slice(-1), p3, isIL);
-    notFound = false;
-    return notFound;
-  };
+  function run(i1, i2, i3) {
+    if (i1 === s1.length) return s3.slice(i3) === s2.slice(i2);
+    if (i2 === s2.length) return s3.slice(i3) === s1.slice(i1);
+    const key = `${i1}-${i2}`;
+    if (memo.has(key)) return memo.get(key);
 
-  let isIL = true;
+    let res = false;
 
-  s1 = s1.split('');
-  s2 = s1.split('');
-  s3 = s3.split('');
-  for (const char of s3) {
-    if (s1[s1.length - 1] === char) return dp(s1.shift(), s2, s3.shift());
-    if (s2[s2.length - 1] === char) return dp(s1, s2.shift(), s3.shift());
-    if (s1[s1.length - 1] !== char && s2[s2.length - 1] !== char) isIL = false;
+    if (s1[i1] === s2[i2] && s1[i1] === s3[i3])
+      res = run(i1 + 1, i2, i3 + 1) || run(i1, i2 + 1, i3 + 1);
+    else if (s1[i1] === s3[i3]) res = run(i1 + 1, i2, i3 + 1);
+    else if (s2[i2] === s3[i3]) res = run(i1, i2 + 1, i3 + 1);
+
+    memo.set(key, res);
+    return res;
   }
-  return isIL;
+  return run(0, 0, 0);
 };
 
 export default isInterleave;

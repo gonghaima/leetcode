@@ -5,36 +5,48 @@
  * @return {boolean}
  */
 
-// https://leetcode.com/problems/interleaving-string/discuss/1127736/JavaScript-Simple-Top-Down-DP
+// https://leetcode.com/problems/interleaving-string/discuss/1758436/typescriptjavascript-DP-1D-solution
 
 /*****************************************************************************************************
- * Runtime: 72 ms, faster than 90.72% of JavaScript online submissions for Interleaving String.      *
- * Memory Usage: 45.2 MB, less than 41.77% of JavaScript online submissions for Interleaving String. *
+ * Runtime: 105 ms, faster than 58.70% of JavaScript online submissions for Interleaving String.     *
+ * Memory Usage: 42.3 MB, less than 74.49% of JavaScript online submissions for Interleaving String. *
  *****************************************************************************************************/
 
-//dfs - memo
+//dp
 
 var isInterleave = function(s1, s2, s3) {
-  if (s1.length + s2.length !== s3.length) return false;
-  const memo = new Map();
-
-  function run(i1, i2, i3) {
-    if (i1 === s1.length) return s3.slice(i3) === s2.slice(i2);
-    if (i2 === s2.length) return s3.slice(i3) === s1.slice(i1);
-    const key = `${i1}-${i2}`;
-    if (memo.has(key)) return memo.get(key);
-
-    let res = false;
-
-    if (s1[i1] === s2[i2] && s1[i1] === s3[i3])
-      res = run(i1 + 1, i2, i3 + 1) || run(i1, i2 + 1, i3 + 1);
-    else if (s1[i1] === s3[i3]) res = run(i1 + 1, i2, i3 + 1);
-    else if (s2[i2] === s3[i3]) res = run(i1, i2 + 1, i3 + 1);
-
-    memo.set(key, res);
-    return res;
+  const s1l = s1.length
+  const s2l = s2.length
+  const s3l = s3.length
+  if (s3l !== s1l + s2l) return false
+  
+  const dp = []
+  for (let i = 0; i <= s1l; i++) {
+    for (let j = 0; j <= s2l; j++) {
+      const isFirst = i === 0 && j === 0
+      const isFirstRow = i === 0
+      const isFirstColumn = j === 0
+	  
+      // prev row current cell
+      const curDP = dp[j]
+      // current row prev cell
+      const prevDP = dp[j - 1]
+	  
+      const str1Cur = s1[i - 1]
+      const str2Cur = s2[j - 1]
+      const str3Cur = s3[i + j - 1]
+       
+      if (isFirst) dp[j] = true
+      else if (isFirstRow) dp[j] = prevDP && str2Cur === str3Cur
+      else if (isFirstColumn) dp[j] = curDP && str1Cur === str3Cur
+      else {
+        dp[j] = (curDP && str1Cur === str3Cur
+        ||
+        prevDP && str2Cur === str3Cur)
+      }
+    }
   }
-  return run(0, 0, 0);
+  
+  return dp[s2l]
 };
-
 export default isInterleave;

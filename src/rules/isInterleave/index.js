@@ -5,48 +5,50 @@
  * @return {boolean}
  */
 
-// https://leetcode.com/problems/interleaving-string/discuss/1758436/typescriptjavascript-DP-1D-solution
+// https://leetcode.com/problems/interleaving-string/discuss/1354439/DP-bottom-up(84ms)
 
 /*****************************************************************************************************
- * Runtime: 105 ms, faster than 58.70% of JavaScript online submissions for Interleaving String.     *
- * Memory Usage: 42.3 MB, less than 74.49% of JavaScript online submissions for Interleaving String. *
+ * Runtime: 103 ms, faster than 61.19% of JavaScript online submissions for Interleaving String.     *
+ * Memory Usage: 46.2 MB, less than 21.64% of JavaScript online submissions for Interleaving String. *
  *****************************************************************************************************/
 
-//dp
+//dp - buttom up
 
 var isInterleave = function(s1, s2, s3) {
-  const s1l = s1.length
-  const s2l = s2.length
-  const s3l = s3.length
-  if (s3l !== s1l + s2l) return false
-  
-  const dp = []
-  for (let i = 0; i <= s1l; i++) {
-    for (let j = 0; j <= s2l; j++) {
-      const isFirst = i === 0 && j === 0
-      const isFirstRow = i === 0
-      const isFirstColumn = j === 0
-	  
-      // prev row current cell
-      const curDP = dp[j]
-      // current row prev cell
-      const prevDP = dp[j - 1]
-	  
-      const str1Cur = s1[i - 1]
-      const str2Cur = s2[j - 1]
-      const str3Cur = s3[i + j - 1]
-       
-      if (isFirst) dp[j] = true
-      else if (isFirstRow) dp[j] = prevDP && str2Cur === str3Cur
-      else if (isFirstColumn) dp[j] = curDP && str1Cur === str3Cur
-      else {
-        dp[j] = (curDP && str1Cur === str3Cur
-        ||
-        prevDP && str2Cur === str3Cur)
+  if (s1.length + s2.length !== s3.length) return false;
+
+  const dp = Array.from({ length: s1.length + 1 }).map(() =>
+    new Array(s2.length + 1).fill(false)
+  );
+  // base case empty string is true for all the 3 strings
+  dp[0][0] = true;
+
+  // fill only the first row
+  for (let i = 1; i <= s1.length; i++) {
+    if (s1[i - 1] === s3[i - 1]) {
+      dp[i][0] = dp[i - 1][0];
+    }
+  }
+  // fill only the first col
+  for (let i = 1; i <= s2.length; i++) {
+    if (s2[i - 1] === s3[i - 1]) {
+      dp[0][i] = dp[0][i - 1];
+    }
+  }
+  for (let i = 1; i <= s1.length; i++) {
+    for (let j = 1; j <= s2.length; j++) {
+      // if it mathes with s1 check the prev row value
+      if (s1[i - 1] === s3[i + j - 1]) {
+        dp[i][j] = dp[i - 1][j];
+      }
+      // if it mathes with s2 check the prev col value
+      if (s2[j - 1] === s3[i + j - 1]) {
+        // or condition is where if it matches both s1 and s2 and we can check either of it
+        dp[i][j] = dp[i][j] || dp[i][j - 1];
       }
     }
   }
-  
-  return dp[s2l]
+  return dp[s1.length][s2.length];
+  console.log(dp);
 };
 export default isInterleave;

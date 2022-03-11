@@ -174,3 +174,4 @@ Identify if problems talks about finding groups or components.
 - [49. Group Anagrams](https://leetcode.com/problems/group-anagrams/) => [groupAnagrams](./src/rules/groupAnagrams/index.js)
 - [93. Restore IP Addresses](https://leetcode.com/problems/restore-ip-addresses/) => [restoreIpAddresses](./src/rules/restoreIpAddresses/index.js)
 - [97. Interleaving String](https://leetcode.com/problems/interleaving-string/) => [isInterleave](./src/rules/isInterleave/index.js)
+- [131. Palindrome Partitioning](https://leetcode.com/problems/palindrome-partitioning/) => [palindromePartitioning](./src/rules/palindromePartitioning/index.js)

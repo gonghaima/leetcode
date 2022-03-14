@@ -4,39 +4,45 @@
  */
 
 /*********************************************************************************************************
- * Runtime: 312 ms, faster than 80.76% of JavaScript online submissions for Palindrome Partitioning.     *
- * Memory Usage: 81.2 MB, less than 41.93% of JavaScript online submissions for Palindrome Partitioning. *
+ * Runtime: 393 ms, faster than 55.15% of JavaScript online submissions for Palindrome Partitioning.     *
+ * Memory Usage: 80.5 MB, less than 55.85% of JavaScript online submissions for Palindrome Partitioning. *
  *********************************************************************************************************/
 
-// backtrack
-// https://leetcode.com/problems/palindrome-partitioning/discuss/1664463/Javascript-easy-backtracking-solution
+// dfs
+// https://leetcode.com/problems/palindrome-partitioning/discuss/557573/Intuitive-Javascript-Solution-with-DFS
 
 var partition = function(s) {
-  let result = [];
-  function backtrack(i, partitions) {
-    if (i >= s.length) {
-      result.push([...partitions]);
+  const output = [];
+  const partitions = [];
+  const isPalindrome = (str) =>
+    str ===
+    str
+      .split('')
+      .reverse()
+      .join('');
+  const findPalindrome = (str, start, parts, result) => {
+    if (start === str.length) {
+      result.push([...parts]);
       return;
     }
-    for (let j = i; j < s.length; j++) {
-      if (isPalindrome(i, j)) {
-        partitions.push(s.substring(i, j + 1));
-        backtrack(j + 1, partitions);
-        partitions.pop();
+
+    for (let i = start + 1; i <= str.length; i++) {
+      const target = str.substring(start, i);
+      if (isPalindrome(target)) {
+        parts.push(target);
+        findPalindrome(str, i, parts, result);
+        parts.pop();
       }
     }
-  }
-  function isPalindrome(left, right) {
-    while (left < right) {
-      if (s[left] !== s[right]) {
-        return false;
-      }
-      left++;
-      right--;
-    }
-    return true;
-  }
-  backtrack(0, []);
-  return result;
+  };
+  /*
+      string: 'aab'
+      start = 0 will find palindrome in 'a', 'aa', 'aab'
+      start = 1 will find palindrome in      'a',  'ab'
+      start = 2 will find palindrome in            'b'
+   */
+  findPalindrome(s, 0, partitions, output);
+
+  return output;
 };
 export default partition;

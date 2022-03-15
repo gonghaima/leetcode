@@ -4,45 +4,53 @@
  */
 
 /*********************************************************************************************************
- * Runtime: 393 ms, faster than 55.15% of JavaScript online submissions for Palindrome Partitioning.     *
- * Memory Usage: 80.5 MB, less than 55.85% of JavaScript online submissions for Palindrome Partitioning. *
+ * Runtime: 369 ms, faster than 63.02% of JavaScript online submissions for Palindrome Partitioning.     *
+ * Memory Usage: 80.2 MB, less than 59.43% of JavaScript online submissions for Palindrome Partitioning. *
  *********************************************************************************************************/
 
-// dfs
-// https://leetcode.com/problems/palindrome-partitioning/discuss/557573/Intuitive-Javascript-Solution-with-DFS
+// dp + backtrack
+// https://leetcode.com/problems/palindrome-partitioning/discuss/346128/DP-%2B-backtracking
 
 var partition = function(s) {
-  const output = [];
-  const partitions = [];
-  const isPalindrome = (str) =>
-    str ===
-    str
-      .split('')
-      .reverse()
-      .join('');
-  const findPalindrome = (str, start, parts, result) => {
-    if (start === str.length) {
-      result.push([...parts]);
-      return;
-    }
+  let result = [];
+  if (!s) {
+    return result;
+  }
 
-    for (let i = start + 1; i <= str.length; i++) {
-      const target = str.substring(start, i);
-      if (isPalindrome(target)) {
-        parts.push(target);
-        findPalindrome(str, i, parts, result);
-        parts.pop();
+  let memo = Array.from(Array(s.length), (_) => Array(s.length).fill(false));
+
+  for (let i = 0; i < s.length; i++) {
+    for (let j = 0; j <= i; j++) {
+      if (i == j) {
+        memo[i][j] = true;
+        continue;
+      }
+
+      if (i - j <= 2) {
+        memo[j][i] = s[i] === s[j];
+      } else {
+        memo[j][i] = s[j] === s[i] && memo[j + 1][i - 1];
       }
     }
-  };
-  /*
-      string: 'aab'
-      start = 0 will find palindrome in 'a', 'aa', 'aab'
-      start = 1 will find palindrome in      'a',  'ab'
-      start = 2 will find palindrome in            'b'
-   */
-  findPalindrome(s, 0, partitions, output);
+  }
 
-  return output;
+  helper(result, 0, s, [], memo);
+
+  return result;
 };
+
+function helper(result, index, s, temp, memo) {
+  if (index === s.length) {
+    result.push(temp.concat());
+    return;
+  }
+
+  for (let i = index; i < s.length; i++) {
+    if (memo[index][i]) {
+      temp.push(s.slice(index, i + 1));
+      helper(result, i + 1, s, temp, memo);
+      temp.pop();
+    }
+  }
+}
 export default partition;

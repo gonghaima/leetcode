@@ -175,3 +175,4 @@ Identify if problems talks about finding groups or components.
 - [93. Restore IP Addresses](https://leetcode.com/problems/restore-ip-addresses/) => [restoreIpAddresses](./src/rules/restoreIpAddresses/index.js)
 - [97. Interleaving String](https://leetcode.com/problems/interleaving-string/) => [isInterleave](./src/rules/isInterleave/index.js)
 - [131. Palindrome Partitioning](https://leetcode.com/problems/palindrome-partitioning/) => [palindromePartitioning](./src/rules/palindromePartitioning/index.js)
+- [151. Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/) => [reverseWords](./src/rules/reverseWords/index.js)

@@ -3,15 +3,22 @@
  * @return {string}
  */
 var reverseWords = function(s) {
-  // 1. split the string with a space to form an array of words
-  // 2. reverse the words
-  // 3. filter out the words that are empty
-  // 4. join the array to form the resultant string
-  return s
-    .split(' ')
-    .reverse()
-    .filter((w) => w !== '')
-    .join(' ');
+  const ret = [];
+  let word = [];
+  for (let i = 0; i < s.length; ++i) {
+    if (s.charAt(i) === ' ') {
+      // We found the space, put word in front (if there is any)
+      word.length > 0 && ret.unshift(word.join(''));
+      // Reset the current word
+      word = [];
+    } else {
+      // Add characters to the current word
+      word.push(s.charAt(i));
+    }
+  }
+  // If there is current word exists, add it in front
+  word.length > 0 && ret.unshift(word.join(''));
+  return ret.join(' ');
 };
 
 export default reverseWords;

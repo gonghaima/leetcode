@@ -176,3 +176,4 @@ Identify if problems talks about finding groups or components.
 - [97. Interleaving String](https://leetcode.com/problems/interleaving-string/) => [isInterleave](./src/rules/isInterleave/index.js)
 - [131. Palindrome Partitioning](https://leetcode.com/problems/palindrome-partitioning/) => [palindromePartitioning](./src/rules/palindromePartitioning/index.js)
 - [151. Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/) => [reverseWords](./src/rules/reverseWords/index.js)
+- [179. Largest Number](https://leetcode.com/problems/largest-number/) => [largestNumber149](./src/rules/largestNumber149/index.js)

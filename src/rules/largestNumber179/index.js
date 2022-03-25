@@ -3,23 +3,31 @@
  * @return {string}
  */
 
-// https://leetcode.com/problems/largest-number/discuss/1012321/javascript-with-sort-O(nlogn)
+// https://leetcode.com/problems/largest-number/discuss/1657704/JavaScript-Solution
 
 /************************************************************************************************
- * Runtime: 82 ms, faster than 65.92% of JavaScript online submissions for Largest Number.      *
- * Memory Usage: 43.4 MB, less than 93.63% of JavaScript online submissions for Largest Number. *
+ * Runtime: 132 ms, faster than 12.70% of JavaScript online submissions for Largest Number.     *
+ * Memory Usage: 43.5 MB, less than 94.26% of JavaScript online submissions for Largest Number. *
  ************************************************************************************************/
 
 var largestNumber179 = function(nums) {
-  if (!nums || nums.length === 0) {
-    return '0';
+  nums.sort(compareFunc);
+
+  let res = '';
+
+  for (let j = 0; j < nums.length; j++) {
+    res += nums[j];
   }
 
-  nums.sort((a, b) => `${b}${a}` - `${a}${b}`);
-  if (nums[0] === 0) {
-    return '0';
+  if (res.charAt(0) === '0') return '0';
+  return res;
+
+  function compareFunc(numStr1, numStr2) {
+    let combinedNumStr1 = numStr1 + '' + numStr2;
+    let combinedNumStr2 = numStr2 + '' + numStr1;
+
+    return combinedNumStr2 - combinedNumStr1;
   }
-  return nums.join('');
 };
 
 export default largestNumber179;

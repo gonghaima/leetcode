@@ -1,0 +1,9 @@
+/**
+ * @param {string} s
+ * @return {string[]}
+ */
+var findRepeatedDnaSequences = function(s) {
+  return [];
+};
+
+export default findRepeatedDnaSequences;

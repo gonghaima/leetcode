@@ -178,3 +178,4 @@ Identify if problems talks about finding groups or components.
 - [151. Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/) => [reverseWords](./src/rules/reverseWords/index.js)
 - [179. Largest Number](https://leetcode.com/problems/largest-number/) => [largestNumber149](./src/rules/largestNumber149/index.js)
 - [187. Repeated DNA Sequences](https://leetcode.com/problems/repeated-dna-sequences/) => [findRepeatedDnaSequences](./src/rules/findRepeatedDnaSequences/index.js)
+- [208. Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/) => [implementTrie](./src/rules/implementTrie/index.js)

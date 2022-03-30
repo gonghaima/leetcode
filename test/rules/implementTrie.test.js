@@ -12,15 +12,15 @@ test('implementTrie should return correct result for case1', () => {
       trie = new Trie();
     }
     if (inputData.case1[0][i] === 'insert') {
-      const res = trie.insert(inputData.case1[1][i]);
+      const res = trie.insert(inputData.case1[1][i][0]);
       expect(res).toEqual(expected.case1[i]);
     }
     if (inputData.case1[0][i] === 'search') {
-      const res = trie.search(inputData.case1[1][i]);
+      const res = trie.search(inputData.case1[1][i][0]);
       expect(res).toEqual(expected.case1[i]);
     }
     if (inputData.case1[0][i] === 'startsWith') {
-      res = trie.startsWith(inputData.case1[1][i]);
+      const res = trie.startsWith(inputData.case1[1][i][0]);
       expect(res).toEqual(expected.case1[i]);
     }
   }

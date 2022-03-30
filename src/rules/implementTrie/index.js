@@ -1,35 +1,35 @@
-var Trie = function() {};
+class Trie {
+  constructor() {
+    this.root = {};
+  }
 
-/**
- * @param {string} word
- * @return {void}
- */
-Trie.prototype.insert = function(word) {
-  return null;
-};
+  insert(word) {
+    let node = this.root;
+    for (let c of word) {
+      if (node[c] == null) node[c] = {};
+      node = node[c];
+    }
+    node.isWord = true;
+    return null;
+  }
 
-/**
- * @param {string} word
- * @return {boolean}
- */
-Trie.prototype.search = function(word) {
-  return null;
-};
+  traverse(word) {
+    let node = this.root;
+    for (let c of word) {
+      node = node[c];
+      if (node == null) return null;
+    }
+    return node;
+  }
 
-/**
- * @param {string} prefix
- * @return {boolean}
- */
-Trie.prototype.startsWith = function(prefix) {
-  return null;
-};
+  search(word) {
+    const node = this.traverse(word);
+    return node != null && node.isWord === true;
+  }
 
-/**
- * Your Trie object will be instantiated and called as such:
- * var obj = new Trie()
- * obj.insert(word)
- * var param_2 = obj.search(word)
- * var param_3 = obj.startsWith(prefix)
- */
+  startsWith(prefix) {
+    return this.traverse(prefix) != null;
+  }
+}
 
 export default Trie;

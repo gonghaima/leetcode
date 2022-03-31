@@ -1,3 +1,10 @@
+// https://leetcode.com/problems/implement-trie-prefix-tree/submissions/
+
+/************************************************************************************************************
+ * Runtime: 235 ms, faster than 73.55% of JavaScript online submissions for Implement Trie (Prefix Tree).   *
+ * Memory Usage: 59 MB, less than 78.33% of JavaScript online submissions for Implement Trie (Prefix Tree). *
+ ************************************************************************************************************/
+
 class Trie {
   constructor() {
     this.root = {};

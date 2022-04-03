@@ -179,3 +179,4 @@ Identify if problems talks about finding groups or components.
 - [179. Largest Number](https://leetcode.com/problems/largest-number/) => [largestNumber149](./src/rules/largestNumber149/index.js)
 - [187. Repeated DNA Sequences](https://leetcode.com/problems/repeated-dna-sequences/) => [findRepeatedDnaSequences](./src/rules/findRepeatedDnaSequences/index.js)
 - [208. Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/) => [implementTrie](./src/rules/implementTrie/index.js)
+- [211. Design Add and Search Words Data Structure](https://leetcode.com/problems/design-add-and-search-words-data-structure/) => [WordDictionary](./src/rules/WordDictionary/index.js)

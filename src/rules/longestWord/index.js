@@ -1,70 +1,40 @@
-// trie
+// trie - 1
 
-// https://leetcode.com/problems/longest-word-in-dictionary/discuss/780606/Javascript-solutions%3A-Set-beats-97-or-Trie-beats-66
+// https://leetcode.com/problems/longest-word-in-dictionary/discuss/892192/Simple-Javascript-Trie%2BDFS-solution
 
 /************************************************************************************************************
- * Runtime: 113 ms, faster than 78.89% of JavaScript online submissions for Longest Word in Dictionary.     *
- * Memory Usage: 52.9 MB, less than 16.11% of JavaScript online submissions for Longest Word in Dictionary. *
+ * Runtime: 122 ms, faster than 75.00% of JavaScript online submissions for Longest Word in Dictionary.     *
+ * Memory Usage: 52.6 MB, less than 19.44% of JavaScript online submissions for Longest Word in Dictionary. *
  ************************************************************************************************************/
 
-/**
- * @param {string[]} words
- * @return {string}
- */
+function TrieNode() {
+  this.children = new Map();
+  this.endOfWord = false;
+}
+
 var longestWord = function(words) {
-  let trie = new Trie();
-  for (let i = 0; i < words.length; i++) {
-    trie.add(words[i]);
+  let root = new TrieNode();
+
+  words.sort((a, b) => a.localeCompare(b));
+  for (let word of words) {
+    let curr = root;
+    for (let w of word) {
+      let map = curr.children;
+      if (!map.has(w)) map.set(w, new TrieNode());
+      curr = map.get(w);
+    }
+    curr.endOfWord = true;
   }
-  let longestWord = '';
-  var dfs = function(node, s) {
-    let keys = Object.keys(node.storage);
-    for (let i = 0; i < keys.length; i++) {
-      if (node.storage[keys[i]].isWord) {
-        dfs(node.storage[keys[i]], s + keys[i]);
-      }
+
+  function dfs(root, str, res) {
+    for (let [char, node] of root.children) {
+      if (!node.endOfWord) continue;
+      res = dfs(node, str + char, res);
     }
-    if (s.length > longestWord.length) {
-      longestWord = s;
-    } else if (s.length === longestWord.length) {
-      longestWord = getSmallest(s, longestWord);
-    }
-  };
-  dfs(trie.root, '');
-  return longestWord;
+    res = res.length < str.length ? str : res;
+    return res;
+  }
+
+  return dfs(root, '', '');
 };
-
-var getSmallest = function(a, b) {
-  for (let i = 0; i < a.length; i++) {
-    if (a[i] < b[i]) {
-      return a;
-    } else if (b[i] < a[i]) {
-      return b;
-    }
-  }
-  return a;
-};
-
-class Node {
-  constructor() {
-    this.isWord = false;
-    this.storage = {};
-  }
-}
-
-class Trie {
-  constructor() {
-    this.root = new Node();
-  }
-  add(word) {
-    let curr = this.root;
-    for (let i = 0; i < word.length; i++) {
-      if (!curr.storage[word[i]]) {
-        curr.storage[word[i]] = new Node();
-      }
-      curr = curr.storage[word[i]];
-    }
-    curr.isWord = true;
-  }
-}
 export default longestWord;

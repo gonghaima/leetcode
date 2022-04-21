@@ -181,3 +181,4 @@ Identify if problems talks about finding groups or components.
 - [208. Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/) => [implementTrie](./src/rules/implementTrie/index.js)
 - [211. Design Add and Search Words Data Structure](https://leetcode.com/problems/design-add-and-search-words-data-structure/) => [WordDictionary](./src/rules/WordDictionary/index.js)
 - [692. Top K Frequent Words](https://leetcode.com/problems/top-k-frequent-words/) => [topKFrequent](./src/rules/topKFrequent/index.js)
+- [752. Open the Lock](https://leetcode.com/problems/open-the-lock/) => [openLock](./src/rules/openLock/index.js)

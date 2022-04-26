@@ -182,3 +182,4 @@ Identify if problems talks about finding groups or components.
 - [211. Design Add and Search Words Data Structure](https://leetcode.com/problems/design-add-and-search-words-data-structure/) => [WordDictionary](./src/rules/WordDictionary/index.js)
 - [692. Top K Frequent Words](https://leetcode.com/problems/top-k-frequent-words/) => [topKFrequent](./src/rules/topKFrequent/index.js)
 - [752. Open the Lock](https://leetcode.com/problems/open-the-lock/) => [openLock](./src/rules/openLock/index.js)
+- [763. Partition Labels](https://leetcode.com/problems/partition-labels/) => [partitionLabels](./src/rules/partitionLabels/index.js)

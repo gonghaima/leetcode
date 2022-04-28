@@ -3,53 +3,25 @@
  * @return {number[]}
  */
 
-// https://leetcode.com/problems/partition-labels/discuss/554230/Intuitive-Javascript-Solution-with-Greedy
+// https://leetcode.com/problems/partition-labels/discuss/1283020/Easy-to-understand-for-beginners-as-well(runtime-98)
 
 /**************************************************************************************************
- * Runtime: 92 ms, faster than 56.40% of JavaScript online submissions for Partition Labels.      *
- * Memory Usage: 43.4 MB, less than 74.79% of JavaScript online submissions for Partition Labels. *
+ * Runtime: 92 ms, faster than 56.29% of JavaScript online submissions for Partition Labels.      *
+ * Memory Usage: 42.7 MB, less than 91.53% of JavaScript online submissions for Partition Labels. *
  **************************************************************************************************/
 
-var partitionLabels = function(S) {
-  const last = new Array(26).fill(-1);
-  const partitions = [];
-  let anchor = 0;
-  let end = 0;
-
-  for (let i = 0; i < S.length; i++) {
-    last[S.charCodeAt(i) - 'a'.charCodeAt(0)] = i;
-  }
-
-  /*
-  example
-  a b c c a d d b e f f e
-  
-        a b c d e  f  
-  last=[4,7,3,6,11,10]
-  
-  i=0  -> end=max(0,4)=4     anchor=0
-  i=1  -> end=max(4,7)=7     anchor=0
-  i=2  -> end=max(7,3)=7     anchor=0
-  i=3  -> end=max(7,3)=7     anchor=0
-  i=4  -> end=max(7,3)=7     anchor=0
-  i=5  -> end=max(7,6)=7     anchor=0
-  i=6  -> end=max(7,6)=7     anchor=0
-  i=7  -> end=max(7,7)=7     anchor=8   partitions.push(7 - 0 + 1)
-  i=8  -> end=max(7,11)=11   anchor=8
-  i=9  -> end=max(11,10)=11  anchor=8
-  i=10 -> end=max(11,10)=11  anchor=8
-  i=11 -> end=max(11,11)=11  anchor=12  partitions.push(11 - 8 + 1)
-  
-  partitions = [8, 4]
-  */
-  for (let i = 0; i < S.length; i++) {
-    end = Math.max(end, last[S.charCodeAt(i) - 'a'.charCodeAt(0)]);
-    if (i === end) {
-      partitions.push(i - anchor + 1);
-      anchor = i + 1;
+var partitionLabels = function(s) {
+  let last = -1;
+  const res = [];
+  let left = 0;
+  for (let i = 0; i < s.length; i++) {
+    last = Math.max(s.lastIndexOf(s[i]), last);
+    if (i === last) {
+      res.push(i - left + 1);
+      left = i + 1;
     }
   }
-  return partitions;
+  return res;
 };
 
 export default partitionLabels;

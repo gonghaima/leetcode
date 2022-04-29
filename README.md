@@ -183,3 +183,4 @@ Identify if problems talks about finding groups or components.
 - [692. Top K Frequent Words](https://leetcode.com/problems/top-k-frequent-words/) => [topKFrequent](./src/rules/topKFrequent/index.js)
 - [752. Open the Lock](https://leetcode.com/problems/open-the-lock/) => [openLock](./src/rules/openLock/index.js)
 - [763. Partition Labels](https://leetcode.com/problems/partition-labels/) => [partitionLabels](./src/rules/partitionLabels/index.js)
+- [767. Reorganize String](https://leetcode.com/problems/reorganize-string/) => [reorganizeString](./src/rules/reorganizeString/index.js)

@@ -3,64 +3,35 @@
  * @return {string}
  */
 
-// https://leetcode.com/problems/reorganize-string/discuss/1409359/Two-JavaScript-solutions
+// https://leetcode.com/problems/reorganize-string/discuss/480696/JavaScript-Solution-Sort-and-PQ
 
-/***************************************************************************************************
- * Runtime: 110 ms, faster than 34.14% of JavaScript online submissions for Reorganize String.     *
- * Memory Usage: 43.3 MB, less than 82.18% of JavaScript online submissions for Reorganize String. *
- ***************************************************************************************************/
+var reorganizeString = function(S) {
+  let hash = {},
+    pq = [];
+  for (let s of S) hash[s] = hash[s] + 1 || 1;
 
-/***********************************************************************************************************************
- * Count the chars.                                                                                                    *
- * FInd the largest count and the char associated with that char.                                                      *
- * If our largest count is greater than half of our string's length, we can return an empty string; the string cannot be reorganized in a way that satisfies the problem. *
- * Place the maxLetter inside of an array. Increment the index by 2 so that the max letter is never next to itself.    *
- * Iterate through the characters, and slot them in any empty spaces.                                                  *
- ***********************************************************************************************************************/
+  for (let key in hash) pq.push([key, hash[key]]);
 
-const reorganizeString = (S) => {
-  const charCount = {};
+  pq.sort((a, b) => b[1] - a[1]);
 
-  for (const char of S) {
-    charCount[char] = charCount[char] + 1 || 1;
-  }
+  let res = '';
+  while (pq.length != 0) {
+    let lastChar = res[res.length - 1];
+    let first = pq.shift();
 
-  let max = -Infinity;
-  let maxLetter;
-
-  const chars = Object.keys(charCount);
-
-  chars.forEach((char) => {
-    if (charCount[char] > max) {
-      max = charCount[char];
-      maxLetter = char;
+    if (lastChar != first[0]) {
+      res += first[0];
+      if (first[1] != 1) pq.push([first[0], first[1] - 1]);
+    } else {
+      let second = pq.shift();
+      if (second == null) return '';
+      res += second[0];
+      pq.push(first);
+      if (second[1] != 1) pq.push([second[0], second[1] - 1]);
     }
-  });
-
-  const stringLength = S.length;
-
-  if (max > (stringLength + 1) / 2) return '';
-
-  const reorganizedChars = new Array(S.length);
-  let index = 0;
-
-  while (charCount[maxLetter] > 0) {
-    reorganizedChars[index] = maxLetter;
-    index += 2;
-    charCount[maxLetter]--;
+    pq.sort((a, b) => b[1] - a[1]);
   }
-
-  for (const char of chars) {
-    while (charCount[char] > 0) {
-      if (index >= stringLength) index = 1;
-
-      reorganizedChars[index] = char;
-      index += 2;
-      charCount[char]--;
-    }
-  }
-
-  return reorganizedChars.join('');
+  return res;
 };
 
 export default reorganizeString;

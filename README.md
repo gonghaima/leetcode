@@ -184,3 +184,4 @@ Identify if problems talks about finding groups or components.
 - [752. Open the Lock](https://leetcode.com/problems/open-the-lock/) => [openLock](./src/rules/openLock/index.js)
 - [763. Partition Labels](https://leetcode.com/problems/partition-labels/) => [partitionLabels](./src/rules/partitionLabels/index.js)
 - [767. Reorganize String](https://leetcode.com/problems/reorganize-string/) => [reorganizeString](./src/rules/reorganizeString/index.js)
+- [784. Letter Case Permutation](https://leetcode.com/problems/letter-case-permutation/) => [letterCasePermutation](./src/rules/letterCasePermutation/index.js)

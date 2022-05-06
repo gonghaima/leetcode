@@ -6,30 +6,50 @@
 // https://leetcode.com/problems/letter-case-permutation/discuss/471249/DP-Backtracking-both-solution-or-Easy-to-UnderStand-or-Simple-or-Faster-or-MrMagician
 
 /*********************************************************************************************************
- * Runtime: 95 ms, faster than 63.26% of JavaScript online submissions for Letter Case Permutation.      *
- * Memory Usage: 44.6 MB, less than 86.74% of JavaScript online submissions for Letter Case Permutation. *
+ * Runtime: 82 ms, faster than 81.55% of JavaScript online submissions for Letter Case Permutation.      *
+ * Memory Usage: 46.7 MB, less than 32.81% of JavaScript online submissions for Letter Case Permutation. *
  *********************************************************************************************************/
 
-// backtrack
-
 var letterCasePermutation = function(S) {
-  return permut(S, 0);
+  return permut(S);
 };
 
-function permut(str, pos, out = [], curr = '') {
-  if (pos === str.length || curr.length === str.length) {
-    out.push(curr);
-  } else {
-    if (isAlpha(str[pos])) {
-      let up = curr + str[pos].toUpperCase();
-      let low = curr + str[pos].toLowerCase();
-      permut(str, pos + 1, out, up);
-      permut(str, pos + 1, out, low);
+function permut(str, out = []) {
+  str = str.split('');
+  let till = '';
+  for (let i of str) {
+    if (out.length === 0) {
+      if (isAlpha(i)) {
+        out.push(i.toUpperCase());
+        out.push(i.toLowerCase());
+      } else {
+        out.push(i);
+      }
     } else {
-      permut(str, pos + 1, out, curr + str[pos]);
+      let alpha = isAlpha(i);
+      if (alpha) {
+        let up = i.toUpperCase();
+        let low = i.toLowerCase();
+        out = attach(out, up).concat(attach(out, low));
+        out.push(till + up);
+        out.push(till + low);
+      } else {
+        out = attach(out, i);
+        out.push(till + i);
+      }
     }
+    till += i;
   }
-  return out;
+  let set = new Set(out);
+  return Array.from(set);
+}
+
+function attach(out, ch) {
+  let newOut = [...out];
+  for (let i = 0; i < out.length; i++) {
+    newOut[i] += ch;
+  }
+  return newOut;
 }
 
 function isAlpha(ch) {

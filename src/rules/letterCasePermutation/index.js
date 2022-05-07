@@ -3,57 +3,38 @@
  * @return {string[]}
  */
 
-// https://leetcode.com/problems/letter-case-permutation/discuss/471249/DP-Backtracking-both-solution-or-Easy-to-UnderStand-or-Simple-or-Faster-or-MrMagician
+// https://leetcode.com/problems/letter-case-permutation/discuss/1068160/Simple-Backtracking-recursion-solution
 
 /*********************************************************************************************************
- * Runtime: 82 ms, faster than 81.55% of JavaScript online submissions for Letter Case Permutation.      *
- * Memory Usage: 46.7 MB, less than 32.81% of JavaScript online submissions for Letter Case Permutation. *
+ * Runtime: 95 ms, faster than 64.03% of JavaScript online submissions for Letter Case Permutation.      *
+ * Memory Usage: 45.7 MB, less than 45.45% of JavaScript online submissions for Letter Case Permutation. *
  *********************************************************************************************************/
 
 var letterCasePermutation = function(S) {
-  return permut(S);
-};
+  let n = S.length;
+  let res = [];
+  let char = /[a-zA-Z]/;
+  let arr = [];
 
-function permut(str, out = []) {
-  str = str.split('');
-  let till = '';
-  for (let i of str) {
-    if (out.length === 0) {
-      if (isAlpha(i)) {
-        out.push(i.toUpperCase());
-        out.push(i.toLowerCase());
-      } else {
-        out.push(i);
-      }
-    } else {
-      let alpha = isAlpha(i);
-      if (alpha) {
-        let up = i.toUpperCase();
-        let low = i.toLowerCase();
-        out = attach(out, up).concat(attach(out, low));
-        out.push(till + up);
-        out.push(till + low);
-      } else {
-        out = attach(out, i);
-        out.push(till + i);
-      }
+  function backtrack(i) {
+    if (i == n) {
+      res.push(arr.join(''));
+      return;
     }
-    till += i;
-  }
-  let set = new Set(out);
-  return Array.from(set);
-}
 
-function attach(out, ch) {
-  let newOut = [...out];
-  for (let i = 0; i < out.length; i++) {
-    newOut[i] += ch;
+    if (char.test(S[i])) {
+      arr[i] = S[i].toLowerCase();
+      backtrack(i + 1);
+      arr[i] = S[i].toUpperCase();
+      backtrack(i + 1);
+    } else {
+      arr[i] = S[i];
+      backtrack(i + 1);
+    }
   }
-  return newOut;
-}
 
-function isAlpha(ch) {
-  return /[a-zA-Z]/i.test(ch);
-}
+  backtrack(0);
+  return res;
+};
 
 export default letterCasePermutation;

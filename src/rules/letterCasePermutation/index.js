@@ -3,49 +3,40 @@
  * @return {string[]}
  */
 
-// https://leetcode.com/problems/letter-case-permutation/discuss/1795202/Javascript-or-Using-Set
+// https://leetcode.com/problems/letter-case-permutation/discuss/1647441/Character-By-Character-Change
 
 /*********************************************************************************************************
- * Runtime: 110 ms, faster than 47.55% of JavaScript online submissions for Letter Case Permutation.     *
- * Memory Usage: 48.4 MB, less than 20.62% of JavaScript online submissions for Letter Case Permutation. *
+ * Runtime: 89 ms, faster than 72.07% of JavaScript online submissions for Letter Case Permutation.      *
+ * Memory Usage: 44.4 MB, less than 92.73% of JavaScript online submissions for Letter Case Permutation. *
  *********************************************************************************************************/
 
-const DIGIT_REGEX = /[0-9]+/g;
 var letterCasePermutation = function(s) {
-  /* Original string itself is a one of the valid combination. */
-  let set = new Set([s]);
-  let copyS;
-  let index = 0,
-    values;
+  const result = [];
 
-  while (index < s.length) {
-    /* Skip digit to keep them in place, while moving forward refer original string */
-    if (s[index].match(DIGIT_REGEX)) {
-      index++;
-      continue;
+  function generatePermutations(currentStr, start) {
+    // every call to this function generates a new result
+    result.push(currentStr);
+
+    for (let i = start; i < currentStr.length; i++) {
+      const currentChar = currentStr[i];
+      // if the current character is number then skip to next character
+      if (!isNaN(Number(currentChar))) {
+        continue;
+      }
+      // change the casing for current character
+      const newStr =
+        currentStr.substr(0, i) +
+        currentChar.toUpperCase() +
+        currentStr.substr(i + 1);
+
+      // try to generate permutation from the next character
+      generatePermutations(newStr, i + 1);
     }
-
-    /* Get all combinations generated so far */
-    values = [...set.values()];
-
-    for (let i = 0; i < values.length; i++) {
-      copyS = [...values[i]];
-
-      /*
-       * Take every combination generated so far and manipulate the `index`
-       * to lowercase and uppercase to generate new pair
-       */
-      copyS[index] = copyS[index].toLowerCase();
-      set.add(copyS.join(''));
-
-      copyS[index] = copyS[index].toUpperCase();
-      set.add(copyS.join(''));
-    }
-
-    index++;
   }
 
-  return [...set.values()];
+  generatePermutations(s.toLowerCase(), 0);
+
+  return result;
 };
 
 export default letterCasePermutation;

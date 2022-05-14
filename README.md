@@ -185,3 +185,4 @@ Identify if problems talks about finding groups or components.
 - [763. Partition Labels](https://leetcode.com/problems/partition-labels/) => [partitionLabels](./src/rules/partitionLabels/index.js)
 - [767. Reorganize String](https://leetcode.com/problems/reorganize-string/) => [reorganizeString](./src/rules/reorganizeString/index.js)
 - [784. Letter Case Permutation](https://leetcode.com/problems/letter-case-permutation/) => [letterCasePermutation](./src/rules/letterCasePermutation/index.js)
+- [791. Custom Sort String](https://leetcode.com/problems/custom-sort-string/) => [customSortString](./src/rules/customSortString/index.js)

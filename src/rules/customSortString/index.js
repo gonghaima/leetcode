@@ -3,19 +3,18 @@
  * @param {string} s
  * @return {string}
  */
-var customSortString = function(order, string) {
-  let map = {};
-  // iterate throuhg our string and place  map[string[i]] = i
-  for (let i = 0; i < order.length; i++) {
-    map[order[i]] = i;
-  }
-  for (let i = 0; i < string.length; i++) {
-    if (map[string[i]] == undefined) {
-      map[string[i]] = Infinity;
-    }
-  }
-  string = string.split('');
-  return string.sort((a, b) => map[a] - map[b]).join(''); // if not in map then the order will stay and the char will not be moved from orignal string
+
+// one liner - use native api sort, I guess it is n(log n) complexity?
+
+/****************************************************************************************************
+ * Runtime: 81 ms, faster than 52.93% of JavaScript online submissions for Custom Sort String.      *
+ * Memory Usage: 41.7 MB, less than 98.30% of JavaScript online submissions for Custom Sort String. *
+ ****************************************************************************************************/
+
+var customSortString = function(S, T) {
+  return T.split('')
+    .sort((a, b) => S.indexOf(a) - S.indexOf(b))
+    .join('');
 };
 
 export default customSortString;

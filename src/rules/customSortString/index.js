@@ -4,34 +4,24 @@
  * @return {string}
  */
 
-// https://leetcode.com/problems/custom-sort-string/discuss/1676681/JavaScript
+// https://leetcode.com/problems/custom-sort-string/discuss/1979872/JavaScript-Using-Splice
 
-/****************************************************************************************************
- * Runtime: 119 ms, faster than 6.20% of JavaScript online submissions for Custom Sort String.      *
- * Memory Usage: 42.9 MB, less than 42.11% of JavaScript online submissions for Custom Sort String. *
- ****************************************************************************************************/
+/**************************************************************************************************
+ * Runtime: 124 ms, faster than 5.18% of JavaScript online submissions for Custom Sort String.    *
+ * Memory Usage: 44 MB, less than 15.36% of JavaScript online submissions for Custom Sort String. *
+ **************************************************************************************************/
 
 var customSortString = function(order, s) {
-  let map = new Map();
-  for (const c of s) {
-    if (!map.has(c)) {
-      map.set(c, 0);
-    }
-    map.set(c, map.get(c) + 1);
-  }
-  let ans = '';
-  for (const c of order) {
-    if (map.has(c)) {
-      ans += c.repeat(map.get(c));
-      map.delete(c);
+  let finalStr = '';
+  for (let i = 0; i < order.length; i++) {
+    while (s.indexOf(order[i]) > -1) {
+      finalStr += order[i];
+      let sArr = s.split('');
+      sArr.splice(s.indexOf(order[i]), 1);
+      s = sArr.join('');
     }
   }
-
-  for (const [key, count] of map) {
-    ans += key.repeat(count);
-  }
-
-  return ans;
+  return finalStr + s;
 };
 
 export default customSortString;

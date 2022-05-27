@@ -186,3 +186,4 @@ Identify if problems talks about finding groups or components.
 - [767. Reorganize String](https://leetcode.com/problems/reorganize-string/) => [reorganizeString](./src/rules/reorganizeString/index.js)
 - [784. Letter Case Permutation](https://leetcode.com/problems/letter-case-permutation/) => [letterCasePermutation](./src/rules/letterCasePermutation/index.js)
 - [791. Custom Sort String](https://leetcode.com/problems/custom-sort-string/) => [customSortString](./src/rules/customSortString/index.js)
+- [792. Number of Matching Subsequences](https://leetcode.com/problems/number-of-matching-subsequences/) => [numMatchingSubseq](./src/rules/numMatchingSubseq/index.js)

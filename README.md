@@ -188,3 +188,4 @@ Identify if problems talks about finding groups or components.
 - [791. Custom Sort String](https://leetcode.com/problems/custom-sort-string/) => [customSortString](./src/rules/customSortString/index.js)
 - [792. Number of Matching Subsequences](https://leetcode.com/problems/number-of-matching-subsequences/) => [numMatchingSubseq](./src/rules/numMatchingSubseq/index.js)
 - [811. Subdomain Visit Count](https://leetcode.com/problems/subdomain-visit-count/) => [subdomainVisits](./src/rules/subdomainVisits/index.js)
+- [820. Short Encoding of Words](https://leetcode.com/problems/short-encoding-of-words/) => [minimumLengthEncoding](./src/rules/minimumLengthEncoding/index.js)

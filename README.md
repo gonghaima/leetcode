@@ -189,3 +189,4 @@ Identify if problems talks about finding groups or components.
 - [792. Number of Matching Subsequences](https://leetcode.com/problems/number-of-matching-subsequences/) => [numMatchingSubseq](./src/rules/numMatchingSubseq/index.js)
 - [811. Subdomain Visit Count](https://leetcode.com/problems/subdomain-visit-count/) => [subdomainVisits](./src/rules/subdomainVisits/index.js)
 - [820. Short Encoding of Words](https://leetcode.com/problems/short-encoding-of-words/) => [minimumLengthEncoding](./src/rules/minimumLengthEncoding/index.js)
+- [831. Masking Personal Information](https://leetcode.com/problems/masking-personal-information/) => [maskPII](./src/rules/maskPII/index.js)

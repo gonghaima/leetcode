@@ -190,3 +190,4 @@ Identify if problems talks about finding groups or components.
 - [811. Subdomain Visit Count](https://leetcode.com/problems/subdomain-visit-count/) => [subdomainVisits](./src/rules/subdomainVisits/index.js)
 - [820. Short Encoding of Words](https://leetcode.com/problems/short-encoding-of-words/) => [minimumLengthEncoding](./src/rules/minimumLengthEncoding/index.js)
 - [831. Masking Personal Information](https://leetcode.com/problems/masking-personal-information/) => [maskPII](./src/rules/maskPII/index.js)
+- [833. Find And Replace in String](https://leetcode.com/problems/find-and-replace-in-string/) => [findReplaceString](./src/rules/findReplaceString/index.js)

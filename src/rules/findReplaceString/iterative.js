@@ -14,26 +14,22 @@
  ************************************************************************************************************/
 
 var findReplaceString = function(S, indexes, sources, targets) {
-  const n = indexes.length;
-  const chars = S.split('');
+  var result = S.split('');
+  indexes.forEach((indexInS, i) => { // length of index, max size of all items, 
+    var sourceChars = sources[i];
+    var targetChars = targets[i];
 
-  for (let i = 0; i < n; i++) {
-    const [index, source, target] = [indexes[i], sources[i], targets[i]];
-
-    if (S.substring(index).startsWith(source)) {
-      replaceChars(chars, index, source, target);
+    if (S.slice(indexInS, indexInS + sourceChars.length) === sourceChars) {
+      result[indexInS] = [targetChars];
+      var elementsToReplace = sourceChars.length - 1;
+      while (elementsToReplace > 0) {
+        indexInS += 1;
+        result[indexInS] = '';
+        elementsToReplace -= 1;
+      }
     }
-  }
-
-  return chars.join('');
-
-  function replaceChars(chars, start, source, target) {
-    chars[start] = target;
-
-    for (let i = 1; i < source.length; i++) {
-      chars[start + i] = '';
-    }
-  }
+  });
+  return result.join('');
 };
 
 export default findReplaceString;

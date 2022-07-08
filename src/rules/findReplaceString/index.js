@@ -6,34 +6,44 @@
  * @return {string}
  */
 
-// https://leetcode.com/problems/find-and-replace-in-string/discuss/268644/JavaScript-solution
+// https://leetcode.com/problems/find-and-replace-in-string/discuss/555382/Intuitive-Javascript-Solution
 
 /************************************************************************************************************
- * Runtime: 69 ms, faster than 84.58% of JavaScript online submissions for Find And Replace in String.      *
- * Memory Usage: 42.9 MB, less than 77.10% of JavaScript online submissions for Find And Replace in String. *
+ * Runtime: 117 ms, faster than 16.29% of JavaScript online submissions for Find And Replace in String.     *
+ * Memory Usage: 43.5 MB, less than 60.94% of JavaScript online submissions for Find And Replace in String. *
  ************************************************************************************************************/
 
 var findReplaceString = function(S, indexes, sources, targets) {
-  const n = indexes.length;
-  const chars = S.split('');
+  /* 
+   * building a single array for replacement information.
+   * the goal is to replace the strings from the end(right) to the 
+   * beginning(left) so the current replacement will not affect the next one.
+   *
+   * example: 
+   *  S = "abcd"
+   *  indexes = [0, 2]
+   *  sources = ["a", "cd"]
+   *  targets = ["eee", "ffff"]
+   *  expected output = "eeebffff"
 
-  for (let i = 0; i < n; i++) {
-    const [index, source, target] = [indexes[i], sources[i], targets[i]];
-
-    if (S.substring(index).startsWith(source)) {
-      replaceChars(chars, index, source, target);
+   *  replacements = [[2, 'cd', 'ffff'],[0, 'a', 'eee']]
+   *  output: 
+   *  iteration #1 -> 'ab' + 'fff' + '' = 'abffff'
+   *  iteration #2 -> '' + 'eee' + 'bffff' = 'eeebffff'
+   *  final output -> 'eeebffff'
+   */
+  const replacements = indexes
+    .map((index, i) => [index, sources[i], targets[i]])
+    .sort((a, b) => b[0] - a[0]);
+  const output = replacements.reduce((str, [index, source, target]) => {
+    if (str.substring(index, index + source.length) !== source) {
+      return str;
     }
-  }
-
-  return chars.join('');
-
-  function replaceChars(chars, start, source, target) {
-    chars[start] = target;
-
-    for (let i = 1; i < source.length; i++) {
-      chars[start + i] = '';
-    }
-  }
+    return `${str.substring(0, index)}${target}${str.substring(
+      index + source.length
+    )}`;
+  }, S);
+  return output;
 };
 
 export default findReplaceString;

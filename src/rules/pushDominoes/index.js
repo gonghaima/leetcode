@@ -3,59 +3,25 @@
  * @return {string}
  */
 
-/*************
- * Thoughts:
- * O(n) , for each char,
- * if L or R, keep it as it is, keep next interation*
- * if ".", check left and right char, hash for four possible combinations
- *    LL LR RL RR
- *************/
+/**********************************************************************************************
+ * Runtime: 147 ms, faster than 88.46% of JavaScript online submissions for Push Dominoes.    *
+ * Memory Usage: 56.3 MB, less than 84.62% of JavaScript online submissions for Push Dominoes *
+ **********************************************************************************************/
 
 var pushDominoes = function(dominoes) {
-  let result = '';
-  const dominoesChars = dominoes.split('');
-  for (let i = 0; i < dominoesChars.length; i++) {
-    const currentChar = dominoesChars[i];
-    const prev = i - 1 >= 0 ? dominoesChars[i - 1] : null;
-    const next =
-      i + 1 <= dominoesChars.length - 1 ? dominoesChars[i + 1] : null;
-
-    if (currentChar === 'L' || currentChar === 'R') {
-      result += currentChar;
-      continue;
-    }
-
-    // R.L , keep it as .
-    if (prev && next && prev === 'R' && next === 'L') {
-      result += '.';
-      continue;
-    }
-
-    // L.R , keep it as .
-    if (prev && next && prev === 'L' && next === 'R') {
-      result += '.';
-      continue;
-    }
-
-    // ... , keep it as .
-    if (prev && next && prev === '.' && next === '.') {
-      result += '.';
-      continue;
-    }
-
-    if (prev && prev === 'R') {
-      result += 'R';
-      continue;
-    }
-
-    if (next && next === 'L') {
-      result += 'L';
-      continue;
-    }
-
-    result += currentChar;
+  let l = 0,
+    r = 1;
+  const arr = ('L' + dominoes + 'R').split('');
+  while (l < arr.length - 1) {
+    while (arr[r] == '.') r++;
+    if (arr[l] == arr[r]) for (let i = l + 1; i < r; i++) arr[i] = arr[l];
+    if (arr[l] > arr[r])
+      for (let i = 1; i <= (r - l - 1) / 2; i++) {
+        arr[l + i] = 'R';
+        arr[r - i] = 'L';
+      }
+    l = r++;
   }
-  return result;
+  return arr.slice(1, arr.length - 1).join('');
 };
-
 export default pushDominoes;

@@ -191,4 +191,5 @@ Identify if problems talks about finding groups or components.
 - [820. Short Encoding of Words](https://leetcode.com/problems/short-encoding-of-words/) => [minimumLengthEncoding](./src/rules/minimumLengthEncoding/index.js)
 - [831. Masking Personal Information](https://leetcode.com/problems/masking-personal-information/) => [maskPII](./src/rules/maskPII/index.js)
 - [833. Find And Replace in String](https://leetcode.com/problems/find-and-replace-in-string/) => [findReplaceString](./src/rules/findReplaceString/index.js)
-- # [838. Push Dominoes](https://leetcode.com/problems/push-dominoes/) => [pushDominoes](./src/rules/pushDominoes/index.js)
+- [838. Push Dominoes](https://leetcode.com/problems/push-dominoes/) => [pushDominoes](./src/rules/pushDominoes/index.js)
+- [842. Split Array into Fibonacci Sequence](https://leetcode.com/problems/split-array-into-fibonacci-sequence/) => [splitIntoFibonacci](./src/rules/splitIntoFibonacci/index.js)

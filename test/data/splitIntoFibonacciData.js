@@ -4,6 +4,6 @@ export const inputData = {
 };
 
 export const expected = {
-  case1: [11, 0, 11, 11],
+  case1: ['11', '0', '11', '11'],
   case2: [],
 };

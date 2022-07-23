@@ -193,3 +193,4 @@ Identify if problems talks about finding groups or components.
 - [833. Find And Replace in String](https://leetcode.com/problems/find-and-replace-in-string/) => [findReplaceString](./src/rules/findReplaceString/index.js)
 - [838. Push Dominoes](https://leetcode.com/problems/push-dominoes/) => [pushDominoes](./src/rules/pushDominoes/index.js)
 - [842. Split Array into Fibonacci Sequence](https://leetcode.com/problems/split-array-into-fibonacci-sequence/) => [splitIntoFibonacci](./src/rules/splitIntoFibonacci/index.js)
+- [848. Shifting Letters](https://leetcode.com/problems/shifting-letters/) => [shiftingLetters](./src/rules/shiftingLetters/index.js)

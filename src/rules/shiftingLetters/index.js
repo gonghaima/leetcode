@@ -4,22 +4,28 @@
  * @return {string}
  */
 
-/**************************************************************************************************
- * Runtime: 179 ms, faster than 51.96% of JavaScript online submissions for Shifting Letters.     *
- * Memory Usage: 66.7 MB, less than 19.61% of JavaScript online submissions for Shifting Letters. *
- **************************************************************************************************/
+/**********************************************************************************************
+ * Runtime: 148 ms, faster than 76.32% of JavaScript online submissions for Shifting Letters. *
+ **********************************************************************************************/
+ Memory Usage: 66.3 MB, less than 32.89% of JavaScript online submissions for Shifting Letters.
 
-// https://leetcode.com/problems/shifting-letters/discuss/2305934/Javascript-or-O(n)-reverse-while-loop
+// https://leetcode.com/problems/shifting-letters/discuss/2032876/javascript-easy-understanding-O(n)
 
 var shiftingLetters = function(s, shifts) {
-  let res = '',
-    i = shifts.length;
-  shifts.push(0);
-  while (--i >= 0) {
-    shifts[i] += shifts[i + 1];
-    res =
-      String.fromCharCode(((s.charCodeAt(i) - 97 + shifts[i]) % 26) + 97) + res;
-  }
-  return res;
+  let len=shifts.length;
+    let a=[]
+    for(i=len-2;i>=0;i--){
+        shifts[i]=shifts[i]+shifts[i+1]
+    }
+    let lens=s.length;
+    for(i=0;i<lens;i++){
+        a[i]=s.charCodeAt(i)+shifts[i];
+         if(a[i]>122){
+           let rem=(a[i]-97)%26
+            a[i]=97+rem
+        }
+    }
+    return String.fromCharCode(...a);
+   
 };
 export default shiftingLetters;

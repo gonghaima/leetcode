@@ -194,3 +194,4 @@ Identify if problems talks about finding groups or components.
 - [838. Push Dominoes](https://leetcode.com/problems/push-dominoes/) => [pushDominoes](./src/rules/pushDominoes/index.js)
 - [842. Split Array into Fibonacci Sequence](https://leetcode.com/problems/split-array-into-fibonacci-sequence/) => [splitIntoFibonacci](./src/rules/splitIntoFibonacci/index.js)
 - [848. Shifting Letters](https://leetcode.com/problems/shifting-letters/) => [shiftingLetters](./src/rules/shiftingLetters/index.js)
+- [856. Score of Parentheses](https://leetcode.com/problems/score-of-parentheses/) => [scoreOfParentheses](./src/rules/scoreOfParentheses/index.js)

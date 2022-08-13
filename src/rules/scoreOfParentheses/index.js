@@ -3,28 +3,26 @@
  * @return {number}
  */
 
-// https://leetcode.com/problems/score-of-parentheses/discuss/1979330/JavaScript-Solution-oror-O(n)-Time-oror-O(n)-Space
-
 /******************************************************************************************************
- * Runtime: 117 ms, faster than 8.65% of JavaScript online submissions for Score of Parentheses.      *
+ * Runtime: 67 ms, faster than 73.08% of JavaScript online submissions for Score of Parentheses.      *
  * Memory Usage: 41.9 MB, less than 76.92% of JavaScript online submissions for Score of Parentheses. *
  ******************************************************************************************************/
 
+// https://leetcode.com/problems/score-of-parentheses/discuss/1857307/javascript-typescript-stack-solution
+
 var scoreOfParentheses = function(s) {
-  let stack = [0];
-  for (let char of s) {
-    if (char === '(') {
-      stack.push(0);
-    } else {
-      let popped = stack.pop();
-      if (popped === 0) {
-        stack[stack.length - 1] += 1;
-      } else {
-        stack[stack.length - 1] += popped * 2;
-      }
+  const stack = [0];
+
+  for (const char of s) {
+    if (char === '(') stack.push(0);
+    else {
+      const last = stack.pop();
+      const score = 2 * last || 1;
+      stack[stack.length - 1] += score;
     }
   }
-  return stack[0];
+
+  return stack.pop();
 };
 
 export default scoreOfParentheses;

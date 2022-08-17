@@ -4,48 +4,33 @@
  * @return {string}
  */
 
-/********************************************************************************************
- * We decode the string and N keeps the length of decoded string, until N >= K.             *
- * Then we go back from the decoding position.                                              *
- * If it's S[i] = d is a digit, then N = N / d before repeat and K = K % N is what we want. *
- * If it's S[i] = c is a character, we return c if K == 0 or K == N                         *
- ********************************************************************************************/
-
-// https://leetcode.com/problems/decoded-string-at-index/discuss/1632475/Easy-to-understand
+/*******************************************************************************************
+ * Second solution: devide and conquer                                                     *
+ * We assume that S = "abcd3" and K = 11                                                   *
+ * we could find that index K-1 position in "abcdabcdabcd" is 'c'                          *
+ * but we know final answer must be in one of "abcd" regardless of K if K <= lengthOf(S)   *
+ * so we should find which position of "abcd" could be the answer                          *
+ * the mod operation may satisfies our goal because position = 4 is equal to position = 0, *
+ * finally we can make a conclusion                                                        *
+ *    S = "abcd3", K = 11 is equal to S = "abcd", K = 3                                       *
+ *    targetPosition = (K-1) % lengthOf(S)                                                    *
+ *    recursive calculate the targetPosition until we get the correct answer                  *
+ *******************************************************************************************/
 
 /*********************************************************************************************************
- * Runtime: 108 ms, faster than 8.70% of JavaScript online submissions for Decoded String at Index.      *
- * Memory Usage: 42.2 MB, less than 43.48% of JavaScript online submissions for Decoded String at Index. *
+ * Runtime: 70 ms, faster than 82.61% of JavaScript online submissions for Decoded String at Index.      *
+ * Memory Usage: 42.3 MB, less than 34.78% of JavaScript online submissions for Decoded String at Index. *
  *********************************************************************************************************/
 
+// https://leetcode.com/problems/decoded-string-at-index/discuss/980055/Javascript-or-Simple-6-Line-Solution-w-Explanation-or-100-100
+
 var decodeAtIndex = function(s, k) {
-  let len = 0;
-  let isDigit = false;
-
-  for (let v of s) {
-    if (v >= '0' && v <= '9') {
-      len *= +v;
-      isDigit = true;
-    } else {
-      len++;
-      if (len === k && !isDigit) {
-        return s[k - 1];
-      }
-    }
-  }
-
-  for (let i = s.length - 1; i >= 0; i--) {
-    const v = s[i];
-    if (v >= '0' && v <= '9') {
-      len = Math.ceil(len / +v); // Math.floor() wont work because we endup leaving few strings
-      k %= len;
-    } else {
-      if (k === 0 || k === len) {
-        return v;
-      }
-      len--;
-    }
-  }
+  for (let i = 0, j = 0, n; true; i++)
+    if (s[i] < 10) {
+      n = ~~s[i] * j;
+      if (k > n) j = n;
+      else return decodeAtIndex(s, k % j || j);
+    } else if (++j === k) return s[i];
 };
 
 export default decodeAtIndex;

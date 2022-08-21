@@ -4,28 +4,30 @@
  * @return {string}
  */
 
-// https://leetcode.com/problems/decoded-string-at-index/discuss/1369688/javascript-dp-76ms
+// https://leetcode.com/problems/decoded-string-at-index/discuss/979122/Javascript-solution
 
-const isLowerCaseLetter = (c) => {
-  return c.charCodeAt() >= 97 && c.charCodeAt() <= 122;
+/*********************************************************************************************************
+ * Runtime: 74 ms, faster than 78.26% of JavaScript online submissions for Decoded String at Index.      *
+ * Memory Usage: 42.4 MB, less than 34.78% of JavaScript online submissions for Decoded String at Index. *
+ *********************************************************************************************************/
+
+var isNum = function(char) {
+  return char >= 0 && char <= 9;
 };
 
 var decodeAtIndex = function(s, k) {
-  let n = s.length;
-  let dp = Array(n + 1).fill(0); // save current decoded string length by repeating
-  for (let i = 0; i < n; i++) {
-    if (isLowerCaseLetter(s[i])) {
-      dp[i + 1] = dp[i] + 1;
+  var lens = [isNum(s[0]) ? 0 : 1];
+  for (var i = 1; i < s.length; i++) {
+    var char = s[i];
+    if (isNum(char)) {
+      lens.push(lens[i - 1] * char);
     } else {
-      dp[i + 1] = dp[i] * (s[i] - '0');
+      lens.push(lens[i - 1] + 1);
     }
   }
-  k--;
-  for (let i = n - 1; ~i; i--) {
-    // get current decoded string length for each origin string index
-    let curL = dp[i + 1];
-    k %= curL;
-    if (k + 1 == curL && isLowerCaseLetter(s[i])) return s[i]; // matched
+  for (var i = s.length - 1; i >= 0; i--) {
+    k %= lens[i];
+    if (k === 0 && !isNum(s[i])) return s[i];
   }
 };
 

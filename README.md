@@ -196,3 +196,4 @@ Identify if problems talks about finding groups or components.
 - [848. Shifting Letters](https://leetcode.com/problems/shifting-letters/) => [shiftingLetters](./src/rules/shiftingLetters/index.js)
 - [856. Score of Parentheses](https://leetcode.com/problems/score-of-parentheses/) => [scoreOfParentheses](./src/rules/scoreOfParentheses/index.js)
 - [880. Decoded String at Index](https://leetcode.com/problems/decoded-string-at-index/) => [decodeAtIndex](./src/rules/decodeAtIndex/index.js)
+- [916. Word Subsets](https://leetcode.com/problems/word-subsets/) => [wordSubsets](./src/rules/wordSubsets/index.js)

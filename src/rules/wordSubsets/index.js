@@ -4,36 +4,48 @@
  * @return {string[]}
  */
 
-// frequency map
-// https://leetcode.com/problems/word-subsets/discuss/1128048/JS-Python-Java-C%2B%2B-or-Easy-Merge-and-Frequency-Map-Solution-w-Explanation
+// frequency map 1
+// https://leetcode.com/problems/word-subsets/discuss/1128227/JavaScript-Combine-Words-in-B-into-One
 
 /**********************************************************************************************
- * Runtime: 165 ms, faster than 97.17% of JavaScript online submissions for Word Subsets.     *
- * Memory Usage: 57.3 MB, less than 98.58% of JavaScript online submissions for Word Subsets. *
+ * Runtime: 301 ms, faster than 62.62% of JavaScript online submissions for Word Subsets.     *
+ * Memory Usage: 67.5 MB, less than 51.64% of JavaScript online submissions for Word Subsets. *
  **********************************************************************************************/
 
 var wordSubsets = function(words1, words2) {
-  let Bfreq = new Int8Array(26),
-    cmax = 0,
-    check = new Int8Array(26),
-    ans = [];
-  for (let i = 0; i < words2.length; i++, check.fill()) {
-    let word = words2[i];
-    for (let j = 0; j < word.length; j++) check[word.charCodeAt(j) - 97]++;
-    for (let j = 0; j < 26; j++) {
-      let diff = check[j] - Bfreq[j];
-      if (diff > 0) (cmax += diff), (Bfreq[j] += diff);
-      if (cmax > 10) return [];
+  const output = [];
+  const freqB = Array(26).fill(0);
+
+  for (let wordB of words2) {
+    const currFreq = getFreq(wordB);
+
+    for (let i = 0; i < freqB.length; i++) {
+      freqB[i] = Math.max(freqB[i], currFreq[i]);
     }
   }
-  for (let i = 0; i < words1.length; i++, check.fill()) {
-    let word = words1[i],
-      j;
-    if (word.length < cmax) continue;
-    for (j = 0; j < word.length; j++) check[word.charCodeAt(j) - 97]++;
-    for (j = 0; j < 26; j++) if (check[j] < Bfreq[j]) break;
-    if (j === 26) ans.push(word);
+
+  for (let wordA of words1) {
+    const freqA = getFreq(wordA);
+    const universal = isSubset(freqA);
+    if (universal) output.push(wordA);
   }
-  return ans;
+
+  function isSubset(freqA) {
+    for (let i = 0; i < freqA.length; i++) {
+      if (freqB[i] > freqA[i]) return false;
+    }
+    return true;
+  }
+
+  function getFreq(word) {
+    const map = Array(26).fill(0);
+
+    for (let char of word) {
+      const idx = char.charCodeAt() - 'a'.charCodeAt();
+      map[idx]++;
+    }
+    return map;
+  }
+  return output;
 };
 export default wordSubsets;

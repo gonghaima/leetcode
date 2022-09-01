@@ -162,7 +162,7 @@ Identify if problems talks about finding groups or components.
 - [583. Delete Operation for Two Strings](https://leetcode.com/problems/delete-operation-for-two-strings/) [deleteOperationforTwoStrings](./src/rules/deleteOperationforTwoStrings/index.js)
 - # [1092. Shortest Common Supersequence](https://leetcode.com/problems/shortest-common-supersequence/) => [shortestCommonSupersequence](./src/rules/shortestCommonSupersequence/index.js)
 
-### string
+### string and array
 
 - [377. Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/) => [combinationSum4](./src/rules/combinationSum4/index.js)
 - [712. Minimum ASCII Delete Sum for Two Strings](https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings/) => [minimumDeleteSum](./src/rules/minimumDeleteSum/index.js)
@@ -180,6 +180,7 @@ Identify if problems talks about finding groups or components.
 - [187. Repeated DNA Sequences](https://leetcode.com/problems/repeated-dna-sequences/) => [findRepeatedDnaSequences](./src/rules/findRepeatedDnaSequences/index.js)
 - [208. Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/) => [implementTrie](./src/rules/implementTrie/index.js)
 - [211. Design Add and Search Words Data Structure](https://leetcode.com/problems/design-add-and-search-words-data-structure/) => [WordDictionary](./src/rules/WordDictionary/index.js)
+- [238. Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) => [productExceptSelf](./src/rules/productExceptSelf/index.js)
 - [692. Top K Frequent Words](https://leetcode.com/problems/top-k-frequent-words/) => [topKFrequent](./src/rules/topKFrequent/index.js)
 - [752. Open the Lock](https://leetcode.com/problems/open-the-lock/) => [openLock](./src/rules/openLock/index.js)
 - [763. Partition Labels](https://leetcode.com/problems/partition-labels/) => [partitionLabels](./src/rules/partitionLabels/index.js)

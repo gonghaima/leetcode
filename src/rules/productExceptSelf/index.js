@@ -4,24 +4,26 @@
  */
 
 /**************************************************************************************************************
- * Runtime: 183 ms, faster than 30.64% of JavaScript online submissions for Product of Array Except Self.     *
- * Memory Usage: 53.1 MB, less than 87.57% of JavaScript online submissions for Product of Array Except Self. *
+ * Runtime: 181 ms, faster than 32.24% of JavaScript online submissions for Product of Array Except Self.     *
+ * Memory Usage: 54.9 MB, less than 45.81% of JavaScript online submissions for Product of Array Except Self. *
  **************************************************************************************************************/
 
 // https://leetcode.com/problems/product-of-array-except-self/discuss/65663/Javascript-solution-if-anyone-is-interested
 
 var productExceptSelf = function(nums) {
-  var output = [];
-  var leftMult = 1;
-  var rightMult = 1;
-  for (var i = nums.length - 1; i >= 0; i--) {
-    output[i] = rightMult;
-    rightMult *= nums[i];
+  let result = Array(nums.length).fill(1);
+
+  let prodOfNumsBehindLeftPointer = 1;
+  let prodOfNumsBehindRigthtPointer = 1;
+
+  for (let l = 0, r = nums.length - 1; l < nums.length; l++, r--) {
+    result[l] *= prodOfNumsBehindLeftPointer;
+    result[r] *= prodOfNumsBehindRigthtPointer;
+
+    prodOfNumsBehindLeftPointer *= nums[l];
+    prodOfNumsBehindRigthtPointer *= nums[r];
   }
-  for (var j = 0; j < nums.length; j++) {
-    output[j] *= leftMult;
-    leftMult *= nums[j];
-  }
-  return output;
+
+  return result;
 };
 export default productExceptSelf;

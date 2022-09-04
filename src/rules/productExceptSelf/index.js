@@ -4,26 +4,23 @@
  */
 
 /**************************************************************************************************************
- * Runtime: 181 ms, faster than 32.24% of JavaScript online submissions for Product of Array Except Self.     *
- * Memory Usage: 54.9 MB, less than 45.81% of JavaScript online submissions for Product of Array Except Self. *
+ * Runtime: 149 ms, faster than 62.94% of JavaScript online submissions for Product of Array Except Self.     *
+ * Memory Usage: 54.9 MB, less than 47.63% of JavaScript online submissions for Product of Array Except Self. *
  **************************************************************************************************************/
 
-// https://leetcode.com/problems/product-of-array-except-self/discuss/65663/Javascript-solution-if-anyone-is-interested
+// https://leetcode.com/problems/product-of-array-except-self/discuss/1179835/JavaScript-Solution-O(1)-Space
 
 var productExceptSelf = function(nums) {
-  let result = Array(nums.length).fill(1);
+  const n = nums.length;
+  const res = Array(n).fill(1);
 
-  let prodOfNumsBehindLeftPointer = 1;
-  let prodOfNumsBehindRigthtPointer = 1;
-
-  for (let l = 0, r = nums.length - 1; l < nums.length; l++, r--) {
-    result[l] *= prodOfNumsBehindLeftPointer;
-    result[r] *= prodOfNumsBehindRigthtPointer;
-
-    prodOfNumsBehindLeftPointer *= nums[l];
-    prodOfNumsBehindRigthtPointer *= nums[r];
+  let left = (right = 1);
+  for (let i = 0; i < n; i++) {
+    res[i] *= left;
+    res[n - 1 - i] *= right;
+    left *= nums[i];
+    right *= nums[n - 1 - i];
   }
-
-  return result;
+  return res;
 };
 export default productExceptSelf;

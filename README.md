@@ -172,6 +172,7 @@ Identify if problems talks about finding groups or components.
 - [22. Generate Parentheses](https://leetcode.com/problems/generate-parentheses/) => [generateParenthesis](./src/rules/generateParenthesis/index.js)
 - [43. Multiply Strings](https://leetcode.com/problems/multiply-strings/) => [multiplyStrings](./src/rules/multiplyStrings/index.js)
 - [49. Group Anagrams](https://leetcode.com/problems/group-anagrams/) => [groupAnagrams](./src/rules/groupAnagrams/index.js)
+- [54. Spiral Matrix](https://leetcode.com/problems/spiral-matrix/) => [spiralOrder](./src/rules/spiralOrder/index.js)
 - [93. Restore IP Addresses](https://leetcode.com/problems/restore-ip-addresses/) => [restoreIpAddresses](./src/rules/restoreIpAddresses/index.js)
 - [97. Interleaving String](https://leetcode.com/problems/interleaving-string/) => [isInterleave](./src/rules/isInterleave/index.js)
 - [131. Palindrome Partitioning](https://leetcode.com/problems/palindrome-partitioning/) => [palindromePartitioning](./src/rules/palindromePartitioning/index.js)

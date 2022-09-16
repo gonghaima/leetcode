@@ -3,12 +3,12 @@
  * @return {number[]}
  */
 
-/***********************************************************************************************
- * Runtime: 104 ms, faster than 18.16% of JavaScript online submissions for Spiral Matrix.     *
- * Memory Usage: 42.1 MB, less than 24.10% of JavaScript online submissions for Spiral Matrix. *
- ***********************************************************************************************/
+// https://leetcode.com/problems/spiral-matrix/discuss/651503/Javascript-simple-and-clean
 
-// https://leetcode.com/problems/spiral-matrix/discuss/1226384/1-approach-for-your-interview
+/***********************************************************************************************
+ * Runtime: 97 ms, faster than 29.80% of JavaScript online submissions for Spiral Matrix.      *
+ * Memory Usage: 41.8 MB, less than 60.65% of JavaScript online submissions for Spiral Matrix. *
+ ***********************************************************************************************/
 
 var spiralOrder = function(matrix) {
   const res = [];

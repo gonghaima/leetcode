@@ -3,40 +3,36 @@
  * @return {number[]}
  */
 
-/***********************************************************************************************
- * Runtime: 104 ms, faster than 18.16% of JavaScript online submissions for Spiral Matrix.     *
- * Memory Usage: 42.1 MB, less than 24.10% of JavaScript online submissions for Spiral Matrix. *
- ***********************************************************************************************/
+/*********************************************************************************************
+ * Runtime: 118 ms, faster than 5.04% of JavaScript online submissions for Spiral Matrix.    *
+ * Memory Usage: 42 MB, less than 35.71% of JavaScript online submissions for Spiral Matrix. *
+ *********************************************************************************************/
 
-// https://leetcode.com/problems/spiral-matrix/discuss/1226384/1-approach-for-your-interview
+// https://leetcode.com/problems/spiral-matrix/discuss/316519/Simple-JavaScript-Solution-with-pop-%2B-shift-%2B-recursion-beat-86
 
 var spiralOrder = function(matrix) {
-  let r = matrix.length,
-    c = matrix[0].length;
-  let [left, right, top, bottom] = [0, c - 1, 0, r - 1];
+  if (matrix.length === 0) return [];
+  if (matrix[0].length === 0) return [];
 
-  let arr = [];
+  let result = [];
+  // ADD FIRST ROW
+  result = result.concat(matrix.shift());
 
-  while (left <= right && top <= bottom) {
-    for (let i = left; i <= right; i++) arr.push(matrix[top][i]);
-    top++;
-
-    for (let i = top; i <= bottom; i++) arr.push(matrix[i][right]);
-    right--;
-
-    if (top <= bottom) {
-      // condition 1
-      for (let i = right; i >= left; i--) arr.push(matrix[bottom][i]);
-      bottom--;
-    }
-
-    if (left <= right) {
-      // condition 2
-      for (let i = bottom; i >= top; i--) arr.push(matrix[i][left]);
-      left++;
-    }
+  // ADD LAST COL
+  for (let i = 0; i < matrix.length - 1; i++) {
+    result.push(matrix[i].pop());
   }
-  return arr;
+
+  // ADD LAST ROW
+  const lastRow = matrix.pop();
+  if (lastRow) result = result.concat(lastRow.reverse());
+
+  // ADD FIRST COL
+  for (let i = matrix.length - 1; i >= 0; i--) {
+    if (matrix[i].length) result.push(matrix[i].shift());
+  }
+
+  return result.concat(spiralOrder(matrix));
 };
 
 export default spiralOrder;

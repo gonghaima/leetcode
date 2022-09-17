@@ -11,18 +11,32 @@
 // https://leetcode.com/problems/spiral-matrix/discuss/1226384/1-approach-for-your-interview
 
 var spiralOrder = function(matrix) {
-  const res = [];
-  while (matrix.length) {
-    const first = matrix.shift();
-    res.push(...first);
-    for (const m of matrix) {
-      let val = m.pop();
-      if (val) res.push(val);
-      m.reverse();
+  let r = matrix.length,
+    c = matrix[0].length;
+  let [left, right, top, bottom] = [0, c - 1, 0, r - 1];
+
+  let arr = [];
+
+  while (left <= right && top <= bottom) {
+    for (let i = left; i <= right; i++) arr.push(matrix[top][i]);
+    top++;
+
+    for (let i = top; i <= bottom; i++) arr.push(matrix[i][right]);
+    right--;
+
+    if (top <= bottom) {
+      // condition 1
+      for (let i = right; i >= left; i--) arr.push(matrix[bottom][i]);
+      bottom--;
     }
-    matrix.reverse();
+
+    if (left <= right) {
+      // condition 2
+      for (let i = bottom; i >= top; i--) arr.push(matrix[i][left]);
+      left++;
+    }
   }
-  return res;
+  return arr;
 };
 
 export default spiralOrder;

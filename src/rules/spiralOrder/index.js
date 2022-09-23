@@ -3,44 +3,35 @@
  * @return {number[]}
  */
 
-// https://leetcode.com/problems/spiral-matrix/discuss/20631/Concise-JavaScript-O(n)-using-directions
+// https://leetcode.com/problems/spiral-matrix/discuss/1648434/Beginner-friendly-JavaJavaScriptPython-solutions
 
-// https://leetcode.com/problems/spiral-matrix/discuss/1468151/Python-Smart-Simulate-by-marking-as-Visited-Clean-and-Concise
-
-/***********************************************************************************************
- * Runtime: 62 ms, faster than 93.45% of JavaScript online submissions for Spiral Matrix.      *
- * Memory Usage: 41.7 MB, less than 72.45% of JavaScript online submissions for Spiral Matrix. *
- ***********************************************************************************************/
+/*********************************************************************************************
+ * Runtime: 86 ms, faster than 56.44% of JavaScript online submissions for Spiral Matrix.    *
+ * Memory Usage: 42 MB, less than 35.82% of JavaScript online submissions for Spiral Matrix. *
+ *********************************************************************************************/
 
 var spiralOrder = function(matrix) {
-  if (!matrix.length) return [];
-  const res = [];
-  let dir,
-    dirs = [
-      [0, 1],
-      [1, 0],
-      [0, -1],
-      [-1, 0],
-    ];
-  const walls = [-1, matrix[0].length, matrix.length, -1];
-  for (
-    let i = 0, d = 0, r = 0, c = 0, len = matrix.length * matrix[0].length;
-    i < len;
-    i++, r += dir[0], c += dir[1]
-  ) {
-    res.push(matrix[r][c]);
-    dir = dirs[d % 4];
-    let w = [0, 1, 2, 3].find(
-      (j) =>
-        (j % 2 === 0 && r + dir[0] === walls[j]) ||
-        (j % 2 && c + dir[1] === walls[j])
-    );
-    if (w !== undefined) {
-      walls[(w + 3) % 4] += w < 2 ? 1 : -1;
-      dir = dirs[++d % 4];
-    }
+  let arr = [];
+  let left = 0,
+    right = matrix[0].length - 1,
+    top = 0,
+    bottom = matrix.length - 1;
+  let len = matrix.length * matrix[0].length;
+  while (arr.length < len) {
+    for (let i = left; i <= right && arr.length < len; i++)
+      arr.push(matrix[top][i]);
+    top++;
+    for (let i = top; i <= bottom && arr.length < len; i++)
+      arr.push(matrix[i][right]);
+    right--;
+    for (let i = right; i >= left && arr.length < len; i--)
+      arr.push(matrix[bottom][i]);
+    bottom--;
+    for (let i = bottom; i >= top && arr.length < len; i--)
+      arr.push(matrix[i][left]);
+    left++;
   }
-  return res;
+  return arr;
 };
 
 export default spiralOrder;

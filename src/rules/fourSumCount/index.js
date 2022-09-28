@@ -5,37 +5,40 @@
  * @param {number[]} nums4
  * @return {number}
  */
+
+/*****************************************************************************************
+ * Runtime: 338 ms, faster than 68.55% of JavaScript online submissions for 4Sum II.     *
+ * Memory Usage: 46.3 MB, less than 65.41% of JavaScript online submissions for 4Sum II. *
+ *****************************************************************************************/
+
+// https://leetcode.com/problems/4sum-ii/discuss/260070/Javascript-solution-%3A0
+
+// reducde to 2sum question
+
 var fourSumCount = function(nums1, nums2, nums3, nums4) {
-  let tracker = nums1;
-  let tmp = [];
-  let result = 0;
+  const sumTwoList = function(x, y) {
+    let len = x.length;
+    let result = new Map();
+    for (let i = 0; i < len; i++) {
+      for (let j = 0; j < len; j++) {
+        let c = x[i] + y[j];
+        result.set(c, result.get(c) + 1 || 1);
+      }
+    }
+    return result;
+  };
 
-  for (let i = 0; i < nums2.length; i++) {
-    const num = nums2[i];
-    tracker.map((n) => {
-      tmp.push(num + n);
-    });
-  }
-  tracker = tmp;
-  tmp = [];
+  let sum1 = sumTwoList(nums1, nums2);
+  let sum2 = sumTwoList(nums3, nums4);
+  let total = 0;
 
-  for (let i = 0; i < nums3.length; i++) {
-    const num = nums3[i];
-    tracker.map((n) => {
-      tmp.push(num + n);
-    });
-  }
-  tracker = tmp;
-  tmp = [];
-
-  for (let i = 0; i < nums4.length; i++) {
-    const num = nums4[i];
-    tracker.map((n) => {
-      if (num + n === 0) result++;
-    });
-  }
-
-  return result;
+  sum1.forEach((value, key) => {
+    let offset = 0 - key;
+    if (sum2.has(offset)) {
+      total += sum2.get(offset) * sum1.get(key);
+    }
+  });
+  return total;
 };
 
 export default fourSumCount;

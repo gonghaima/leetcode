@@ -7,38 +7,32 @@
  */
 
 /*****************************************************************************************
- * Runtime: 338 ms, faster than 68.55% of JavaScript online submissions for 4Sum II.     *
- * Memory Usage: 46.3 MB, less than 65.41% of JavaScript online submissions for 4Sum II. *
+ * Runtime: 260 ms, faster than 87.38% of JavaScript online submissions for 4Sum II.     *
+ * Memory Usage: 46.4 MB, less than 65.37% of JavaScript online submissions for 4Sum II. *
  *****************************************************************************************/
 
-// https://leetcode.com/problems/4sum-ii/discuss/260070/Javascript-solution-%3A0
+// https://leetcode.com/problems/4sum-ii/discuss/1742681/C%2B%2BJavaScript-Solution
 
-// reducde to 2sum question
+// similar, reducde to 2sum question
 
 var fourSumCount = function(nums1, nums2, nums3, nums4) {
-  const sumTwoList = function(x, y) {
-    let len = x.length;
-    let result = new Map();
-    for (let i = 0; i < len; i++) {
-      for (let j = 0; j < len; j++) {
-        let c = x[i] + y[j];
-        result.set(c, result.get(c) + 1 || 1);
-      }
-    }
-    return result;
-  };
+  let m = new Map(),
+    count = 0;
 
-  let sum1 = sumTwoList(nums1, nums2);
-  let sum2 = sumTwoList(nums3, nums4);
-  let total = 0;
-
-  sum1.forEach((value, key) => {
-    let offset = 0 - key;
-    if (sum2.has(offset)) {
-      total += sum2.get(offset) * sum1.get(key);
-    }
+  nums1.forEach((n1) => {
+    nums2.forEach((n2) => {
+      let sum = n1 + n2;
+      m.set(sum, m.get(sum) + 1 || 1);
+    });
   });
-  return total;
+
+  nums3.forEach((n3) => {
+    nums4.forEach((n4) => {
+      let sum = -(n3 + n4);
+      count += m.get(sum) ? m.get(sum) : 0;
+    });
+  });
+  return count;
 };
 
 export default fourSumCount;

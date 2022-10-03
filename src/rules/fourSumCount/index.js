@@ -7,31 +7,43 @@
  */
 
 /*****************************************************************************************
- * Runtime: 260 ms, faster than 87.38% of JavaScript online submissions for 4Sum II.     *
- * Memory Usage: 46.4 MB, less than 65.37% of JavaScript online submissions for 4Sum II. *
+ * Runtime: 478 ms, faster than 53.87% of JavaScript online submissions for 4Sum II.     *
+ * Memory Usage: 46.6 MB, less than 53.23% of JavaScript online submissions for 4Sum II. *
  *****************************************************************************************/
 
-// https://leetcode.com/problems/4sum-ii/discuss/1742681/C%2B%2BJavaScript-Solution
+// https://leetcode.com/problems/4sum-ii/discuss/1460149/JavaScript-kSum-Solution
 
-// similar, reducde to 2sum question
+// kSum solution
 
 var fourSumCount = function(nums1, nums2, nums3, nums4) {
-  let m = new Map(),
-    count = 0;
+  const addToHash = (i, sum) => {
+    // for the 1st half arrays, recursively add count to map
+    if (i < pivot) {
+      for (const num of list[i]) addToHash(i + 1, sum + num);
+    }
 
-  nums1.forEach((n1) => {
-    nums2.forEach((n2) => {
-      let sum = n1 + n2;
-      m.set(sum, m.get(sum) + 1 || 1);
-    });
-  });
+    // if sum exist increment count by 1, if NOT set to 1
+    else map.set(sum, (map.get(sum) || 0) + 1);
+  };
 
-  nums3.forEach((n3) => {
-    nums4.forEach((n4) => {
-      let sum = -(n3 + n4);
-      count += m.get(sum) ? m.get(sum) : 0;
-    });
-  });
+  const complements = (i, sum) => {
+    // for the 2nd half array, recursively find complements
+    if (i < list.length) {
+      for (const num of list[i]) complements(i + 1, sum + num);
+    }
+
+    // find complement and add to count
+    else if (map.has(-sum)) count += map.get(-sum);
+  };
+
+  const list = [nums1, nums2, nums3, nums4];
+  const pivot = Math.floor(list.length / 2); // pivot to divide list in half
+  const map = new Map();
+  let count = 0;
+
+  addToHash(0, 0);
+  complements(pivot, 0);
+
   return count;
 };
 

@@ -4,23 +4,21 @@
  */
 
 /***********************************************************************************************************
- * Runtime: 138 ms, faster than 29.24% of JavaScript online submissions for Container With Most Water.     *
- * Memory Usage: 49.2 MB, less than 85.84% of JavaScript online submissions for Container With Most Water. *
+ * Runtime: 126 ms, faster than 49.16% of JavaScript online submissions for Container With Most Water.     *
+ * Memory Usage: 49.8 MB, less than 37.06% of JavaScript online submissions for Container With Most Water. *
  ***********************************************************************************************************/
 
-// inspired by
-// https://leetcode.com/problems/container-with-most-water/discuss/6100/Simple-and-clear-proofexplanation
+// https://leetcode.com/problems/container-with-most-water/discuss/1980860/JavaC%2B%2BPythonJavaScriptKotlinO(n)timeBEATS-99.97-MEMORYSPEED-0ms-APRIL-2022
 
 var maxArea = function(height) {
-  let i = 0,
-    j = height.length - 1,
-    water = 0;
+  let ans = 0,
+    i = 0,
+    j = height.length - 1;
   while (i < j) {
-    water = Math.max(water, (j - i) * Math.min(height[i], height[j]));
-    if (height[i] < height[j]) i += 1;
-    else j -= 1;
+    ans = Math.max(ans, Math.min(height[i], height[j]) * (j - i));
+    height[i] <= height[j] ? i++ : j--;
   }
-  return water;
+  return ans;
 };
 
 export default maxArea;

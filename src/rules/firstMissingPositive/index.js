@@ -3,25 +3,25 @@
  * @return {number}
  */
 
+// https://leetcode.com/problems/first-missing-positive/discuss/927112/Three-JS-Solutions
+
+// Time Complexity: O(nlog(n))
+// Space Complexity: O(n)
+
 /********************************************************************************************************
- * Runtime: 145 ms, faster than 39.78% of JavaScript online submissions for First Missing Positive.     *
- * Memory Usage: 57.5 MB, less than 26.61% of JavaScript online submissions for First Missing Positive. *
+ * Runtime: 160 ms, faster than 23.70% of JavaScript online submissions for First Missing Positive.     *
+ * Memory Usage: 58.9 MB, less than 22.66% of JavaScript online submissions for First Missing Positive. *
  ********************************************************************************************************/
 
-// https://leetcode.com/problems/first-missing-positive/discuss/2248885/Hard-Question-Solved-Easily.-Very-Basic-Apprach-O(n)
-
 var firstMissingPositive = function(nums) {
-  let set = new Set(),
-    res = 1;
-  for (let ele of nums) {
-    if (ele > 0) {
-      set.add(ele);
-    }
+  nums = Array.from(new Set(nums)).filter((num) => num > 0);
+  nums.sort((a, b) => a - b);
+  let j = 1;
+  for (let i = 0; i < nums.length; i++) {
+    if (j == nums[i]) j++;
+    else return j;
   }
-  while (set.has(res)) {
-    ++res;
-  }
-  return res;
+  return j;
 };
 
 export default firstMissingPositive;

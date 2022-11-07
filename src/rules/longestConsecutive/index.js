@@ -3,27 +3,38 @@
  * @return {number}
  */
 
-/**************************************************************************************************************
- * Runtime: 173 ms, faster than 74.61% of JavaScript online submissions for Longest Consecutive Sequence.     *
- * Memory Usage: 58.4 MB, less than 37.61% of JavaScript online submissions for Longest Consecutive Sequence. *
- **************************************************************************************************************/
-
+/************************************************************************************************************
+ * Runtime: 166 ms, faster than 78.66% of JavaScript online submissions for Longest Consecutive Sequence.   *
+ * Memory Usage: 62 MB, less than 24.53% of JavaScript online submissions for Longest Consecutive Sequence. *
+ ************************************************************************************************************/
 // inspired by
-// https://leetcode.com/problems/longest-consecutive-sequence/discuss/41057/Simple-O(n)-with-Explanation-Just-walk-each-streak
-
-// Simple O(n) with Explanation - Just walk each streak
+// https://leetcode.com/problems/longest-consecutive-sequence/discuss/41055/My-really-simple-Java-O(n)-solution-Accepted
 
 var longestConsecutive = function(nums) {
-  const numsSet = new Set(nums);
-  let best = 0;
-  [...numsSet].map((x) => {
-    if (!numsSet.has(x - 1)) {
-      let y = x + 1;
-      while (numsSet.has(y)) y += 1;
-      best = Math.max(best, y - x);
+  let res = 0;
+  const map = new Map();
+  for (let n of nums) {
+    if (!map.has(n)) {
+      const left = map.has(n - 1) ? map.get(n - 1) : 0;
+      const right = map.has(n + 1) ? map.get(n + 1) : 0;
+      // sum: length of the sequence n is in
+      const sum = left + right + 1;
+      map.set(n, sum);
+
+      // keep track of the max length
+      res = Math.max(res, sum);
+
+      // extend the length to the boundary(s)
+      // of the sequence
+      // will do nothing if n has no neighbors
+      map.set(n - left, sum);
+      map.set(n + right, sum);
+    } else {
+      // duplicates
+      continue;
     }
-  });
-  return best;
+  }
+  return res;
 };
 
 export default longestConsecutive;

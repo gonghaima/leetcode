@@ -3,38 +3,71 @@
  * @return {number}
  */
 
-/************************************************************************************************************
- * Runtime: 166 ms, faster than 78.66% of JavaScript online submissions for Longest Consecutive Sequence.   *
- * Memory Usage: 62 MB, less than 24.53% of JavaScript online submissions for Longest Consecutive Sequence. *
- ************************************************************************************************************/
-// inspired by
-// https://leetcode.com/problems/longest-consecutive-sequence/discuss/41055/My-really-simple-Java-O(n)-solution-Accepted
+/*************************************************************************************************************
+ * Runtime: 202 ms, faster than 64.03% of JavaScript online submissions for Longest Consecutive Sequence.    *
+ * Memory Usage: 75.4 MB, less than 7.51% of JavaScript online submissions for Longest Consecutive Sequence. *
+ *************************************************************************************************************/
 
-var longestConsecutive = function(nums) {
-  let res = 0;
-  const map = new Map();
-  for (let n of nums) {
-    if (!map.has(n)) {
-      const left = map.has(n - 1) ? map.get(n - 1) : 0;
-      const right = map.has(n + 1) ? map.get(n + 1) : 0;
-      // sum: length of the sequence n is in
-      const sum = left + right + 1;
-      map.set(n, sum);
+// https://leetcode.com/problems/longest-consecutive-sequence/discuss/807892/Just-an-other-implementation-using-union-find
+//
 
-      // keep track of the max length
-      res = Math.max(res, sum);
+class UnionFind {
+  constructor(arr) {
+    [this.parentMap, this.rankMap] = this.initialise(arr);
+  }
 
-      // extend the length to the boundary(s)
-      // of the sequence
-      // will do nothing if n has no neighbors
-      map.set(n - left, sum);
-      map.set(n + right, sum);
+  initialise(arr) {
+    let parentMap = new Map();
+    let rankMap = new Map();
+    arr.forEach((val) => {
+      parentMap.set(val, val);
+      rankMap.set(val, 1);
+    });
+    return [parentMap, rankMap];
+  }
+
+  find(val) {
+    if (this.parentMap.get(val) === val) return val;
+    this.parentMap.set(val, this.find(this.parentMap.get(val)));
+    return this.parentMap.get(val);
+  }
+
+  union(m, n) {
+    const rootM = this.find(m);
+    const rootN = this.find(n);
+
+    if (rootM === rootN) return;
+    if (this.rankMap.get(rootN) > this.rankMap.get(rootM)) {
+      this.updateParent(rootM, rootN);
     } else {
-      // duplicates
-      continue;
+      this.updateParent(rootN, rootM);
     }
   }
-  return res;
+
+  updateParent(child, parent) {
+    this.rankMap.set(
+      parent,
+      this.rankMap.get(parent) + this.rankMap.get(child)
+    );
+    this.parentMap.set(child, parent);
+  }
+}
+
+var longestConsecutive = function(nums) {
+  const unionFind = new UnionFind(nums);
+
+  for (let num of nums) {
+    if (unionFind.parentMap.has(num - 1)) {
+      unionFind.union(num - 1, num);
+    }
+  }
+
+  let max = 0;
+  for (let num of nums) {
+    max = Math.max(max, unionFind.rankMap.get(num));
+  }
+
+  return max;
 };
 
 export default longestConsecutive;

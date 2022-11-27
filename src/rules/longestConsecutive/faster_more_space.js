@@ -37,4 +37,11 @@ var longestConsecutive = function(nums) {
   return res;
 };
 
+const preOrd = (node)=>{
+  if(!node)return;
+  console.log({node.key});
+  preOrd(node.left);
+  preOrd(node.right);
+}
+
 export default longestConsecutive;

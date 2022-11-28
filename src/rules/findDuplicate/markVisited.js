@@ -6,22 +6,23 @@
 // https://leetcode.com/problems/find-the-duplicate-number/discuss/1892921/9-Approaches%3A-Count-Hash-In-place-Marked-Sort-Binary-Search-Bit-Mask-Fast-Slow-Pointers
 
 /***********************************************************************************************************
- * Runtime: 529 ms, faster than 8.57% of JavaScript online submissions for Find the Duplicate Number.      *
- * Memory Usage: 54.4 MB, less than 39.39% of JavaScript online submissions for Find the Duplicate Number. *
+ * Runtime: 86 ms, faster than 96.67% of JavaScript online submissions for Find the Duplicate Number.      *
+ * Memory Usage: 50.9 MB, less than 53.18% of JavaScript online submissions for Find the Duplicate Number. *
  ***********************************************************************************************************/
 
-/******************
- * time O(log n)  *
- * space O(log n) *
- ******************/
+/**************
+ * time O(n)  *
+ * space O(n) *
+ **************/
 
 var findDuplicate = function(nums) {
-  nums.sort();
-  let len = nums.length;
-  for (let i = 1; i < len; i++) {
-    if (nums[i] == nums[i - 1]) {
-      return nums[i];
+  const len = nums.length;
+  for (let num of nums) {
+    const idx = Math.abs(num);
+    if (nums[idx] < 0) {
+      return idx;
     }
+    nums[idx] = -nums[idx];
   }
 
   return len;

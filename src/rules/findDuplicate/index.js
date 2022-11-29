@@ -3,28 +3,32 @@
  * @return {number}
  */
 
-// https://leetcode.com/problems/find-the-duplicate-number/discuss/1892921/9-Approaches%3A-Count-Hash-In-place-Marked-Sort-Binary-Search-Bit-Mask-Fast-Slow-Pointers
+// https://leetcode.com/problems/find-the-duplicate-number/discuss/72846/My-easy-understood-solution-with-O(n)-time-and-O(1)-space-without-modifying-the-array.-With-clear-explanation.
 
-/***********************************************************************************************************
- * Runtime: 529 ms, faster than 8.57% of JavaScript online submissions for Find the Duplicate Number.      *
- * Memory Usage: 54.4 MB, less than 39.39% of JavaScript online submissions for Find the Duplicate Number. *
- ***********************************************************************************************************/
+/*******************************************************************************************************
+ * Runtime: 113 ms, faster than 86.56% of JavaScript online submissions for Find the Duplicate Number. *
+ * Memory Usage: 50 MB, less than 60.62% of JavaScript online submissions for Find the Duplicate       *
+ *******************************************************************************************************/
 
-/******************
- * time O(log n)  *
- * space O(log n) *
- ******************/
+// time O(1) space O(1)
 
 var findDuplicate = function(nums) {
-  nums.sort();
-  let len = nums.length;
-  for (let i = 1; i < len; i++) {
-    if (nums[i] == nums[i - 1]) {
-      return nums[i];
+  if (nums.length > 1) {
+    let slow = nums[0];
+    let fast = nums[nums[0]];
+    while (slow != fast) {
+      slow = nums[slow];
+      fast = nums[nums[fast]];
     }
-  }
 
-  return len;
+    fast = 0; // slow = 4, fast = 0
+    while (fast != slow) {
+      fast = nums[fast];//f(0)1     f(1)3       f(3)2
+      slow = nums[slow];//f(4)2     f(2)4       f(4)2
+    }
+    return slow;
+  }
+  return -1;
 };
 
 export default findDuplicate;

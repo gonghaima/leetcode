@@ -184,6 +184,7 @@ Identify if problems talks about finding groups or components.
 - [187. Repeated DNA Sequences](https://leetcode.com/problems/repeated-dna-sequences/) => [findRepeatedDnaSequences](./src/rules/findRepeatedDnaSequences/index.js)
 - [208. Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/) => [implementTrie](./src/rules/implementTrie/index.js)
 - [211. Design Add and Search Words Data Structure](https://leetcode.com/problems/design-add-and-search-words-data-structure/) => [WordDictionary](./src/rules/WordDictionary/index.js)
+- [227. Basic Calculator II](https://leetcode.com/problems/basic-calculator-ii/) => [calculate2](./src/rules/calculate2/index.js)
 - [238. Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) => [productExceptSelf](./src/rules/productExceptSelf/index.js)
 - [287. Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) => [findDuplicate](./src/rules/findDuplicate/index.js)
 - [289. Game of Life](https://leetcode.com/problems/game-of-life/) => [gameOfLife](./src/rules/gameOfLife/index.js)

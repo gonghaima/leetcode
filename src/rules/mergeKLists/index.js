@@ -13,28 +13,37 @@ function ListNode(val) {
   this.val = val;
   this.next = null;
 }
-var mergeKLists = function(lists) {
-  if (lists.length === 0) return null;
-  return lists.reduce(mergeTwoLists);
-};
-
-function mergeTwoLists(l1, l2) {
-  let l3 = new ListNode();
-  let curr = l3;
-
-  while (l1 && l2) {
-    if (l1.val < l2.val) {
-      curr.next = l1;
-      l1 = l1.next;
+function merge (left, right) {
+    if (!left) {
+        return right;
+    } else if (!right) {
+        return left;
+    } else if (left.val < right.val){
+        left.next = merge(left.next, right);
+        return left;
     } else {
-      curr.next = l2;
-      l2 = l2.next;
+        right.next = merge(left, right.next);
+        return right;
     }
-    curr = curr.next;
-  }
-
-  curr.next = l1 || l2;
-  return l3.next;
 }
+
+
+function helper(lists, start, end) {
+    if (start === end) {
+        return lists[start];
+    } else if (start < end) {
+        const mid = parseInt((start + end) / 2);
+        const left = helper(lists, start, mid);
+        const right = helper(lists, mid + 1, end);
+        return merge(left, right);
+    } else {
+        return null;
+    }
+    
+}
+
+var mergeKLists = function(lists) {
+    return helper(lists, 0, lists.length - 1);
+};
 
 export default mergeKLists;

@@ -210,3 +210,4 @@ Identify if problems talks about finding groups or components.
 ### Linked List
 
 - [23. Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/) => [mergeKLists](./src/rules/mergeKLists/index.js)
+- [148. Sort List](https://leetcode.com/problems/sort-list/) => [sortList](./src/rules/sortList/index.js)

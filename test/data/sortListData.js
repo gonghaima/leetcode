@@ -49,11 +49,11 @@ nodeList1_expected.insert(4);
 // Input: head = [-1,5,3,4,0]
 // Output: [-1,0,3,4,5]
 const nodeList2 = new NodeList();
-nodeList1.insert(-1);
-nodeList1.insert(5);
-nodeList1.insert(3);
-nodeList1.insert(4);
-nodeList1.insert(0);
+nodeList2.insert(-1);
+nodeList2.insert(5);
+nodeList2.insert(3);
+nodeList2.insert(4);
+nodeList2.insert(0);
 
 const nodeList2_expected = new NodeList();
 nodeList2_expected.insert(-1);

@@ -13,27 +13,35 @@ function Node(val, next, random) {
   this.random = random;
 }
 
+/***********
+ * Runtime *
+ * 114 ms  *
+ * Beats   *
+ * 17.39%  *
+ * Memory  *
+ * 43.6 MB *
+ * Beats   *
+ * 89.77%  *
+ ***********/
+
 /**
  * @param {Node} head
  * @return {Node}
  */
 var copyRandomList = function(head) {
-  if (!head) {
-    return null;
-  }
-  const clones = new Map();
-  let n = head;
-  while (n) {
-    clones.set(n, new Node(n.val));
-    n = n.next;
-  }
-  n = head;
-  while (n) {
-    clones.get(n).next = clones.get(n.next) || null;
-    clones.get(n).random = clones.get(n.random) || null;
-    n = n.next;
-  }
-  return clones.get(head);
+  let visited = new Map();
+
+  let helper = (node) => {
+    if (!node) return null;
+    if (visited.has(node)) return visited.get(node);
+
+    let newNode = new Node(node.val);
+    visited.set(node, newNode);
+    newNode.next = helper(node.next);
+    newNode.random = helper(node.random);
+    return newNode;
+  };
+  return helper(head);
 };
 
 export default copyRandomList;

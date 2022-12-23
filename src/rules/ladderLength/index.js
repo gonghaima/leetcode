@@ -18,37 +18,52 @@
  * 45.94%  *
  ***********/
 
+const differs = (word1, word2) => {
+    let diffCounter = 0;
+    for (let i = 0; i < word1.length; i++) {
+        if (word1[i] !== word2[i]) {
+            diffCounter++;
+        }
+    }
+    return diffCounter === 1;
+}
+
 var ladderLength = function(beginWord, endWord, wordList) {
-    const wordSet = new Set(wordList)
-    let queue = [beginWord];
-    let steps = 1;
-    
-    while(queue.length) {
-        const next = [];
-        
-        // loop over each word in the queue
-        for(let word of queue) {
-            if(word === endWord) return steps;
-            
-            // loop over each char of the word 
-            for(let i = 0; i < word.length; i++) {
-                
-                // and replace the char with letters from [a - z]
-                for(let j = 0; j < 26; j++) {
-                    const newWord = word.slice(0, i) + String.fromCharCode(j + 97) + word.slice(i+1);
-                    
-                    // if the new word exist in the word list add it to the queue
-                    if(wordSet.has(newWord)) {
-                        next.push(newWord);
-                        wordSet.delete(newWord);
-                    }
-                }
+    const adjList = {};
+    for (let k of [...wordList, beginWord]) {
+        adjList[k] = [];
+        for (const nextWord of wordList) {
+            if (differs(k, nextWord)) {
+                adjList[k].push(nextWord);
             }
         }
-        queue = next
-        steps++;
     }
-    return 0;    
+    
+    let stack = [...adjList[beginWord]];
+    let tmpStack = [];
+    const visited = new Set();
+    let counter = 1;
+    while (stack.length) {
+        const word = stack.pop();
+        if (word === endWord) {
+            return counter + 1;
+        }
+        if (!visited.has(word)) {
+            visited.add(word);
+            for (const k of adjList[word]) {
+              if (!visited.has(k)) {
+                  tmpStack.push(k);
+              }   
+            }
+        }
+        
+       if (!stack.length) {
+           stack = tmpStack;
+           tmpStack = [];
+           counter++;
+       }
+    }
+    return 0;
 };
 
 export default ladderLength;

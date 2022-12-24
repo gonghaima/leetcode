@@ -216,3 +216,4 @@ Identify if problems talks about finding groups or components.
 ### trees-and-graphs
 
 - [127. Word Ladder](https://leetcode.com/problems/word-ladder/) => [ladderLength](./src/rules/ladderLength/index.js)
+- [130. Surrounded Regions](https://leetcode.com/problems/surrounded-regions/) => [surroundedRegions](./src/rules/surroundedRegions/index.js)

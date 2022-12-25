@@ -1,111 +1,96 @@
-// 1. dfs
-// initiate a visited list, and a nabour list
-// loop through board, if item value is O, recursively find all connected nabours from up/down/left/right with O value
-// for set, if one item has undefined nabours (up/down/left/right), remove from the parent set
-// eset whole board into X, then for each parents, add items by turning X into O
+/**
+ * @param {character[][]} board
+ * @return {void} Do not return anything, modify board in-place instead.
+ */
 
+/***********
+ * Runtime *
+ * 215 ms  *
+ * Beats   *
+ * 18.92%  *
+ * Memory  *
+ * 55.6 MB *
+ * Beats   *
+ * 13.51%  *
+ ***********/
 
-// 2. union find
-// build a graph, find all edges, union all 'O', build a parent set with coordinate
-// check each parent set, if any one item has exceeded range nabour (undefined nabour), add the parent set to result
-// reset whole board into X, then for each parents, add items by turning X into O
+var solve = function(board) {
+  const DIRS = [
+    [0, 1],
+    [0, -1],
+    [1, 0],
+    [-1, 0],
+  ];
+  if (board === null || board.length === 0) return;
 
-// find all neighbours
-const getNeighbours = (i, j, xLimit, yLimit) => {
-  const result = [];
-  if ((i - 1) >= 0 && (i - 1) < xLimit) result.push([(i - 1), j]);
-  if ((i + 1) >= 0 && (i + 1) < xLimit) result.push([(i + 1), j]);
-  if ((j - 1) >= 0 && (j - 1) < yLimit) result.push([i, (j - 1)]);
-  if ((j + 1) >= 0 && (j + 1) < yLimit) result.push([i, (j + 1)]);
-  return result;
-}
+  let rows = board.length;
+  let cols = board[0].length;
 
-export default (board) => {
-  let visited = new Set();
-  // track/group items to regions
-  let regions = {};
-  let regionsKey = 0;
-  let xCoordinateLimit = board.length;
-  let yCoordinateLimit = board[0].length;
+  const UnionFind = function(board) {
+    let parent = {};
 
-
-  // loop through each item
-  for (let i = 0; i < xCoordinateLimit; i++) {
-    for (let j = 0; j < yCoordinateLimit; j++) {
-      // set next to current item, if it hasn't been visited
-      let next = visited.has(i + "" + j) ? [] : [i + "" + j];
-      // if visited, set next to empty
-      if (visited.has(i + "" + j)) {
-        next.length=0;
-      } else if (board[i][j] === "X") { //if X, set visited, set next empty
-        visited.add(i + "" + j);
-        next.length = 0;
-      }
-      else { //else it is O, also unvisited
-        // add current item into next
-        next = [i + "" + j];
-        //set as visited
-        visited.add(i + "" + j);
-        //set a new region, add the item into the region
-        regionsKey += 1;
-        regions[regionsKey] = new Set();
-        regions[regionsKey].add(i + "" + j);
-        // if the item is on an edge, it means it is not sournded by X
-        // add a null value into the region, to indicate that.
-        if (i === 0 || j === 0 || j === yCoordinateLimit - 1 || i === xCoordinateLimit - 1) regions[regionsKey].add(null);
-      }
-      // loop through next, keep finding region items
-      while (next.length > 0) {
-        // temp value for the items to be visited
-        let holderNext = [];
-        next.map(stringIndex => {
-          // get all neighbours
-          const neighbours = getNeighbours(Number(stringIndex[0]), Number(stringIndex[1]), xCoordinateLimit, yCoordinateLimit);
-          neighbours.map(([x, y]) => {
-            // if the neighbour hasn't been visited, also X
-            if (board[x][y] === "O" && !visited.has(x + "" + y)) {
-              // add it to holderNext, to be visited
-              holderNext.push(x + "" + y);
-              // add it into current region
-              regions[regionsKey].add(x + "" + y);
-              // if the item is on an edge, it means it is not sournded by X
-              // add a null value into the region, to indicate that.
-              if (x === 0 || y === 0 || y === yCoordinateLimit - 1 || x === xCoordinateLimit - 1) regions[regionsKey].add(null);
-            }
-            // set the neighbour as visited
-            visited.add(x + "" + y);
-          })
-        });
-        // set values to be checked
-        next = holderNext;
+    for (let x = 0; x < rows; x++) {
+      for (let y = 0; y < cols; y++) {
+        if (board[x][y] === 'O') {
+          let id = `${x}_${y}`;
+          parent[id] = id;
+        }
       }
     }
+    parent['border'] = 'border';
 
-  }
-  debugger;
-  // get regions with null, it means it is not surrounded by X
-  const noneSurroundedRegion = [];
-  Object.values(regions).map(region => {
-    if (region.has(null)) noneSurroundedRegion.push([...region]);
-  })
+    this.find = (x) => {
+      if (x === parent[x]) return x;
+      parent[x] = this.find(parent[x]);
+      return parent[x];
+    };
 
-  // initiate whole area to be X
-  // const newArea = new Array(board.length).fill(new Array(board[0].length).fill("X"));
-  // const newArea = [...Array(board.length)].map(x => Array(board[0].length).fill("X")) 
-  const newArea = [...Array(xCoordinateLimit)].map(x => [...Array(yCoordinateLimit)].map(r => "X"));
- 
+    this.union = (x, y) => {
+      let rootX = this.find(x);
+      let rootY = this.find(y);
+      if (rootX !== rootY) {
+        parent[rootX] = rootY;
+      }
+    };
+  };
 
-  // set none surrounded to be O
-  if(noneSurroundedRegion.length>0){
-    noneSurroundedRegion.map(rgList=>{
-      rgList.map(rg=>{
-        if (rg) {
-          const xCoordinate = Number(rg[0]);
-          const yCoordinate = Number(rg[1]);
-          newArea[xCoordinate][yCoordinate] = "O";
+  let uf = new UnionFind(board);
+  let dummyBorder = 'border';
+
+  for (let x = 0; x < rows; x++) {
+    for (let y = 0; y < cols; y++) {
+      if (board[x][y] === 'O') {
+        let id = `${x}_${y}`;
+        if (x === 0 || x === rows - 1 || y === 0 || y === cols - 1) {
+          uf.union(dummyBorder, id);
         }
-      })
-    });
+        for (let dir of DIRS) {
+          let nx = x + dir[0];
+          let ny = y + dir[1];
+          if (
+            nx >= 0 &&
+            ny >= 0 &&
+            nx < rows &&
+            ny < cols &&
+            board[nx][ny] === 'O'
+          ) {
+            let nId = `${nx}_${ny}`;
+            uf.union(id, nId);
+          }
+        }
+      }
+    }
   }
-  return newArea;
+  for (let x = 0; x < rows; x++) {
+    for (let y = 0; y < cols; y++) {
+      if (
+        board[x][y] === 'O' &&
+        uf.find(`${x}_${y}`) !== uf.find(dummyBorder)
+      ) {
+        board[x][y] = 'X';
+      }
+    }
+  }
 };
+
+export default solve;

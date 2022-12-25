@@ -217,3 +217,4 @@ Identify if problems talks about finding groups or components.
 
 - [127. Word Ladder](https://leetcode.com/problems/word-ladder/) => [ladderLength](./src/rules/ladderLength/index.js)
 - [130. Surrounded Regions](https://leetcode.com/problems/surrounded-regions/) => [surroundedRegions](./src/rules/surroundedRegions/index.js)
+- [236. Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/) => [lowestCommonAncestor](./src/rules/lowestCommonAncestor/index.js)

@@ -4,3 +4,26 @@ export default class TreeNode {
     this.left = this.right = null; // eslint-disable-line
   }
 }
+
+class Node {
+  constructor(value) {
+    this.value = value;
+  }
+}
+
+export function createTree(data) {
+  const targets = [[]];
+  let head;
+
+  data.forEach((value, i) => {
+    const node = new Node(value),
+      [target, side] = targets[i];
+
+    targets.push([node, 'left'], [node, 'right']);
+
+    if (!target) head = node;
+    else if (value !== null) target[side] = node;
+  });
+
+  return head;
+}

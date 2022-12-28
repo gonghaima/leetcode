@@ -13,12 +13,26 @@
  */
 
 var lowestCommonAncestor = function(root, p, q) {
-  // If p or q is found, return it back up the stack.
-  if (!root || root === p || root === q) return root;
-  var resL = lowestCommonAncestor(root.left, p, q); // Return first instance of p or q in left subtree
-  var resR = lowestCommonAncestor(root.right, p, q); // Return first instance of p or q in right subtree
+  const pSet = new Set();
+  const qSet = new Set();
+  pSet.add(p);
+  qSet.add(q);
 
-  // If we found p in left and q in right, the node we are currently at is LCA. If we found one of them, the one we found is LCA.
-  return resL && resR ? root : resL || resR;
+  function callDFS(node) {
+    if (!node) return null;
+    if (pSet.has(node) || qSet.has(node)) return node;
+
+    const left = callDFS(node.left);
+    const right = callDFS(node.right);
+
+    if (
+      (pSet.has(left) && qSet.has(right)) ||
+      (pSet.has(right) && qSet.has(left))
+    )
+      return node;
+
+    return left || right;
+  }
+  return callDFS(root);
 };
 export default lowestCommonAncestor;

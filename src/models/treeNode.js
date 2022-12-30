@@ -7,7 +7,7 @@ export default class TreeNode {
 
 class Node {
   constructor(value) {
-    this.value = value;
+    this.val = value;
   }
 }
 

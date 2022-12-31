@@ -219,3 +219,4 @@ Identify if problems talks about finding groups or components.
 - [130. Surrounded Regions](https://leetcode.com/problems/surrounded-regions/) => [surroundedRegions](./src/rules/surroundedRegions/index.js)
 - [236. Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/) => [lowestCommonAncestor](./src/rules/lowestCommonAncestor/index.js)
 - [124. Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/) => [maxPathSum](./src/rules/maxPathSum/index.js)
+- [547. Number of Provinces](https://leetcode.com/problems/friend-circles/) => [findCircleNum](./src/rules/findCircleNum/index.js)

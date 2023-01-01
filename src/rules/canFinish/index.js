@@ -22,13 +22,11 @@ var canFinish = function (numCourses, prerequisites) {
 
   prerequisites.map(([cur, pre]) => {
     if (!visited.has(cur)) {
-      debugger
       let next = [];
       const tempVisited = new Set();
       next.push(cur);
       tempVisited.add(cur);
       let noneSkip = true;
-      debugger
       // while iteration
       while (next.length && noneSkip) {
         // for each iter array item

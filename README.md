@@ -222,3 +222,4 @@ Identify if problems talks about finding groups or components.
 - [547. Number of Provinces](https://leetcode.com/problems/friend-circles/) => [findCircleNum](./src/rules/findCircleNum/index.js)
 - [207. Course Schedule](https://leetcode.com/problems/course-schedule/) => [canFinish](./src/rules/canFinish/index.js)
 - [210. Course Schedule II](https://leetcode.com/problems/course-schedule-ii/) => [findOrder](./src/rules/findOrder/index.js)
+- [329. Longest Increasing Path in a Matrix](https://leetcode.com/problems/longest-increasing-path-in-a-matrix/) [longestIncreasingPath](./src/rules/longestIncreasingPath/index.js)

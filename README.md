@@ -224,3 +224,7 @@ Identify if problems talks about finding groups or components.
 - [210. Course Schedule II](https://leetcode.com/problems/course-schedule-ii/) => [findOrder](./src/rules/findOrder/index.js)
 - [329. Longest Increasing Path in a Matrix](https://leetcode.com/problems/longest-increasing-path-in-a-matrix/) =>[longestIncreasingPath](./src/rules/longestIncreasingPath/index.js)
 - [315. Count of Smaller Numbers After Self](https://leetcode.com/problems/count-of-smaller-numbers-after-self/) =>[countSmaller](./src/rules/countSmaller/index.js)
+
+### Backtracking
+
+- [131. Palindrome Partitioning](https://leetcode.com/problems/palindrome-partitioning/) => [palindromePartitioning](./src/rules/palindromePartitioning/index.js)

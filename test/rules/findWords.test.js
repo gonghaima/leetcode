@@ -5,7 +5,7 @@ import { inputData, expected } from "../data/findWordsData";
 
 test("findWords should return expected result for case1", () => {
   const result = findWords(inputData.case1.board, inputData.case1.words);
-  expect(result).toEqual(expected.case1);
+  expect(result.sort()).toEqual(expected.case1.sort());
 });
 test("findWords should return expected result for case2", () => {
   const result = findWords(inputData.case2.board, inputData.case2.words);

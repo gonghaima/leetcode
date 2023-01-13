@@ -229,3 +229,4 @@ Identify if problems talks about finding groups or components.
 
 - [131. Palindrome Partitioning](https://leetcode.com/problems/palindrome-partitioning/) => [palindromePartitioning](./src/rules/palindromePartitioning/index.js)
 - [212. Word Search II](https://leetcode.com/problems/word-search-ii/) => [findWords](./src/rules/findWords/index.js)
+- [301. Remove Invalid Parentheses](https://leetcode.com/problems/remove-invalid-parentheses/) => [removeInvalidParentheses](./src/rules/removeInvalidParentheses/index.js)

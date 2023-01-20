@@ -9,7 +9,7 @@ Given an input string (s) and a pattern (p), implement wildcard pattern matching
 The matching should cover the entire input string (not partial).
 
 Example 1:
-
+∏
 ```s
 Input: s = "aa", p = "a"
 Output: false

@@ -4,48 +4,29 @@
  * @return {boolean}
  */
 var isMatch = function(s, p) {
-  // two pointers
-  let sIdx = 0;
-  let pIdx = 0;
-  let valid = true;
+  let dp = Array(s.length+1).fill(null).map(()=>Array(p.length+1).fill(false));
+  dp[0][0] = true;
 
-  const isStar = (c) => c === "*";
-  const isQuestionMark = (c) => c === "?";
-
-  const handleStar = (sI, currentPattern) => {
-    sI++;
-    while (s[sI] === currentPattern) {
-      sI++;
-    }
-    return sI;
-  };
-
-  // check condition
-  while (sIdx < s.length && pIdx < p.length && valid) {
-    const pChar = p[pIdx];
-    const sChar = s[sIdx];
-
-    if (isStar(pChar)) {
-      // handle star
-      sIdx = handleStar(sIdx, sChar);
-    } else if (isQuestionMark(pChar)) {
-      // handle question mark
-      sIdx++;
-      pIdx++;
-    } else {
-      // handle exact match
-      if (pChar !== sChar) {
-        valid = false;
-      } else {
-        sIdx++;
-        pIdx++;
-      }
-    }
+  // initialize first column (string)
+  for (let i=1;i<=s.length;i++) {
+      dp[i][0] = false;
   }
 
-  if (pIdx === p.length && sIdx < s.length) return false;
-
-  return valid;
-};
+  // initialize first row (pattern) 
+  for (let i=1;i<=p.length;i++) {
+      dp[0][i] = dp[0][i-1] && p[i-1] == "*";
+  }
+  
+  for (let i=1;i<=s.length;i++) {
+      for (let j=1;j<=p.length;j++) {
+          if (p[j-1]=='*') {
+              dp[i][j] = dp[i-1][j] || dp[i][j-1]; // look top or left
+          } else if (s[i-1] == p[j-1] || p[j-1]=='?') {
+              dp[i][j] = dp[i-1][j-1]; // inherit from previous result
+          }
+      }
+  }
+  return dp[s.length][p.length]
+}
 
 export default isMatch;

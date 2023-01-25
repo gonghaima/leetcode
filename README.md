@@ -231,3 +231,4 @@ Identify if problems talks about finding groups or components.
 - [212. Word Search II](https://leetcode.com/problems/word-search-ii/) => [findWords](./src/rules/findWords/index.js)
 - [301. Remove Invalid Parentheses](https://leetcode.com/problems/remove-invalid-parentheses/) => [removeInvalidParentheses](./src/rules/removeInvalidParentheses/index.js)
 - [44. Wildcard Matching](https://leetcode.com/problems/wildcard-matching/) => [isMatch](./src/rules/isMatch/index.js)
+- [10. Regular Expression Matching](https://leetcode.com/problems/regular-expression-matching/) => [isMatch2](./src/rules/isMatch2/index.js)

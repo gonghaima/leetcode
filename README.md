@@ -232,3 +232,6 @@ Identify if problems talks about finding groups or components.
 - [301. Remove Invalid Parentheses](https://leetcode.com/problems/remove-invalid-parentheses/) => [removeInvalidParentheses](./src/rules/removeInvalidParentheses/index.js)
 - [44. Wildcard Matching](https://leetcode.com/problems/wildcard-matching/) => [isMatch](./src/rules/isMatch/index.js)
 - [10. Regular Expression Matching](https://leetcode.com/problems/regular-expression-matching/) => [isMatch2](./src/rules/isMatch2/index.js)
+
+### Sorting and Searching
+- [324. Wiggle Sort II](https://leetcode.com/problems/wiggle-sort-ii/) => [wiggleSort](./src/rules/wiggleSort/index.js)

@@ -235,3 +235,4 @@ Identify if problems talks about finding groups or components.
 
 ### Sorting and Searching
 - [324. Wiggle Sort II](https://leetcode.com/problems/wiggle-sort-ii/) => [wiggleSort](./src/rules/wiggleSort/index.js)
+- [378. Kth Smallest Element in a Sorted Matrix](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/) => [kthSmallest](./src/rules/kthSmallest/index.js)

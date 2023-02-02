@@ -3,22 +3,34 @@
  * @param {number} k
  * @return {number}
  */
+
 var kthSmallest = function(matrix, k) {
-  let lo = matrix[0][0],
-    hi = matrix[matrix.length - 1][matrix[0].length - 1] + 1; // +1 because we don't want to forget the last number
-  while (lo < hi) {
-    let mid = lo + Math.floor((hi - lo) / 2);
-    let count = 0;
-    for (let i = 0; i < matrix.length; i++) {
-      for (let j = 0; j < matrix.length; j++) {
-        if (matrix[i][j] <= mid) count++;
-        else break;
+  var n = matrix.length, lo = matrix[0][0]
+  var hi = matrix[n-1][n-1];
+  var mid, count;
+  
+  while(lo < hi) {
+      mid = (lo + (hi - lo) / 2) >> 0;
+      count = countLEQ(matrix, mid);
+      if (count < k) {
+          lo = mid + 1;
+      } else {
+          hi = mid;
       }
-    }
-    if (count < k) lo = mid + 1;
-    else hi = mid;
   }
   return lo;
+};
+
+var countLEQ = function (matrix, x) {
+  var n = matrix.length;
+  var count = 0;
+  var j;
+  
+  matrix.forEach(function(row){
+      for(j = 0; j < n && row[j] <= x; j++){ ;}
+      count += j
+  });
+  return count;
 };
 
 export default kthSmallest;

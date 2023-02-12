@@ -4,33 +4,20 @@
  * @return {number}
  */
 var findMedianSortedArrays = function(nums1, nums2) {
-  if (nums1.length > nums2.length) return findMedianSortedArrays(nums2, nums1);
-  let x = nums1.length;
-  let y = nums2.length;
-  let low = 0,
-    high = x;
-  while (low <= high) {
-    const partitionX = (high + low) >> 1;
-    const partitionY = ((x + y + 1) >> 1) - partitionX;
+  const LEN = nums1.length + nums2.length;
+  const IS_ODD = LEN % 2 === 1;
+  const PAST_MID = (1 + LEN / 2) | 0;
+  const MAX_NUM = 10e5;
 
-    const maxX =
-      partitionX == 0 ? Number.NEGATIVE_INFINITY : nums1[partitionX - 1];
-    const maxY =
-      partitionY == 0 ? Number.NEGATIVE_INFINITY : nums2[partitionY - 1];
-
-    const minX =
-      partitionX == nums1.length ? Number.POSITIVE_INFINITY : nums1[partitionX];
-    const minY =
-      partitionY == nums2.length ? Number.POSITIVE_INFINITY : nums2[partitionY];
-
-    if (maxX <= minY && maxY <= minX) {
-      const lowMax = Math.max(maxX, maxY);
-      if ((x + y) % 2 == 1) return lowMax;
-      return (lowMax + Math.min(minX, minY)) / 2;
-    } else if (maxX < minY) {
-      low = partitionX + 1;
-    } else high = partitionX - 1;
-  }
+  let j = 0,
+    k = 0,
+    last,
+    beforeLast;
+  do {
+    beforeLast = last;
+    last = nums1[j] < (nums2[k] ?? MAX_NUM) ? nums1[j++] : nums2[k++];
+  } while (j + k !== PAST_MID);
+  return IS_ODD ? last : (last + beforeLast) / 2;
 };
 
 export default findMedianSortedArrays;

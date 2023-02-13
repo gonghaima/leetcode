@@ -237,3 +237,10 @@ Identify if problems talks about finding groups or components.
 - [324. Wiggle Sort II](https://leetcode.com/problems/wiggle-sort-ii/) => [wiggleSort](./src/rules/wiggleSort/index.js)
 - [378. Kth Smallest Element in a Sorted Matrix](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/) => [kthSmallest](./src/rules/kthSmallest/index.js)
 - [4. Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/) => [findMedianSortedArrays](./src/rules/findMedianSortedArrays/index.js)
+
+### Sorting and Searching
+- [324. Wiggle Sort II](https://leetcode.com/problems/wiggle-sort-ii/) => [wiggleSort](./src/rules/wiggleSort/index.js)
+
+### Dynamic Programming
+
+- [152. Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/) => [maxProduct](./src/rules/maxProduct/index.js)

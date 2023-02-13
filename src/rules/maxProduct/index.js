@@ -3,37 +3,20 @@
  * @return {number}
  */
 
-/**********************************************************************************************************
- *   Runtime: 189 ms, faster than 7.49% of JavaScript online submissions for Maximum Product Subarray.    *
- * Memory Usage: 40.2 MB, less than 69.93% of JavaScript online submissions for Maximum Product Subarray. *
- **********************************************************************************************************/
-
-// https://leetcode.com/problems/maximum-product-subarray/discuss/48252/Sharing-my-solution%3A-O(1)-space-O(n)-running-time
-
 var maxProduct = function(nums) {
-  if (nums.length == 0) {
-    return 0;
-  }
-
-  let maxherepre = nums[0];
-  let minherepre = nums[0];
-  let maxsofar = nums[0];
-  let maxhere, minhere;
-
+  let max = nums[0];
+  let prevMax = nums[0];
+  let prevMin = nums[0];
+  
   for (let i = 1; i < nums.length; i++) {
-    maxhere = Math.max(
-      Math.max(maxherepre * nums[i], minherepre * nums[i]),
-      nums[i]
-    );
-    minhere = Math.min(
-      Math.min(maxherepre * nums[i], minherepre * nums[i]),
-      nums[i]
-    );
-    maxsofar = Math.max(maxhere, maxsofar);
-    maxherepre = maxhere;
-    minherepre = minhere;
+      const options = [nums[i], nums[i] * prevMax, nums[i] * prevMin];
+      prevMax = Math.max(...options);
+      prevMin = Math.min(...options);
+      
+      max = Math.max(max, prevMax);
   }
-  return maxsofar;
+  
+  return max;
 };
 
 export default maxProduct;

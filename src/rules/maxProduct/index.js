@@ -4,18 +4,25 @@
  */
 
 var maxProduct = function(nums) {
-  let max = nums[0];
-  let prevMax = nums[0];
-  let prevMin = nums[0];
-  
-  for (let i = 1; i < nums.length; i++) {
-      const options = [nums[i], nums[i] * prevMax, nums[i] * prevMin];
-      prevMax = Math.max(...options);
-      prevMin = Math.min(...options);
-      
-      max = Math.max(max, prevMax);
+  const n = nums.length;
+  let max = -Infinity,
+    currProduct = 1;
+
+  for (let i = 0; i < n; ++i) {
+    currProduct *= nums[i];
+    max = Math.max(max, currProduct);
+    if (nums[i] === 0) {
+      currProduct = 1;
+    }
   }
-  
+  currProduct = 1;
+  for (let i = n - 1; i >= 0; --i) {
+    currProduct *= nums[i];
+    max = Math.max(max, currProduct);
+    if (nums[i] === 0) {
+      currProduct = 1;
+    }
+  }
   return max;
 };
 

@@ -11,31 +11,15 @@
 // https://www.youtube.com/watch?v=oL6mRyTn56M
 // https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/discuss/75928/Share-my-DP-solution-(By-State-Machine-Thinking)
 // state visulization - solution-index.png
-var maxProfitCooldown = function(prices) {
-  const dp = Array.from({ length: prices.length }, _ => Array(2));
-  
-  function dfs(i, canBuy) {
-      if (i >= prices.length) {
-          return 0;
-      }
-
-      if (dp[i][canBuy] !== undefined) {
-          return dp[i][canBuy];
-      }
-
-      const noAction = dfs(i + 1, canBuy);
-
-      let action = 0;
-      if (canBuy) {
-          action = -prices[i] + dfs(i + 1, 0);
-      } else {
-          action = prices[i] + dfs(i + 2, 1);
-      }
-
-      return dp[i][canBuy] = Math.max(action, noAction);
-  }
-
-  return dfs(0, 1);
+var maxProfitCooldown = function (prices) {
+  let hold = -Infinity, rest = 0, sold = 0;
+  prices.map(price => {
+    const prev_sold = sold;
+    sold = hold + price; //currently sold -  yesterday hold + price
+    hold = Math.max(hold, rest - price); //currently hold - yesterday hold as well  VS.  yesterday rest and just bought today
+    rest = Math.max(rest, prev_sold); //currently rest - yesterday rest  VS. yesterday sold
+  });
+  return Math.max(rest, sold);
 };
 
 export default maxProfitCooldown;

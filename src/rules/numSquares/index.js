@@ -3,23 +3,31 @@
  * @return {number}
  */
 
-/*************************************************************************************************
- *   RUNTIME: 212 MS, FASTER THAN 60.76% OF JAVASCRIPT ONLINE SUBMISSIONS FOR PERFECT SQUARES.   *
- * MEMORY USAGE: 41.9 MB, LESS THAN 84.10% OF JAVASCRIPT ONLINE SUBMISSIONS FOR PERFECT SQUARES. *
- *************************************************************************************************/
+// https://leetcode.com/problems/perfect-squares/solutions/2713405/python-js-java-c-by-dp-coin-change-demo-visualization/
 
-//https://www.youtube.com/watch?v=KaXeidsmvVQ
+var numSquares = function(n) {
+  // Initialize with INT_MAX, except for dp[0] = 0 as base case
+  let dp = new Array(n + 1).fill(Number.MAX_SAFE_INTEGER);
 
-var numSquares = function (n) {
-    const dp = new Array(n + 1).fill(n);
-    dp[0] = 0;
-    dp[1] = 1;
-    for (let i = 1; i <= n; i++) {
-        for (let j = 1; j * j <= i; j++) {
-            dp[i] = Math.min(dp[i], dp[i - j * j] + 1)
-        };
-    };
-    return dp[n];
+  // Base case
+  dp[0] = 0;
+
+  let root = 1;
+  let square = root * root;
+
+  // for each square 1, 4, 9, 16, 25...
+  while (square <= n) {
+    //  update dp value for number from square to n
+    for (let i = square; i <= n; i++) {
+      dp[i] = Math.min(dp[i], dp[i - square] + 1);
+    }
+
+    // go to next square number
+    root++;
+    square = root * root;
+  }
+
+  return dp[n];
 };
 
 export default numSquares;

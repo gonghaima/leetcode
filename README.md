@@ -245,3 +245,4 @@ Identify if problems talks about finding groups or components.
 
 - [152. Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/) => [maxProduct](./src/rules/maxProduct/index.js)
 - [279. Perfect Squares](https://leetcode.com/problems/perfect-squares/)=>[numSquares](./src/rules/numSquares/index.js)
+- [139. Word Break](https://leetcode.com/problems/word-break/) => [wordBreak](./src/rules/wordBreak/index.js)

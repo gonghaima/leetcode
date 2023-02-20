@@ -4,26 +4,44 @@
  * @return {boolean}
  */
 
-// https://leetcode.com/problems/word-break/discuss/43790/Java-implementation-using-DP-in-two-ways
+// take next word from wordDict
 
-/********************************************************************************************
- *   Runtime: 113 ms, faster than 31.39% of JavaScript online submissions for Word Break.   *
- * Memory Usage: 40.4 MB, less than 77.20% of JavaScript online submissions for Word Break. *
- ********************************************************************************************/
+// take sub string from s,
+// if not match, return false
+// else keep going
+
+// return true
+
+// O(n) time complexity, O(1) space complexity
+// my solution - test cases passes - not all at submit
 
 var wordBreak = function(s, wordDict) {
-  const f = new Array(s.length + 1).fill(false);
-  const dict = new Set(wordDict);
-  f[0] = true;
-  for (let i = 1; i <= s.length; i++) {
-    for (let j = 0; j < i; j++) {
-      if (f[j] && dict.has(s.substring(j, i))) {
-        f[i] = true;
-        break;
-      }
+  //lib: take next word from wordDict
+  let wordDictIdx = 0;
+  const takeNextFromwordDict = (wd) => {
+    if (wd[wordDictIdx]) {
+      const wordToReturn = wd[wordDictIdx];
+      wordDictIdx += 1;
+      return { currentWord: wordToReturn, len: wordToReturn.length };
     }
-  }
 
-  return f[s.length];
+    wordDictIdx = 0;
+    return { currentWord: wd[0], len: wd[0].length };
+  };
+
+  let sIdx = 0;
+  while (sIdx < s.length - 1) {
+    // take next word from wordDict
+    const { currentWord, len } = takeNextFromwordDict(wordDict);
+    // take sub string from s,
+    const currentSWord = s.slice(sIdx, sIdx + len);
+
+    // if not match, return false
+    if (currentWord !== currentSWord) return false;
+
+    // else keep going
+    sIdx += len;
+  }
+  return true;
 };
 export default wordBreak;

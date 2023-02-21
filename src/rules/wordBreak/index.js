@@ -4,44 +4,30 @@
  * @return {boolean}
  */
 
-// take next word from wordDict
+var wordBreak = (s, wordDict) => {
+  if (wordDict == null || wordDict.length === 0) return false;
+  const set = new Set(wordDict);
 
-// take sub string from s,
-// if not match, return false
-// else keep going
+  // When s = 'catsandog', wordDict = ['cats', 'ca', 'ts']
+  // After 'cats' and 'ca', it will become 'andog', 'tsandog'
+  // For 'tsandog', after 'ts', it will become 'andog' again, visited set here is for memoization
+  const visited = new Set();
+  const q = [0];
 
-// return true
+  while (q.length) {
+    const start = q.shift();
 
-// O(n) time complexity, O(1) space complexity
-// my solution - test cases passes - not all at submit
-
-var wordBreak = function(s, wordDict) {
-  //lib: take next word from wordDict
-  let wordDictIdx = 0;
-  const takeNextFromwordDict = (wd) => {
-    if (wd[wordDictIdx]) {
-      const wordToReturn = wd[wordDictIdx];
-      wordDictIdx += 1;
-      return { currentWord: wordToReturn, len: wordToReturn.length };
+    if (!visited.has(start)) {
+      for (let end = start + 1; end <= s.length; end++) {
+        if (set.has(s.slice(start, end))) {
+          if (end === s.length) return true;
+          q.push(end);
+        }
+      }
+      visited.add(start);
     }
-
-    wordDictIdx = 0;
-    return { currentWord: wd[0], len: wd[0].length };
-  };
-
-  let sIdx = 0;
-  while (sIdx < s.length - 1) {
-    // take next word from wordDict
-    const { currentWord, len } = takeNextFromwordDict(wordDict);
-    // take sub string from s,
-    const currentSWord = s.slice(sIdx, sIdx + len);
-
-    // if not match, return false
-    if (currentWord !== currentSWord) return false;
-
-    // else keep going
-    sIdx += len;
   }
-  return true;
+  return false;
 };
+
 export default wordBreak;

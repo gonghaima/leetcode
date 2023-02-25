@@ -5,29 +5,25 @@
  */
 
 var wordBreak = (s, wordDict) => {
-  if (wordDict == null || wordDict.length === 0) return false;
-  const set = new Set(wordDict);
+  const memo = new Map();
 
-  // When s = 'catsandog', wordDict = ['cats', 'ca', 'ts']
-  // After 'cats' and 'ca', it will become 'andog', 'tsandog'
-  // For 'tsandog', after 'ts', it will become 'andog' again, visited set here is for memoization
-  const visited = new Set();
-  const q = [0];
+  function permute(str) {
+    if (!str.length) return true;
+    if (memo.has(str)) return memo.get(str);
 
-  while (q.length) {
-    const start = q.shift();
-
-    if (!visited.has(start)) {
-      for (let end = start + 1; end <= s.length; end++) {
-        if (set.has(s.slice(start, end))) {
-          if (end === s.length) return true;
-          q.push(end);
+    for (let word of wordDict) {
+      let patt = RegExp(`^${word}`);
+      if (patt.test(str)) {
+        if (permute(str.slice(word.length))) {
+          memo.set(str, true);
+          return true;
         }
       }
-      visited.add(start);
     }
+    memo.set(str, false);
+    return false;
   }
-  return false;
+  return permute(s);
 };
 
 export default wordBreak;

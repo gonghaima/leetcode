@@ -144,6 +144,7 @@ Identify if problems talks about finding groups or components.
 - [1567. Maximum Length of Subarray With Positive Product](https://leetcode.com/problems/maximum-length-of-subarray-with-positive-product/) => [getMaxLen](./src/rules/getMaxLen/index.js)
 - [1014. Best Sightseeing Pair](https://leetcode.com/problems/best-sightseeing-pair/) => [maxScoreSightseeingPair](./src/rules/maxScoreSightseeingPair/index.js)
 - [139. Word Break](https://leetcode.com/problems/word-break/) => [wordBreak](./src/rules/wordBreak/index.js)
+- [140. Word Break II](https://leetcode.com/problems/word-break-ii/) => [wordBreak](./src/rules/wordBreakII/index.js)
 - [42. Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) => [trap](./src/rules/trap/index.js)
 - [264. Ugly Number II](https://leetcode.com/problems/ugly-number-ii/) => [uglyNumberII](./src/rules/uglyNumberII/index.js)
 - [120. Triangle](https://leetcode.com/problems/triangle/) => [minimumTotal](./src/rules/minimumTotal/index.js)
@@ -234,11 +235,13 @@ Identify if problems talks about finding groups or components.
 - [10. Regular Expression Matching](https://leetcode.com/problems/regular-expression-matching/) => [isMatch2](./src/rules/isMatch2/index.js)
 
 ### Sorting and Searching
+
 - [324. Wiggle Sort II](https://leetcode.com/problems/wiggle-sort-ii/) => [wiggleSort](./src/rules/wiggleSort/index.js)
 - [378. Kth Smallest Element in a Sorted Matrix](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/) => [kthSmallest](./src/rules/kthSmallest/index.js)
 - [4. Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/) => [findMedianSortedArrays](./src/rules/findMedianSortedArrays/index.js)
 
 ### Sorting and Searching
+
 - [324. Wiggle Sort II](https://leetcode.com/problems/wiggle-sort-ii/) => [wiggleSort](./src/rules/wiggleSort/index.js)
 
 ### Dynamic Programming
@@ -246,3 +249,4 @@ Identify if problems talks about finding groups or components.
 - [152. Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/) => [maxProduct](./src/rules/maxProduct/index.js)
 - [279. Perfect Squares](https://leetcode.com/problems/perfect-squares/)=>[numSquares](./src/rules/numSquares/index.js)
 - [139. Word Break](https://leetcode.com/problems/word-break/) => [wordBreak](./src/rules/wordBreak/index.js)
+- [140. Word Break II](https://leetcode.com/problems/word-break-ii/) => [wordBreak](./src/rules/wordBreakII/index.js)

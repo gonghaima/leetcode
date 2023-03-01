@@ -4,15 +4,22 @@
  * @return {string[]}
  */
 
-var wordBreak = function(s, wordDict, cur = [], res = []) {
-  if (!s.length) return res.push(cur.join(' '));
-  for (let word of wordDict) {
-    if (!s.startsWith(word)) continue;
-    cur.push(word);
-    wordBreak(s.slice(word.length), wordDict, cur, res);
-    cur.pop();
-  }
-  return res;
-};
+var wordBreak = function(s, wordDict, cache = new Map()) {
+  if (cache.has(s)) return cache.get(s);
 
+  const result = [];
+  for (const word of wordDict) {
+    if (s.startsWith(word)) {
+      const leftAfter = s.slice(word.length);
+      if (!leftAfter.length) result.push(word);
+      else
+        wordBreak(leftAfter, wordDict, cache).forEach((val) =>
+          result.push(word + ' ' + val)
+        );
+    }
+  }
+
+  cache.set(s, result);
+  return result;
+};
 export default wordBreak;

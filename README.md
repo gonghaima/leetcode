@@ -92,6 +92,7 @@ Identify if problems talks about finding groups or components.
 - [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/) =>[maxSubArray](./src/rules/maxSubArray/index.js)
 - [198. House Robber](https://leetcode.com/problems/house-robber/) =>[rob](./src/rules/rob/index.js)
 - [279. Perfect Squares](https://leetcode.com/problems/perfect-squares/)=>[numSquares](./src/rules/numSquares/index.js)
+- [312. Burst Balloons](https://leetcode.com/problems/burst-balloons/) => [maxCoins](./src/rules/maxCoins/index.js)
 - [322. Coin Change](https://leetcode.com/problems/coin-change/)=>[coinChange](./src/rules/coinChange/index.js)
 - [518. Coin Change 2](https://leetcode.com/problems/coin-change-2/) => [coinChange2](./src/rules/coinChange2/index.js)
 - [343. Integer Break](https://leetcode.com/problems/integer-break/) => [integerBreak](./src/rules/integerBreak/index.js)
@@ -250,3 +251,4 @@ Identify if problems talks about finding groups or components.
 - [279. Perfect Squares](https://leetcode.com/problems/perfect-squares/)=>[numSquares](./src/rules/numSquares/index.js)
 - [139. Word Break](https://leetcode.com/problems/word-break/) => [wordBreak](./src/rules/wordBreak/index.js)
 - [140. Word Break II](https://leetcode.com/problems/word-break-ii/) => [wordBreak](./src/rules/wordBreakII/index.js)
+- [312. Burst Balloons](https://leetcode.com/problems/burst-balloons/) => [maxCoins](./src/rules/maxCoins/index.js)

@@ -252,3 +252,7 @@ Identify if problems talks about finding groups or components.
 - [139. Word Break](https://leetcode.com/problems/word-break/) => [wordBreak](./src/rules/wordBreak/index.js)
 - [140. Word Break II](https://leetcode.com/problems/word-break-ii/) => [wordBreak](./src/rules/wordBreakII/index.js)
 - [312. Burst Balloons](https://leetcode.com/problems/burst-balloons/) => [maxCoins](./src/rules/maxCoins/index.js)
+
+### Design
+
+- [146. LRU Cache](https://leetcode.com/problems/lru-cache/) => [maxProduct](./src/rules/maxProduct/index.js)

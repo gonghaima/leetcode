@@ -255,4 +255,5 @@ Identify if problems talks about finding groups or components.
 
 ### Design
 
-- [146. LRU Cache](https://leetcode.com/problems/lru-cache/) => [maxProduct](./src/rules/maxProduct/index.js)
+- [146. LRU Cache](https://leetcode.com/problems/lru-cache/) => [lRUCache](./src/rules/lRUCache/index.js)
+- [208. Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/) => [Implement Trie](./src/rules/implementTrie/2ndSolution.js)

@@ -257,3 +257,4 @@ Identify if problems talks about finding groups or components.
 
 - [146. LRU Cache](https://leetcode.com/problems/lru-cache/) => [lRUCache](./src/rules/lRUCache/index.js)
 - [208. Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/) => [Implement Trie](./src/rules/implementTrie/2ndSolution.js)
+- [341. Flatten Nested List Iterator](https://leetcode.com/problems/flatten-nested-list-iterator/) => [NestedIterator](./src/rules/NestedIterator/index.js)

@@ -24,21 +24,58 @@
  *     };
  * };
  */
+
+// const IteratorModel = {
+//   hasNext: () => {},
+//   next: () => {},
+//   nextItr: {},
+// };
+
+class IteratorModel {
+  constructor(){
+    hasNext: () => {};
+    next: () => {};
+    nextItr: {};
+  }
+  
+};
+
 /**
  * @constructor
  * @param {NestedInteger[]} nestedList
  */
 var NestedIterator = function(nestedList) {
-    
-};
+  this.root = new IteratorModel();
 
+  this.currentItr = this.root;
+  const addToIterator = (nl) => {
+    for (let i = 0; i < nl.length; i++) {
+      const ele = array[i];
+      if (Array.isArray(ele)) {
+        addToIterator(ele);
+      }
+
+      currentItr.moveToNext;
+      currentItr.hasNext = () => true;
+      currentItr.next = () => {
+        this.currentItr = nextItr;
+        return ele;
+      };
+      const newItr = new IteratorModel();
+      const preIter = currentItr;
+      currentItr = newItr;
+      preIter.nextItr = currentItr;
+    }
+  };
+  return this.root;
+};
 
 /**
  * @this NestedIterator
  * @returns {boolean}
  */
 NestedIterator.prototype.hasNext = function() {
-    return false;
+  return this.currentItr.hasNext();
 };
 
 /**
@@ -46,13 +83,13 @@ NestedIterator.prototype.hasNext = function() {
  * @returns {integer}
  */
 NestedIterator.prototype.next = function() {
-    
+  return this.currentItr.next();
 };
 
 /**
  * Your NestedIterator will be called like this:
  * var i = new NestedIterator(nestedList), a = [];
  * while (i.hasNext()) a.push(i.next());
-*/
+ */
 
 export default NestedIterator;

@@ -1,123 +1,44 @@
-
 /**
  * initialize your data structure here.
  */
 var MedianFinder = function() {
-    this.maxHeap = new Heap(Heap.maxComparator);
-    this.minHeap = new Heap(Heap.minComparator);
+  this.arr = [];
 };
 
-/** 
+/**
  * @param {number} num
  * @return {void}
  */
 MedianFinder.prototype.addNum = function(num) {
-    if(this.maxHeap.peek() === null || num < this.maxHeap.peek()) {
-        this.maxHeap.add(num);
-    } else {
-        this.minHeap.add(num);
+  const bs = (n) => {
+    let start = 0;
+    let end = this.arr.length;
+    while (start < end) {
+      let mid = Math.floor((start + end) / 2);
+      if (n > this.arr[mid]) start = mid + 1;
+      else end = mid;
     }
-    
-    if(this.maxHeap.size - this.minHeap.size > 1) {
-        this.minHeap.add(this.maxHeap.poll());
-    } else if(this.minHeap.size - this.maxHeap.size > 1) {
-        this.maxHeap.add(this.minHeap.poll());
-    }
+    this.arr.splice(start, 0, n);
+  };
+  if (this.arr.length === 0) this.arr.push(num);
+  else bs(num);
 };
 
 /**
  * @return {number}
  */
 MedianFinder.prototype.findMedian = function() {
-    if(this.maxHeap.size > this.minHeap.size) {
-        return this.maxHeap.peek();
-    } else if(this.maxHeap.size < this.minHeap.size) {
-        return this.minHeap.peek();
-    } else {
-        return (this.maxHeap.peek() + this.minHeap.peek()) / 2;
-    }
+  const mid = Math.floor(this.arr.length / 2);
+  return this.arr.length % 2 === 0
+    ? (this.arr[mid - 1] + this.arr[mid]) / 2
+    : this.arr[mid];
 };
 
-/** 
- *  custom Heap class
+/**
+ * Your MedianFinder object will be instantiated and called as such:
+ * var obj = new MedianFinder()
+ * obj.addNum(num)
+ * var param_2 = obj.findMedian()
  */
-class Heap {
-	constructor(comparator) {
-		this.size = 0;
-		this.values = [];
-		this.comparator = comparator || Heap.minComparator;
-	}
-
-	add(val) {
-		this.values.push(val);
-		this.size ++;
-		this.bubbleUp();
-	}
-
-	peek() {
-		return this.values[0] || null;
-	}
-
-	poll() {
-		const max = this.values[0];
-		const end = this.values.pop();
-		this.size --;
-		if (this.values.length) {
-			this.values[0] = end;
-			this.bubbleDown();
-		}
-		return max;
-	}
-
-	bubbleUp() {
-		let index = this.values.length - 1;
-		let parent = Math.floor((index - 1) / 2);
-
-		while (this.comparator(this.values[index], this.values[parent]) < 0) {
-			[this.values[parent], this.values[index]] = [this.values[index], this.values[parent]];
-			index = parent;
-			parent = Math.floor((index - 1) / 2);
-		}
-	}
-
-	bubbleDown() {
-		let index = 0, length = this.values.length;
-
-		while (true) {
-			let left = null,
-				right = null,
-				swap = null,
-				leftIndex = index * 2 + 1,
-				rightIndex = index * 2 + 2;
-
-			if (leftIndex < length) {
-				left = this.values[leftIndex];
-				if (this.comparator(left, this.values[index]) < 0) swap = leftIndex;
-			}
-
-			if (rightIndex < length) {
-				right = this.values[rightIndex];
-				if ((swap !== null && this.comparator(right, left) < 0) || (swap === null && this.comparator(right, this.values[index]))) {
-					swap = rightIndex;
-				}
-			}
-			if (swap === null) break;
-
-			[this.values[index], this.values[swap]] = [this.values[swap], this.values[index]];
-			index = swap;
-		}
-	}
-}
-
-/** 
- *  Min Comparator
- */
-Heap.minComparator = (a, b) => { return a - b; }
-
-/** 
- *  Max Comparator
- */
-Heap.maxComparator = (a, b) => { return b - a; }
 
 export default MedianFinder;
-

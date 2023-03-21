@@ -259,3 +259,7 @@ Identify if problems talks about finding groups or components.
 - [208. Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/) => [Implement Trie](./src/rules/implementTrie/2ndSolution.js)
 - [341. Flatten Nested List Iterator](https://leetcode.com/problems/flatten-nested-list-iterator/) => [NestedIterator](./src/rules/NestedIterator/index.js)
 - [295. Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/) => [MedianFinder](./src/rules/MedianFinder/index.js)
+
+### Math
+
+- [179. Largest Number](https://leetcode.com/problems/largest-number/) => [largestNumber149](./src/rules/largestNumber179/index.js)

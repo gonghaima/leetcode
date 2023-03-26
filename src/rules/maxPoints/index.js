@@ -2,24 +2,25 @@
  * @param {number[][]} points
  * @return {number}
  */
+var angle = function(x1,y1,x2,y2)  {
+  let y = y2 - y1
+  let x = x2 - x1
+  let theta = Math.atan2(y,x)
+  theta *= 180 / Math.PI
+  return theta
+}
 var maxPoints = function(points) {
-    let max = 0;
-    for (const x of points) {
-      const slopes = new Map();
-    for (const y of points) {
-      if (x === y) continue;
-      let slope = Infinity;
-      if (y[0] - x[0] !== 0) {
-        slope = (y[1] - x[1]) / (y[0] - x[0]);
+  if (points.length === 1) return 1
+  let max = 2
+  for (let i = 0; i<points.length; i++) {
+      let obj = {}
+      for (let j = 0; j<points.length; j++) {
+          if (i===j) continue;
+          let diff = angle(points[i][0],points[i][1],points[j][0],points[j][1])
+          obj[diff] = obj[diff] ? obj[diff]+1:2
       }
-      if (slopes.has(slope)) {
-        slopes.set(slope, slopes.get(slope) + 1);
-      } else {
-        slopes.set(slope, 1);
-      }
-      max = Math.max(max, slopes.get(slope));
-    }
+      max = Math.max(max, ...Object.values(obj))
   }
-  return max + 1;
-};
+  return max
+}
 export default maxPoints;

@@ -264,3 +264,7 @@ Identify if problems talks about finding groups or components.
 
 - [179. Largest Number](https://leetcode.com/problems/largest-number/) => [largestNumber149](./src/rules/largestNumber179/index.js)
 - [149. Max Points on a Line](https://leetcode.com/problems/max-points-on-a-line/) => [maxPoints](./src/rules/maxPoints/index.js)
+
+### Others
+
+- [406. Queue Reconstruction by Height](https://leetcode.com/problems/queue-reconstruction-by-height/) => [reconstructQueue](./src/rules/reconstructQueue/index.js)

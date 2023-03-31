@@ -268,3 +268,5 @@ Identify if problems talks about finding groups or components.
 ### Others
 
 - [406. Queue Reconstruction by Height](https://leetcode.com/problems/queue-reconstruction-by-height/) => [reconstructQueue](./src/rules/reconstructQueue/index.js)
+
+- [42. Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) => [trap](./src/rules/trap/index.js)

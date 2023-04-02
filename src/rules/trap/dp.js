@@ -10,28 +10,20 @@
  * Memory Usage: 40 MB, less than 97.90% of JavaScript online submissions for Trapping Rain Water. *
  ***************************************************************************************************/
 
-// Brute force
-
 var trap = function(height) {
-  if (height == null || height.length === 0) return 0;
-
-  let res = 0;
-  for (let i = 0; i < height.length; i++) {
-    let lMax = 0;
-    let rMax = 0;
-
-    for (let j = 0; j < i; j++) {
-      lMax = Math.max(lMax, height[j]);
+  let total = 0,
+    high1 = 0,
+    high2 = 0;
+  for (let l = 0, r = height.length - 1; l < r; ) {
+    if (height[l] < height[r]) {
+      high1 = Math.max(high1, height[l]);
+      total += high1 - height[l++];
+    } else {
+      high2 = Math.max(high2, height[r]);
+      total += high2 - height[r--];
     }
-    for (let j = i + 1; j < height.length; j++) {
-      rMax = Math.max(rMax, height[j]);
-    }
-
-    const water = Math.min(lMax, rMax) - height[i];
-    if (water > 0) res += water;
   }
-
-  return res;
+  return total;
 };
 
 export default trap;

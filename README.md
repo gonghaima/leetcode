@@ -270,3 +270,4 @@ Identify if problems talks about finding groups or components.
 - [406. Queue Reconstruction by Height](https://leetcode.com/problems/queue-reconstruction-by-height/) => [reconstructQueue](./src/rules/reconstructQueue/index.js)
 
 - [42. Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) => [trap](./src/rules/trap/index.js)
+- [218. The Skyline Problem](https://leetcode.com/problems/the-skyline-problem/) => [getSkyline](./src/rules/getSkyline/index.js)

@@ -1,17 +1,15 @@
-import getMaxLen from '../../src/rules/getMaxLen';
-import { inputData, expected } from '../data/getMaxLenData';
+import getSkyline from '../../src/rules/getSkyline';
+import { inputData, expected } from '../data/getSkylineData';
 
-test('getMaxLen should return correct result for case1', () => {
-  const result = getMaxLen(inputData.case1);
-  expect(result).toEqual(expected.case1);
+test('getSkyline should return correct result for case1', () => {
+  const result = getSkyline(inputData.case1);
+  expect(JSON.stringify(result.sort())).toEqual(
+    JSON.stringify(expected.case1.sort())
+  );
 });
 
-test('getMaxLen should return correct result for case2', () => {
-  const result = getMaxLen(inputData.case2);
-  expect(result).toEqual(expected.case2);
-});
-
-test('getMaxLen should return correct result for case3', () => {
-  const result = getMaxLen(inputData.case3);
-  expect(result).toEqual(expected.case3);
+test('getSkyline should return correct result for case2', () => {
+  const result = getSkyline(inputData.case2);
+  expect(JSON.stringify(result.sort())).toEqual(
+    JSON.stringify(expected.case2.sort())
 });

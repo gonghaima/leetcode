@@ -271,5 +271,8 @@ Identify if problems talks about finding groups or components.
 
 - [42. Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) => [trap](./src/rules/trap/index.js)
 - [218. The Skyline Problem](https://leetcode.com/problems/the-skyline-problem/) => [getSkyline](./src/rules/getSkyline/index.js)
-
 - [84. Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/) => [largestRectangleArea](./src/rules/largestRectangleArea/index.js)
+
+### Top liked
+
+- [3. Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) => [lengthOfLongestSubstring](./src/rules/lengthOfLongestSubstring/index.js)

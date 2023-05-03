@@ -276,3 +276,4 @@ Identify if problems talks about finding groups or components.
 ### Top liked
 
 - [3. Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) => [lengthOfLongestSubstring](./src/rules/lengthOfLongestSubstring/index.js)
+- [15. 3Sum](https://leetcode.com/problems/3sum/) =>[threeSum](./src/rules/threeSum/index.js)

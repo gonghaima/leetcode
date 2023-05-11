@@ -3,18 +3,33 @@ import { inputData, expected } from '../data/removeNthFromEndData';
 
 test('removeNthFromEnd should return correct result for case1', () => {
   const { head, n } = inputData.case1;
-  const result = removeNthFromEnd(head, n);
-  expect(result.sort()).toEqual(expected.case1.sort());
+  let result = removeNthFromEnd(head, n);
+  let expectedResult = expected.case1;
+  while (result?.val) {
+    expect(result.val).toEqual(expectedResult.val);
+    result = result.next ?? null;
+    expectedResult = expectedResult.next ?? null;
+  }
 });
 
 test('removeNthFromEnd should return correct result for case2', () => {
   const { head, n } = inputData.case2;
-  const result = removeNthFromEnd(head, n);
-  expect(result.sort()).toEqual(expected.case2.sort());
+  let result = removeNthFromEnd(head, n);
+  let expectedResult = expected.case2;
+  while (result?.val) {
+    expect(result.val).toEqual(expectedResult.val);
+    result = result.next ?? null;
+    expectedResult = expectedResult.next ?? null;
+  }
 });
 
 test('removeNthFromEnd should return correct result for case3', () => {
   const { head, n } = inputData.case3;
-  const result = removeNthFromEnd(head, n);
-  expect(result.sort()).toEqual(expected.case3.sort());
+  let result = removeNthFromEnd(head, n);
+  let expectedResult = expected.case3;
+  while (result?.val) {
+    expect(result.val).toEqual(expectedResult.val);
+    result = result.next ?? null;
+    expectedResult = expectedResult.next ?? null;
+  }
 });

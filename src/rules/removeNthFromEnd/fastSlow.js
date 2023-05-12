@@ -11,20 +11,12 @@
  * @return {ListNode}
  */
 var removeNthFromEnd = function(head, n) {
-  let hare = head,
-    curr = head;
-  while (n--) {
-    hare = hare.next;
-  }
-  while (hare && hare.next) {
-    curr = curr.next;
-    hare = hare.next;
-  }
-  if (!hare) {
-    head = head.next;
-  } else {
-    curr.next = curr.next ? curr.next.next : null;
-  }
+  let fast = head,
+    slow = head;
+  for (let i = 0; i < n; i++) fast = fast.next;
+  if (!fast) return head.next;
+  while (fast.next) (fast = fast.next), (slow = slow.next);
+  slow.next = slow.next.next;
   return head;
 };
 export default removeNthFromEnd;

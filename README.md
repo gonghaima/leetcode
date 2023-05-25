@@ -280,3 +280,4 @@ Identify if problems talks about finding groups or components.
 - [19. Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) =>[removeNthFromEnd](./src/rules/removeNthFromEnd/index.js)
 - [151. Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/) =>[reverseKGroup](./src/rules/reverseKGroup/index.js)
 - [31. Next Permutation](https://leetcode.com/problems/next-permutation/) =>[nextPermutation](./src/rules/nextPermutation/index.js)
+- [32. Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/) =>[longestValidParentheses](./src/rules/longestValidParentheses/index.js)

@@ -2,13 +2,23 @@
  * @param {string} s
  * @return {number}
  */
-var longestValidParentheses = function(S) {
-  let stack = [-1], ans = 0
-  for (let i = 0; i < S.length; i++)
-      if (S[i] === '(') stack.push(i)
-      else if (stack.length === 1) stack[0] = i
-      else {
-        stack.pop(); ans = Math.max(ans, i - stack[stack.length-1])}
-  return ans
+var longestValidParentheses = function(s) {
+  let longest = 0
+  let stack=[-1]
+  
+  for(let i=0;i<s.length;i++){
+    let char = s[i]
+    
+    if(char === '('){
+      stack.push(i)
+      continue
+    }
+    
+    stack.pop()
+    if(!stack.length) stack.push(i)
+    else longest = Math.max((i - stack[stack.length-1]),longest)
+  }
+
+  return longest
 };
 export default longestValidParentheses;

@@ -4,42 +4,19 @@
  * @return {number}
  */
 var search = function(nums, target) {
-  let left = 0;
-  let right = nums.length - 1;
-
-  while (left <= right) {
-    let mid = Math.floor((left + right) / 2);
-
-    if (nums[mid] === target) {
-      return mid;
+  let res = -1;
+  const compute = (nums, startIndex) => {
+    let len = nums.length;
+    let mid = len % 2 == 0 ? len / 2 : (len - 1) / 2;
+    if (!nums.length) return;
+    if (nums[mid] == target) {
+      res = startIndex + mid;
     }
-
-    // When dividing the roated array into two halves, one must be sorted.
-
-    // Check if the left side is sorted
-    if (nums[left] <= nums[mid]) {
-      if (nums[left] <= target && target <= nums[mid]) {
-        // target is in the left
-        right = mid - 1;
-      } else {
-        // target is in the right
-        left = mid + 1;
-      }
-    }
-
-    // Otherwise, the right side is sorted
-    else {
-      if (nums[mid] <= target && target <= nums[right]) {
-        // target is in the right
-        left = mid + 1;
-      } else {
-        // target is in the left
-        right = mid - 1;
-      }
-    }
-  }
-
-  return -1;
+    compute(nums.slice(0, mid), startIndex) ||
+      compute(nums.slice(mid + 1), mid + startIndex + 1);
+  };
+  compute(nums, 0);
+  return res;
 };
 
 export default search;

@@ -283,3 +283,4 @@ Identify if problems talks about finding groups or components.
 - [32. Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/) =>[longestValidParentheses](./src/rules/longestValidParentheses/index.js)
 - [33. Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/) =>[searchRotatedSortedArray](./src/rules/searchRotatedSortedArray/index.js)
 - [39. Combination Sum](https://leetcode.com/problems/combination-sum/) =>[combinationSum](./src/rules/combinationSum/index.js)
+- [46. Permutations](https://leetcode.com/problems/permutations/) => [permutations](./src/rules/permutations/index.js)

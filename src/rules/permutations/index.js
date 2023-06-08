@@ -3,28 +3,32 @@
  * @return {number[][]}
  */
 var permute = function(nums) {
-  let res = [];
-  dfs(nums, [], Array(nums.length).fill(false), res);
-  return res;
+  const output = [];
+  /**
+   * The goal is break down the problem by finding permutations in subarrays.
+   * So we will maintain a subarray of fixed elements and a subarray for 
+   * exploring permutations.
+   *
+   *                  [1], [2, 3]    [1, 2], [3]    [1, 2, 3]
+   * [], [1, 2, 3] -> [2], [1, 3] -> [1, 3], [2] -> [1, 3, 2]
+   *                  [3], [1, 2]    [2, 1], [1]    [2, 1, 3]
+   *                                 [2, 3], [1]    [2, 3, 1]
+   *                                 [3, 1], [2]    [3, 1, 2]
+   *                                 [3, 2], [1]    [3, 2, 1]                                 
+   */
+  const dfs = (curr, rest) => {
+    // base case. Found a permutation because there's nothing else to explore.
+    if (rest.length === 0) {
+      output.push(curr);
+      return;
+    }
+    for (let i = 0; i < rest.length; i++) {
+      dfs([...curr, rest[i]], [...rest.slice(0, i), ...rest.slice(i + 1)]);
+    }
+  }
+  dfs([], nums);
+  
+  return output;
 };
-
-function dfs(letters, path, used, res) {
-  if (path.length == letters.length) {
-    // make a deep copy since otherwise we'd be append the same list over and over
-    res.push(Array.from(path));
-    return;
-  }
-  for (let i = 0; i < letters.length; i++) {
-    // skip used letters
-    if (used[i]) continue;
-    // add letter to permutation, mark letter as used
-    path.push(letters[i]);
-    used[i] = true;
-    dfs(letters, path, used, res);
-    // remove letter from permutation, mark letter as unused
-    path.pop();
-    used[i] = false;
-  }
-}
 
 export default permute;

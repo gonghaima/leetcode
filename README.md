@@ -286,3 +286,4 @@ Identify if problems talks about finding groups or components.
 - [46. Permutations](https://leetcode.com/problems/permutations/) => [permutations](./src/rules/permutations/index.js)
 - [48. Rotate Image](https://leetcode.com/problems/rotate-image/?envType=featured-list&envId=top-100-liked-questions) => [rotateImage](./src/rules/rotateImage/index.js)
 - [51. N-Queens](https://leetcode.com/problems/n-queens/?envType=featured-list&envId=top-100-liked-questions) => [solveNQueens](./src/rules/solveNQueens/index.js)
+- [56. Merge Intervals](https://leetcode.com/problems/merge-intervals/?envType=featured-list&envId=top-100-liked-questions) => [mergeIntervals](./src/rules/mergeIntervals/index.js)

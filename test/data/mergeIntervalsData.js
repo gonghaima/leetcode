@@ -5,7 +5,7 @@ export const inputData = {
     [8, 10],
     [15, 18],
   ],
-  case12: [
+  case2: [
     [1, 4],
     [4, 5],
   ],

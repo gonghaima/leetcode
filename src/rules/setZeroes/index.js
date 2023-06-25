@@ -3,28 +3,26 @@
  * @return {void} Do not return anything, modify matrix in-place instead.
  */
 var setZeroes = function(matrix) {
-  var track = [];
-
-  // find zeros
-  for (var i = 0; i < matrix.length; i++) {
-    for (var j = 0; j < matrix[0].length; j++) {
-      if (matrix[i][j] === 0) track.push([i, j]);
+  const row = matrix.length;
+  const col = matrix[0].length;
+  const dummyRow = new Array(row).fill(-1);
+  const dummyCol = new Array(col).fill(-1);
+  for (let i = 0; i < row; i++) {
+    for (let j = 0; j < col; j++) {
+      if (matrix[i][j] == 0) {
+        dummyRow[i] = 0;
+        dummyCol[j] = 0;
+      }
     }
   }
-
-  for (var i = 0; i < track.length; i++) {
-    var [x, y] = track[i];
-
-    // update row
-    for (var j = 0; j < matrix[0].length; j++) {
-      matrix[x][j] = 0;
-    }
-
-    // udpate column
-    for (var j = 0; j < matrix.length; j++) {
-      matrix[j][y] = 0;
+  for (let i = 0; i < row; i++) {
+    for (let j = 0; j < col; j++) {
+      if (dummyRow[i] == 0 || dummyCol[j] == 0) {
+        matrix[i][j] = 0;
+      }
     }
   }
+  return matrix;
 };
 
 export default setZeroes;

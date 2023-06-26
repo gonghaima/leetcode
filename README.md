@@ -287,4 +287,5 @@ Identify if problems talks about finding groups or components.
 - [48. Rotate Image](https://leetcode.com/problems/rotate-image/?envType=featured-list&envId=top-100-liked-questions) => [rotateImage](./src/rules/rotateImage/index.js)
 - [51. N-Queens](https://leetcode.com/problems/n-queens/?envType=featured-list&envId=top-100-liked-questions) => [solveNQueens](./src/rules/solveNQueens/index.js)
 - [56. Merge Intervals](https://leetcode.com/problems/merge-intervals/?envType=featured-list&envId=top-100-liked-questions) => [mergeIntervals](./src/rules/mergeIntervals/index.js)
-- [73. Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/?envType=featured-list&envId=top-100-liked-questions) [setZeroes](./src/rules/setZeroes/index.js)
+- [73. Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/?envType=featured-list&envId=top-100-liked-questions) =>[setZeroes](./src/rules/setZeroes/index.js)
+- [74. Search a 2D Matrix](https://leetcode.com/problems/search-a-2d-matrix/?envType=featured-list&envId=top-100-liked-questions) =>[searchMatrix](./src/rules/searchMatrix/index.js)

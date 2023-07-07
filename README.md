@@ -290,3 +290,4 @@ Identify if problems talks about finding groups or components.
 - [73. Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/?envType=featured-list&envId=top-100-liked-questions) =>[setZeroes](./src/rules/setZeroes/index.js)
 - [74. Search a 2D Matrix](https://leetcode.com/problems/search-a-2d-matrix/?envType=featured-list&envId=top-100-liked-questions) =>[searchMatrix](./src/rules/searchMatrix/index.js)
 - [75. Sort Colors](https://leetcode.com/problems/sort-colors/?envType=featured-list&envId=top-100-liked-questions) =>[sortColors](./src/rules/sortColors/index.js)
+- [79. Word Search](https://leetcode.com/problems/word-search/?envType=featured-list&envId=top-100-liked-questions) =>[wordSearch](./src/rules/wordSearch/index.js)

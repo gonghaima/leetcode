@@ -1,20 +1,20 @@
-import wordSearch from '../../src/rules/wordSearch';
+import wordearch from '../../src/rules/wordSearch';
 import { inputData, expected } from '../data/wordSearchData';
 
-test('wordSearch should return expected result for case1', () => {
-  const { board, words } = inputData.case1;
-  const result = wordSearch(board, words);
+test('wordearch should return expected result for case1', () => {
+  const { board, word } = inputData.case1;
+  const result = wordearch(board, word);
   expect(result).toEqual(expected.case1);
 });
 
-test('wordSearch should return expected result for case2', () => {
-  const { board, words } = inputData.case2;
-  const result = wordSearch(board, words);
+test('wordearch should return expected result for case2', () => {
+  const { board, word } = inputData.case2;
+  const result = wordearch(board, word);
   expect(result).toEqual(expected.case2);
 });
 
-test('wordSearch should return expected result for case3', () => {
-  const { board, words } = inputData.case3;
-  const result = wordSearch(board, words);
+test('wordearch should return expected result for case3', () => {
+  const { board, word } = inputData.case3;
+  const result = wordearch(board, word);
   expect(result).toEqual(expected.case3);
 });

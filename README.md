@@ -291,3 +291,4 @@ Identify if problems talks about finding groups or components.
 - [74. Search a 2D Matrix](https://leetcode.com/problems/search-a-2d-matrix/?envType=featured-list&envId=top-100-liked-questions) =>[searchMatrix](./src/rules/searchMatrix/index.js)
 - [75. Sort Colors](https://leetcode.com/problems/sort-colors/?envType=featured-list&envId=top-100-liked-questions) =>[sortColors](./src/rules/sortColors/index.js)
 - [79. Word Search](https://leetcode.com/problems/word-search/?envType=featured-list&envId=top-100-liked-questions) =>[wordSearch](./src/rules/wordSearch/index.js)
+- [98. Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/?envType=featured-list&envId=top-100-liked-questions) => [isValidBST](./src/rules/isValidBST/index.js)

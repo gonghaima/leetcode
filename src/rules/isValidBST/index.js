@@ -11,17 +11,24 @@
  * @return {boolean}
  */
 var isValidBST = function(root) {
-  //compare left with right
-  // if not the same return false
-  if (root?.left?.val > root.val || root?.right?.val < root.val) {
-    return false;
+  return validate(root, -Infinity, Infinity);
+};
+var validate = function(node, lower, upper) {
+  if (node == null) {
+    // empty node or empty tree
+    return true;
   }
 
-  // otherwise do the isValidBST for both left and right
-  if (root?.left?.val) isValidBST(root.left);
-  if (root?.right?.val) isValidBST(root.right);
-
-  // return true
-  return true;
+  if (lower < node.val && node.val < upper) {
+    // check if all tree nodes follow BST rule
+    return (
+      validate(node.left, lower, node.val) &&
+      validate(node.right, node.val, upper)
+    );
+  } else {
+    // early reject when we find violation
+    return false;
+  }
 };
+
 export default isValidBST;

@@ -11,17 +11,17 @@
  * @return {boolean}
  */
 var isValidBST = function(root) {
-  function inOrder(node) {
-    if (!node) return [];
-    return [...inOrder(node.left), node.val, ...inOrder(node.right)];
+  //compare left with right
+  // if not the same return false
+  if (root?.left?.val > root.val || root?.right?.val < root.val) {
+    return false;
   }
 
-  const sortedArr = inOrder(root);
+  // otherwise do the isValidBST for both left and right
+  if (root?.left?.val) isValidBST(root.left);
+  if (root?.right?.val) isValidBST(root.right);
 
-  for (let i = 0; i < sortedArr.length; i++) {
-    if (sortedArr[i + 1] <= sortedArr[i]) return false;
-  }
+  // return true
   return true;
 };
-
 export default isValidBST;

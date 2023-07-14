@@ -11,24 +11,17 @@
  * @return {boolean}
  */
 var isValidBST = function(root) {
-  return validate(root, -Infinity, Infinity);
-};
-var validate = function(node, lower, upper) {
-  if (node == null) {
-    // empty node or empty tree
-    return true;
+  function inOrder(node) {
+    if (!node) return [];
+    return [...inOrder(node.left), node.val, ...inOrder(node.right)];
   }
 
-  if (lower < node.val && node.val < upper) {
-    // check if all tree nodes follow BST rule
-    return (
-      validate(node.left, lower, node.val) &&
-      validate(node.right, node.val, upper)
-    );
-  } else {
-    // early reject when we find violation
-    return false;
+  const sortedArr = inOrder(root);
+
+  for (let i = 0; i < sortedArr.length; i++) {
+    if (sortedArr[i + 1] <= sortedArr[i]) return false;
   }
+  return true;
 };
 
 export default isValidBST;

@@ -11,18 +11,16 @@
  * @return {boolean}
  */
 var isValidBST = function(root) {
-  const queue = [[root, -Infinity, Infinity]];
-
-  while (queue.length > 0) {
-    const [node, min, max] = queue.shift();
-
-    if (!node) continue;
-    if (node.val >= max || node.val <= min) return false;
-
-    queue.push([node.left, min, node.val]);
-    queue.push([node.right, node.val, max]);
+  function inOrder(node) {
+    if (!node) return [];
+    return [...inOrder(node.left), node.val, ...inOrder(node.right)];
   }
 
+  const sortedArr = inOrder(root);
+
+  for (let i = 0; i < sortedArr.length; i++) {
+    if (sortedArr[i + 1] <= sortedArr[i]) return false;
+  }
   return true;
 };
 

@@ -294,3 +294,4 @@ Identify if problems talks about finding groups or components.
 - [98. Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/?envType=featured-list&envId=top-100-liked-questions) => [isValidBST](./src/rules/isValidBST/index.js)
 - [105. Construct Binary Tree from Preorder and Inorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/?envType=featured-list&envId=top-100-liked-questions) => [constructBST](./src/rules/constructBST/index.js)
 - [114. Flatten Binary Tree to Linked List](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/?envType=featured-list&envId=top-100-liked-questions) => [flattenBTree](./src/rules/flattenBTree/index.js)
+- [142. Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii/?envType=featured-list&envId=top-100-liked-questions) => [detectCycle](./src/rules/detectCycle/index.js)

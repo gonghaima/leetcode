@@ -295,3 +295,4 @@ Identify if problems talks about finding groups or components.
 - [105. Construct Binary Tree from Preorder and Inorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/?envType=featured-list&envId=top-100-liked-questions) => [constructBST](./src/rules/constructBST/index.js)
 - [114. Flatten Binary Tree to Linked List](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/?envType=featured-list&envId=top-100-liked-questions) => [flattenBTree](./src/rules/flattenBTree/index.js)
 - [142. Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii/?envType=featured-list&envId=top-100-liked-questions) => [detectCycle](./src/rules/detectCycle/index.js)
+- [153. Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/?envType=featured-list&envId=top-100-liked-questions) => [findMin](./src/rules/findMin/index.js)

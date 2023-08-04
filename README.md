@@ -296,3 +296,4 @@ Identify if problems talks about finding groups or components.
 - [114. Flatten Binary Tree to Linked List](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/?envType=featured-list&envId=top-100-liked-questions) => [flattenBTree](./src/rules/flattenBTree/index.js)
 - [142. Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii/?envType=featured-list&envId=top-100-liked-questions) => [detectCycle](./src/rules/detectCycle/index.js)
 - [153. Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/?envType=featured-list&envId=top-100-liked-questions) => [findMin](./src/rules/findMin/index.js)
+- [199. Binary Tree Right Side View](https://leetcode.com/problems/binary-tree-right-side-view/?envType=featured-list&envId=top-100-liked-questions) => [rightSideView](./src/rules/rightSideView/index.js)

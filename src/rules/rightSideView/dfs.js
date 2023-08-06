@@ -12,20 +12,15 @@
  */
 var rightSideView = function(root) {
   if (!root) return [];
+  let res = [];
+  pre(root, 0);
+  return res;
 
-  let queue = [root];
-  const result = [root.val];
-
-  while (queue.length) {
-    const next = [];
-
-    for (let node of queue) {
-      if (node.left) next.push(node.left);
-      if (node.right) next.push(node.right);
-    }
-    if (next.length) result.push(next[next.length - 1].val);
-    queue = next;
+  function pre(node, h) {
+    if (!node) return;
+    res[h] = node.val;
+    pre(node.left, h + 1);
+    pre(node.right, h + 1);
   }
-  return result;
 };
 export default rightSideView;

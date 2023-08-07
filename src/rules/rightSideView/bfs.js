@@ -11,15 +11,21 @@
  * @return {number[]}
  */
 var rightSideView = function(root) {
-  let list = [];
-  rightView(root, 0, list);
-  return list;
-};
+  if (!root) return [];
 
-function rightView(root, depth, list) {
-  if (!root) return;
-  if (depth == list.length) list.push(root.val);
-  rightView(root.right, depth + 1, list);
-  rightView(root.left, depth + 1, list);
-}
+  let queue = [root];
+  const result = [root.val];
+
+  while (queue.length) {
+    const next = [];
+
+    for (let node of queue) {
+      if (node.left) next.push(node.left);
+      if (node.right) next.push(node.right);
+    }
+    if (next.length) result.push(next[next.length - 1].val);
+    queue = next;
+  }
+  return result;
+};
 export default rightSideView;

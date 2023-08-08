@@ -297,3 +297,4 @@ Identify if problems talks about finding groups or components.
 - [142. Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii/?envType=featured-list&envId=top-100-liked-questions) => [detectCycle](./src/rules/detectCycle/index.js)
 - [153. Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/?envType=featured-list&envId=top-100-liked-questions) => [findMin](./src/rules/findMin/index.js)
 - [199. Binary Tree Right Side View](https://leetcode.com/problems/binary-tree-right-side-view/?envType=featured-list&envId=top-100-liked-questions) => [rightSideView](./src/rules/rightSideView/index.js)
+- [206. Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/?envType=featured-list&envId=top-100-liked-questions) => [reverseList](./src/rules/reverseList/index.js)

@@ -3,83 +3,51 @@
  * @param {number} k
  * @return {number}
  */
-class MinHeap {
-  constructor() {
-    this.heap = [];
-  }
-  push(val) {
-    this.heap.push(val);
-    this.bubbleUp();
-  }
-  pop() {
-    const max = this.heap[0];
-    const end = this.heap.pop();
-    if (this.heap.length > 0) {
-      this.heap[0] = end;
-      this.bubbleDown();
-    }
-    return max;
-  }
-  peek() {
-    return this.heap[0];
-  }
-  bubbleUp() {
-    let idx = this.heap.length - 1;
-    const element = this.heap[idx];
-    while (idx > 0) {
-      let parentIdx = Math.floor((idx - 1) / 2);
-      let parent = this.heap[parentIdx];
-      if (element >= parent) break;
-      this.heap[parentIdx] = element;
-      this.heap[idx] = parent;
-      idx = parentIdx;
-    }
-  }
-  bubbleDown() {
-    let idx = 0;
-    const length = this.heap.length;
-    const element = this.heap[0];
-    while (true) {
-      let leftChildIdx = 2 * idx + 1;
-      let rightChildIdx = 2 * idx + 2;
-      let leftChild, rightChild;
-      let swap = null;
-      if (leftChildIdx < length) {
-        leftChild = this.heap[leftChildIdx];
-        if (leftChild < element) {
-          swap = leftChildIdx;
-        }
-      }
-      if (rightChildIdx < length) {
-        rightChild = this.heap[rightChildIdx];
-        if (
-          (swap === null && rightChild < element) ||
-          (swap !== null && rightChild < leftChild)
-        ) {
-          swap = rightChildIdx;
-        }
-      }
-      if (swap === null) break;
-      this.heap[idx] = this.heap[swap];
-      this.heap[swap] = element;
-      idx = swap;
-    }
-  }
-}
-var findKthLargest = function(nums, k) {
-  let heap = new MinHeap();
-  for (let i = 0; i < k; i++) {
-    heap.push(nums[i]);
-  }
-  for (let i = k; i < nums.length; i++) {
-    if (nums[i] > heap.peek()) {
-      heap.pop();
-      heap.push(nums[i]);
-    }
-  }
-  return heap.peek();
-};
 
+var findKthLargest = function(nums, k) {
+  // the final position of the kth largest number in a sorted array
+  const finalIdx = nums.length - k;
+  let left = 0;
+  let right = nums.length - 1;
+
+  while (left <= right) {
+    // random num between left and right
+    const pivot = Math.floor(Math.random() * (right - left + 1)) + left;
+    // the final position of the pivot in a sorted array
+    const pivotIdx = pivotHelper(pivot, left, right);
+    // the target number is in its correct postion, thus return
+    if (pivotIdx === finalIdx) return nums[finalIdx];
+
+    // if pivotIdx is smaller we undershot, so look only on the right half
+    if (pivotIdx < finalIdx) left = pivotIdx + 1;
+    // else we overshot, so look only on the left half
+    else right = pivotIdx - 1;
+  }
+
+  function pivotHelper(pivot, start, end) {
+    // move the pivot to the end (get it out of the way)
+    swap(pivot, end);
+
+    let i = start;
+    let j = start;
+
+    // move smaller nums to the begining of the array
+    while (j < end) {
+      if (nums[j] <= nums[end]) {
+        swap(i, j);
+        i++;
+      }
+      j++;
+    }
+    // swap pivot to its final position
+    swap(i, end);
+    return i;
+  }
+
+  function swap(i, j) {
+    [nums[i], nums[j]] = [nums[j], nums[i]];
+  }
+};
 // min-heap
 
 export default findKthLargest;

@@ -298,4 +298,5 @@ Identify if problems talks about finding groups or components.
 - [153. Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/?envType=featured-list&envId=top-100-liked-questions) => [findMin](./src/rules/findMin/index.js)
 - [199. Binary Tree Right Side View](https://leetcode.com/problems/binary-tree-right-side-view/?envType=featured-list&envId=top-100-liked-questions) => [rightSideView](./src/rules/rightSideView/index.js)
 - [206. Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/?envType=featured-list&envId=top-100-liked-questions) => [reverseList](./src/rules/reverseList/index.js)
-- [215. Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/) [findKthLargest](./src/rules/findKthLargest/index.js)
+- [215. Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/) => [findKthLargest](./src/rules/findKthLargest/index.js)
+- [226. Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/?envType=featured-list&envId=top-100-liked-questions) => [invertTree](./src/rules/invertTree/index.js)

@@ -300,3 +300,4 @@ Identify if problems talks about finding groups or components.
 - [206. Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/?envType=featured-list&envId=top-100-liked-questions) => [reverseList](./src/rules/reverseList/index.js)
 - [215. Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/) => [findKthLargest](./src/rules/findKthLargest/index.js)
 - [226. Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/?envType=featured-list&envId=top-100-liked-questions) => [invertTree](./src/rules/invertTree/index.js)
+- [230. Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/?envType=featured-list&envId=top-100-liked-questions?envType=featured-list&envId=top-100-liked-questions) => [kthSmallestBST](.src/rules/kthSmallestBST/index.js)

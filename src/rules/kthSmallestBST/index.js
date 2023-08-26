@@ -12,7 +12,17 @@
  * @return {number}
  */
 var kthSmallest = function(root, k) {
-    
+  let vals = [];
+  const dfs = (node) => {
+    if (vals.length != k) {
+      if (node.left) dfs(node.left); //go left first
+      vals.push(node.val);
+      if (node.right) dfs(node.right); //if have right, go there and repeat process
+    }
+  };
+  dfs(root);
+
+  return vals[k - 1];
 };
 
 export default kthSmallest;

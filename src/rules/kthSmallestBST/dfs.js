@@ -12,16 +12,17 @@
  * @return {number}
  */
 var kthSmallest = function(root, k) {
-  let n = 0;
-  let res;
-  const inorder = (root) => {
-    if (!root) return;
-    inorder(root.left);
-    if (n++ < k) res = root.val;
-    inorder(root.right);
+  let vals = [];
+  const dfs = (node) => {
+    if (vals.length != k) {
+      if (node.left) dfs(node.left); //go left first
+      vals.push(node.val);
+      if (node.right) dfs(node.right); //if have right, go there and repeat process
+    }
   };
-  inorder(root);
-  return res;
+  dfs(root);
+
+  return vals[k - 1];
 };
 
 export default kthSmallest;

@@ -10,16 +10,17 @@
  * @return {boolean}
  */
 var isPalindrome = function(head) {
-  let string1 = '';
-  let string2 = '';
-  let node = head;
-
-  while (node != null) {
-    string1 = `${string1}${node.val}`;
-    string2 = `${node.val}${string2}`;
-    node = node.next;
+  let arr = [];
+  while (head) {
+    arr.push(head.val);
+    head = head.next;
   }
-  return string1 === string2;
+  return arr
+    .slice()
+    .reverse()
+    .join() == arr.join()
+    ? true
+    : false;
 };
 
 export default isPalindrome;

@@ -304,3 +304,4 @@ Identify if problems talks about finding groups or components.
 - [234. Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/) => [isPalindromeLinkedList](.src/rules/isPalindromeLinkedList/index.js)
 - [240. Search a 2D Matrix II](https://leetcode.com/problems/search-a-2d-matrix-ii/?envType=featured-list&envId=top-100-liked-questions?envType=featured-list&envId=top-100-liked-questions) => [Search a 2D Matrix II
   ](.src/rules/searchMatrixII/index.js)
+- [283. Move Zeroes](https://leetcode.com/problems/move-zeroes/) => [moveZeroes](./src/rules/moveZeroes/index.js)

@@ -3,21 +3,21 @@
  * @return {void} Do not return anything, modify nums in-place instead.
  */
 
-// my thoughts:
-// maintain one pointer as cdx, initially 0, to indicated filled index
-// loop through the array, if current value is not zero, assign array[cdx] = currentValue,  cdx++
-
-// for cdx to array.length - 1,  set array[cdx] = 0
-
 var moveZeroes = function(nums) {
-  let pos = 0;
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] !== 0) {
-      nums[pos++] = nums[i];
+  let low = 0;
+  let high = low + 1;
+
+  while (high <= nums.length - 1) {
+    if (nums[low] !== 0) {
+      low++;
+      high++;
+    } else {
+      if (nums[high] !== 0) {
+        [nums[low], nums[high]] = [nums[high], nums[low]];
+        low++;
+      }
+      high++;
     }
-  }
-  for (let i = pos; i < nums.length; i++) {
-    nums[i] = 0;
   }
   return nums;
 };

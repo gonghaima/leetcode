@@ -4,19 +4,13 @@
  */
 
 var moveZeroes = function(nums) {
-  let low = 0;
-  let high = low + 1;
-
-  while (high <= nums.length - 1) {
-    if (nums[low] !== 0) {
-      low++;
-      high++;
-    } else {
-      if (nums[high] !== 0) {
-        [nums[low], nums[high]] = [nums[high], nums[low]];
-        low++;
-      }
-      high++;
+  let size = nums.length;
+  for (let i = 0; i < size; i++) {
+    if (nums[i] === 0) {
+      nums.splice(i, 1);
+      nums.push(0);
+      i--;
+      size--;
     }
   }
   return nums;

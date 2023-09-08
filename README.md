@@ -305,3 +305,4 @@ Identify if problems talks about finding groups or components.
 - [240. Search a 2D Matrix II](https://leetcode.com/problems/search-a-2d-matrix-ii/?envType=featured-list&envId=top-100-liked-questions?envType=featured-list&envId=top-100-liked-questions) => [Search a 2D Matrix II
   ](.src/rules/searchMatrixII/index.js)
 - [283. Move Zeroes](https://leetcode.com/problems/move-zeroes/) => [moveZeroes](./src/rules/moveZeroes/index.js)
+- [347. Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) => [topKFrequentElement](./src/rules/topKFrequentElement/index.js)

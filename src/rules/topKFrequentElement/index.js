@@ -3,8 +3,9 @@
  * @param {number} k
  * @return {number[]}
  */
-var topKFrequentElement = function(nums, k) {
-    
-};
+
+// put it to max heap, then take the top n
+
+var topKFrequentElement = function(nums, k) {};
 
 export default topKFrequentElement;

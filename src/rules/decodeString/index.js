@@ -3,28 +3,20 @@
  * @return {string}
  */
 var decodeString = function(s) {
-  const stack = [];
-  for (const char of s) {
-    if (char !== ']') {
-      stack.push(char);
-      continue;
+  while (s.indexOf('[') != -1) {
+    // base case, breaks when there's no bracket found
+    let left = s.lastIndexOf('['); // left position of the inner-most `[`
+    let right = left + s.substring(left).indexOf(']'); // right positio of the inner-most `]`
+    let word = s.substring(left + 1, right); // between them is the string
+    let count = '';
+    while (s[left - 1] >= 0 && s[left - 1] <= 9) {
+      // try to find a valid number
+      left--;
+      count = s[left] + count;
     }
-    let cur = stack.pop();
-    let str = '';
-    while (cur !== '[') {
-      str = cur + str;
-      cur = stack.pop();
-    }
-    let num = '';
-    cur = stack.pop();
-    while (!Number.isNaN(Number(cur))) {
-      num = cur + num;
-      cur = stack.pop();
-    }
-    stack.push(cur);
-    stack.push(str.repeat(Number(num)));
+    s = s.substring(0, left) + word.repeat(count) + s.substring(right + 1); // put them all togher and repeat :)
   }
-  return stack.join('');
+  return s;
 };
 
 export default decodeString;

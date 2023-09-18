@@ -307,3 +307,4 @@ Identify if problems talks about finding groups or components.
 - [283. Move Zeroes](https://leetcode.com/problems/move-zeroes/) => [moveZeroes](./src/rules/moveZeroes/index.js)
 - [347. Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) => [topKFrequentElement](./src/rules/topKFrequentElement/index.js)
 - [394. Decode String](https://leetcode.com/problems/decode-string/description/?envType=featured-list&envId=top-100-liked-questions?envType=featured-list&envId=top-100-liked-questions) => [decodeString](./src/rules/decodeString/index.js)
+- [438. Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string/description/?envType=featured-list) => [findAnagrams](./src/rules/findAnagrams/index.js)

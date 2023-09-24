@@ -309,3 +309,4 @@ Identify if problems talks about finding groups or components.
 - [394. Decode String](https://leetcode.com/problems/decode-string/description/?envType=featured-list&envId=top-100-liked-questions?envType=featured-list&envId=top-100-liked-questions) => [decodeString](./src/rules/decodeString/index.js)
 - [438. Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string/description/?envType=featured-list) => [findAnagrams](./src/rules/findAnagrams/index.js)
 - [543. Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/description/?envType=featured-list) => [diameterOfBinaryTree](./src/rules/diameterOfBinaryTree/index.js)
+- [560. Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/description/?envType=featured-list) => [subarraySum](./src/rules/subarraySum/index.js)

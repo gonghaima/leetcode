@@ -310,3 +310,4 @@ Identify if problems talks about finding groups or components.
 - [438. Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string/description/?envType=featured-list) => [findAnagrams](./src/rules/findAnagrams/index.js)
 - [543. Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/description/?envType=featured-list) => [diameterOfBinaryTree](./src/rules/diameterOfBinaryTree/index.js)
 - [560. Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/description/?envType=featured-list) => [subarraySum](./src/rules/subarraySum/index.js)
+- [567. Permutation in String](https://leetcode.com/problems/permutation-in-string/description/) => [checkInclusion](./src/rules/checkInclusion/index.js)

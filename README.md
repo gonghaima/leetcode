@@ -311,3 +311,4 @@ Identify if problems talks about finding groups or components.
 - [543. Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/description/?envType=featured-list) => [diameterOfBinaryTree](./src/rules/diameterOfBinaryTree/index.js)
 - [560. Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/description/?envType=featured-list) => [subarraySum](./src/rules/subarraySum/index.js)
 - [567. Permutation in String](https://leetcode.com/problems/permutation-in-string/description/) => [checkInclusion](./src/rules/checkInclusion/index.js)
+- [739. Daily Temperatures](https://leetcode.com/problems/daily-temperatures) => [dailyTemperatures](./src/rules/dailyTemperatures/index.js)

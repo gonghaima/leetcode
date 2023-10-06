@@ -9,7 +9,7 @@ test('divideTwoInt should return expected result for case1', () => {
 });
 
 test('divideTwoInt should return expected result for case2', () => {
-  const { dividend, divisor } = inputData.case1;
+  const { dividend, divisor } = inputData.case2;
   const result = divideTwoInt(dividend, divisor);
   expect(result).toEqual(expected.case2);
 });

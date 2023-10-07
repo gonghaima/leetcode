@@ -316,3 +316,4 @@ Identify if problems talks about finding groups or components.
 ### Top interview
 
 - [29. Divide Two Integers](https://leetcode.com/problems/divide-two-integers) => [divideTwoInt](./src/rules/divideTwoInt/index.js)
+- [26. Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/) => [removeDuplicatesFromSortedArray](./src/rules/removeDuplicatesFromSortedArray/index.js)

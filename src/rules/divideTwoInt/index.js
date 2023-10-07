@@ -4,25 +4,22 @@
  * @return {number}
  */
 var divide = function(dividend, divisor) {
-  const retIsNegative = Math.sign(divisor) !== Math.sign(dividend);
-  dividend = Math.abs(dividend);
-  divisor = Math.abs(divisor);
-
-  let ret = 0;
-  while (divisor <= dividend) {
-    let value = divisor;
-    let multiple = 1;
-    while (value + value <= dividend) {
-      value += value;
-      multiple += multiple;
+  var rem = Math.abs(dividend);
+  var div = Math.abs(divisor);
+  var quo = 0;
+  // subtract divisor bit by bit, starting from most significant bit
+  for (var b = 31; b >= 0; b--) {
+    if (rem >>> b >= div) {
+      quo |= 1 << b;
+      rem -= div << b;
     }
-    dividend = dividend - value;
-    ret += multiple;
   }
-
-  if (ret > 2 ** 31 - 1) {
-    return retIsNegative ? -(2 ** 31) : 2 ** 31 - 1;
-  }
-  return retIsNegative ? -ret : ret;
+  quo >>>= 0; // make unsigned
+  if (dividend > 0 !== divisor > 0) quo = -quo; // add sign
+  return quo > -0x80000000
+    ? quo < 0x7fffffff
+      ? quo
+      : 0x7fffffff
+    : -0x80000000; // check bounds
 };
 export default divide;

@@ -318,3 +318,4 @@ Identify if problems talks about finding groups or components.
 - [29. Divide Two Integers](https://leetcode.com/problems/divide-two-integers) => [divideTwoInt](./src/rules/divideTwoInt/index.js)
 - [26. Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/) => [removeDuplicatesFromSortedArray](./src/rules/removeDuplicatesFromSortedArray/index.js)
 - [122. Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/) =>[maxProfitII](./src/rules/maxProfitII/index.js)
+- [88. Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array) => [merge](./src/rules/mergeSortedArray/index.js)

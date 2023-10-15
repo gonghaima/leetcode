@@ -4,11 +4,14 @@
  * @return {number}
  */
 var removeElement = function(nums, val) {
-  let result = 0;
-  nums.map((num) => {
-    if (num !== val) result++;
-  });
-  return result;
+  var zeroStartIdx = 0;
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] !== val) {
+      nums[zeroStartIdx] = nums[i];
+      zeroStartIdx++;
+    }
+  }
+  return zeroStartIdx;
 };
 
 export default removeElement;

@@ -3,17 +3,11 @@
  * @return {number}
  */
 var removeDuplicatesII = function(nums) {
-  let j = 0;
-  let i = 0;
-
-  for (; i < nums.length; i += 1) {
-    if (nums[i] !== nums[i + 2]) {
-      nums[j] = nums[i];
-      j += 1;
-    }
+  for (let i = nums.length - 1; i >= 0; i--) {
+    let secPrev = nums[i - 2];
+    if (secPrev === nums[i]) nums.splice(i, 1);
   }
-
-  return j;
+  return nums.length;
 };
 
 export default removeDuplicatesII;

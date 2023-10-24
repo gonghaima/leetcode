@@ -320,4 +320,6 @@ Identify if problems talks about finding groups or components.
 - [122. Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/) =>[maxProfitII](./src/rules/maxProfitII/index.js)
 - [88. Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array) => [merge](./src/rules/mergeSortedArray/index.js)
 - [27. Remove Element](https://leetcode.com/problems/remove-element/description/?envType=study-plan-v2&envId=top-interview-150) => [removeElement](./src/rules/removeElement/index.js)
-- [80. Remove Duplicates from Sorted Array II](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/description)
+- [80. Remove Duplicates from Sorted Array II](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/description) => [removeDuplicatesFromSortedArrayII](./src/rules/removeDuplicatesFromSortedArrayII/index.js)
+
+- [274. H-Index](https://leetcode.com/problems/h-index/description/?envType=study-plan-v2&envId=top-interview-150) => [hIndex](./src/rules/hIndex/index.js)

@@ -4,18 +4,37 @@ var RandomizedSet = function() {};
  * @param {number} val
  * @return {boolean}
  */
-RandomizedSet.prototype.insert = function(val) {};
+RandomizedSet.prototype.insert = function(val) {
+  this.cur = this.cur ?? new Set();
+  if (this.cur.has(val)) {
+    return false;
+  } else {
+    this.cur.add(val);
+    return true;
+  }
+};
 
 /**
  * @param {number} val
  * @return {boolean}
  */
-RandomizedSet.prototype.remove = function(val) {};
+RandomizedSet.prototype.remove = function(val) {
+  this.cur = this.cur ?? new Set();
+  if (this.cur.has(val)) {
+    this.cur.delete(val);
+    return true;
+  } else {
+    return false;
+  }
+};
 
 /**
  * @return {number}
  */
-RandomizedSet.prototype.getRandom = function() {};
+RandomizedSet.prototype.getRandom = function() {
+  const randomElement = [...this.cur][Math.floor(Math.random() * [...this.cur].length)];
+  return randomElement;
+};
 
 /**
  * Your RandomizedSet object will be instantiated and called as such:

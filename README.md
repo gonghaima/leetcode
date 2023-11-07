@@ -325,4 +325,4 @@ Identify if problems talks about finding groups or components.
 - [274. H-Index](https://leetcode.com/problems/h-index/description/?envType=study-plan-v2&envId=top-interview-150) => [hIndex](./src/rules/hIndex/index.js)
 - [380. Insert Delete GetRandom O(1)](https://leetcode.com/problems/insert-delete-getrandom-o1/description/?envType=study-plan-v2&envId=top-interview-150) => [insertDeleteGetRandom](./src/rules/insertDeleteGetRandom/index.js)
 - [ Intersection of Two Arrays II](https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/674/) => [Intersection 2](./src/rules/intersect2/index.js)
-
+- [Valid Sudoku](https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/769/) => [isValidSudoku](./src/rules/isValidSudoku/index.js)

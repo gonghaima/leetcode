@@ -327,4 +327,5 @@ Identify if problems talks about finding groups or components.
 - [ Intersection of Two Arrays II](https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/674/) => [Intersection 2](./src/rules/intersect2/index.js)
 - [Valid Sudoku](https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/769/) => [isValidSudoku](./src/rules/isValidSudoku/index.js)
 - [189. Rotate Array](https://leetcode.com/problems/rotate-array/?envType=study-plan-v2&envId=top-interview-150) => [rotate](./src/rules/rotate/index.js)
-- [135. Candy](https://leetcode.com/problems/candy/description/?envType=study-plan-v2&envId=top-interview-150)  => [candy](./src/rules/candy/index.js)
+- [135. Candy](https://leetcode.com/problems/candy/description/?envType=study-plan-v2&envId=top-interview-150) => [candy](./src/rules/candy/index.js)
+- [12. Integer to Roman](https://leetcode.com/problems/integer-to-roman/description/?envType=study-plan-v2&envId=top-interview-150) => [intToRoman](./src/rules/intToRoman/index.js)

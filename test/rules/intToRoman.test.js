@@ -13,5 +13,5 @@ test('intToRoman should return correct result for case2', () => {
 
 test('intToRoman should return correct result for case3', () => {
   const result = intToRoman(inputData.case3);
-  expect(result).toEqual(expected.case2);
+  expect(result).toEqual(expected.case3);
 });

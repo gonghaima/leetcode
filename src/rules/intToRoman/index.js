@@ -2,30 +2,16 @@
  * @param {number} num
  * @return {string}
  */
-var intToRoman = function(N) {
-  const val = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
-  const rom = [
-    'M',
-    'CM',
-    'D',
-    'CD',
-    'C',
-    'XC',
-    'L',
-    'XL',
-    'X',
-    'IX',
-    'V',
-    'IV',
-    'I',
-  ];
-  let ans = '';
-  for (let i = 0; N; i++) {
-    while (N >= val[i]) {
-      ans += rom[i];
-      N -= val[i];
-    }
-  }
-  return ans;
+var intToRoman = function(num) {
+  const ones = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX'];
+  const tens = ['', 'X', 'XX', 'XXX', 'XL', 'L', 'LX', 'LXX', 'LXXX', 'XC'];
+  const hrns = ['', 'C', 'CC', 'CCC', 'CD', 'D', 'DC', 'DCC', 'DCCC', 'CM'];
+  const ths = ['', 'M', 'MM', 'MMM'];
+  return (
+    ths[Math.floor(num / 1000)] +
+    hrns[Math.floor((num % 1000) / 100)] +
+    tens[Math.floor((num % 100) / 10)] +
+    ones[num % 10]
+  );
 };
 export default intToRoman;

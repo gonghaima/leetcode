@@ -1,22 +1,11 @@
-export default strs => {
-  if (strs.length === 0) return '';
-  if (strs.length === 1) return strs[0];
-  const first = strs[0].split('') || 0;
-
-  let commonPrefix = true;
-  let prefixIndex = 0;
-  for (let i = 1; i < first.length + 1 && commonPrefix === true; i++) {
-    [...strs].reduce((a, c) => {
-      if (a === '') a = c;
-      if (a.substring(0, i) !== c.substring(0, i)) {
-        commonPrefix = false;
-        prefixIndex = i;
-      }
-      return a;
-    }, '');
-    prefixIndex = i;
+export default (strs) => {
+  if (strs === undefined || strs.length === 0) {
+    return '';
   }
-  if (commonPrefix === true) return strs[0].substring(0, prefixIndex);
-  if (prefixIndex === 1 && commonPrefix === false) return '';
-  return strs[0].substring(0, prefixIndex - 1);
+
+  return strs.reduce((prev, next) => {
+    let i = 0;
+    while (prev[i] && next[i] && prev[i] === next[i]) i++;
+    return prev.slice(0, i);
+  });
 };

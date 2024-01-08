@@ -329,3 +329,4 @@ Identify if problems talks about finding groups or components.
 - [189. Rotate Array](https://leetcode.com/problems/rotate-array/?envType=study-plan-v2&envId=top-interview-150) => [rotate](./src/rules/rotate/index.js)
 - [135. Candy](https://leetcode.com/problems/candy/description/?envType=study-plan-v2&envId=top-interview-150) => [candy](./src/rules/candy/index.js)
 - [12. Integer to Roman](https://leetcode.com/problems/integer-to-roman/description/?envType=study-plan-v2&envId=top-interview-150) => [intToRoman](./src/rules/intToRoman/index.js)
+- [14. Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/description/?envType=study-plan-v2&envId=top-interview-150) => [longestCommonPrefix] (./src/rules/longestCommonPrefix/index.js)

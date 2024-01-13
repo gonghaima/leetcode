@@ -330,5 +330,5 @@ Identify if problems talks about finding groups or components.
 - [135. Candy](https://leetcode.com/problems/candy/description/?envType=study-plan-v2&envId=top-interview-150) => [candy](./src/rules/candy/index.js)
 - [12. Integer to Roman](https://leetcode.com/problems/integer-to-roman/description/?envType=study-plan-v2&envId=top-interview-150) => [intToRoman](./src/rules/intToRoman/index.js)
 - [14. Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/description/?envType=study-plan-v2&envId=top-interview-150) => [longestCommonPrefix](./src/rules/longestCommonPrefix/index.js)
-
 - [28. Find the Index of the First Occurrence in a String](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string) => [strStr](./src/rules/strStr/index.js)
+- [68. Text Justification](https://leetcode.com/problems/text-justification/description/?envType=study-plan-v2&envId=top-interview-150) => [fullJustify](./src/rules/fullJustify/index.js)

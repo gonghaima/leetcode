@@ -332,3 +332,4 @@ Identify if problems talks about finding groups or components.
 - [14. Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/description/?envType=study-plan-v2&envId=top-interview-150) => [longestCommonPrefix](./src/rules/longestCommonPrefix/index.js)
 - [28. Find the Index of the First Occurrence in a String](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string) => [strStr](./src/rules/strStr/index.js)
 - [68. Text Justification](https://leetcode.com/problems/text-justification/description/?envType=study-plan-v2&envId=top-interview-150) => [fullJustify](./src/rules/fullJustify/index.js)
+- [167. Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/?envType=study-plan-v2&envId=top-interview-150) => [twoSumII](./src/rules/twoSumII/index.js)

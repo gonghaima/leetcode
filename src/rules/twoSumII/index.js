@@ -4,18 +4,11 @@
  * @return {number[]}
  */
 var twoSumII = function(numbers, target) {
-  let p1 = 0;
-  let p2 = numbers.length - 1;
-
-  while (numbers[p1] + numbers[p2] !== target) {
-    if (numbers[p1] + numbers[p2] > target) {
-      p2--;
-    } else {
-      p1++;
-    }
+  for (let start = 0, end = numbers.length - 1; start < end; ) {
+    let sum = numbers[start] + numbers[end];
+    if (sum === target) return [++start, ++end];
+    else sum > target ? end-- : start++;
   }
-
-  return [p1 + 1, p2 + 1];
 };
 
 export default twoSumII;

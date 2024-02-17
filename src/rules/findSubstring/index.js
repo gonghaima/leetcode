@@ -4,36 +4,53 @@
  * @return {number[]}
  */
 var findSubstring = function(s, words) {
-  let res = [];
+  let totalCharCount = 0;
+  let map = new Map();
 
   let wordLength = words[0].length;
   let wordCount = words.length;
-  let len = wordCount * wordLength; //Length of sliding window
-  
-  let map = {}
-  
-  for (let word of words) map[word] = map[word] + 1 || 1; //Hash word freq
 
-  for (let i = 0; i < s.length - len + 1; i++) {
-          let sub = s.slice(i, i + len); //Generate substring of sliding window length
-          if (isConcat(sub, map, wordLength)) res.push(i)
-      }
-  
-  return res;
+  let slideWindow = wordLength * wordCount;
+
+  for (let word of words) {
+    map.has(word) ? map.set(word, map.get(word) + 1) : map.set(word, 1);
+  }
+
+  let leftIndex = 0;
+  let rightIndex = slideWindow - 1;
+  let result = [];
+
+  const helper = (tempStr) => {
+    let visited = new Map();
+
+    for (let i = 0; i < tempStr.length; i += wordLength) {
+      let word = tempStr.substr(i, wordLength);
+
+      visited.has(word)
+        ? visited.set(word, visited.get(word) + 1)
+        : visited.set(word, 1);
+    }
+
+    for (let [key, val] of visited) {
+      if (map.get(key) != val) return false;
+    }
+
+    return true;
+  };
+
+  while (rightIndex < s.length) {
+    if (rightIndex - leftIndex + 1 == slideWindow) {
+      let tempStr = s.substring(leftIndex, rightIndex + 1);
+
+      if (helper(tempStr)) result.push(leftIndex);
+
+      leftIndex++;
+    }
+
+    rightIndex++;
+  }
+
+  return result;
 };
-
-function isConcat(sub,map,wordLength){
-    
-  let seen = {};
-  for (let i = 0; i < sub.length; i+=wordLength) {
-      let word = sub.slice(i,i + wordLength);
-      seen[word] = seen[word] + 1 || 1
-  }
-  
-  for(let key in map){
-      if(map[key] !== seen[key]) return false; //Word freq must match between map and seen
-  }
-  return true;
-}
 
 export default findSubstring;

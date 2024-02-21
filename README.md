@@ -334,3 +334,4 @@ Identify if problems talks about finding groups or components.
 - [68. Text Justification](https://leetcode.com/problems/text-justification/description/?envType=study-plan-v2&envId=top-interview-150) => [fullJustify](./src/rules/fullJustify/index.js)
 - [167. Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/?envType=study-plan-v2&envId=top-interview-150) => [twoSumII](./src/rules/twoSumII/index.js)
 - [30. Substring with Concatenation of All Words](https://leetcode.com/problems/substring-with-concatenation-of-all-words/description/?envType=study-plan-v2&envId=top-interview-150) => [findSubstring](./src/rules/findSubstring/index.js)
+- [383. Ransom Note](https://leetcode.com/problems/ransom-note/description/?envType=study-plan-v2&envId=top-interview-150) => [canConstruct](./src/rules/canConstruct/index.js)

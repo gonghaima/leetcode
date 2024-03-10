@@ -336,3 +336,4 @@ Identify if problems talks about finding groups or components.
 - [30. Substring with Concatenation of All Words](https://leetcode.com/problems/substring-with-concatenation-of-all-words/description/?envType=study-plan-v2&envId=top-interview-150) => [findSubstring](./src/rules/findSubstring/index.js)
 - [383. Ransom Note](https://leetcode.com/problems/ransom-note/description/?envType=study-plan-v2&envId=top-interview-150) => [canConstruct](./src/rules/canConstruct/index.js)
 - [205. Isomorphic Strings](https://leetcode.com/problems/isomorphic-strings/description/?envType=study-plan-v2&envId=top-interview-150) => [isIsomorphic](./src/rules/isIsomorphic/index.js)
+- [290. Word Pattern](https://leetcode.com/problems/word-pattern/description/?envType=study-plan-v2&envId=top-interview-150) => [wordPattern](./src/rules/wordPattern/index.js)

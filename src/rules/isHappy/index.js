@@ -3,35 +3,23 @@
  * @return {boolean}
  */
 var isHappy = function(n) {
-  const toSplittedDigits = (param) => param.toString().split('');
-  let foundisHappy = false;
-  let splittedDigits = toSplittedDigits(n);
-  let rootSum = n;
-
-  const getNewSplittedDigits = (digits) => {
-    let sum = 0;
-    let foundIt = false;
-    for (let i = 0; i < digits.length; i++) {
-      const element = digits[i];
-      sum += Number(element) ** 2;
+  if (n < 10) {
+    if (n === 1 || n === 7) {
+      return true;
     }
-    if (sum === 1) {
-      foundIt = true;
-    }
-
-    return { digits: sum.toString(), foundIt };
-  };
-
-  while (!foundisHappy && rootSum > 10) {
-    const { digits, foundIt } = getNewSplittedDigits(splittedDigits);
-    if (foundIt) {
-      foundisHappy = true;
-    }
-    splittedDigits = toSplittedDigits(digits);
-    rootSum = Number(digits);
+    return false;
   }
-
-  return foundisHappy;
+  let total = 0;
+  while (n > 0) {
+    let sq = n % 10;
+    total += sq ** 2;
+    n -= sq;
+    n /= 10;
+  }
+  if (total === 1) {
+    return true;
+  }
+  return isHappy(total);
 };
 
 export default isHappy;

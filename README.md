@@ -339,3 +339,4 @@ Identify if problems talks about finding groups or components.
 - [290. Word Pattern](https://leetcode.com/problems/word-pattern/description/?envType=study-plan-v2&envId=top-interview-150) => [wordPattern](./src/rules/wordPattern/index.js)
 - [242. Valid Anagram](https://leetcode.com/problems/valid-anagram/description/?envType=study-plan-v2&envId=top-interview-150) => [isAnagram](./src/rules/isAnagram/index.js)
 - [219. Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/description/?envType=study-plan-v2&envId=top-interview-150) => [containsNearbyDuplicate](./src/rules/containsNearbyDuplicate/index.js)
+- [228. Summary Ranges](https://leetcode.com/problems/summary-ranges/description/?envType=study-plan-v2&envId=top-interview-150) => [summaryRanges](./src/rules/summaryRanges/index.js)

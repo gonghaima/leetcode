@@ -3,32 +3,14 @@
  * @return {string[]}
  */
 var summaryRanges = function(nums) {
-
-  if (nums.length === 0) return [];
-  if (nums.length === 1) return [`${nums[0]}`];
-  let result = [];
-  let start = nums[0];
-  let end = nums[0];
-  for (let i = 1; i < nums.length; i++) {
-    if (nums[i] === end + 1) {
-      end += 1;
-    } else {
-      if (start === end) {
-        result.push(`${start}`);
-      } else {
-        result.push(`${start}->${end}`);
-      }
-      start = nums[i];
-      end = nums[i];
+  const res = [];
+  for (let i = 0, left = nums[0]; i < nums.length; i++) {
+    if (nums[i] + 1 !== nums[i + 1]) {
+      res.push(left === nums[i] ? '' + nums[i] : left + '->' + nums[i]);
+      left = nums[i + 1];
     }
   }
-  if (start === end) {
-    result.push(`${start}`);
-  } else {
-    result.push(`${start}->${end}`);
-  }
-  return result;
-
+  return res;
 };
 
 export default summaryRanges;

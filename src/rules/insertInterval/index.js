@@ -4,29 +4,25 @@
  * @return {number[][]}
  */
 var insertInterval = function(intervals, newInterval) {
-  let merged = [];
-  let i = 0;
+  let [start, end] = newInterval;
+  let left = [];
+  let right = [];
 
-  while (i < intervals.length && intervals[i][1] < newInterval[0]) {
-    merged.push(intervals[i]);
-    i++;
+  for (const interval of intervals) {
+    const [first, last] = interval;
+
+    // current interval is smaller than newInterval
+    if (last < start) left.push(interval);
+    // current interval is larger than newInterval
+    else if (first > end) right.push(interval);
+    // there is a overlap
+    else {
+      start = Math.min(start, first);
+      end = Math.max(end, last);
+    }
   }
 
-  while (i < intervals.length && intervals[i][0] <= newInterval[1]) {
-    newInterval = [
-      Math.min(newInterval[0], intervals[i][0]),
-      Math.max(newInterval[1], intervals[i][1]),
-    ];
-    i++;
-  }
-  merged.push(newInterval);
-
-  while (i < intervals.length) {
-    merged.push(intervals[i]);
-    i++;
-  }
-
-  return merged;
+  return [...left, [start, end], ...right];
 };
 
 export default insertInterval;

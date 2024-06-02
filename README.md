@@ -342,3 +342,4 @@ Identify if problems talks about finding groups or components.
 - [228. Summary Ranges](https://leetcode.com/problems/summary-ranges/description/?envType=study-plan-v2&envId=top-interview-150) => [summaryRanges](./src/rules/summaryRanges/index.js)
 - [57. Insert Interval](https://leetcode.com/problems/insert-interval/description/?envType=study-plan-v2&envId=top-interview-150) => [Insert Interval](./src/rules/insertInterval/index.js)
 - [452. Minimum Number of Arrows to Burst Balloons](https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/description/?envType=study-plan-v2&envId=top-interview-150) => [findMinArrowShots](./src/rules/findMinArrowShots/index.js)
+- [20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses/description/?envType=study-plan-v2&envId=top-interview-150) => [isValidParenheses](./src/rules/isValidParenheses/index.js)

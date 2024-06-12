@@ -2,24 +2,37 @@
  * @param {string} s
  * @return {boolean}
  */
-var isValid = function(s) {
-  // Initialize stack to store the closing brackets expected...
-  let stack = [];
-  // Traverse each charater in input string...
-  for (let idx = 0; idx < s.length; idx++) {
-    // If open parentheses are present, push it to stack...
-    if (s[idx] == '{') {
-      stack.push('}');
-    } else if (s[idx] == '[') {
-      stack.push(']');
-    } else if (s[idx] == '(') {
-      stack.push(')');
-    }
-    // If a close bracket is found, check that it matches the last stored open bracket
-    else if (stack.pop() !== s[idx]) {
-      return false;
+var isValidParenheses = function(s) {
+  // 1
+  if (s.length === 0) return true;
+  if (s.length === 1) return false;
+  if (s.length % 2 !== 0) return false;
+
+  const dictionary = {
+    '}': '{',
+    ')': '(',
+    ']': '[',
+  };
+  const stack = [];
+
+  for (let i = 0; i < s.length; i++) {
+    const currChar = s[i];
+    const lastChar = stack[stack.length - 1];
+    const delChar = dictionary[currChar];
+
+    if (delChar) {
+      // 2
+      if (delChar === lastChar) {
+        stack.pop();
+      } else {
+        return false;
+      }
+    } else {
+      stack.push(currChar);
     }
   }
+
+  // 3
   return !stack.length;
 };
-export default isValid;
+export default isValidParenheses;

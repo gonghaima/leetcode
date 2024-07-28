@@ -28,6 +28,6 @@ test("MinStack should perform as expected for case1", () => {
 
   expect(minNum).toEqual(-2);
   expect(topNum).toEqual(-1);
-  expect(popVal).toEqual(null);
+  expect(+popVal).toEqual(NaN);
   expect(minNum1).toEqual(-2);
 });

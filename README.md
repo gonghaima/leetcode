@@ -345,3 +345,4 @@ Identify if problems talks about finding groups or components.
 - [452. Minimum Number of Arrows to Burst Balloons](https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/description/?envType=study-plan-v2&envId=top-interview-150) => [findMinArrowShots](./src/rules/findMinArrowShots/index.js)
 - [20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses/description/?envType=study-plan-v2&envId=top-interview-150) => [isValidParenheses](./src/rules/isValidParenheses/index.js)
 - [71. Simplify Path](https://leetcode.com/problems/simplify-path/description/?envType=study-plan-v2&envId=top-interview-150) => [simplifyPath](./src/rules/simplifyPath/index.js)
+- [150. Evaluate Reverse Polish Notation](https://leetcode.com/problems/evaluate-reverse-polish-notation/description/?envType=study-plan-v2&envId=top-interview-150) => [evalRPN](./src/rules/evalRPN/index.js)

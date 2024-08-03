@@ -3,18 +3,23 @@
  * @return {number}
  */
 var evalRPN = function(tokens) {
-  const x = tokens.pop();
+  const stack = [];
 
-  return operators[x]
-    ? operators[x](evalRPN(tokens), evalRPN(tokens))
-    : parseInt(x);
-};
+  for (let i = 0; i < tokens.length; i++) {
+    const token = tokens[i];
 
-const operators = {
-  '+': (a, b) => b + a,
-  '-': (a, b) => b - a,
-  '*': (a, b) => b * a,
-  '/': (a, b) => parseInt(b / a),
+    if (Number.isInteger(+token)) {
+      stack.push(token);
+    } else {
+      const second = stack.pop();
+      const first = stack.pop();
+      const exp = `${first} ${token} ${second}`;
+      const exp_res = Math.trunc(eval(exp));
+      stack.push(exp_res);
+    }
+  }
+
+  return stack[0];
 };
 
 export default evalRPN;

@@ -347,3 +347,4 @@ Identify if problems talks about finding groups or components.
 - [71. Simplify Path](https://leetcode.com/problems/simplify-path/description/?envType=study-plan-v2&envId=top-interview-150) => [simplifyPath](./src/rules/simplifyPath/index.js)
 - [150. Evaluate Reverse Polish Notation](https://leetcode.com/problems/evaluate-reverse-polish-notation/description/?envType=study-plan-v2&envId=top-interview-150) => [evalRPN](./src/rules/evalRPN/index.js)
 - [224. Basic Calculator](https://leetcode.com/problems/basic-calculator/?envType=study-plan-v2&envId=top-interview-150) => [calculate](./src/rules/calculate/index.js)
+- [141. Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/description/?envType=study-plan-v2&envId=top-interview-150) => [hasCycle](./src/rules/hasCycle/index.js)

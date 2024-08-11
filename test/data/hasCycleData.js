@@ -1,9 +1,9 @@
-import { constructListNode } from '../../src/models/listNode-v1';
+import { createLinkedListWithCycle } from '../../src/models/listNode-v2';
 
 export const inputData = {
-  case1: constructListNode([3, 2, 0, -4]),
-  case2: constructListNode([1, 2]),
-  case3: constructListNode([1]),
+  case1: createLinkedListWithCycle([3, 2, 0, -4], 1),
+  case2: createLinkedListWithCycle([1, 2], 0),
+  case3: createLinkedListWithCycle([1]),
 };
 
 export const expected = {

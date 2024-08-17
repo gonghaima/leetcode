@@ -99,4 +99,4 @@ const head = [3, 2, 0, -4];
 const pos = 1;
 const linkedList = createLinkedListWithCycle(head, pos);
 
-linkedList.printList(); // Output: 3 -> 2 -> 0 -> -4 -> (cycle to 2)
+// linkedList.printList(); // Output: 3 -> 2 -> 0 -> -4 -> (cycle to 2)

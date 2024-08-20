@@ -45,7 +45,7 @@
     "eslint-plugin-prettier": "^2.7.0",
     "jest": "24.8.0",
     "nyc": "14.1.1",
-    "prettier": "^1.19.1",
+    "prettier": "^3.3.3",
     "rimraf": "^2.7.1"
   }
 }

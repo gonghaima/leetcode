@@ -15,20 +15,26 @@ function ListNode(val, next) {
  * @param {number} right
  * @return {ListNode}
  */
-var reverseBetween = function (list, left, right) {
-  const dummy = new ListNode(0, list);
-  let head = dummy;
-  let curr = 1;
+var reverseBetween = function (head, left, right) {
+  if (!head || left === right) return head;
 
-  while (curr++ < left) head = head.next;
+  const dummy = new ListNode(0);
+  dummy.next = head;
+  let prev = dummy;
 
-  let tail = head.next;
-  while (left++ < right) {
-    const next = tail.next;
-    tail.next = next.next;
-    next.next = head.next;
-    head.next = next;
+  for (let i = 0; i < left - 1; ++i) {
+    prev = prev.next;
   }
+
+  let current = prev.next;
+
+  for (let i = 0; i < right - left; ++i) {
+    const nextNode = current.next;
+    current.next = nextNode.next;
+    nextNode.next = prev.next;
+    prev.next = nextNode;
+  }
+
   return dummy.next;
 };
 

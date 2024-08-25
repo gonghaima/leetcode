@@ -1,40 +1,31 @@
-# [151. Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/)
+# [25. Reverse Nodes in k-Group](https://leetcode.com/problems/reverse-nodes-in-k-group/description/?envType=study-plan-v2&envId=top-interview-150)
 
-Medium
+Hard
 
-Given an input string s, reverse the order of the words.
+Given the head of a linked list, reverse the nodes of the list k at a time, and return the modified list.
 
-A word is defined as a sequence of non-space characters. The words in s will be separated by at least one space.
+k is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of k then left-out nodes, in the end, should remain as it is.
 
-Return a string of the words in reverse order concatenated by a single space.
-
-Note that s may contain leading or trailing spaces or multiple spaces between two words. The returned string should only have a single space separating the words. Do not include any extra spaces.
+You may not alter the values in the list's nodes, only nodes themselves may be changed.
 
 Example 1:
 
 ```s
-Input: s = "the sky is blue"
-Output: "blue is sky the"
+Input: head = [1,2,3,4,5], k = 2
+Output: [2,1,4,3,5]
 ```
 
 Example 2:
 
 ```s
-Input: s = "  hello world  "
-Output: "world hello"
-Explanation: Your reversed string should not contain leading or trailing spaces.
-```
-
-Example 3:
-
-```s
-Input: s = "a good   example"
-Output: "example good a"
-Explanation: You need to reduce multiple spaces between two words to a single space in the reversed string.
+Input: head = [1,2,3,4,5], k = 3
+Output: [3,2,1,4,5]
 ```
 
 Constraints:
 
-- 1 <= s.length <= 104
-- s contains English letters (upper-case and lower-case), digits, and spaces ' '.
-- There is at least one word in s.
+- The number of nodes in the list is n.
+- 1 <= k <= n <= 5000
+- 0 <= Node.val <= 1000
+
+Follow-up: Can you solve the problem in O(1) extra memory space?

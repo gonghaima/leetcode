@@ -351,3 +351,4 @@ Identify if problems talks about finding groups or components.
 - [141. Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/description/?envType=study-plan-v2&envId=top-interview-150) => [hasCycle](./src/rules/hasCycle/index.js)
 - [2. Add Two Numbers](https://leetcode.com/problems/add-two-numbers/description/?envType=study-plan-v2&envId=top-interview-150) => [addTwoNumbers](./src/rules/addTwoNumbers/index.js)
 - [21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/description/?envType=study-plan-v2&envId=top-interview-150) => [mergeTwoLists](./src/rules/mergeTwoLists/index.js)
+- [25. Reverse Nodes in k-Group](https://leetcode.com/problems/reverse-nodes-in-k-group/description/?envType=study-plan-v2&envId=top-interview-150) => [reverseKGroup](./src/rules/reverseKGroup/index.js)

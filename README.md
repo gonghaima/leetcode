@@ -353,3 +353,4 @@ Identify if problems talks about finding groups or components.
 - [21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/description/?envType=study-plan-v2&envId=top-interview-150) => [mergeTwoLists](./src/rules/mergeTwoLists/index.js)
 - [25. Reverse Nodes in k-Group](https://leetcode.com/problems/reverse-nodes-in-k-group/description/?envType=study-plan-v2&envId=top-interview-150) => [reverseKGroup](./src/rules/reverseKGroup/index.js)
 - [19. Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) =>[removeNthFromEnd](./src/rules/removeNthFromEnd/index.js)
+- [82. Remove Duplicates from Sorted List II](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/description/?envType=study-plan-v2&envId=top-interview-150) => [deleteDuplicatesII](./src/rules/deleteDuplicatesII/index.js)

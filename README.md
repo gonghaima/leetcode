@@ -355,3 +355,4 @@ Identify if problems talks about finding groups or components.
 - [19. Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) =>[removeNthFromEnd](./src/rules/removeNthFromEnd/index.js)
 - [82. Remove Duplicates from Sorted List II](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/description/?envType=study-plan-v2&envId=top-interview-150) => [deleteDuplicatesII](./src/rules/deleteDuplicatesII/index.js)
 - [61. Rotate List](https://leetcode.com/problems/rotate-list/description/?envType=study-plan-v2&envId=top-interview-150) => [rotateRight](./src/rules/rotateRight/index.js)
+- [86. Partition List](https://leetcode.com/problems/partition-list/description/?envType=study-plan-v2&envId=top-interview-150) => [partitionList](./src/rules/partitionList/index.js)

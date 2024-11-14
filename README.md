@@ -357,4 +357,5 @@ Identify if problems talks about finding groups or components.
 - [61. Rotate List](https://leetcode.com/problems/rotate-list/description/?envType=study-plan-v2&envId=top-interview-150) => [rotateRight](./src/rules/rotateRight/index.js)
 - [86. Partition List](https://leetcode.com/problems/partition-list/description/?envType=study-plan-v2&envId=top-interview-150) => [partitionList](./src/rules/partitionList/index.js)
 - [146. LRU Cache](https://leetcode.com/problems/lru-cache/) => [lRUCache](./src/rules/lRUCache/index.js)
-# [104. Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/description/?envType=study-plan-v2&envId=top-interview-150) => [maxDepth](./src/rules/maxDepth/index.js)
+- [104. Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/description/?envType=study-plan-v2&envId=top-interview-150) => [maxDepth](./src/rules/maxDepth/index.js)
+- [100. Same Tree](https://leetcode.com/problems/same-tree/?envType=study-plan-v2&envId=top-interview-150) => [isSameTree](./src/rules/binaryTree/isSameTree/index.js)

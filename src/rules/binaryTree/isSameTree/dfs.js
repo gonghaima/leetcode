@@ -12,21 +12,13 @@
  * @return {boolean}
  */
 var isSameTree = function (p, q) {
-  const queue = [p, q];
-  while (queue.length > 0) {
-    const first = queue.shift();
-    const second = queue.shift();
-
-    if (!first && !second) continue;
-    if (!first || !second || first.val !== second.val) return false;
-
-    queue.push(first.left);
-    queue.push(second.left);
-    queue.push(first.right);
-    queue.push(second.right);
-  }
-
-  return true;
+  if (!p && !q) return true;
+  if (!p || !q) return false;
+  return (
+    p.val === q.val &&
+    isSameTree(p.left, q.left) &&
+    isSameTree(p.right, q.right)
+  );
 };
 
 export default isSameTree;

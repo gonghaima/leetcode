@@ -12,19 +12,21 @@
  * @return {boolean}
  */
 var isSameTree = function (p, q) {
-  if (p && q) {
-    // Both p and q are non-empty
-    // Check equality on both subtree
-    return (
-      p.val == q.val &&
-      isSameTree(p.left, q.left) &&
-      isSameTree(p.right, q.right)
-    );
-  } else {
-    // At least one of them is empty
-    // Check whether both p and q are empty or not
-    return p == q;
+  const queue = [p, q];
+  while (queue.length > 0) {
+    const first = queue.shift();
+    const second = queue.shift();
+
+    if (!first && !second) continue;
+    if (!first || !second || first.val !== second.val) return false;
+
+    queue.push(first.left);
+    queue.push(second.left);
+    queue.push(first.right);
+    queue.push(second.right);
   }
+
+  return true;
 };
 
 export default isSameTree;

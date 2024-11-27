@@ -359,3 +359,4 @@ Identify if problems talks about finding groups or components.
 - [146. LRU Cache](https://leetcode.com/problems/lru-cache/) => [lRUCache](./src/rules/lRUCache/index.js)
 - [104. Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/description/?envType=study-plan-v2&envId=top-interview-150) => [maxDepth](./src/rules/maxDepth/index.js)
 - [100. Same Tree](https://leetcode.com/problems/same-tree/?envType=study-plan-v2&envId=top-interview-150) => [isSameTree](./src/rules/binaryTree/isSameTree/index.js)
+- [106. Construct Binary Tree from Inorder and Postorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/description/?envType=study-plan-v2&envId=top-interview-150) => [constructBSTFromInorderAndPostorder](./src/rules/binaryTree/constructBSTFromInorderAndPostorder/index.js)
